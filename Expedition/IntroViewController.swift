@@ -16,6 +16,7 @@ class IntroViewController: UIViewController {
 
         print("LOADED INTRO VIEW CONTROLLER")
         
+        OptionsViewController().registerSettingsBundle()
         
         if traitCollection.userInterfaceStyle == .light {
             gifView.loadGif(name: "LightIntro")
@@ -26,7 +27,14 @@ class IntroViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        let timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.switchToSearchView), userInfo: nil, repeats: false)
+        let alreadyOpened = UserDefaults.standard.bool(forKey: "has_opened")
+        
+        if alreadyOpened {
+            switchToSearchView()
+        } else {
+            UserDefaults.standard.set(true, forKey: "has_opened")
+            let timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.switchToSearchView), userInfo: nil, repeats: false)
+        }
     }
     
     @objc func switchToSearchView() {
