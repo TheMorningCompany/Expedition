@@ -469,6 +469,7 @@
                                 <constraint firstItem="KY2-RF-tBX" firstAttribute="top" secondItem="0UT-MA-a3z" secondAttribute="top" id="Xve-z8-gEx"/>
                             </constraints>
                         </view>
+                        <color key="backgroundColor" name="Expedition White"/>
                         <gestureRecognizers/>
                         <blurEffect style="systemChromeMaterial"/>
                     </visualEffectView>
@@ -579,6 +580,7 @@
                                 <constraint firstAttribute="trailing" secondItem="26z-zd-wEY" secondAttribute="trailing" constant="30" id="yhB-B0-kt6"/>
                             </constraints>
                         </view>
+                        <color key="backgroundColor" name="Expedition White"/>
                         <blurEffect style="systemChromeMaterial"/>
                     </visualEffectView>
                 </viewController>
@@ -637,6 +639,7 @@
                                 <constraint firstItem="FdS-Mo-wDz" firstAttribute="top" secondItem="Dfg-vg-I3h" secondAttribute="bottom" constant="18" id="yIY-go-c34"/>
                             </constraints>
                         </view>
+                        <color key="backgroundColor" name="Expedition White"/>
                         <blurEffect style="systemChromeMaterial"/>
                     </visualEffectView>
                 </viewController>
