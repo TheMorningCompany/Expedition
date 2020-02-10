@@ -10,8 +10,6 @@
 		0003C0E323CC08A200111AA1 /* Soft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0003C0E223CC08A200111AA1 /* Soft@2x.png */; };
 		0003C0E523CC10AA00111AA1 /* Paper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0003C0E423CC10AA00111AA1 /* Paper@2x.png */; };
 		0004B01B23CD3A0D00F67723 /* TheOrangeOne@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0004B01A23CD3A0C00F67723 /* TheOrangeOne@2x.png */; };
-		0007CD0323D1253F00E3535C /* blurrylogoforui.png in Resources */ = {isa = PBXBuildFile; fileRef = 0007CD0223D1253F00E3535C /* blurrylogoforui.png */; };
-		0007CD0523D1259800E3535C /* logoui.png in Resources */ = {isa = PBXBuildFile; fileRef = 0007CD0423D1259800E3535C /* logoui.png */; };
 		001366B82307B61F009A102E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001366B72307B61F009A102E /* AppDelegate.swift */; };
 		001366BA2307B61F009A102E /* SearchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001366B92307B61F009A102E /* SearchingViewController.swift */; };
 		001366BD2307B61F009A102E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001366BB2307B61F009A102E /* Main.storyboard */; };
@@ -30,7 +28,6 @@
 		00A91DBC23A84AFF00F045F7 /* DarkIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A91DBA23A84AFF00F045F7 /* DarkIcon@2x.png */; };
 		00A91DBD23A84AFF00F045F7 /* DarkIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A91DBB23A84AFF00F045F7 /* DarkIcon@3x.png */; };
 		00AB6BA623CD37DE0088E269 /* Metal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AB6BA523CD37DD0088E269 /* Metal@2x.png */; };
-		00AFAA5523E3B976006E9CD4 /* Inflate.ahap in Resources */ = {isa = PBXBuildFile; fileRef = 00AFAA5423E3B976006E9CD4 /* Inflate.ahap */; };
 		00C4A4C623C509E800C18F65 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00C4A4C523C509E800C18F65 /* Settings.bundle */; };
 		00EED5FC23CD370C00A1E258 /* Black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00EED5FB23CD370C00A1E258 /* Black@2x.png */; };
 		00F7071123D16FB400C0B8E2 /* Diamond@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F7071023D16FB400C0B8E2 /* Diamond@2x.png */; };
@@ -47,7 +44,6 @@
 		5D793D0523D4DF5C00539A44 /* Swift+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D793D0423D4DF5C00539A44 /* Swift+Gif.swift */; };
 		5D793D0723D4E02D00539A44 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D793D0623D4E02D00539A44 /* IntroViewController.swift */; };
 		5D865CC423E1013700374B07 /* BlankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D865CC323E1013700374B07 /* BlankViewController.swift */; };
-		5D865CC823E105E500374B07 /* privacy_screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D865CC723E105E500374B07 /* privacy_screen.png */; };
 		5D9B0E4323CBE355006713A4 /* VortexIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D9B0E4223CBE355006713A4 /* VortexIcon@2x.png */; };
 		5DE81BC223CBB41900F6FA33 /* GlyphFade@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AD59FD23CB98C1007C6495 /* GlyphFade@2x.png */; };
 		5DE81BC323CBB45000F6FA33 /* ColorShadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AD59E923CB986E007C6495 /* ColorShadow@2x.png */; };
@@ -95,8 +91,6 @@
 		0003C0E223CC08A200111AA1 /* Soft@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Soft@2x.png"; sourceTree = "<group>"; };
 		0003C0E423CC10AA00111AA1 /* Paper@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Paper@2x.png"; sourceTree = "<group>"; };
 		0004B01A23CD3A0C00F67723 /* TheOrangeOne@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TheOrangeOne@2x.png"; sourceTree = "<group>"; };
-		0007CD0223D1253F00E3535C /* blurrylogoforui.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blurrylogoforui.png; path = Expedition/blurrylogoforui.png; sourceTree = SOURCE_ROOT; };
-		0007CD0423D1259800E3535C /* logoui.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoui.png; sourceTree = "<group>"; };
 		001366B42307B61F009A102E /* Expedition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expedition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		001366B72307B61F009A102E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		001366B92307B61F009A102E /* SearchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingViewController.swift; sourceTree = "<group>"; usesTabs = 0; };
@@ -129,7 +123,6 @@
 		00AD59FE23CB98C2007C6495 /* GlyphFade@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GlyphFade@3x.png"; sourceTree = "<group>"; };
 		00AD5A0423CB98DB007C6495 /* LightBlue@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LightBlue@3x.png"; sourceTree = "<group>"; };
 		00AD5A0523CB98DC007C6495 /* LightBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LightBlue@2x.png"; sourceTree = "<group>"; };
-		00AFAA5423E3B976006E9CD4 /* Inflate.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Inflate.ahap; sourceTree = "<group>"; };
 		00C4A4C523C509E800C18F65 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		00EED5FB23CD370C00A1E258 /* Black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Black@2x.png"; sourceTree = "<group>"; };
 		00F7071023D16FB400C0B8E2 /* Diamond@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Diamond@2x.png"; sourceTree = "<group>"; };
@@ -147,7 +140,6 @@
 		5D793D0423D4DF5C00539A44 /* Swift+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift+Gif.swift"; sourceTree = "<group>"; };
 		5D793D0623D4E02D00539A44 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		5D865CC323E1013700374B07 /* BlankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankViewController.swift; sourceTree = "<group>"; };
-		5D865CC723E105E500374B07 /* privacy_screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = privacy_screen.png; sourceTree = "<group>"; };
 		5D9B0E4223CBE355006713A4 /* VortexIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VortexIcon@2x.png"; sourceTree = "<group>"; };
 		5DFC236423D58840004A3DF9 /* Stickers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Stickers.xcassets; sourceTree = "<group>"; };
 		5DFC236623D58840004A3DF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -216,18 +208,14 @@
 			children = (
 				00C4A4C523C509E800C18F65 /* Settings.bundle */,
 				D64CA0C823C94E6600619E00 /* LightIcon@2x.png */,
-				0007CD0423D1259800E3535C /* logoui.png */,
-				0007CD0223D1253F00E3535C /* blurrylogoforui.png */,
 				5D2FA89F23D5490B00A68AF5 /* LightIntro.gif */,
 				5D2FA8A123D5491B00A68AF5 /* DarkIntro.gif */,
-				5D865CC723E105E500374B07 /* privacy_screen.png */,
 				5DE81BC623CBB83400F6FA33 /* TotallyNotSecretIcons */,
 				0016FC3C23A6B801000D0022 /* DarkAppIcon */,
 				00AD59E723CB9865007C6495 /* ColorShadowAppIcon */,
 				00AD59F523CB98A5007C6495 /* FadingAppIcon */,
 				00AD59FC23CB98B8007C6495 /* GlyphFadeAppIcon */,
 				00AD5A0323CB98D5007C6495 /* LightBlueAppIcon */,
-				00AFAA5423E3B976006E9CD4 /* Inflate.ahap */,
 				5D793D0623D4E02D00539A44 /* IntroViewController.swift */,
 				001366B92307B61F009A102E /* SearchingViewController.swift */,
 				5D41CBF223C5745C003A16F9 /* OptionsViewController.swift */,
@@ -465,17 +453,14 @@
 				0077891923D14005002AEE78 /* DarkShatter@2x.png in Resources */,
 				D65C4E5E23CD396E00B83EC8 /* ThePinkOne@2x.png in Resources */,
 				00A91DBC23A84AFF00F045F7 /* DarkIcon@2x.png in Resources */,
-				00AFAA5523E3B976006E9CD4 /* Inflate.ahap in Resources */,
 				0040048923CD7DAC002926E9 /* Zuckerberg@2x.png in Resources */,
 				D65C4E6023CD3D5900B83EC8 /* MorningIcon@2x.png in Resources */,
 				5DE81BC223CBB41900F6FA33 /* GlyphFade@2x.png in Resources */,
-				5D865CC823E105E500374B07 /* privacy_screen.png in Resources */,
 				5D2FA8A023D5490B00A68AF5 /* LightIntro.gif in Resources */,
 				00EED5FC23CD370C00A1E258 /* Black@2x.png in Resources */,
 				00F7071123D16FB400C0B8E2 /* Diamond@2x.png in Resources */,
 				0003C0E523CC10AA00111AA1 /* Paper@2x.png in Resources */,
 				00A3DC5D23D3C8EA00F96543 /* README.md in Resources */,
-				0007CD0323D1253F00E3535C /* blurrylogoforui.png in Resources */,
 				0077891823D14005002AEE78 /* LightShatter@2x.png in Resources */,
 				5D2FA89E23D548F300A68AF5 /* DarkIntro.gif in Resources */,
 				5D7845A223CC243A006E6CE1 /* BlurryIcon@2x.png in Resources */,
@@ -491,7 +476,6 @@
 				5DE81BC423CBB45300F6FA33 /* Fading@2x.png in Resources */,
 				00C4A4C623C509E800C18F65 /* Settings.bundle in Resources */,
 				D635B71A23CC07D6006B33F1 /* ThePurpleOne@2x.png in Resources */,
-				0007CD0523D1259800E3535C /* logoui.png in Resources */,
 				006302BD23CC04760074BE1C /* DramaticIcon@2x.png in Resources */,
 				006302BC23CC04760074BE1C /* Halftone@2x.png in Resources */,
 				001366BD2307B61F009A102E /* Main.storyboard in Resources */,
