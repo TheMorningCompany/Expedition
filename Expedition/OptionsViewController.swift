@@ -12,8 +12,8 @@ import Foundation
 import CoreData
 
 class OptionsViewController: UIViewController {
-let notification = UINotificationFeedbackGenerator()//Haptics
-let impact = UIImpactFeedbackGenerator() // Haptics
+    let notification = UINotificationFeedbackGenerator()//Haptics
+    let impact = UIImpactFeedbackGenerator() // Haptics
     @IBOutlet weak var historySwitch: UISwitch!
     @IBOutlet weak var keepCookiesSwitch: UISwitch!
     @IBOutlet weak var reopenTabsSwitch: UISwitch!

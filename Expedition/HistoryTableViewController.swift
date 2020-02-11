@@ -55,12 +55,16 @@ class HistoryTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = historyTableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath)
+        
+        let cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: "cellId")
+        
+        //let cell = historyTableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath)
         
         // Configure the cell...
 
         let row = indexPath.row
         cell.textLabel?.text = historyArray[row].title
+        cell.detailTextLabel?.text = historyArray[row].url
         
         return cell
     }
@@ -71,7 +75,6 @@ class HistoryTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let row = indexPath.row
-        print(historyArray[row])
         
         // Return false if you do not want the specified item to be editable.
         return true
