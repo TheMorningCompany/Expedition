@@ -38,49 +38,11 @@
 		</dict>
 		<dict>
 			<key>Type</key>
-			<string>PSGroupSpecifier</string>
+			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
-			<string>Credits</string>
-		</dict>
-		<dict>
-			<key>DefaultValue</key>
 			<string></string>
-			<key>Type</key>
-			<string>PSTitleValueSpecifier</string>
-			<key>Title</key>
-			<string>Zeqe Golomb</string>
 			<key>Key</key>
-			<string>zeqe golomb</string>
-		</dict>
-		<dict>
-			<key>DefaultValue</key>
 			<string></string>
-			<key>Type</key>
-			<string>PSTitleValueSpecifier</string>
-			<key>Title</key>
-			<string>Finbarr O&apos;Connell</string>
-			<key>Key</key>
-			<string>finbarr oconnell</string>
-		</dict>
-		<dict>
-			<key>DefaultValue</key>
-			<string></string>
-			<key>Type</key>
-			<string>PSTitleValueSpecifier</string>
-			<key>Title</key>
-			<string>Julian Wright</string>
-			<key>Key</key>
-			<string>julian wright</string>
-		</dict>
-		<dict>
-			<key>DefaultValue</key>
-			<string></string>
-			<key>Type</key>
-			<string>PSTitleValueSpecifier</string>
-			<key>Title</key>
-			<string>Jackson Yan</string>
-			<key>Key</key>
-			<string>jackson yan</string>
 		</dict>
 	</array>
 </dict>
