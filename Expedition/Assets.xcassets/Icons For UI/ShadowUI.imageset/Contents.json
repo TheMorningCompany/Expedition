@@ -1,23 +1,23 @@
 {
   "images" : [
     {
+      "filename" : "Artboard 4@1x.png",
       "idiom" : "universal",
-      "filename" : "ShadowUI@1x.png",
       "scale" : "1x"
     },
     {
+      "filename" : "Artboard 4@2x.png",
       "idiom" : "universal",
-      "filename" : "ShadowUI@2x.png",
       "scale" : "2x"
     },
     {
+      "filename" : "Artboard 4@3x.png",
       "idiom" : "universal",
-      "filename" : "ShadowUI@3x.png",
       "scale" : "3x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }
