@@ -17,15 +17,14 @@
 		001366C22307B620009A102E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001366C02307B620009A102E /* LaunchScreen.storyboard */; };
 		001366D82307B620009A102E /* ExpeditionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001366D72307B620009A102E /* ExpeditionUITests.swift */; };
 		001366E72307BEA9009A102E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001366E62307BEA9009A102E /* WebKit.framework */; };
-		00183DAB23F6238600947E56 /* ToolbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00183DAA23F6238600947E56 /* ToolbarViewController.swift */; };
 		0040048923CD7DAC002926E9 /* Zuckerberg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0040048823CD7DAB002926E9 /* Zuckerberg@2x.png */; };
+		0053E05F23F640330012DB78 /* GlyphFade@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0053E05E23F640330012DB78 /* GlyphFade@2x.png */; };
 		006302BC23CC04760074BE1C /* Halftone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 006302B923CC04760074BE1C /* Halftone@2x.png */; };
 		006302BD23CC04760074BE1C /* DramaticIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 006302BA23CC04760074BE1C /* DramaticIcon@2x.png */; };
 		006302BE23CC04760074BE1C /* IOS6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 006302BB23CC04760074BE1C /* IOS6@2x.png */; };
 		0077891823D14005002AEE78 /* LightShatter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0077891623D14005002AEE78 /* LightShatter@2x.png */; };
 		0077891923D14005002AEE78 /* DarkShatter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0077891723D14005002AEE78 /* DarkShatter@2x.png */; };
 		0078502F23CD688E00BDB94C /* Prism@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078502E23CD688E00BDB94C /* Prism@2x.png */; };
-		00A91DBC23A84AFF00F045F7 /* DarkIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A91DBA23A84AFF00F045F7 /* DarkIcon@2x.png */; };
 		00A91DBD23A84AFF00F045F7 /* DarkIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A91DBB23A84AFF00F045F7 /* DarkIcon@3x.png */; };
 		00AB6BA623CD37DE0088E269 /* Metal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AB6BA523CD37DD0088E269 /* Metal@2x.png */; };
 		00C4A4C623C509E800C18F65 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00C4A4C523C509E800C18F65 /* Settings.bundle */; };
@@ -35,7 +34,6 @@
 		5D1D0D5A23C6B0B300B4377E /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D0D5923C6B0B300B4377E /* PersistenceService.swift */; };
 		5D1D0D5D23C6F1CB00B4377E /* HistoryElement+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D0D5B23C6F1CB00B4377E /* HistoryElement+CoreDataClass.swift */; };
 		5D1D0D5E23C6F1CB00B4377E /* HistoryElement+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D0D5C23C6F1CB00B4377E /* HistoryElement+CoreDataProperties.swift */; };
-		5D2FA89E23D548F300A68AF5 /* DarkIntro.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5D2FA89D23D548F300A68AF5 /* DarkIntro.gif */; };
 		5D2FA8A023D5490B00A68AF5 /* LightIntro.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5D2FA89F23D5490B00A68AF5 /* LightIntro.gif */; };
 		5D41CBF123C569B6003A16F9 /* SettingsBundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D41CBF023C569B6003A16F9 /* SettingsBundleHelper.swift */; };
 		5D41CBF323C5745C003A16F9 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D41CBF223C5745C003A16F9 /* OptionsViewController.swift */; };
@@ -45,7 +43,6 @@
 		5D793D0723D4E02D00539A44 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D793D0623D4E02D00539A44 /* IntroViewController.swift */; };
 		5D865CC423E1013700374B07 /* BlankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D865CC323E1013700374B07 /* BlankViewController.swift */; };
 		5D9B0E4323CBE355006713A4 /* VortexIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D9B0E4223CBE355006713A4 /* VortexIcon@2x.png */; };
-		5DE81BC223CBB41900F6FA33 /* GlyphFade@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AD59FD23CB98C1007C6495 /* GlyphFade@2x.png */; };
 		5DE81BC323CBB45000F6FA33 /* ColorShadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AD59E923CB986E007C6495 /* ColorShadow@2x.png */; };
 		5DE81BC423CBB45300F6FA33 /* Fading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AD59F623CB98AC007C6495 /* Fading@2x.png */; };
 		5DE81BC523CBB45700F6FA33 /* LightBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AD5A0523CB98DC007C6495 /* LightBlue@2x.png */; };
@@ -103,8 +100,8 @@
 		001366D72307B620009A102E /* ExpeditionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpeditionUITests.swift; sourceTree = "<group>"; };
 		001366D92307B620009A102E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		001366E62307BEA9009A102E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		00183DAA23F6238600947E56 /* ToolbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarViewController.swift; sourceTree = "<group>"; };
 		0040048823CD7DAB002926E9 /* Zuckerberg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zuckerberg@2x.png"; sourceTree = "<group>"; };
+		0053E05E23F640330012DB78 /* GlyphFade@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GlyphFade@2x.png"; sourceTree = "<group>"; };
 		005932CF234D747100DC2323 /* Expedition.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Expedition.entitlements; sourceTree = "<group>"; };
 		006302B923CC04760074BE1C /* Halftone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Halftone@2x.png"; sourceTree = "<group>"; };
 		006302BA23CC04760074BE1C /* DramaticIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DramaticIcon@2x.png"; sourceTree = "<group>"; };
@@ -112,16 +109,10 @@
 		0077891623D14005002AEE78 /* LightShatter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LightShatter@2x.png"; sourceTree = "<group>"; };
 		0077891723D14005002AEE78 /* DarkShatter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DarkShatter@2x.png"; sourceTree = "<group>"; };
 		0078502E23CD688E00BDB94C /* Prism@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Prism@2x.png"; sourceTree = "<group>"; };
-		00A91DBA23A84AFF00F045F7 /* DarkIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DarkIcon@2x.png"; sourceTree = "<group>"; };
 		00A91DBB23A84AFF00F045F7 /* DarkIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DarkIcon@3x.png"; sourceTree = "<group>"; };
 		00AB6BA523CD37DD0088E269 /* Metal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Metal@2x.png"; sourceTree = "<group>"; };
-		00AD59E823CB986D007C6495 /* ColorShadow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ColorShadow@3x.png"; sourceTree = "<group>"; };
 		00AD59E923CB986E007C6495 /* ColorShadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ColorShadow@2x.png"; sourceTree = "<group>"; };
 		00AD59F623CB98AC007C6495 /* Fading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fading@2x.png"; sourceTree = "<group>"; };
-		00AD59F723CB98AC007C6495 /* Fading@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fading@3x.png"; sourceTree = "<group>"; };
-		00AD59FD23CB98C1007C6495 /* GlyphFade@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GlyphFade@2x.png"; path = "../GlyphFade@2x.png"; sourceTree = "<group>"; };
-		00AD59FE23CB98C2007C6495 /* GlyphFade@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GlyphFade@3x.png"; sourceTree = "<group>"; };
-		00AD5A0423CB98DB007C6495 /* LightBlue@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LightBlue@3x.png"; sourceTree = "<group>"; };
 		00AD5A0523CB98DC007C6495 /* LightBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LightBlue@2x.png"; sourceTree = "<group>"; };
 		00C4A4C523C509E800C18F65 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		00EED5FB23CD370C00A1E258 /* Black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Black@2x.png"; sourceTree = "<group>"; };
@@ -130,7 +121,6 @@
 		5D1D0D5923C6B0B300B4377E /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		5D1D0D5B23C6F1CB00B4377E /* HistoryElement+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryElement+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5D1D0D5C23C6F1CB00B4377E /* HistoryElement+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryElement+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		5D2FA89D23D548F300A68AF5 /* DarkIntro.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = DarkIntro.gif; path = Expedition/DarkIntro.gif; sourceTree = SOURCE_ROOT; };
 		5D2FA89F23D5490B00A68AF5 /* LightIntro.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LightIntro.gif; sourceTree = "<group>"; };
 		5D2FA8A123D5491B00A68AF5 /* DarkIntro.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = DarkIntro.gif; sourceTree = "<group>"; };
 		5D41CBF023C569B6003A16F9 /* SettingsBundleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBundleHelper.swift; sourceTree = "<group>"; };
@@ -227,7 +217,6 @@
 				5D1D0D5623C6AE7600B4377E /* History.xcdatamodeld */,
 				5D793D0423D4DF5C00539A44 /* Swift+Gif.swift */,
 				5D1D0D5B23C6F1CB00B4377E /* HistoryElement+CoreDataClass.swift */,
-				00183DAA23F6238600947E56 /* ToolbarViewController.swift */,
 				5D1D0D5C23C6F1CB00B4377E /* HistoryElement+CoreDataProperties.swift */,
 				D6F21CAF23C409AE004C79EC /* code.swift */,
 				D6030CDB23A89669003C6911 /* Gestures.swift */,
@@ -259,7 +248,6 @@
 		0016FC3C23A6B801000D0022 /* DarkAppIcon */ = {
 			isa = PBXGroup;
 			children = (
-				00A91DBA23A84AFF00F045F7 /* DarkIcon@2x.png */,
 				00A91DBB23A84AFF00F045F7 /* DarkIcon@3x.png */,
 			);
 			path = DarkAppIcon;
@@ -269,7 +257,6 @@
 			isa = PBXGroup;
 			children = (
 				00AD59E923CB986E007C6495 /* ColorShadow@2x.png */,
-				00AD59E823CB986D007C6495 /* ColorShadow@3x.png */,
 			);
 			path = ColorShadowAppIcon;
 			sourceTree = "<group>";
@@ -278,7 +265,6 @@
 			isa = PBXGroup;
 			children = (
 				00AD59F623CB98AC007C6495 /* Fading@2x.png */,
-				00AD59F723CB98AC007C6495 /* Fading@3x.png */,
 			);
 			path = FadingAppIcon;
 			sourceTree = "<group>";
@@ -286,8 +272,7 @@
 		00AD59FC23CB98B8007C6495 /* GlyphFadeAppIcon */ = {
 			isa = PBXGroup;
 			children = (
-				00AD59FD23CB98C1007C6495 /* GlyphFade@2x.png */,
-				00AD59FE23CB98C2007C6495 /* GlyphFade@3x.png */,
+				0053E05E23F640330012DB78 /* GlyphFade@2x.png */,
 			);
 			path = GlyphFadeAppIcon;
 			sourceTree = "<group>";
@@ -295,9 +280,7 @@
 		00AD5A0323CB98D5007C6495 /* LightBlueAppIcon */ = {
 			isa = PBXGroup;
 			children = (
-				5D2FA89D23D548F300A68AF5 /* DarkIntro.gif */,
 				00AD5A0523CB98DC007C6495 /* LightBlue@2x.png */,
-				00AD5A0423CB98DB007C6495 /* LightBlue@3x.png */,
 			);
 			path = LightBlueAppIcon;
 			sourceTree = "<group>";
@@ -452,16 +435,13 @@
 			files = (
 				0077891923D14005002AEE78 /* DarkShatter@2x.png in Resources */,
 				D65C4E5E23CD396E00B83EC8 /* ThePinkOne@2x.png in Resources */,
-				00A91DBC23A84AFF00F045F7 /* DarkIcon@2x.png in Resources */,
 				0040048923CD7DAC002926E9 /* Zuckerberg@2x.png in Resources */,
 				D65C4E6023CD3D5900B83EC8 /* MorningIcon@2x.png in Resources */,
-				5DE81BC223CBB41900F6FA33 /* GlyphFade@2x.png in Resources */,
 				5D2FA8A023D5490B00A68AF5 /* LightIntro.gif in Resources */,
 				00EED5FC23CD370C00A1E258 /* Black@2x.png in Resources */,
 				00F7071123D16FB400C0B8E2 /* Diamond@2x.png in Resources */,
 				0003C0E523CC10AA00111AA1 /* Paper@2x.png in Resources */,
 				0077891823D14005002AEE78 /* LightShatter@2x.png in Resources */,
-				5D2FA89E23D548F300A68AF5 /* DarkIntro.gif in Resources */,
 				5D7845A223CC243A006E6CE1 /* BlurryIcon@2x.png in Resources */,
 				00A91DBD23A84AFF00F045F7 /* DarkIcon@3x.png in Resources */,
 				5D9B0E4323CBE355006713A4 /* VortexIcon@2x.png in Resources */,
@@ -471,6 +451,7 @@
 				001366C22307B620009A102E /* LaunchScreen.storyboard in Resources */,
 				006302BE23CC04760074BE1C /* IOS6@2x.png in Resources */,
 				001366BF2307B620009A102E /* Assets.xcassets in Resources */,
+				0053E05F23F640330012DB78 /* GlyphFade@2x.png in Resources */,
 				5DE81BC323CBB45000F6FA33 /* ColorShadow@2x.png in Resources */,
 				5DE81BC423CBB45300F6FA33 /* Fading@2x.png in Resources */,
 				00C4A4C623C509E800C18F65 /* Settings.bundle in Resources */,
@@ -508,7 +489,6 @@
 				5D1D0D5A23C6B0B300B4377E /* PersistenceService.swift in Sources */,
 				5D793D0723D4E02D00539A44 /* IntroViewController.swift in Sources */,
 				5D41CBF123C569B6003A16F9 /* SettingsBundleHelper.swift in Sources */,
-				00183DAB23F6238600947E56 /* ToolbarViewController.swift in Sources */,
 				5D865CC423E1013700374B07 /* BlankViewController.swift in Sources */,
 				5D1D0D5E23C6F1CB00B4377E /* HistoryElement+CoreDataProperties.swift in Sources */,
 				D6F21CB023C409AE004C79EC /* code.swift in Sources */,
