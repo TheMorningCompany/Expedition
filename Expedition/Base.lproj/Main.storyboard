@@ -268,7 +268,6 @@
                                             <color key="onTintColor" name="Expedition Blue"/>
                                             <connections>
                                                 <action selector="fadeSwitchValueChanged:" destination="bgj-w0-VgC" eventType="valueChanged" id="z8V-eP-8AZ"/>
-                                                <action selector="historySwitchValueChange:" destination="bgj-w0-VgC" eventType="valueChanged" id="gxB-Z8-X6L"/>
                                             </connections>
                                         </switch>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="show toolbar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ZM-So-EHN">
@@ -287,7 +286,6 @@
                                             </constraints>
                                             <color key="onTintColor" name="Expedition Blue"/>
                                             <connections>
-                                                <action selector="historySwitchValueChange:" destination="bgj-w0-VgC" eventType="valueChanged" id="zgL-gd-lR6"/>
                                                 <action selector="toolbarSwitchValueChanged:" destination="bgj-w0-VgC" eventType="valueChanged" id="CdA-Sd-jXa"/>
                                             </connections>
                                         </switch>
