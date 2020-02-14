@@ -80,6 +80,8 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     }
     
     @objc func appMovedToBackground() {
+       
+        
         performSegue(withIdentifier: "showBlankScreen", sender: self)
     }
     

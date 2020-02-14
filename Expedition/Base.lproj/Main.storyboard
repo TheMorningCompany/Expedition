@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E3a-YU-zsV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16085" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E3a-YU-zsV">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16078.1"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -270,7 +270,7 @@
                                                 <action selector="fadeSwitchValueChanged:" destination="bgj-w0-VgC" eventType="valueChanged" id="z8V-eP-8AZ"/>
                                             </connections>
                                         </switch>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="show toolbar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ZM-So-EHN">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="show toolbar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ZM-So-EHN">
                                             <rect key="frame" x="18" y="230.66666666666666" width="103" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="QdR-bd-9pP"/>
@@ -279,7 +279,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5CU-yf-rhg">
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5CU-yf-rhg">
                                             <rect key="frame" x="331" y="227" width="51" height="31"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="31" id="wn3-1s-5yM"/>
@@ -314,7 +314,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="es1-Lj-mt9">
-                                            <rect key="frame" x="19.666666666666671" y="268.66666666666669" width="154" height="36"/>
+                                            <rect key="frame" x="18" y="268.66666666666669" width="157" height="36"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                             <state key="normal" title="clear browsing data">
                                                 <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -352,7 +352,7 @@
                                             </connections>
                                         </switch>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jx4-xQ-9or" userLabel="GlyphFade">
-                                            <rect key="frame" x="99" y="682.66666666666663" width="200" height="200"/>
+                                            <rect key="frame" x="149" y="582.66666666666663" width="100" height="100"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                             <state key="normal" image="GlyphFadeUI">
                                                 <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -362,7 +362,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydw-Ey-JIH" userLabel="Shadow">
-                                            <rect key="frame" x="8" y="682.66666666666663" width="200" height="200"/>
+                                            <rect key="frame" x="8" y="582.66666666666663" width="100" height="100"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                             <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" image="ShadowUI">
@@ -373,7 +373,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WC4-Vs-hNj" userLabel="Light">
-                                            <rect key="frame" x="8" y="500.66666666666674" width="200" height="200"/>
+                                            <rect key="frame" x="8" y="500.66666666666674" width="100" height="100"/>
                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.69999999999999996" height="1"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                             <state key="normal" image="LightUI">
@@ -384,7 +384,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lny-al-JS1" userLabel="FadeBG">
-                                            <rect key="frame" x="190" y="682.66666666666663" width="200" height="200"/>
+                                            <rect key="frame" x="290" y="582.66666666666663" width="100" height="100"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                             <state key="normal" image="FadeUI">
                                                 <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -416,7 +416,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqT-31-vf2" userLabel="Blue">
-                                            <rect key="frame" x="190" y="500.66666666666674" width="200" height="200"/>
+                                            <rect key="frame" x="290" y="500.66666666666674" width="100" height="100"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                             <state key="normal" image="BlueLightUI">
                                                 <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -426,7 +426,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzd-j1-tNi" userLabel="Dark">
-                                            <rect key="frame" x="99" y="500.66666666666674" width="200" height="200"/>
+                                            <rect key="frame" x="149" y="500.66666666666674" width="100" height="100"/>
                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.80000000000000004" height="0.80000000000000004"/>
                                             <gestureRecognizers/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
@@ -446,6 +446,7 @@
                                         <constraint firstItem="upf-2I-yKl" firstAttribute="centerY" secondItem="Fe1-Jp-GEO" secondAttribute="centerY" id="6C3-Mk-SFu"/>
                                         <constraint firstItem="iZR-it-taf" firstAttribute="top" secondItem="b04-xd-9wp" secondAttribute="bottom" constant="6" id="7dh-wC-a4f"/>
                                         <constraint firstItem="Yal-xU-wbO" firstAttribute="centerY" secondItem="LhN-FL-P2C" secondAttribute="centerY" id="7ic-g0-6DL"/>
+                                        <constraint firstItem="XjT-db-CDc" firstAttribute="trailing" secondItem="5CU-yf-rhg" secondAttribute="trailing" constant="18" id="7wz-yI-XsZ"/>
                                         <constraint firstItem="Fe1-Jp-GEO" firstAttribute="top" secondItem="TAD-S2-yJa" secondAttribute="bottom" constant="14" id="85W-cb-8dZ"/>
                                         <constraint firstItem="lny-al-JS1" firstAttribute="centerY" secondItem="ydw-Ey-JIH" secondAttribute="centerY" id="8ex-Sk-mZV"/>
                                         <constraint firstItem="bzd-j1-tNi" firstAttribute="centerX" secondItem="KY2-RF-tBX" secondAttribute="centerX" id="Al2-MJ-eGa"/>
@@ -458,8 +459,10 @@
                                         <constraint firstItem="ClN-sF-8td" firstAttribute="top" secondItem="KY2-RF-tBX" secondAttribute="top" constant="24" id="Hfl-jg-Iju"/>
                                         <constraint firstItem="Fe1-Jp-GEO" firstAttribute="leading" secondItem="KY2-RF-tBX" secondAttribute="leading" constant="18" id="I8U-W8-pLD"/>
                                         <constraint firstItem="5CU-yf-rhg" firstAttribute="centerY" secondItem="8ZM-So-EHN" secondAttribute="centerY" id="L1V-hN-2dk"/>
+                                        <constraint firstItem="8ZM-So-EHN" firstAttribute="leading" secondItem="XjT-db-CDc" secondAttribute="leading" constant="18" id="Lbt-8O-gq6"/>
                                         <constraint firstItem="ydw-Ey-JIH" firstAttribute="centerX" secondItem="WC4-Vs-hNj" secondAttribute="centerX" id="NHp-ak-Miq"/>
                                         <constraint firstAttribute="trailing" secondItem="upf-2I-yKl" secondAttribute="trailing" constant="18" id="Ngh-br-eyU"/>
+                                        <constraint firstItem="es1-Lj-mt9" firstAttribute="leading" secondItem="XjT-db-CDc" secondAttribute="leading" constant="18" id="OT4-BA-sP0"/>
                                         <constraint firstItem="Yal-xU-wbO" firstAttribute="leading" secondItem="4S2-tN-yD7" secondAttribute="leading" id="P1N-6l-Md6"/>
                                         <constraint firstItem="ClN-sF-8td" firstAttribute="leading" secondItem="KY2-RF-tBX" secondAttribute="leading" constant="20" id="PcB-YE-1Dw"/>
                                         <constraint firstItem="XjT-db-CDc" firstAttribute="trailing" secondItem="eqT-31-vf2" secondAttribute="trailing" constant="8" id="PfY-Po-gyo"/>
@@ -664,6 +667,10 @@
             <point key="canvasLocation" x="1312" y="753"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="tOY-Um-AMB"/>
+    </inferredMetricsTieBreakers>
+    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
     <resources>
         <image name="BlueLightUI" width="100" height="100"/>
         <image name="DarkUI" width="100" height="100"/>
@@ -671,10 +678,10 @@
         <image name="GlyphFadeUI" width="100" height="100"/>
         <image name="LightUI" width="100" height="100"/>
         <image name="ShadowUI" width="100" height="100"/>
-        <image name="arrow.clockwise" catalog="system" width="56" height="64"/>
-        <image name="chevron.left" catalog="system" width="48" height="64"/>
-        <image name="chevron.right" catalog="system" width="48" height="64"/>
-        <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <namedColor name="Expedition Blue">
             <color red="0.0" green="0.6119999885559082" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -682,8 +689,4 @@
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="tOY-Um-AMB"/>
-    </inferredMetricsTieBreakers>
-    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
 </document>
