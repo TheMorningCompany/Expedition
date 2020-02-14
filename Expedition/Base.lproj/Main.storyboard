@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16085" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E3a-YU-zsV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E3a-YU-zsV">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16078.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -83,7 +83,7 @@
                                     <outletCollection property="gestureRecognizers" destination="ltd-91-b5P" appends="YES" id="TaL-68-UQP"/>
                                 </connections>
                             </searchBar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fdo-tH-OsN">
+                            <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fdo-tH-OsN">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
@@ -123,6 +123,7 @@
                     </view>
                     <connections>
                         <outlet property="ActInd" destination="JeA-nV-CKj" id="Nec-3V-7Ni"/>
+                        <outlet property="accessibilityToolbar" destination="Fdo-tH-OsN" id="Qcj-w5-Wbl"/>
                         <outlet property="searchBar" destination="gA5-H8-wBy" id="GK0-Cp-j0j"/>
                         <outlet property="webView" destination="1Sr-kh-OPV" id="AbH-gy-eSn"/>
                         <segue destination="E3a-YU-zsV" kind="show" identifier="showIntro" id="b16-5W-GaX"/>
@@ -266,6 +267,7 @@
                                             </constraints>
                                             <color key="onTintColor" name="Expedition Blue"/>
                                             <connections>
+                                                <action selector="fadeSwitchValueChanged:" destination="bgj-w0-VgC" eventType="valueChanged" id="z8V-eP-8AZ"/>
                                                 <action selector="historySwitchValueChange:" destination="bgj-w0-VgC" eventType="valueChanged" id="gxB-Z8-X6L"/>
                                             </connections>
                                         </switch>
@@ -286,6 +288,7 @@
                                             <color key="onTintColor" name="Expedition Blue"/>
                                             <connections>
                                                 <action selector="historySwitchValueChange:" destination="bgj-w0-VgC" eventType="valueChanged" id="zgL-gd-lR6"/>
+                                                <action selector="toolbarSwitchValueChanged:" destination="bgj-w0-VgC" eventType="valueChanged" id="CdA-Sd-jXa"/>
                                             </connections>
                                         </switch>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="options" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ClN-sF-8td">
@@ -351,7 +354,7 @@
                                             </connections>
                                         </switch>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jx4-xQ-9or" userLabel="GlyphFade">
-                                            <rect key="frame" x="149" y="582.66666666666663" width="100" height="100"/>
+                                            <rect key="frame" x="99" y="682.66666666666663" width="200" height="200"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                             <state key="normal" image="GlyphFadeUI">
                                                 <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -361,7 +364,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydw-Ey-JIH" userLabel="Shadow">
-                                            <rect key="frame" x="8" y="582.66666666666663" width="100" height="100"/>
+                                            <rect key="frame" x="8" y="682.66666666666663" width="200" height="200"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                             <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" image="ShadowUI">
@@ -372,7 +375,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WC4-Vs-hNj" userLabel="Light">
-                                            <rect key="frame" x="8" y="500.66666666666674" width="100" height="100"/>
+                                            <rect key="frame" x="8" y="500.66666666666674" width="200" height="200"/>
                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.69999999999999996" height="1"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                             <state key="normal" image="LightUI">
@@ -383,7 +386,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lny-al-JS1" userLabel="FadeBG">
-                                            <rect key="frame" x="290" y="582.66666666666663" width="100" height="100"/>
+                                            <rect key="frame" x="190" y="682.66666666666663" width="200" height="200"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                             <state key="normal" image="FadeUI">
                                                 <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -415,7 +418,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqT-31-vf2" userLabel="Blue">
-                                            <rect key="frame" x="290" y="500.66666666666674" width="100" height="100"/>
+                                            <rect key="frame" x="190" y="500.66666666666674" width="200" height="200"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                             <state key="normal" image="BlueLightUI">
                                                 <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -425,7 +428,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzd-j1-tNi" userLabel="Dark">
-                                            <rect key="frame" x="149" y="500.66666666666674" width="100" height="100"/>
+                                            <rect key="frame" x="99" y="500.66666666666674" width="200" height="200"/>
                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.80000000000000004" height="0.80000000000000004"/>
                                             <gestureRecognizers/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
@@ -514,9 +517,11 @@
                         <blurEffect style="systemChromeMaterial"/>
                     </visualEffectView>
                     <connections>
+                        <outlet property="fadeOnCloseSwitch" destination="Yal-xU-wbO" id="856-pj-kBJ"/>
                         <outlet property="historySwitch" destination="4S2-tN-yD7" id="WTe-wa-xHc"/>
                         <outlet property="keepCookiesSwitch" destination="upf-2I-yKl" id="SmG-0j-0J0"/>
                         <outlet property="reopenTabsSwitch" destination="5RC-3q-jpM" id="etq-nJ-uT8"/>
+                        <outlet property="showToolbarSwitch" destination="5CU-yf-rhg" id="8cr-Nl-Gdw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tzH-Lv-A1d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -661,10 +666,6 @@
             <point key="canvasLocation" x="1312" y="753"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="tOY-Um-AMB"/>
-    </inferredMetricsTieBreakers>
-    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
     <resources>
         <image name="BlueLightUI" width="100" height="100"/>
         <image name="DarkUI" width="100" height="100"/>
@@ -672,10 +673,10 @@
         <image name="GlyphFadeUI" width="100" height="100"/>
         <image name="LightUI" width="100" height="100"/>
         <image name="ShadowUI" width="100" height="100"/>
-        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
-        <image name="chevron.left" catalog="system" width="96" height="128"/>
-        <image name="chevron.right" catalog="system" width="96" height="128"/>
-        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <image name="arrow.clockwise" catalog="system" width="56" height="64"/>
+        <image name="chevron.left" catalog="system" width="48" height="64"/>
+        <image name="chevron.right" catalog="system" width="48" height="64"/>
+        <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
         <namedColor name="Expedition Blue">
             <color red="0.0" green="0.6119999885559082" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -683,4 +684,8 @@
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="tOY-Um-AMB"/>
+    </inferredMetricsTieBreakers>
+    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
 </document>

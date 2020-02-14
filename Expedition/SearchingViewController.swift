@@ -14,6 +14,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
 
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var ActInd: UIActivityIndicatorView!
+    @IBOutlet weak var accessibilityToolbar: UIToolbar!
     let notification = UINotificationFeedbackGenerator()//Haptics
     
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -64,6 +65,14 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             }
         } else {
             openUrl(urlString: url!.absoluteString)
+        }
+        
+        if let showToolbar:Bool = UserDefaults.standard.bool(forKey: "show_toolbar") {
+            if (showToolbar) {
+                accessibilityToolbar.isHidden = false
+            } else {
+                accessibilityToolbar.isHidden = true
+            }
         }
         
         let notificationCenter = NotificationCenter.default

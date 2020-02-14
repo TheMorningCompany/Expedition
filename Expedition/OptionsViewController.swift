@@ -17,6 +17,8 @@ class OptionsViewController: UIViewController {
     @IBOutlet weak var historySwitch: UISwitch!
     @IBOutlet weak var keepCookiesSwitch: UISwitch!
     @IBOutlet weak var reopenTabsSwitch: UISwitch!
+    @IBOutlet weak var fadeOnCloseSwitch: UISwitch!
+    @IBOutlet weak var showToolbarSwitch: UISwitch!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -102,6 +104,14 @@ class OptionsViewController: UIViewController {
         UserDefaults.standard.set(reopenTabsSwitch.isOn, forKey: "reopen_tabs")
         UserDefaults.standard.synchronize()
     }
+    @IBAction func fadeSwitchValueChanged(_ sender: UISwitch) {
+        UserDefaults.standard.set(fadeOnCloseSwitch.isOn, forKey: "fade_on_close")
+        UserDefaults.standard.synchronize()
+    }
+    @IBAction func toolbarSwitchValueChanged(_ sender: UISwitch) {
+        UserDefaults.standard.set(showToolbarSwitch.isOn, forKey: "show_toolbar")
+        UserDefaults.standard.synchronize()
+    }
     func registerSettingsBundle(){
         let appDefaults = [String:AnyObject]()
         UserDefaults.standard.register(defaults: appDefaults)
@@ -109,7 +119,6 @@ class OptionsViewController: UIViewController {
     
     @objc func defaultsChanged(){
         if let saveHistory:Bool = UserDefaults.standard.bool(forKey: "save_history") {
-            
             historySwitch.setOn(saveHistory, animated: false)
         }
         if let keepCookies:Bool = UserDefaults.standard.bool(forKey: "keep_cookies") {
@@ -117,6 +126,12 @@ class OptionsViewController: UIViewController {
         }
         if let reopenTabs:Bool = UserDefaults.standard.bool(forKey: "reopen_tabs") {
             reopenTabsSwitch.setOn(reopenTabs, animated: false)
+        }
+        if let fadeOnClose:Bool = UserDefaults.standard.bool(forKey: "fade_on_close") {
+            reopenTabsSwitch.setOn(fadeOnClose, animated: false)
+        }
+        if let showToolbar:Bool = UserDefaults.standard.bool(forKey: "show_toolbar") {
+            showToolbarSwitch.setOn(showToolbar, animated: false)
         }
     }
     
