@@ -86,7 +86,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     }
     
     @IBAction func searchBarShare(_ sender: UILongPressGestureRecognizer) {
-      impact.impactOccurred() // Haptic
+        impact.impactOccurred() // Haptic
         let textToShare = searchBar.text
         if textToShare != nil {
             displayShareSheet(shareContent: textToShare!)
@@ -261,7 +261,6 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     }
 
     @IBAction func reloadSwipe(_ sender: Any) {
-   
         webView.reload()
     
     }
@@ -309,8 +308,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         
     }
     @IBAction func shareButton(_ sender: Any) {
-    
-    
+        displayShareSheet(shareContent: searchBar.text!)
     }
     
     
