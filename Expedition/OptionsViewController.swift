@@ -30,6 +30,7 @@ class OptionsViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
     @IBAction func didTapHowToUse(_ sender: UIButton) {
         impact.impactOccurred() // Haptics
         //present(, animated: true)
@@ -111,6 +112,7 @@ class OptionsViewController: UIViewController {
     @IBAction func toolbarSwitchValueChanged(_ sender: UISwitch) {
         UserDefaults.standard.set(showToolbarSwitch.isOn, forKey: "show_toolbar")
         UserDefaults.standard.synchronize()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "toolbar"), object: nil)
     }
     func registerSettingsBundle(){
         let appDefaults = [String:AnyObject]()

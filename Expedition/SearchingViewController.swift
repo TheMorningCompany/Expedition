@@ -48,6 +48,8 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         
         Code().work()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(toolbarVisible), name: NSNotification.Name(rawValue: "toolbar"), object: nil)
+        
         if UserDefaults.standard.bool(forKey: "reopen_tabs") {
             let fetchRequest: NSFetchRequest<HistoryElement> = HistoryElement.fetchRequest()
             
@@ -79,9 +81,17 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
     }
     
+    @objc func toolbarVisible() {
+        if let showToolbar:Bool = UserDefaults.standard.bool(forKey: "show_toolbar") {
+            if (showToolbar) {
+                accessibilityToolbar.isHidden = false
+            } else {
+                accessibilityToolbar.isHidden = true
+            }
+        }
+    }
+    
     @objc func appMovedToBackground() {
-       
-        
         performSegue(withIdentifier: "showBlankScreen", sender: self)
     }
     
@@ -310,9 +320,6 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     @IBAction func shareButton(_ sender: Any) {
         displayShareSheet(shareContent: searchBar.text!)
     }
-    
-    
-    
 }
 
 
