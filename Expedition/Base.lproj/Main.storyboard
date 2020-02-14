@@ -87,13 +87,35 @@
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
-                                    <barButtonItem image="chevron.left" catalog="system" id="GpC-A9-Dyx"/>
+                                    <barButtonItem image="chevron.left" catalog="system" id="GpC-A9-Dyx">
+                                        <connections>
+                                            <action selector="backButton:" destination="BYZ-38-t0r" id="JEV-Ba-HTz"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="fLe-ka-wiu"/>
-                                    <barButtonItem image="chevron.right" catalog="system" id="4mC-9H-f34"/>
+                                    <barButtonItem image="chevron.right" catalog="system" id="4mC-9H-f34">
+                                        <connections>
+                                            <action selector="forwardButton:" destination="BYZ-38-t0r" id="Th1-zH-0Tz"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Kb8-XX-3cb"/>
-                                    <barButtonItem image="arrow.clockwise" catalog="system" id="gWu-gt-cfO"/>
+                                    <barButtonItem image="arrow.clockwise" catalog="system" id="gWu-gt-cfO">
+                                        <connections>
+                                            <action selector="reloadButton:" destination="BYZ-38-t0r" id="0As-oQ-Ofy"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="b9I-UI-kI0"/>
-                                    <barButtonItem image="square.and.arrow.up" catalog="system" id="Kxq-0C-tHm"/>
+                                    <barButtonItem image="square.and.arrow.up" catalog="system" id="Kxq-0C-tHm">
+                                        <connections>
+                                            <action selector="shareButton:" destination="BYZ-38-t0r" id="hNO-6b-1du"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="OWn-sv-M0a"/>
+                                    <barButtonItem image="gear" catalog="system" id="f5j-7z-w5L">
+                                        <connections>
+                                            <segue destination="bgj-w0-VgC" kind="presentation" id="FPf-sT-8iH"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                                 <color key="barTintColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
@@ -668,6 +690,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="dyC-su-jYw"/>
         <segue reference="tOY-Um-AMB"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -681,6 +704,7 @@
         <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <namedColor name="Expedition Blue">
             <color red="0.0" green="0.6119999885559082" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

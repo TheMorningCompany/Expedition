@@ -291,6 +291,30 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     
     }
     
+    @IBAction func backButton(_ sender: Any) {
+        if webView.canGoBack{
+            webView.goBack()
+        }
+    
+    }
+    @IBAction func forwardButton(_ sender: Any) {
+        if webView.canGoForward{
+            webView.goForward()
+        }
+        
+    }
+    
+    @IBAction func reloadButton(_ sender: Any) {
+        webView.reload()
+        
+    }
+    @IBAction func shareButton(_ sender: Any) {
+    
+    
+    }
+    
+    
+    
 }
 
 
