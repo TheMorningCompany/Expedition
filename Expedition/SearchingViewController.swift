@@ -92,7 +92,11 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     }
     
     @objc func appMovedToBackground() {
-        performSegue(withIdentifier: "showBlankScreen", sender: self)
+        if let fadeOnClose:Bool = UserDefaults.standard.bool(forKey: "fade_on_close") {
+            if (fadeOnClose) {
+                performSegue(withIdentifier: "showBlankScreen", sender: self)
+            }
+        }
     }
     
     @IBAction func searchBarShare(_ sender: UILongPressGestureRecognizer) {
