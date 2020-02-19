@@ -130,7 +130,7 @@ class OptionsViewController: UIViewController {
             reopenTabsSwitch.setOn(reopenTabs, animated: false)
         }
         if let fadeOnClose:Bool = UserDefaults.standard.bool(forKey: "fade_on_close") {
-            reopenTabsSwitch.setOn(fadeOnClose, animated: false)
+            fadeOnCloseSwitch.setOn(fadeOnClose, animated: false)
         }
         if let showToolbar:Bool = UserDefaults.standard.bool(forKey: "show_toolbar") {
             showToolbarSwitch.setOn(showToolbar, animated: false)
