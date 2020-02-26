@@ -31,9 +31,11 @@ class IntroViewController: UIViewController {
         
         if alreadyOpened {
             switchToSearchView()
+            
         } else {
             UserDefaults.standard.set(true, forKey: "has_opened")
             let timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.switchToSearchView), userInfo: nil, repeats: false)
+            
         }
     }
     
@@ -41,7 +43,9 @@ class IntroViewController: UIViewController {
         performSegue(withIdentifier: "showSearchView", sender: self)
     }
     
-
+    @objc func switchToHowToUseView() {
+    performSegue(withIdentifier: "goToHowToUse", sender: nil)
+    }
     /*
     // MARK: - Navigation
 

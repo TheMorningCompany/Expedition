@@ -33,6 +33,7 @@
                     <connections>
                         <outlet property="gifView" destination="Bwc-XX-UMS" id="1hb-6x-xTN"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="showSearchView" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="tOY-Um-AMB"/>
+                        <segue destination="VIU-GY-pak" kind="presentation" identifier="goToHowToUse" id="A7N-vK-sn6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lsQ-Iq-tM5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -690,6 +691,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="A7N-vK-sn6"/>
         <segue reference="dyC-su-jYw"/>
         <segue reference="tOY-Um-AMB"/>
     </inferredMetricsTieBreakers>
