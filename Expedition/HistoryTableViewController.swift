@@ -63,6 +63,7 @@ class HistoryTableViewController: UITableViewController {
         // Configure the cell...
 
         let row = indexPath.row
+        cell.textLabel?.font = UIFont(name: "AvenirNext-DemiBold", size: UIFont.labelFontSize)
         cell.textLabel?.text = historyArray[row].title
         cell.detailTextLabel?.text = historyArray[row].url
         
