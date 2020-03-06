@@ -25,7 +25,7 @@ class OptionsViewController: UIViewController {
         print(historySwitch.isOn)
         
         registerSettingsBundle()
-        NotificationCenter.default.addObserver(self, selector: #selector(OptionsViewController.defaultsChanged), name: UserDefaults.didChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(defaultsChanged), name: UserDefaults.didChangeNotification, object: nil)
         defaultsChanged()
         
         // Do any additional setup after loading the view.
