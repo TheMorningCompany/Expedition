@@ -139,7 +139,7 @@ class OptionsViewController: UIViewController {
     
     @IBAction func didTapLightIcon(_ sender: UIButton) {
         impact.impactOccurred() // Haptics
-        UIApplication.shared.setAlternateIconName("lighticon")
+        UIApplication.shared.setAlternateIconName("lightblueicon")
     }
     
     @IBAction func didTapDarkIcon(_ sender: UIButton) {
@@ -164,7 +164,7 @@ class OptionsViewController: UIViewController {
     
     @IBAction func didTapLightBlueIcon(_ sender: Any) {
        impact.impactOccurred() // Haptics
-        UIApplication.shared.setAlternateIconName("lightblueicon")
+        UIApplication.shared.setAlternateIconName(nil)
     }
     
     /*
