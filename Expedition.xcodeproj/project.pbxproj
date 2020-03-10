@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0003C0E323CC08A200111AA1 /* Soft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0003C0E223CC08A200111AA1 /* Soft@2x.png */; };
-		0003C0E523CC10AA00111AA1 /* Paper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0003C0E423CC10AA00111AA1 /* Paper@2x.png */; };
-		0004B01B23CD3A0D00F67723 /* TheOrangeOne@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0004B01A23CD3A0C00F67723 /* TheOrangeOne@2x.png */; };
 		001366B82307B61F009A102E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001366B72307B61F009A102E /* AppDelegate.swift */; };
 		001366BA2307B61F009A102E /* SearchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001366B92307B61F009A102E /* SearchingViewController.swift */; };
 		001366BD2307B61F009A102E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001366BB2307B61F009A102E /* Main.storyboard */; };
@@ -18,9 +16,7 @@
 		001366D82307B620009A102E /* ExpeditionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001366D72307B620009A102E /* ExpeditionUITests.swift */; };
 		001366E72307BEA9009A102E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001366E62307BEA9009A102E /* WebKit.framework */; };
 		0037F18C24170A8300275CD0 /* LightBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0037F18B24170A8300275CD0 /* LightBlue@2x.png */; };
-		0040048923CD7DAC002926E9 /* Zuckerberg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0040048823CD7DAB002926E9 /* Zuckerberg@2x.png */; };
 		0053E05F23F640330012DB78 /* GlyphFade@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0053E05E23F640330012DB78 /* GlyphFade@2x.png */; };
-		006302BC23CC04760074BE1C /* Halftone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 006302B923CC04760074BE1C /* Halftone@2x.png */; };
 		006302BD23CC04760074BE1C /* DramaticIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 006302BA23CC04760074BE1C /* DramaticIcon@2x.png */; };
 		006302BE23CC04760074BE1C /* IOS6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 006302BB23CC04760074BE1C /* IOS6@2x.png */; };
 		0077891823D14005002AEE78 /* LightShatter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0077891623D14005002AEE78 /* LightShatter@2x.png */; };
@@ -29,7 +25,6 @@
 		00A91DBD23A84AFF00F045F7 /* DarkIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A91DBB23A84AFF00F045F7 /* DarkIcon@2x.png */; };
 		00AB6BA623CD37DE0088E269 /* Metal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AB6BA523CD37DD0088E269 /* Metal@2x.png */; };
 		00C4A4C623C509E800C18F65 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00C4A4C523C509E800C18F65 /* Settings.bundle */; };
-		00EED5FC23CD370C00A1E258 /* Black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00EED5FB23CD370C00A1E258 /* Black@2x.png */; };
 		00F7071123D16FB400C0B8E2 /* Diamond@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F7071023D16FB400C0B8E2 /* Diamond@2x.png */; };
 		5D1D0D5823C6AE7600B4377E /* History.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D0D5623C6AE7600B4377E /* History.xcdatamodeld */; };
 		5D1D0D5A23C6B0B300B4377E /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D0D5923C6B0B300B4377E /* PersistenceService.swift */; };
@@ -39,18 +34,13 @@
 		5D41CBF123C569B6003A16F9 /* SettingsBundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D41CBF023C569B6003A16F9 /* SettingsBundleHelper.swift */; };
 		5D41CBF323C5745C003A16F9 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D41CBF223C5745C003A16F9 /* OptionsViewController.swift */; };
 		5D5BA2E223C5910C00D98050 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BA2E123C5910C00D98050 /* HistoryTableViewController.swift */; };
-		5D7845A223CC243A006E6CE1 /* BlurryIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D7845A123CC243A006E6CE1 /* BlurryIcon@2x.png */; };
 		5D793D0523D4DF5C00539A44 /* Swift+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D793D0423D4DF5C00539A44 /* Swift+Gif.swift */; };
 		5D793D0723D4E02D00539A44 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D793D0623D4E02D00539A44 /* IntroViewController.swift */; };
 		5D865CC423E1013700374B07 /* BlankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D865CC323E1013700374B07 /* BlankViewController.swift */; };
-		5D9B0E4323CBE355006713A4 /* VortexIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D9B0E4223CBE355006713A4 /* VortexIcon@2x.png */; };
 		5DE81BC323CBB45000F6FA33 /* ColorShadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AD59E923CB986E007C6495 /* ColorShadow@2x.png */; };
 		5DE81BC423CBB45300F6FA33 /* Fading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AD59F623CB98AC007C6495 /* Fading@2x.png */; };
 		D6030CDC23A89669003C6911 /* Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6030CDB23A89669003C6911 /* Gestures.swift */; };
-		D635B71A23CC07D6006B33F1 /* ThePurpleOne@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D635B71923CC07D6006B33F1 /* ThePurpleOne@2x.png */; };
 		D64CA0C923C94E6600619E00 /* LightIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D64CA0C823C94E6600619E00 /* LightIcon@2x.png */; };
-		D65C4E5E23CD396E00B83EC8 /* ThePinkOne@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D65C4E5D23CD396E00B83EC8 /* ThePinkOne@2x.png */; };
-		D65C4E6023CD3D5900B83EC8 /* MorningIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D65C4E5F23CD3D5900B83EC8 /* MorningIcon@2x.png */; };
 		D6F21CB023C409AE004C79EC /* code.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F21CAF23C409AE004C79EC /* code.swift */; };
 /* End PBXBuildFile section */
 
@@ -86,8 +76,6 @@
 
 /* Begin PBXFileReference section */
 		0003C0E223CC08A200111AA1 /* Soft@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Soft@2x.png"; sourceTree = "<group>"; };
-		0003C0E423CC10AA00111AA1 /* Paper@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Paper@2x.png"; sourceTree = "<group>"; };
-		0004B01A23CD3A0C00F67723 /* TheOrangeOne@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TheOrangeOne@2x.png"; sourceTree = "<group>"; };
 		001366B42307B61F009A102E /* Expedition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expedition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		001366B72307B61F009A102E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		001366B92307B61F009A102E /* SearchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingViewController.swift; sourceTree = "<group>"; usesTabs = 0; };
@@ -101,10 +89,8 @@
 		001366D92307B620009A102E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		001366E62307BEA9009A102E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		0037F18B24170A8300275CD0 /* LightBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LightBlue@2x.png"; sourceTree = "<group>"; };
-		0040048823CD7DAB002926E9 /* Zuckerberg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zuckerberg@2x.png"; sourceTree = "<group>"; };
 		0053E05E23F640330012DB78 /* GlyphFade@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GlyphFade@2x.png"; sourceTree = "<group>"; };
 		005932CF234D747100DC2323 /* Expedition.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Expedition.entitlements; sourceTree = "<group>"; };
-		006302B923CC04760074BE1C /* Halftone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Halftone@2x.png"; sourceTree = "<group>"; };
 		006302BA23CC04760074BE1C /* DramaticIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DramaticIcon@2x.png"; sourceTree = "<group>"; };
 		006302BB23CC04760074BE1C /* IOS6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IOS6@2x.png"; sourceTree = "<group>"; };
 		0077891623D14005002AEE78 /* LightShatter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LightShatter@2x.png"; sourceTree = "<group>"; };
@@ -115,7 +101,6 @@
 		00AD59E923CB986E007C6495 /* ColorShadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ColorShadow@2x.png"; sourceTree = "<group>"; };
 		00AD59F623CB98AC007C6495 /* Fading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fading@2x.png"; sourceTree = "<group>"; };
 		00C4A4C523C509E800C18F65 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		00EED5FB23CD370C00A1E258 /* Black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Black@2x.png"; sourceTree = "<group>"; };
 		00F7071023D16FB400C0B8E2 /* Diamond@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Diamond@2x.png"; sourceTree = "<group>"; };
 		5D1D0D5723C6AE7600B4377E /* History.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = History.xcdatamodel; sourceTree = "<group>"; };
 		5D1D0D5923C6B0B300B4377E /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
@@ -126,20 +111,15 @@
 		5D41CBF023C569B6003A16F9 /* SettingsBundleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBundleHelper.swift; sourceTree = "<group>"; };
 		5D41CBF223C5745C003A16F9 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		5D5BA2E123C5910C00D98050 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
-		5D7845A123CC243A006E6CE1 /* BlurryIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BlurryIcon@2x.png"; sourceTree = "<group>"; };
 		5D793D0423D4DF5C00539A44 /* Swift+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift+Gif.swift"; sourceTree = "<group>"; };
 		5D793D0623D4E02D00539A44 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		5D865CC323E1013700374B07 /* BlankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankViewController.swift; sourceTree = "<group>"; };
-		5D9B0E4223CBE355006713A4 /* VortexIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VortexIcon@2x.png"; sourceTree = "<group>"; };
 		5DFC236423D58840004A3DF9 /* Stickers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Stickers.xcassets; sourceTree = "<group>"; };
 		5DFC236623D58840004A3DF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DFC236E23D58C3E004A3DF9 /* ExpeditionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpeditionTests.swift; sourceTree = "<group>"; };
 		5DFC236F23D58C3E004A3DF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6030CDB23A89669003C6911 /* Gestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gestures.swift; sourceTree = "<group>"; };
-		D635B71923CC07D6006B33F1 /* ThePurpleOne@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ThePurpleOne@2x.png"; sourceTree = "<group>"; };
 		D64CA0C823C94E6600619E00 /* LightIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LightIcon@2x.png"; sourceTree = "<group>"; };
-		D65C4E5D23CD396E00B83EC8 /* ThePinkOne@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ThePinkOne@2x.png"; sourceTree = "<group>"; };
-		D65C4E5F23CD3D5900B83EC8 /* MorningIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MorningIcon@2x.png"; sourceTree = "<group>"; };
 		D6F21CAF23C409AE004C79EC /* code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = code.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -289,23 +269,13 @@
 			isa = PBXGroup;
 			children = (
 				00F7071023D16FB400C0B8E2 /* Diamond@2x.png */,
-				00EED5FB23CD370C00A1E258 /* Black@2x.png */,
 				006302BA23CC04760074BE1C /* DramaticIcon@2x.png */,
 				00AB6BA523CD37DD0088E269 /* Metal@2x.png */,
 				0003C0E223CC08A200111AA1 /* Soft@2x.png */,
-				0003C0E423CC10AA00111AA1 /* Paper@2x.png */,
-				0040048823CD7DAB002926E9 /* Zuckerberg@2x.png */,
 				0077891723D14005002AEE78 /* DarkShatter@2x.png */,
 				0077891623D14005002AEE78 /* LightShatter@2x.png */,
 				0078502E23CD688E00BDB94C /* Prism@2x.png */,
-				006302B923CC04760074BE1C /* Halftone@2x.png */,
-				D635B71923CC07D6006B33F1 /* ThePurpleOne@2x.png */,
 				006302BB23CC04760074BE1C /* IOS6@2x.png */,
-				5D9B0E4223CBE355006713A4 /* VortexIcon@2x.png */,
-				0004B01A23CD3A0C00F67723 /* TheOrangeOne@2x.png */,
-				D65C4E5D23CD396E00B83EC8 /* ThePinkOne@2x.png */,
-				5D7845A123CC243A006E6CE1 /* BlurryIcon@2x.png */,
-				D65C4E5F23CD3D5900B83EC8 /* MorningIcon@2x.png */,
 			);
 			path = TotallyNotSecretIcons;
 			sourceTree = "<group>";
@@ -434,19 +404,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0077891923D14005002AEE78 /* DarkShatter@2x.png in Resources */,
-				D65C4E5E23CD396E00B83EC8 /* ThePinkOne@2x.png in Resources */,
-				0040048923CD7DAC002926E9 /* Zuckerberg@2x.png in Resources */,
-				D65C4E6023CD3D5900B83EC8 /* MorningIcon@2x.png in Resources */,
 				5D2FA8A023D5490B00A68AF5 /* LightIntro.gif in Resources */,
-				00EED5FC23CD370C00A1E258 /* Black@2x.png in Resources */,
 				00F7071123D16FB400C0B8E2 /* Diamond@2x.png in Resources */,
-				0003C0E523CC10AA00111AA1 /* Paper@2x.png in Resources */,
 				0077891823D14005002AEE78 /* LightShatter@2x.png in Resources */,
-				5D7845A223CC243A006E6CE1 /* BlurryIcon@2x.png in Resources */,
 				00A91DBD23A84AFF00F045F7 /* DarkIcon@2x.png in Resources */,
-				5D9B0E4323CBE355006713A4 /* VortexIcon@2x.png in Resources */,
 				0037F18C24170A8300275CD0 /* LightBlue@2x.png in Resources */,
-				0004B01B23CD3A0D00F67723 /* TheOrangeOne@2x.png in Resources */,
 				0003C0E323CC08A200111AA1 /* Soft@2x.png in Resources */,
 				D64CA0C923C94E6600619E00 /* LightIcon@2x.png in Resources */,
 				001366C22307B620009A102E /* LaunchScreen.storyboard in Resources */,
@@ -456,9 +418,7 @@
 				5DE81BC323CBB45000F6FA33 /* ColorShadow@2x.png in Resources */,
 				5DE81BC423CBB45300F6FA33 /* Fading@2x.png in Resources */,
 				00C4A4C623C509E800C18F65 /* Settings.bundle in Resources */,
-				D635B71A23CC07D6006B33F1 /* ThePurpleOne@2x.png in Resources */,
 				006302BD23CC04760074BE1C /* DramaticIcon@2x.png in Resources */,
-				006302BC23CC04760074BE1C /* Halftone@2x.png in Resources */,
 				001366BD2307B61F009A102E /* Main.storyboard in Resources */,
 				0078502F23CD688E00BDB94C /* Prism@2x.png in Resources */,
 				00AB6BA623CD37DE0088E269 /* Metal@2x.png in Resources */,
