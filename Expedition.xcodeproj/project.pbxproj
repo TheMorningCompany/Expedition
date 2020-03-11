@@ -107,7 +107,6 @@
 		5D1D0D5B23C6F1CB00B4377E /* HistoryElement+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryElement+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5D1D0D5C23C6F1CB00B4377E /* HistoryElement+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryElement+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5D2FA89F23D5490B00A68AF5 /* LightIntro.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LightIntro.gif; sourceTree = "<group>"; };
-		5D2FA8A123D5491B00A68AF5 /* DarkIntro.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = DarkIntro.gif; sourceTree = "<group>"; };
 		5D41CBF023C569B6003A16F9 /* SettingsBundleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBundleHelper.swift; sourceTree = "<group>"; };
 		5D41CBF223C5745C003A16F9 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		5D5BA2E123C5910C00D98050 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
@@ -178,7 +177,6 @@
 				00C4A4C523C509E800C18F65 /* Settings.bundle */,
 				D64CA0C823C94E6600619E00 /* LightIcon@2x.png */,
 				5D2FA89F23D5490B00A68AF5 /* LightIntro.gif */,
-				5D2FA8A123D5491B00A68AF5 /* DarkIntro.gif */,
 				5DE81BC623CBB83400F6FA33 /* TotallyNotSecretIcons */,
 				0016FC3C23A6B801000D0022 /* DarkAppIcon */,
 				00AD59E723CB9865007C6495 /* ColorShadowAppIcon */,

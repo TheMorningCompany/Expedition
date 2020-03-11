@@ -18,11 +18,7 @@ class IntroViewController: UIViewController {
         
         OptionsViewController().registerSettingsBundle()
         
-        if traitCollection.userInterfaceStyle == .light {
-            gifView.loadGif(name: "LightIntro")
-        } else {
-            gifView.loadGif(name: "DarkIntro")
-        }
+        
         // Do any additional setup after loading the view.
     }
     
