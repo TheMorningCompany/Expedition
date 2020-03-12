@@ -18,7 +18,7 @@ class IntroViewController: UIViewController {
         
         OptionsViewController().registerSettingsBundle()
         
-        
+        gifView.loadGif(name: "LightIntro")
         // Do any additional setup after loading the view.
     }
     
@@ -30,7 +30,7 @@ class IntroViewController: UIViewController {
             
         } else {
             UserDefaults.standard.set(true, forKey: "has_opened")
-            let timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.switchToSearchView), userInfo: nil, repeats: false)
+            let timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.switchToSearchView), userInfo: nil, repeats: false)
             
         }
     }
