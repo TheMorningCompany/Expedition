@@ -31,6 +31,9 @@
                                     <constraint firstAttribute="height" constant="31" id="6Iq-Ny-sK6"/>
                                 </constraints>
                                 <color key="onTintColor" name="Expedition Blue"/>
+                                <connections>
+                                    <action selector="switchValueChanged:" destination="ieB-mx-4LC" eventType="valueChanged" id="lEB-ez-1lL"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="show toolbar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMo-KK-lPA">
                                 <rect key="frame" x="20" y="330.5" width="114.5" height="24"/>
@@ -47,6 +50,9 @@
                                     <constraint firstAttribute="height" constant="31" id="5hZ-Y6-T2v"/>
                                 </constraints>
                                 <color key="onTintColor" name="Expedition Blue"/>
+                                <connections>
+                                    <action selector="switchValueChanged:" destination="ieB-mx-4LC" eventType="valueChanged" id="6t7-it-ZWI"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lets get started with some customization" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CxD-W0-hS7">
                                 <rect key="frame" x="35" y="25" width="250" height="57.5"/>
@@ -97,6 +103,8 @@
                         <viewLayoutGuide key="safeArea" id="Xho-IF-Wgk"/>
                     </view>
                     <connections>
+                        <outlet property="fadeOnCloseSwitch" destination="8bK-3g-7Wa" id="2fF-di-5Jd"/>
+                        <outlet property="showToolbarSwitch" destination="zP3-3f-mOR" id="5tG-Tq-YeD"/>
                         <segue destination="hGy-5K-Mff" kind="show" identifier="customToPrivacy" id="8Bj-xQ-ihw"/>
                     </connections>
                 </viewController>
@@ -236,6 +244,9 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eAh-5k-q4l">
                                 <rect key="frame" x="253" y="371" width="51" height="31"/>
                                 <color key="onTintColor" name="Expedition Blue"/>
+                                <connections>
+                                    <action selector="switchValueChanged:" destination="hGy-5K-Mff" eventType="valueChanged" id="iBy-LB-Eig"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="keep cookies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ekr-0d-CeX">
                                 <rect key="frame" x="20" y="332.5" width="115.5" height="26"/>
@@ -246,6 +257,9 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3eh-aD-XDK">
                                 <rect key="frame" x="253" y="330" width="51" height="31"/>
                                 <color key="onTintColor" name="Expedition Blue"/>
+                                <connections>
+                                    <action selector="switchValueChanged:" destination="hGy-5K-Mff" eventType="valueChanged" id="YmU-1v-88f"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reopen on last page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYT-9K-ICP">
                                 <rect key="frame" x="20" y="292.5" width="175.5" height="26"/>
@@ -256,6 +270,9 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hNP-t6-eq8">
                                 <rect key="frame" x="253" y="290" width="51" height="31"/>
                                 <color key="onTintColor" name="Expedition Blue"/>
+                                <connections>
+                                    <action selector="switchValueChanged:" destination="hGy-5K-Mff" eventType="valueChanged" id="ziw-CI-Ae6"/>
+                                </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgS-ba-KkU">
                                 <rect key="frame" x="35" y="434" width="250" height="109"/>
@@ -299,6 +316,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="mcU-x1-Ewi"/>
                     <connections>
+                        <outlet property="historySwitch" destination="eAh-5k-q4l" id="Ov2-rT-eoF"/>
+                        <outlet property="keepCookiesSwitch" destination="3eh-aD-XDK" id="eup-IE-uxe"/>
+                        <outlet property="reopenTabsSwitch" destination="eAh-5k-q4l" id="NR8-i2-yXc"/>
                         <segue destination="tKh-gu-0SK" kind="show" identifier="PrivacyToGesture" id="qHJ-BH-vD8"/>
                     </connections>
                 </viewController>
