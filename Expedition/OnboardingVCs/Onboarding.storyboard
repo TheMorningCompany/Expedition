@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16085" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16078.1"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fade screen on close" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jo-gh-vxg">
-                                <rect key="frame" x="20" y="292.5" width="178.5" height="24"/>
+                                <rect key="frame" x="20" y="336.5" width="178.5" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="2ab-d4-Lf9"/>
                                 </constraints>
@@ -26,7 +26,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8bK-3g-7Wa">
-                                <rect key="frame" x="253" y="289" width="51" height="31"/>
+                                <rect key="frame" x="253" y="333" width="51" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="6Iq-Ny-sK6"/>
                                 </constraints>
@@ -36,7 +36,7 @@
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="show toolbar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMo-KK-lPA">
-                                <rect key="frame" x="20" y="330.5" width="114.5" height="24"/>
+                                <rect key="frame" x="20" y="374.5" width="114.5" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="DK4-yW-wKT"/>
                                 </constraints>
@@ -44,8 +44,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zP3-3f-mOR">
-                                <rect key="frame" x="253" y="327" width="51" height="31"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zP3-3f-mOR">
+                                <rect key="frame" x="253" y="371" width="51" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="5hZ-Y6-T2v"/>
                                 </constraints>
@@ -55,13 +55,13 @@
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lets get started with some customization" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CxD-W0-hS7">
-                                <rect key="frame" x="35" y="25" width="250" height="57.5"/>
+                                <rect key="frame" x="35" y="69" width="250" height="57.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wrench" translatesAutoresizingMaskIntoConstraints="NO" id="Ofa-Pi-T0y">
-                                <rect key="frame" x="62.5" y="82.5" width="195" height="195"/>
+                                <rect key="frame" x="62.5" y="126.5" width="195" height="195"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Ofa-Pi-T0y" secondAttribute="height" multiplier="1:1" id="2Do-lD-hqW"/>
                                     <constraint firstAttribute="width" constant="195" id="wkY-dJ-js6"/>
@@ -102,6 +102,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xho-IF-Wgk"/>
                     </view>
+                    <navigationItem key="navigationItem" id="A7C-dw-QA9"/>
                     <connections>
                         <outlet property="fadeOnCloseSwitch" destination="8bK-3g-7Wa" id="2fF-di-5Jd"/>
                         <outlet property="showToolbarSwitch" destination="zP3-3f-mOR" id="5tG-Tq-YeD"/>
@@ -110,61 +111,61 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qCC-9q-jec" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-448.125" y="-202.81690140845072"/>
+            <point key="canvasLocation" x="549.375" y="-202.81690140845072"/>
         </scene>
         <!--Onb3 View Controller-->
         <scene sceneID="s4M-C6-oEH">
             <objects>
                 <viewController id="tKh-gu-0SK" customClass="Onb3ViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TID-wt-RaY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lets learn the gesture controls" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hwm-cx-4HN">
-                                <rect key="frame" x="35" y="25" width="250" height="57.5"/>
+                                <rect key="frame" x="35" y="69" width="250" height="57.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swipe" translatesAutoresizingMaskIntoConstraints="NO" id="Cct-BO-M7r">
-                                <rect key="frame" x="62.5" y="82.5" width="195" height="195"/>
+                                <rect key="frame" x="62.5" y="126.5" width="195" height="195"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Cct-BO-M7r" secondAttribute="height" multiplier="1:1" id="HmI-wB-JcY"/>
                                     <constraint firstAttribute="width" constant="195" id="S1H-H2-gvf"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe down on the search bar to reload" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBl-83-2W6">
-                                <rect key="frame" x="25" y="282.5" width="270" height="41"/>
+                                <rect key="frame" x="25" y="326.5" width="270" height="41"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe right on the search bar to customise" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIC-rI-bzT">
-                                <rect key="frame" x="25" y="328.5" width="270" height="41"/>
+                                <rect key="frame" x="25" y="372.5" width="270" height="41"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe left on the search bar for history" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6d-ez-owi">
-                                <rect key="frame" x="25" y="374.5" width="270" height="20.5"/>
+                                <rect key="frame" x="25" y="418.5" width="270" height="20.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe up on the search bar for desktop website" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YS4-Cd-HnB">
-                                <rect key="frame" x="25" y="400" width="270" height="41"/>
+                                <rect key="frame" x="25" y="444" width="270" height="41"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe down with three fingers to share" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8k-Cg-WZy">
-                                <rect key="frame" x="26" y="446" width="269" height="20.5"/>
+                                <rect key="frame" x="26" y="490" width="269" height="20.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9R-yr-elq">
-                                <rect key="frame" x="35" y="434" width="250" height="109"/>
+                                <rect key="frame" x="35" y="454" width="250" height="109"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="7ne-C1-lpP"/>
                                     <constraint firstAttribute="width" secondItem="i9R-yr-elq" secondAttribute="height" multiplier="101:44" id="DZb-UP-PJy"/>
@@ -212,70 +213,70 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kek-lJ-NpQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="913" y="-202"/>
+            <point key="canvasLocation" x="1908.75" y="-202.81690140845072"/>
         </scene>
         <!--Onb2 View Controller-->
         <scene sceneID="jZQ-4g-6Ia">
             <objects>
                 <viewController id="hGy-5K-Mff" customClass="Onb2ViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l24-dL-hJF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="now we'll consider privacy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTC-xz-8Ir">
-                                <rect key="frame" x="35" y="25" width="250" height="57.5"/>
+                                <rect key="frame" x="35" y="69" width="250" height="57.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shield" translatesAutoresizingMaskIntoConstraints="NO" id="DvE-qJ-1SW">
-                                <rect key="frame" x="62.5" y="82.5" width="195" height="195"/>
+                                <rect key="frame" x="62.5" y="126.5" width="195" height="195"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="195" id="C4h-rJ-8Ya"/>
                                     <constraint firstAttribute="width" secondItem="DvE-qJ-1SW" secondAttribute="height" multiplier="1:1" id="rQ8-If-JNz"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="keep history" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axL-1W-0vS">
-                                <rect key="frame" x="20" y="373.5" width="107" height="26"/>
+                                <rect key="frame" x="20" y="417.5" width="107" height="26"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eAh-5k-q4l">
-                                <rect key="frame" x="253" y="371" width="51" height="31"/>
+                                <rect key="frame" x="253" y="415" width="51" height="31"/>
                                 <color key="onTintColor" name="Expedition Blue"/>
                                 <connections>
                                     <action selector="switchValueChanged:" destination="hGy-5K-Mff" eventType="valueChanged" id="iBy-LB-Eig"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="keep cookies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ekr-0d-CeX">
-                                <rect key="frame" x="20" y="332.5" width="115.5" height="26"/>
+                                <rect key="frame" x="20" y="376.5" width="115.5" height="26"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3eh-aD-XDK">
-                                <rect key="frame" x="253" y="330" width="51" height="31"/>
+                                <rect key="frame" x="253" y="374" width="51" height="31"/>
                                 <color key="onTintColor" name="Expedition Blue"/>
                                 <connections>
                                     <action selector="switchValueChanged:" destination="hGy-5K-Mff" eventType="valueChanged" id="YmU-1v-88f"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reopen on last page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYT-9K-ICP">
-                                <rect key="frame" x="20" y="292.5" width="175.5" height="26"/>
+                                <rect key="frame" x="20" y="336.5" width="175.5" height="26"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hNP-t6-eq8">
-                                <rect key="frame" x="253" y="290" width="51" height="31"/>
+                                <rect key="frame" x="253" y="334" width="51" height="31"/>
                                 <color key="onTintColor" name="Expedition Blue"/>
                                 <connections>
                                     <action selector="switchValueChanged:" destination="hGy-5K-Mff" eventType="valueChanged" id="ziw-CI-Ae6"/>
                                 </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgS-ba-KkU">
-                                <rect key="frame" x="35" y="434" width="250" height="109"/>
+                                <rect key="frame" x="35" y="454" width="250" height="109"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cgS-ba-KkU" secondAttribute="height" multiplier="101:44" id="2ck-0s-dNC"/>
                                     <constraint firstAttribute="width" constant="250" id="7oV-Kf-ev4"/>
@@ -324,37 +325,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJo-y1-RUq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="230" y="-202"/>
+            <point key="canvasLocation" x="1226.25" y="-202.81690140845072"/>
         </scene>
         <!--Onb4 View Controller-->
         <scene sceneID="jwx-AA-rTj">
             <objects>
                 <viewController id="BWE-GQ-arh" customClass="Onb4ViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JIQ-7V-gzE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="expeditionLogo" translatesAutoresizingMaskIntoConstraints="NO" id="2De-a2-Lmz">
-                                <rect key="frame" x="35" y="149" width="250" height="250"/>
+                                <rect key="frame" x="35" y="159" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="8S9-6m-RhI"/>
                                     <constraint firstAttribute="width" secondItem="2De-a2-Lmz" secondAttribute="height" multiplier="1:1" id="C5h-0V-l5b"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="welcome to" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2WC-kW-xzO">
-                                <rect key="frame" x="35" y="139.5" width="250" height="29"/>
+                                <rect key="frame" x="35" y="149.5" width="250" height="29"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="expedition" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAE-4d-4Ao">
-                                <rect key="frame" x="70" y="371" width="180" height="46.5"/>
+                                <rect key="frame" x="70" y="381" width="180" height="46.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nI-QV-JYC">
-                                <rect key="frame" x="35" y="434" width="250" height="109"/>
+                                <rect key="frame" x="35" y="454" width="250" height="109"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1nI-QV-JYC" secondAttribute="height" multiplier="101:44" id="2Re-bO-LbH"/>
                                     <constraint firstAttribute="width" constant="250" id="4ot-dF-FGL"/>
@@ -385,7 +386,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bHp-YM-6V1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1583" y="-203"/>
+            <point key="canvasLocation" x="2580" y="-203.87323943661971"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Gle-OK-4qQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Syp-I9-UGM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1Nf-mE-F1D">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ieB-mx-4LC" kind="relationship" relationship="rootViewController" id="otT-Xh-7Ud"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WoL-D2-idI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-201" y="-203"/>
         </scene>
     </scenes>
     <resources>
