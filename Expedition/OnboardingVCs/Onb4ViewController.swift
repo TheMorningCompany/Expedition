@@ -16,12 +16,9 @@ class Onb4ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
     @IBAction func continuePressed(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainVC = storyboard.instantiateViewController(identifier: "mainVC") as! ViewController
+        let mainVC = storyboard.instantiateViewController(identifier: "IntroViewController") as! IntroViewController
         self.present(mainVC, animated: true, completion: nil)
     }
-    
-
 }

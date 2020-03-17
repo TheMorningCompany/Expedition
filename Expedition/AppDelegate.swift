@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.standard.set(personRole, forKey: personName)
             
             
-            let launchedBefore = UserDefaults.standard.bool(forKey: "hasLaunched")
+            let launchedBefore = UserDefaults.standard.bool(forKey: "has_opened")
             self.window = UIWindow(frame: UIScreen.main.bounds)
             let launchStorybard = UIStoryboard(name: "Onboarding", bundle: nil)
             let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -39,9 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 vc = mainStoryboard.instantiateInitialViewController()!
                 
             } else {
-                vc = launchStorybard.instantiateViewController(identifier: "customiseStoryboard")
+                vc = launchStorybard.instantiateViewController(identifier: "customizeStoryboard")
             }
-            UserDefaults.standard.set(true, forKey: "hasLaunched")
             self.window?.rootViewController = vc
             self.window?.makeKeyAndVisible()
             
