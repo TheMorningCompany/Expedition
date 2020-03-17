@@ -17,6 +17,11 @@
 		001366E72307BEA9009A102E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001366E62307BEA9009A102E /* WebKit.framework */; };
 		0037F18C24170A8300275CD0 /* LightBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0037F18B24170A8300275CD0 /* LightBlue@2x.png */; };
 		0053E05F23F640330012DB78 /* GlyphFade@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0053E05E23F640330012DB78 /* GlyphFade@2x.png */; };
+		0062525D242080AE004B3136 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0062525C242080AE004B3136 /* Onboarding.storyboard */; };
+		0062526124208C02004B3136 /* Onb1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0062526024208C02004B3136 /* Onb1ViewController.swift */; };
+		0062526324208C08004B3136 /* Onb2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0062526224208C08004B3136 /* Onb2ViewController.swift */; };
+		0062526524208C26004B3136 /* Onb3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0062526424208C26004B3136 /* Onb3ViewController.swift */; };
+		0062526724208C2E004B3136 /* Onb4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0062526624208C2E004B3136 /* Onb4ViewController.swift */; };
 		006302BD23CC04760074BE1C /* DramaticIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 006302BA23CC04760074BE1C /* DramaticIcon@2x.png */; };
 		006302BE23CC04760074BE1C /* IOS6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 006302BB23CC04760074BE1C /* IOS6@2x.png */; };
 		0077891823D14005002AEE78 /* LightShatter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0077891623D14005002AEE78 /* LightShatter@2x.png */; };
@@ -40,7 +45,6 @@
 		5DE81BC323CBB45000F6FA33 /* ColorShadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AD59E923CB986E007C6495 /* ColorShadow@2x.png */; };
 		5DE81BC423CBB45300F6FA33 /* Fading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AD59F623CB98AC007C6495 /* Fading@2x.png */; };
 		D6030CDC23A89669003C6911 /* Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6030CDB23A89669003C6911 /* Gestures.swift */; };
-		D64CA0C923C94E6600619E00 /* LightIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D64CA0C823C94E6600619E00 /* LightIcon@2x.png */; };
 		D6F21CB023C409AE004C79EC /* code.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F21CAF23C409AE004C79EC /* code.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +95,11 @@
 		0037F18B24170A8300275CD0 /* LightBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LightBlue@2x.png"; sourceTree = "<group>"; };
 		0053E05E23F640330012DB78 /* GlyphFade@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GlyphFade@2x.png"; sourceTree = "<group>"; };
 		005932CF234D747100DC2323 /* Expedition.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Expedition.entitlements; sourceTree = "<group>"; };
+		0062525C242080AE004B3136 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		0062526024208C02004B3136 /* Onb1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onb1ViewController.swift; sourceTree = "<group>"; };
+		0062526224208C08004B3136 /* Onb2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onb2ViewController.swift; sourceTree = "<group>"; };
+		0062526424208C26004B3136 /* Onb3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onb3ViewController.swift; sourceTree = "<group>"; };
+		0062526624208C2E004B3136 /* Onb4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onb4ViewController.swift; sourceTree = "<group>"; };
 		006302BA23CC04760074BE1C /* DramaticIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DramaticIcon@2x.png"; sourceTree = "<group>"; };
 		006302BB23CC04760074BE1C /* IOS6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IOS6@2x.png"; sourceTree = "<group>"; };
 		0077891623D14005002AEE78 /* LightShatter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LightShatter@2x.png"; sourceTree = "<group>"; };
@@ -118,7 +127,6 @@
 		5DFC236E23D58C3E004A3DF9 /* ExpeditionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpeditionTests.swift; sourceTree = "<group>"; };
 		5DFC236F23D58C3E004A3DF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6030CDB23A89669003C6911 /* Gestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gestures.swift; sourceTree = "<group>"; };
-		D64CA0C823C94E6600619E00 /* LightIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LightIcon@2x.png"; sourceTree = "<group>"; };
 		D6F21CAF23C409AE004C79EC /* code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = code.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -175,14 +183,9 @@
 			isa = PBXGroup;
 			children = (
 				00C4A4C523C509E800C18F65 /* Settings.bundle */,
-				D64CA0C823C94E6600619E00 /* LightIcon@2x.png */,
 				5D2FA89F23D5490B00A68AF5 /* LightIntro.gif */,
-				5DE81BC623CBB83400F6FA33 /* TotallyNotSecretIcons */,
-				0016FC3C23A6B801000D0022 /* DarkAppIcon */,
-				00AD59E723CB9865007C6495 /* ColorShadowAppIcon */,
-				00AD59F523CB98A5007C6495 /* FadingAppIcon */,
-				00AD59FC23CB98B8007C6495 /* GlyphFadeAppIcon */,
-				0037F18824170A5F00275CD0 /* LightBlueAppIcon */,
+				0062525E24208B61004B3136 /* AltAppIcons */,
+				0062525F24208BD2004B3136 /* OnboardingVCs */,
 				5D793D0623D4E02D00539A44 /* IntroViewController.swift */,
 				001366B92307B61F009A102E /* SearchingViewController.swift */,
 				5D41CBF223C5745C003A16F9 /* OptionsViewController.swift */,
@@ -237,6 +240,31 @@
 				0037F18B24170A8300275CD0 /* LightBlue@2x.png */,
 			);
 			path = LightBlueAppIcon;
+			sourceTree = "<group>";
+		};
+		0062525E24208B61004B3136 /* AltAppIcons */ = {
+			isa = PBXGroup;
+			children = (
+				5DE81BC623CBB83400F6FA33 /* TotallyNotSecretIcons */,
+				0016FC3C23A6B801000D0022 /* DarkAppIcon */,
+				00AD59E723CB9865007C6495 /* ColorShadowAppIcon */,
+				00AD59F523CB98A5007C6495 /* FadingAppIcon */,
+				00AD59FC23CB98B8007C6495 /* GlyphFadeAppIcon */,
+				0037F18824170A5F00275CD0 /* LightBlueAppIcon */,
+			);
+			path = AltAppIcons;
+			sourceTree = "<group>";
+		};
+		0062525F24208BD2004B3136 /* OnboardingVCs */ = {
+			isa = PBXGroup;
+			children = (
+				0062525C242080AE004B3136 /* Onboarding.storyboard */,
+				0062526024208C02004B3136 /* Onb1ViewController.swift */,
+				0062526224208C08004B3136 /* Onb2ViewController.swift */,
+				0062526424208C26004B3136 /* Onb3ViewController.swift */,
+				0062526624208C2E004B3136 /* Onb4ViewController.swift */,
+			);
+			path = OnboardingVCs;
 			sourceTree = "<group>";
 		};
 		00AD59E723CB9865007C6495 /* ColorShadowAppIcon */ = {
@@ -408,10 +436,10 @@
 				00A91DBD23A84AFF00F045F7 /* DarkIcon@2x.png in Resources */,
 				0037F18C24170A8300275CD0 /* LightBlue@2x.png in Resources */,
 				0003C0E323CC08A200111AA1 /* Soft@2x.png in Resources */,
-				D64CA0C923C94E6600619E00 /* LightIcon@2x.png in Resources */,
 				001366C22307B620009A102E /* LaunchScreen.storyboard in Resources */,
 				006302BE23CC04760074BE1C /* IOS6@2x.png in Resources */,
 				001366BF2307B620009A102E /* Assets.xcassets in Resources */,
+				0062525D242080AE004B3136 /* Onboarding.storyboard in Resources */,
 				0053E05F23F640330012DB78 /* GlyphFade@2x.png in Resources */,
 				5DE81BC323CBB45000F6FA33 /* ColorShadow@2x.png in Resources */,
 				5DE81BC423CBB45300F6FA33 /* Fading@2x.png in Resources */,
@@ -445,15 +473,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D1D0D5A23C6B0B300B4377E /* PersistenceService.swift in Sources */,
+				0062526724208C2E004B3136 /* Onb4ViewController.swift in Sources */,
 				5D793D0723D4E02D00539A44 /* IntroViewController.swift in Sources */,
 				5D41CBF123C569B6003A16F9 /* SettingsBundleHelper.swift in Sources */,
+				0062526324208C08004B3136 /* Onb2ViewController.swift in Sources */,
 				5D865CC423E1013700374B07 /* BlankViewController.swift in Sources */,
 				5D1D0D5E23C6F1CB00B4377E /* HistoryElement+CoreDataProperties.swift in Sources */,
+				0062526124208C02004B3136 /* Onb1ViewController.swift in Sources */,
 				D6F21CB023C409AE004C79EC /* code.swift in Sources */,
 				5D793D0523D4DF5C00539A44 /* Swift+Gif.swift in Sources */,
 				5D41CBF323C5745C003A16F9 /* OptionsViewController.swift in Sources */,
 				5D1D0D5823C6AE7600B4377E /* History.xcdatamodeld in Sources */,
 				5D1D0D5D23C6F1CB00B4377E /* HistoryElement+CoreDataClass.swift in Sources */,
+				0062526524208C26004B3136 /* Onb3ViewController.swift in Sources */,
 				5D5BA2E223C5910C00D98050 /* HistoryTableViewController.swift in Sources */,
 				001366BA2307B61F009A102E /* SearchingViewController.swift in Sources */,
 				001366B82307B61F009A102E /* AppDelegate.swift in Sources */,
