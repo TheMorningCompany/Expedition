@@ -60,7 +60,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wrench" translatesAutoresizingMaskIntoConstraints="NO" id="Ofa-Pi-T0y">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wrenchBlue" translatesAutoresizingMaskIntoConstraints="NO" id="Ofa-Pi-T0y">
                                 <rect key="frame" x="62.5" y="126.5" width="195" height="195"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Ofa-Pi-T0y" secondAttribute="height" multiplier="1:1" id="2Do-lD-hqW"/>
@@ -106,7 +106,7 @@
                     <connections>
                         <outlet property="fadeOnCloseSwitch" destination="8bK-3g-7Wa" id="2fF-di-5Jd"/>
                         <outlet property="showToolbarSwitch" destination="zP3-3f-mOR" id="5tG-Tq-YeD"/>
-                        <segue destination="hGy-5K-Mff" kind="show" identifier="customToPrivacy" id="8Bj-xQ-ihw"/>
+                        <segue destination="hGy-5K-Mff" kind="show" identifier="customToPrivacy" id="tH8-iZ-WUI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qCC-9q-jec" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -127,7 +127,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swipe" translatesAutoresizingMaskIntoConstraints="NO" id="Cct-BO-M7r">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swipeBlue" translatesAutoresizingMaskIntoConstraints="NO" id="Cct-BO-M7r">
                                 <rect key="frame" x="62.5" y="126.5" width="195" height="195"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Cct-BO-M7r" secondAttribute="height" multiplier="1:1" id="HmI-wB-JcY"/>
@@ -208,7 +208,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="0AH-67-Ctl"/>
                     <connections>
-                        <segue destination="BWE-GQ-arh" kind="show" identifier="gestureToDone" id="JnB-US-Bsj"/>
+                        <segue destination="BWE-GQ-arh" kind="show" identifier="gestureToDone" id="PRj-C9-Sau"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kek-lJ-NpQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -229,7 +229,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shield" translatesAutoresizingMaskIntoConstraints="NO" id="DvE-qJ-1SW">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shieldBlue" translatesAutoresizingMaskIntoConstraints="NO" id="DvE-qJ-1SW">
                                 <rect key="frame" x="62.5" y="126.5" width="195" height="195"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="195" id="C4h-rJ-8Ya"/>
@@ -320,7 +320,7 @@
                         <outlet property="historySwitch" destination="eAh-5k-q4l" id="Ov2-rT-eoF"/>
                         <outlet property="keepCookiesSwitch" destination="3eh-aD-XDK" id="eup-IE-uxe"/>
                         <outlet property="reopenTabsSwitch" destination="eAh-5k-q4l" id="NR8-i2-yXc"/>
-                        <segue destination="tKh-gu-0SK" kind="show" identifier="PrivacyToGesture" id="qHJ-BH-vD8"/>
+                        <segue destination="tKh-gu-0SK" kind="show" identifier="PrivacyToGesture" id="aeF-l6-kQK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJo-y1-RUq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -335,7 +335,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="expeditionLogo" translatesAutoresizingMaskIntoConstraints="NO" id="2De-a2-Lmz">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="expeditionLogoBlue" translatesAutoresizingMaskIntoConstraints="NO" id="2De-a2-Lmz">
                                 <rect key="frame" x="35" y="159" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="8S9-6m-RhI"/>
@@ -391,6 +391,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Gle-OK-4qQ">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WoL-D2-idI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Syp-I9-UGM" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1Nf-mE-F1D">
@@ -402,7 +403,6 @@
                         <segue destination="ieB-mx-4LC" kind="relationship" relationship="rootViewController" id="otT-Xh-7Ud"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WoL-D2-idI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-201" y="-203"/>
         </scene>
@@ -410,10 +410,10 @@
     <resources>
         <image name="continueBtn" width="959" height="420"/>
         <image name="continueBtn-P" width="959" height="420"/>
-        <image name="expeditionLogo" width="30" height="30"/>
-        <image name="shield" width="30" height="30"/>
-        <image name="swipe" width="30" height="30"/>
-        <image name="wrench" width="30" height="30"/>
+        <image name="expeditionLogoBlue" width="1024" height="1024"/>
+        <image name="shieldBlue" width="1024" height="1024"/>
+        <image name="swipeBlue" width="1024" height="1024"/>
+        <image name="wrenchBlue" width="1024" height="1024"/>
         <namedColor name="Expedition Blue">
             <color red="0.090999998152256012" green="0.67400002479553223" blue="0.97000002861022949" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
