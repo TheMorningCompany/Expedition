@@ -18,6 +18,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     let notification = UINotificationFeedbackGenerator()//Haptics
     
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var lastOffsetY :CGFloat = 0
     let impact = UIImpactFeedbackGenerator() // Haptics
     var userAgentVar: String = "mobile" //User agent
     let credits: String = "zeqe golomb:ui designer;finbarr oconnell:programmer;jackson yan:programmer;julian wright:programmer" //Credits
@@ -89,6 +90,18 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
                 accessibilityToolbar.isHidden = true
             }
         }
+    }
+    
+    //Supposed to hide the toolbar on scroll but doesn't work yet
+    func scrollViewWillBeginDragging(scrollView: UIScrollView){
+        lastOffsetY = webView.scrollView.contentOffset.y
+    }
+
+    func scrollViewWillBeginDecelerating(scrollView: UIScrollView){
+
+        let hide = webView.scrollView.contentOffset.y > self.lastOffsetY
+        self.navigationController?.setNavigationBarHidden(hide, animated: true)
+        accessibilityToolbar.isHidden = hide
     }
     
     @objc func appMovedToBackground() {
