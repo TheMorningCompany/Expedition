@@ -32,6 +32,9 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).font = UIFont(name: "AvenirNext-Medium", size: UIFont.labelFontSize)
         var components = URLComponents(string: searchEngine)
         
+        accessibilityToolbar.barTintColor = UIColor(named: "Expedition White")
+        accessibilityToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
+        
         let url = URL(string: "https://duckduckgo.com/")
         
         let request = URLRequest(url: url!)
