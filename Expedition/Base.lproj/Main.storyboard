@@ -686,9 +686,12 @@
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0r-eN-2Ro">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="625"/>
                                             <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <mutableString key="text">privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. privacy policy goes here. </mutableString>
+                                            <string key="text">In this document, “we”, “us”, “TMC” and “our” are taken to be in reference to The Morning Company. “The app” will mean Expedition
+
+We do not collect any data or personal information in Expedition. We simply do not have a way to store this information, and we have not looked for a way as all of us at The Morning Company believe that personal information is just that—personal, and should not be shared with anyone else. Nothing is shared with third parties whatsoever.
+</string>
                                             <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                     </subviews>
@@ -744,7 +747,7 @@
         <image name="shieldBlue" width="1024" height="1024"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <namedColor name="Expedition Blue">
-            <color red="0.064372749935376353" green="0.56398425084757242" blue="0.97000002861022949" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.064000003039836884" green="0.56400001049041748" blue="0.97000002861022949" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Expedition White">
             <color red="1" green="0.97600001096725464" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
