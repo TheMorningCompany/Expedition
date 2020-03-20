@@ -159,7 +159,6 @@
                 </pongPressGestureRecognizer>
                 <swipeGestureRecognizer direction="left" id="Srt-5a-Pr4" userLabel="HistorySwipe">
                     <connections>
-                        <action selector="historySwipe:" destination="BYZ-38-t0r" id="BbT-F3-pQB"/>
                         <segue destination="65v-MH-vlF" kind="presentation" id="zo6-DM-YYL"/>
                     </connections>
                 </swipeGestureRecognizer>
