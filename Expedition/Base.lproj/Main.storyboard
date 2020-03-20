@@ -13,11 +13,11 @@
             <objects>
                 <viewController storyboardIdentifier="IntroViewController" title="GifView" id="E3a-YU-zsV" customClass="IntroViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3n1-9b-CYd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bwc-XX-UMS">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" name="Expedition White"/>
@@ -53,7 +53,7 @@
                                 <color key="color" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                             </activityIndicatorView>
                             <wkWebView contentMode="scaleToFill" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Sr-kh-OPV">
-                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                                <rect key="frame" x="0.0" y="90" width="414" height="806"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <gestureRecognizers/>
@@ -66,26 +66,22 @@
                                     <outletCollection property="gestureRecognizers" destination="Gli-I6-TVR" appends="YES" id="RBe-9s-JSI"/>
                                 </connections>
                             </wkWebView>
-                            <searchBar opaque="NO" contentMode="redraw" layoutMarginsFollowReadableWidth="YES" searchBarStyle="minimal" text="" placeholder="Search" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gA5-H8-wBy">
-                                <rect key="frame" x="2" y="44" width="377" height="56"/>
-                                <color key="backgroundColor" name="Expedition White"/>
-                                <rect key="contentStretch" x="0.050000000000000003" y="0.0" width="1" height="1"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="poK-nr-9UJ">
+                                <rect key="frame" x="15" y="55" width="356" height="36"/>
                                 <gestureRecognizers/>
-                                <color key="tintColor" name="Expedition White"/>
-                                <color key="barTintColor" name="Expedition White"/>
-                                <textInputTraits key="textInputTraits" keyboardType="webSearch" returnKeyType="search" textContentType="url"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                    <string>Title</string>
-                                </scopeButtonTitles>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="2Fp-Z7-fL9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go"/>
                                 <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="If8-vV-6zM"/>
-                                    <outletCollection property="gestureRecognizers" destination="Srt-5a-Pr4" appends="YES" id="qrt-YL-BIT"/>
-                                    <outletCollection property="gestureRecognizers" destination="AN3-pI-gg7" appends="YES" id="mmv-Yg-faM"/>
-                                    <outletCollection property="gestureRecognizers" destination="0xN-Ym-Ghr" appends="YES" id="UpJ-vA-wef"/>
-                                    <outletCollection property="gestureRecognizers" destination="ltd-91-b5P" appends="YES" id="TaL-68-UQP"/>
+                                    <action selector="searchBarSearchButtonClicked:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="QtC-3J-D9M"/>
+                                    <outletCollection property="gestureRecognizers" destination="Srt-5a-Pr4" appends="YES" id="zUG-Fr-3si"/>
+                                    <outletCollection property="gestureRecognizers" destination="ltd-91-b5P" appends="YES" id="9kK-5E-DOK"/>
+                                    <outletCollection property="gestureRecognizers" destination="0xN-Ym-Ghr" appends="YES" id="8JD-Mg-GoV"/>
+                                    <outletCollection property="gestureRecognizers" destination="AN3-pI-gg7" appends="YES" id="7Mv-b0-R3Q"/>
                                 </connections>
-                            </searchBar>
+                            </textField>
                             <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdo-tH-OsN">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <color key="backgroundColor" name="Expedition White"/>
@@ -127,18 +123,18 @@
                         <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="poK-nr-9UJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="17b-j5-Kmq"/>
                             <constraint firstItem="JeA-nV-CKj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="39F-Su-Buy"/>
                             <constraint firstItem="Fdo-tH-OsN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CrI-hR-rt3"/>
-                            <constraint firstItem="1Sr-kh-OPV" firstAttribute="top" secondItem="JeA-nV-CKj" secondAttribute="bottom" constant="18" id="Lx7-e3-q0D"/>
                             <constraint firstItem="JeA-nV-CKj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="Pbw-X0-TzH"/>
-                            <constraint firstItem="gA5-H8-wBy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="2" id="QGB-EC-opR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JeA-nV-CKj" secondAttribute="trailing" constant="15" id="RHd-kV-I4C"/>
                             <constraint firstAttribute="trailing" secondItem="Fdo-tH-OsN" secondAttribute="trailing" id="SzA-vb-RCt"/>
+                            <constraint firstItem="poK-nr-9UJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="11" id="UrB-UL-i1P"/>
                             <constraint firstItem="1Sr-kh-OPV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Usw-fi-elu"/>
                             <constraint firstItem="Fdo-tH-OsN" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="amA-Sl-vM7"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1Sr-kh-OPV" secondAttribute="bottom" id="efN-sm-YhT"/>
-                            <constraint firstItem="gA5-H8-wBy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fDx-7D-J3y"/>
-                            <constraint firstItem="JeA-nV-CKj" firstAttribute="leading" secondItem="gA5-H8-wBy" secondAttribute="trailing" id="fyg-DH-zaa"/>
+                            <constraint firstItem="1Sr-kh-OPV" firstAttribute="top" secondItem="JeA-nV-CKj" secondAttribute="bottom" constant="8" id="bjO-R1-mWo"/>
+                            <constraint firstAttribute="bottom" secondItem="1Sr-kh-OPV" secondAttribute="bottom" id="efN-sm-YhT"/>
+                            <constraint firstItem="JeA-nV-CKj" firstAttribute="leading" secondItem="poK-nr-9UJ" secondAttribute="trailing" constant="8" id="qJB-og-y2a"/>
                             <constraint firstItem="1Sr-kh-OPV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="s3L-9Z-GG1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -149,24 +145,29 @@
                     <connections>
                         <outlet property="ActInd" destination="JeA-nV-CKj" id="Nec-3V-7Ni"/>
                         <outlet property="accessibilityToolbar" destination="Fdo-tH-OsN" id="Qcj-w5-Wbl"/>
-                        <outlet property="searchBar" destination="gA5-H8-wBy" id="GK0-Cp-j0j"/>
+                        <outlet property="searchBar" destination="poK-nr-9UJ" id="UQR-wf-BEh"/>
                         <outlet property="webView" destination="1Sr-kh-OPV" id="AbH-gy-eSn"/>
-                        <segue destination="E3a-YU-zsV" kind="show" identifier="showIntro" id="b16-5W-GaX"/>
+                        <segue destination="E3a-YU-zsV" kind="presentation" identifier="showIntro" modalPresentationStyle="fullScreen" id="b16-5W-GaX"/>
                         <segue destination="KbL-uP-Hd2" kind="presentation" identifier="showBlankScreen" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="J6e-BP-JhY"/>
                     </connections>
                 </viewController>
-                <swipeGestureRecognizer direction="right" id="ltd-91-b5P" userLabel="Credits Swipe">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.0" numberOfTouchesRequired="3" id="Gli-I6-TVR" userLabel="SharePress">
                     <connections>
-                        <segue destination="bgj-w0-VgC" kind="presentation" id="dyC-su-jYw"/>
+                        <action selector="searchBarShare:" destination="BYZ-38-t0r" id="bkJ-9e-51l"/>
                     </connections>
-                </swipeGestureRecognizer>
+                </pongPressGestureRecognizer>
                 <swipeGestureRecognizer direction="left" id="Srt-5a-Pr4" userLabel="HistorySwipe">
                     <connections>
                         <action selector="historySwipe:" destination="BYZ-38-t0r" id="BbT-F3-pQB"/>
                         <segue destination="65v-MH-vlF" kind="presentation" id="zo6-DM-YYL"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="ltd-91-b5P" userLabel="Credits Swipe">
+                    <connections>
+                        <segue destination="bgj-w0-VgC" kind="presentation" id="dyC-su-jYw"/>
+                    </connections>
+                </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="up" id="0xN-Ym-Ghr" userLabel="UserAgentSwipe">
                     <connections>
                         <action selector="desktopSiteSwipe:" destination="BYZ-38-t0r" id="XfT-Xy-hkh"/>
@@ -177,13 +178,8 @@
                         <action selector="reloadSwipe:" destination="BYZ-38-t0r" id="Bka-27-1de"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.0" numberOfTouchesRequired="3" id="Gli-I6-TVR" userLabel="SharePress">
-                    <connections>
-                        <action selector="searchBarShare:" destination="BYZ-38-t0r" id="bkJ-9e-51l"/>
-                    </connections>
-                </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="12" y="-36"/>
+            <point key="canvasLocation" x="11.594202898550726" y="-36.160714285714285"/>
         </scene>
         <!--Blank View Controller-->
         <scene sceneID="M8U-vN-65D">
@@ -767,8 +763,9 @@ We do not collect any data or personal information in Expedition. We simply do n
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="J6e-BP-JhY"/>
         <segue reference="Sog-fL-QSg"/>
-        <segue reference="dyC-su-jYw"/>
+        <segue reference="FPf-sT-8iH"/>
         <segue reference="fET-hm-iSD"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>

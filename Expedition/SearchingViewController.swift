@@ -25,7 +25,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     var searchEngine: String = "https://duckduckgo.com/" //Search engine initialization
     var components = URLComponents(string: "https://duckduckgo.com/") //search engine
     
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var searchBar: UITextField!
     
     override func viewDidLoad() { //Setup stuff
         super.viewDidLoad()
@@ -273,7 +273,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     
 
 
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) { //turns the users input into something that the search engine can use
+    @IBAction func searchBarSearchButtonClicked(_ searchBar: UISearchBar) { //turns the users input into something that the search engine can use
         
         searchBar.resignFirstResponder()
         
@@ -311,10 +311,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             webView.reload()
         }
         
-        UIView.transition(with: searchBar,
-             duration: 1,
-              options: .transitionCrossDissolve,
-           animations: { [weak self] in
+        UIView.transition(with: searchBar, duration: 0.5, options: .transitionCrossDissolve, animations: { [weak self] in
             self?.searchBar.text = self?.userAgentVar
         }, completion: nil)
     
