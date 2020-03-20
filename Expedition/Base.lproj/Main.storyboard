@@ -405,6 +405,7 @@
                                             <state key="normal" image="GlyphFadeUI">
                                                 <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                             </state>
+                                            <state key="highlighted" image="selected"/>
                                             <connections>
                                                 <action selector="didTapGlyphIcon:" destination="bgj-w0-VgC" eventType="touchUpInside" id="GVa-uW-aAM"/>
                                             </connections>
@@ -420,6 +421,7 @@
                                             <state key="normal" image="ShadowUI">
                                                 <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                             </state>
+                                            <state key="highlighted" image="selected"/>
                                             <connections>
                                                 <action selector="didTapShadowIcon:" destination="bgj-w0-VgC" eventType="touchUpInside" id="XzW-hT-Ol8"/>
                                             </connections>
@@ -435,6 +437,7 @@
                                             <state key="normal" image="LightUI">
                                                 <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                             </state>
+                                            <state key="highlighted" image="selected"/>
                                             <connections>
                                                 <action selector="didTapLightIcon:" destination="bgj-w0-VgC" eventType="touchUpInside" id="7Mm-IR-Ij9"/>
                                             </connections>
@@ -449,6 +452,7 @@
                                             <state key="normal" image="FadeUI">
                                                 <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                             </state>
+                                            <state key="highlighted" image="selected"/>
                                             <connections>
                                                 <action selector="didTapFadingIcon:" destination="bgj-w0-VgC" eventType="touchUpInside" id="lJx-rB-YT7"/>
                                             </connections>
@@ -463,6 +467,7 @@
                                             <state key="normal" image="BlueLightUI">
                                                 <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                             </state>
+                                            <state key="highlighted" image="selected"/>
                                             <connections>
                                                 <action selector="didTapLightBlueIcon:" destination="bgj-w0-VgC" eventType="touchUpInside" id="Zoc-HA-bSx"/>
                                             </connections>
@@ -480,6 +485,7 @@
                                             <state key="normal" image="DarkUI">
                                                 <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                             </state>
+                                            <state key="highlighted" image="selected"/>
                                             <connections>
                                                 <action selector="didTapDarkIcon:" destination="bgj-w0-VgC" eventType="touchUpInside" id="2CD-8Q-wY6"/>
                                             </connections>
@@ -777,6 +783,7 @@ We do not collect any data or personal information in Expedition. We simply do n
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="selected" width="731.66668701171875" height="731.66668701171875"/>
         <image name="shieldBlue" width="1024" height="1024"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="swipeBlue" width="1024" height="1024"/>
