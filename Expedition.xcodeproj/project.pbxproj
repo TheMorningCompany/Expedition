@@ -22,7 +22,6 @@
 		0062526324208C08004B3136 /* Onb2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0062526224208C08004B3136 /* Onb2ViewController.swift */; };
 		0062526524208C26004B3136 /* Onb3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0062526424208C26004B3136 /* Onb3ViewController.swift */; };
 		0062526724208C2E004B3136 /* Onb4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0062526624208C2E004B3136 /* Onb4ViewController.swift */; };
-		006302BD23CC04760074BE1C /* DramaticIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 006302BA23CC04760074BE1C /* DramaticIcon@2x.png */; };
 		006302BE23CC04760074BE1C /* IOS6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 006302BB23CC04760074BE1C /* IOS6@2x.png */; };
 		0077891823D14005002AEE78 /* LightShatter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0077891623D14005002AEE78 /* LightShatter@2x.png */; };
 		0077891923D14005002AEE78 /* DarkShatter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0077891723D14005002AEE78 /* DarkShatter@2x.png */; };
@@ -100,7 +99,6 @@
 		0062526224208C08004B3136 /* Onb2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onb2ViewController.swift; sourceTree = "<group>"; };
 		0062526424208C26004B3136 /* Onb3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onb3ViewController.swift; sourceTree = "<group>"; };
 		0062526624208C2E004B3136 /* Onb4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onb4ViewController.swift; sourceTree = "<group>"; };
-		006302BA23CC04760074BE1C /* DramaticIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DramaticIcon@2x.png"; sourceTree = "<group>"; };
 		006302BB23CC04760074BE1C /* IOS6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IOS6@2x.png"; sourceTree = "<group>"; };
 		0077891623D14005002AEE78 /* LightShatter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LightShatter@2x.png"; sourceTree = "<group>"; };
 		0077891723D14005002AEE78 /* DarkShatter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DarkShatter@2x.png"; sourceTree = "<group>"; };
@@ -295,7 +293,6 @@
 			isa = PBXGroup;
 			children = (
 				00F7071023D16FB400C0B8E2 /* Diamond@2x.png */,
-				006302BA23CC04760074BE1C /* DramaticIcon@2x.png */,
 				00AB6BA523CD37DD0088E269 /* Metal@2x.png */,
 				0003C0E223CC08A200111AA1 /* Soft@2x.png */,
 				0077891723D14005002AEE78 /* DarkShatter@2x.png */,
@@ -444,7 +441,6 @@
 				5DE81BC323CBB45000F6FA33 /* ColorShadow@2x.png in Resources */,
 				5DE81BC423CBB45300F6FA33 /* Fading@2x.png in Resources */,
 				00C4A4C623C509E800C18F65 /* Settings.bundle in Resources */,
-				006302BD23CC04760074BE1C /* DramaticIcon@2x.png in Resources */,
 				001366BD2307B61F009A102E /* Main.storyboard in Resources */,
 				0078502F23CD688E00BDB94C /* Prism@2x.png in Resources */,
 				00AB6BA623CD37DE0088E269 /* Metal@2x.png in Resources */,

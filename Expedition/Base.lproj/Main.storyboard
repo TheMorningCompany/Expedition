@@ -397,6 +397,10 @@
                                         </switch>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jx4-xQ-9or" userLabel="GlyphFade">
                                             <rect key="frame" x="149" y="552.66666666666663" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="JDn-NK-rw4"/>
+                                                <constraint firstAttribute="width" constant="100" id="PWn-pO-lgw"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                             <state key="normal" image="GlyphFadeUI">
                                                 <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -407,6 +411,10 @@
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydw-Ey-JIH" userLabel="Shadow">
                                             <rect key="frame" x="8" y="552.66666666666663" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="KmM-hQ-guI"/>
+                                                <constraint firstAttribute="width" constant="100" id="UnE-ff-WiF"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                             <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" image="ShadowUI">
@@ -419,6 +427,10 @@
                                         <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WC4-Vs-hNj" userLabel="Light">
                                             <rect key="frame" x="8" y="470.66666666666674" width="100" height="100"/>
                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.69999999999999996" height="1"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="9wX-fP-3eQ"/>
+                                                <constraint firstAttribute="width" constant="100" id="AzQ-of-yK5"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                             <state key="normal" image="LightUI">
                                                 <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -429,12 +441,47 @@
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lny-al-JS1" userLabel="FadeBG">
                                             <rect key="frame" x="290" y="552.66666666666663" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="MHr-kF-v1z"/>
+                                                <constraint firstAttribute="height" constant="100" id="Yis-Tx-5Ke"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                             <state key="normal" image="FadeUI">
                                                 <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                             </state>
                                             <connections>
                                                 <action selector="didTapFadingIcon:" destination="bgj-w0-VgC" eventType="touchUpInside" id="lJx-rB-YT7"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqT-31-vf2" userLabel="Blue">
+                                            <rect key="frame" x="290" y="470.66666666666674" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="DdJ-oW-vJo"/>
+                                                <constraint firstAttribute="height" constant="100" id="wR4-zb-ezo"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                            <state key="normal" image="BlueLightUI">
+                                                <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="didTapLightBlueIcon:" destination="bgj-w0-VgC" eventType="touchUpInside" id="Zoc-HA-bSx"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzd-j1-tNi" userLabel="Dark">
+                                            <rect key="frame" x="149" y="470.66666666666674" width="100" height="100"/>
+                                            <rect key="contentStretch" x="0.0" y="0.0" width="0.80000000000000004" height="0.80000000000000004"/>
+                                            <gestureRecognizers/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="4a9-Qx-wEC"/>
+                                                <constraint firstAttribute="width" constant="100" id="lAR-Qa-yzT"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                            <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <state key="normal" image="DarkUI">
+                                                <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="didTapDarkIcon:" destination="bgj-w0-VgC" eventType="touchUpInside" id="2CD-8Q-wY6"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZR-it-taf">
@@ -463,29 +510,6 @@
                                             <connections>
                                                 <action selector="didTapHowToUse:" destination="bgj-w0-VgC" eventType="touchUpInside" id="9SE-HN-VgF"/>
                                                 <segue destination="ITb-Tq-qem" kind="presentation" id="4zN-aQ-N27"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqT-31-vf2" userLabel="Blue">
-                                            <rect key="frame" x="290" y="470.66666666666674" width="100" height="100"/>
-                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                            <state key="normal" image="BlueLightUI">
-                                                <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="didTapLightBlueIcon:" destination="bgj-w0-VgC" eventType="touchUpInside" id="Zoc-HA-bSx"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzd-j1-tNi" userLabel="Dark">
-                                            <rect key="frame" x="149" y="470.66666666666674" width="100" height="100"/>
-                                            <rect key="contentStretch" x="0.0" y="0.0" width="0.80000000000000004" height="0.80000000000000004"/>
-                                            <gestureRecognizers/>
-                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                            <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <state key="normal" image="DarkUI">
-                                                <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="didTapDarkIcon:" destination="bgj-w0-VgC" eventType="touchUpInside" id="2CD-8Q-wY6"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -743,12 +767,12 @@ We do not collect any data or personal information in Expedition. We simply do n
     </inferredMetricsTieBreakers>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
     <resources>
-        <image name="BlueLightUI" width="100" height="100"/>
-        <image name="DarkUI" width="100" height="100"/>
-        <image name="FadeUI" width="100" height="100"/>
-        <image name="GlyphFadeUI" width="100" height="100"/>
-        <image name="LightUI" width="100" height="100"/>
-        <image name="ShadowUI" width="100" height="100"/>
+        <image name="BlueLightUI" width="731.66668701171875" height="731.66668701171875"/>
+        <image name="DarkUI" width="731.66668701171875" height="731.66668701171875"/>
+        <image name="FadeUI" width="731.66668701171875" height="731.66668701171875"/>
+        <image name="GlyphFadeUI" width="731.66668701171875" height="731.66668701171875"/>
+        <image name="LightUI" width="731.66668701171875" height="731.66668701171875"/>
+        <image name="ShadowUI" width="731.66668701171875" height="731.66668701171875"/>
         <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
