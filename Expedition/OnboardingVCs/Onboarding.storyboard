@@ -207,9 +207,6 @@
                         <viewLayoutGuide key="safeArea" id="5hb-bc-ZAb"/>
                     </view>
                     <navigationItem key="navigationItem" id="0AH-67-Ctl"/>
-                    <connections>
-                        <segue destination="BWE-GQ-arh" kind="show" identifier="gestureToDone" id="PRj-C9-Sau"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kek-lJ-NpQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -327,67 +324,6 @@
             </objects>
             <point key="canvasLocation" x="1226.25" y="-202.81690140845072"/>
         </scene>
-        <!--Onb4 View Controller-->
-        <scene sceneID="jwx-AA-rTj">
-            <objects>
-                <viewController id="BWE-GQ-arh" customClass="Onb4ViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="JIQ-7V-gzE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="expeditionLogoBlue" translatesAutoresizingMaskIntoConstraints="NO" id="2De-a2-Lmz">
-                                <rect key="frame" x="35" y="159" width="250" height="250"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="8S9-6m-RhI"/>
-                                    <constraint firstAttribute="width" secondItem="2De-a2-Lmz" secondAttribute="height" multiplier="1:1" id="C5h-0V-l5b"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="welcome to" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2WC-kW-xzO">
-                                <rect key="frame" x="35" y="149.5" width="250" height="29"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="expedition" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAE-4d-4Ao">
-                                <rect key="frame" x="70" y="381" width="180" height="46.5"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="34"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nI-QV-JYC">
-                                <rect key="frame" x="35" y="454" width="250" height="109"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="1nI-QV-JYC" secondAttribute="height" multiplier="101:44" id="2Re-bO-LbH"/>
-                                    <constraint firstAttribute="width" constant="250" id="4ot-dF-FGL"/>
-                                </constraints>
-                                <state key="normal" image="continueBtn"/>
-                                <state key="highlighted" image="continueBtn-P"/>
-                                <connections>
-                                    <action selector="continuePressed:" destination="BWE-GQ-arh" eventType="touchUpInside" id="7CI-YT-dOm"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" name="Expedition White"/>
-                        <constraints>
-                            <constraint firstItem="2WC-kW-xzO" firstAttribute="centerY" secondItem="JIQ-7V-gzE" secondAttribute="centerY" constant="-120" id="0qx-qS-CC2"/>
-                            <constraint firstItem="uAE-4d-4Ao" firstAttribute="centerY" secondItem="JIQ-7V-gzE" secondAttribute="centerY" constant="120" id="3lx-pV-BDY"/>
-                            <constraint firstItem="2WC-kW-xzO" firstAttribute="leading" secondItem="Ar9-Ox-bIU" secondAttribute="leading" constant="35" id="Q55-Gc-bh3"/>
-                            <constraint firstItem="1nI-QV-JYC" firstAttribute="centerX" secondItem="JIQ-7V-gzE" secondAttribute="centerX" id="QAT-l6-2Nu"/>
-                            <constraint firstItem="1nI-QV-JYC" firstAttribute="width" secondItem="1nI-QV-JYC" secondAttribute="height" multiplier="101:44" id="TU6-jH-Jai"/>
-                            <constraint firstAttribute="bottom" secondItem="1nI-QV-JYC" secondAttribute="bottom" constant="5" id="Tfn-yA-g8C"/>
-                            <constraint firstItem="2De-a2-Lmz" firstAttribute="centerX" secondItem="JIQ-7V-gzE" secondAttribute="centerX" id="Ue9-a4-zMK"/>
-                            <constraint firstItem="2De-a2-Lmz" firstAttribute="centerY" secondItem="JIQ-7V-gzE" secondAttribute="centerY" id="aix-tT-rXE"/>
-                            <constraint firstAttribute="trailing" secondItem="2WC-kW-xzO" secondAttribute="trailing" constant="35" id="gQH-wE-oFe"/>
-                            <constraint firstItem="uAE-4d-4Ao" firstAttribute="centerX" secondItem="JIQ-7V-gzE" secondAttribute="centerX" id="zmk-yI-wbr"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Ar9-Ox-bIU"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Cz2-oD-aVp"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bHp-YM-6V1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2580" y="-203.87323943661971"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gle-OK-4qQ">
             <objects>
@@ -412,7 +348,6 @@
     <resources>
         <image name="continueBtn" width="959" height="420"/>
         <image name="continueBtn-P" width="959" height="420"/>
-        <image name="expeditionLogoBlue" width="1024" height="1024"/>
         <image name="shieldBlue" width="1024" height="1024"/>
         <image name="swipeBlue" width="1024" height="1024"/>
         <image name="wrenchBlue" width="1024" height="1024"/>

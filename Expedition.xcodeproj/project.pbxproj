@@ -21,7 +21,6 @@
 		0062526124208C02004B3136 /* Onb1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0062526024208C02004B3136 /* Onb1ViewController.swift */; };
 		0062526324208C08004B3136 /* Onb2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0062526224208C08004B3136 /* Onb2ViewController.swift */; };
 		0062526524208C26004B3136 /* Onb3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0062526424208C26004B3136 /* Onb3ViewController.swift */; };
-		0062526724208C2E004B3136 /* Onb4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0062526624208C2E004B3136 /* Onb4ViewController.swift */; };
 		006302BE23CC04760074BE1C /* IOS6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 006302BB23CC04760074BE1C /* IOS6@2x.png */; };
 		0077891823D14005002AEE78 /* LightShatter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0077891623D14005002AEE78 /* LightShatter@2x.png */; };
 		0077891923D14005002AEE78 /* DarkShatter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0077891723D14005002AEE78 /* DarkShatter@2x.png */; };
@@ -98,7 +97,6 @@
 		0062526024208C02004B3136 /* Onb1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onb1ViewController.swift; sourceTree = "<group>"; };
 		0062526224208C08004B3136 /* Onb2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onb2ViewController.swift; sourceTree = "<group>"; };
 		0062526424208C26004B3136 /* Onb3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onb3ViewController.swift; sourceTree = "<group>"; };
-		0062526624208C2E004B3136 /* Onb4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onb4ViewController.swift; sourceTree = "<group>"; };
 		006302BB23CC04760074BE1C /* IOS6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IOS6@2x.png"; sourceTree = "<group>"; };
 		0077891623D14005002AEE78 /* LightShatter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LightShatter@2x.png"; sourceTree = "<group>"; };
 		0077891723D14005002AEE78 /* DarkShatter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DarkShatter@2x.png"; sourceTree = "<group>"; };
@@ -260,7 +258,6 @@
 				0062526024208C02004B3136 /* Onb1ViewController.swift */,
 				0062526224208C08004B3136 /* Onb2ViewController.swift */,
 				0062526424208C26004B3136 /* Onb3ViewController.swift */,
-				0062526624208C2E004B3136 /* Onb4ViewController.swift */,
 			);
 			path = OnboardingVCs;
 			sourceTree = "<group>";
@@ -469,7 +466,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D1D0D5A23C6B0B300B4377E /* PersistenceService.swift in Sources */,
-				0062526724208C2E004B3136 /* Onb4ViewController.swift in Sources */,
 				5D793D0723D4E02D00539A44 /* IntroViewController.swift in Sources */,
 				5D41CBF123C569B6003A16F9 /* SettingsBundleHelper.swift in Sources */,
 				0062526324208C08004B3136 /* Onb2ViewController.swift in Sources */,

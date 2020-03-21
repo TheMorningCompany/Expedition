@@ -17,7 +17,10 @@ class Onb3ViewController: UIViewController {
     }
     
     @IBAction func continuePressed(_ sender: Any) {
-        self.performSegue(withIdentifier: "gestureToDone", sender: self)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainVC = storyboard.instantiateViewController(identifier: "IntroViewController") as! IntroViewController
+        mainVC.modalPresentationStyle = .fullScreen
+        self.present(mainVC, animated: true, completion: nil)
     }
     
     
