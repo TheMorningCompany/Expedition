@@ -64,6 +64,7 @@ class HistoryTableViewController: UITableViewController {
 
         let row = indexPath.row
         cell.textLabel?.font = UIFont(name: "AvenirNext-DemiBold", size: UIFont.labelFontSize)
+        cell.detailTextLabel?.font = UIFont(name: "AvenirNext-medium", size: 12)
         cell.textLabel?.text = historyArray[row].title
         cell.detailTextLabel?.text = historyArray[row].url
         cell.backgroundColor? = UIColor(named: "Expedition White")!
@@ -88,7 +89,7 @@ class HistoryTableViewController: UITableViewController {
     }
    
     
-
+    //Delete rows
    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
             
@@ -107,6 +108,26 @@ class HistoryTableViewController: UITableViewController {
         return UISwipeActionsConfiguration(actions: [action])
         
     }
+    
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+         let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
+             
+             
+             do {
+                 ViewController().openHistoryUrl(index: indexPath.row)
+                
+                 completion(true)
+             } catch {
+                 print("opening url from history failed ERROR: \(error)")
+                 completion(false)
+             }
+             
+         }
+         action.image = #imageLiteral(resourceName: "search")
+         action.backgroundColor = UIColor(named: "Expedition White")
+         return UISwipeActionsConfiguration(actions: [action])
+         
+     }
     
 
 }

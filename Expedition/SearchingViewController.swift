@@ -10,7 +10,7 @@ import WebKit
 import Foundation
 import CoreData
 
-class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegate {
+class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegate, UIScrollViewDelegate {
 
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var ActInd: UIActivityIndicatorView!
@@ -31,6 +31,8 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         super.viewDidLoad()
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).font = UIFont(name: "AvenirNext-Medium", size: UIFont.labelFontSize)
         var components = URLComponents(string: searchEngine)
+        
+        webView.scrollView.delegate = self
         
         accessibilityToolbar.barTintColor = UIColor(named: "Expedition White")
         accessibilityToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
@@ -83,6 +85,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
+        
     }
     
     @objc func toolbarVisible() {
@@ -255,8 +258,9 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             historyArray = try PersistenceService.context.fetch(fetchRequest)
             let url = historyArray[index].url
             openUrl(urlString: url!)
+            
         } catch {
-            print("ERROR OCCURRED")
+            print("ERROR OCCURRED trying to open a history url")
         }
     }
     

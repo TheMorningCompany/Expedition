@@ -52,20 +52,6 @@
                                 <rect key="frame" x="379" y="62" width="20" height="20"/>
                                 <color key="color" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                             </activityIndicatorView>
-                            <wkWebView contentMode="scaleToFill" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Sr-kh-OPV">
-                                <rect key="frame" x="0.0" y="90" width="414" height="806"/>
-                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <gestureRecognizers/>
-                                <wkWebViewConfiguration key="configuration" allowsInlineMediaPlayback="YES" applicationNameForUserAgent="Expedition">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                                <string key="customUserAgent">Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/5.2 Mobile/15E148 Expedition/604.1</string>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Gli-I6-TVR" appends="YES" id="RBe-9s-JSI"/>
-                                </connections>
-                            </wkWebView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="poK-nr-9UJ">
                                 <rect key="frame" x="15" y="55" width="356" height="36"/>
                                 <gestureRecognizers/>
@@ -82,6 +68,20 @@
                                     <outletCollection property="gestureRecognizers" destination="AN3-pI-gg7" appends="YES" id="7Mv-b0-R3Q"/>
                                 </connections>
                             </textField>
+                            <wkWebView contentMode="scaleToFill" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Sr-kh-OPV">
+                                <rect key="frame" x="0.0" y="90" width="414" height="806"/>
+                                <color key="backgroundColor" name="Expedition White"/>
+                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <gestureRecognizers/>
+                                <wkWebViewConfiguration key="configuration" allowsInlineMediaPlayback="YES" applicationNameForUserAgent="Expedition">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                                <string key="customUserAgent">Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/5.2 Mobile/15E148 Expedition/604.1</string>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Gli-I6-TVR" appends="YES" id="RBe-9s-JSI"/>
+                                </connections>
+                            </wkWebView>
                             <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdo-tH-OsN">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <color key="backgroundColor" name="Expedition White"/>
@@ -580,6 +580,7 @@
                                     <viewLayoutGuide key="frameLayoutGuide" id="ihG-mg-cLZ"/>
                                 </scrollView>
                             </subviews>
+                            <color key="backgroundColor" name="Expedition White"/>
                             <gestureRecognizers/>
                             <constraints>
                                 <constraint firstItem="KY2-RF-tBX" firstAttribute="trailing" secondItem="0UT-MA-a3z" secondAttribute="trailingMargin" id="1D9-Ks-5ti"/>
@@ -653,13 +654,14 @@
                                         <constraint firstAttribute="width" constant="120" id="txU-Bd-uX8"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="how to use" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5n-HU-s8K">
-                                    <rect key="frame" x="106.33333333333333" y="150" width="201.66666666666669" height="52"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gestures" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5n-HU-s8K">
+                                    <rect key="frame" x="128" y="150" width="158.33333333333337" height="52"/>
                                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
+                            <color key="backgroundColor" name="Expedition White"/>
                             <constraints>
                                 <constraint firstItem="yFo-uR-ly2" firstAttribute="top" secondItem="Cq2-yv-Z0T" secondAttribute="bottom" constant="6" id="0my-E0-zxx"/>
                                 <constraint firstItem="XuH-MP-99j" firstAttribute="leading" secondItem="uqn-CR-j65" secondAttribute="leading" id="65J-3e-Rrf"/>
@@ -741,6 +743,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                     <viewLayoutGuide key="frameLayoutGuide" id="oU1-jj-duR"/>
                                 </scrollView>
                             </subviews>
+                            <color key="backgroundColor" name="Expedition White"/>
                             <constraints>
                                 <constraint firstItem="K0g-pc-Dks" firstAttribute="centerX" secondItem="bMA-ik-RRg" secondAttribute="centerX" id="0ST-nE-XaR"/>
                                 <constraint firstItem="h53-2p-CD2" firstAttribute="top" secondItem="K0g-pc-Dks" secondAttribute="bottom" constant="15" id="JIg-Wb-tQ8"/>
@@ -762,7 +765,6 @@ We do not collect any data or personal information in Expedition. We simply do n
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="J6e-BP-JhY"/>
         <segue reference="Sog-fL-QSg"/>
         <segue reference="FPf-sT-8iH"/>
         <segue reference="fET-hm-iSD"/>
