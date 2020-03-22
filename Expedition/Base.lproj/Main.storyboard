@@ -400,7 +400,6 @@
                                                 <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                             </state>
                                             <connections>
-                                                <action selector="didTapHowToUse:" destination="bgj-w0-VgC" eventType="touchUpInside" id="mzO-OH-JH7"/>
                                                 <segue destination="U62-Qg-juO" kind="presentation" id="S6y-Te-hsR"/>
                                             </connections>
                                         </button>
@@ -414,7 +413,6 @@
                                                 <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                             </state>
                                             <connections>
-                                                <action selector="didTapHowToUse:" destination="bgj-w0-VgC" eventType="touchUpInside" id="9SE-HN-VgF"/>
                                                 <segue destination="ITb-Tq-qem" kind="presentation" id="4zN-aQ-N27"/>
                                             </connections>
                                         </button>
@@ -705,8 +703,8 @@
                                         <constraint firstAttribute="width" constant="120" id="txU-Bd-uX8"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gestures" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5n-HU-s8K">
-                                    <rect key="frame" x="128" y="150" width="158.33333333333337" height="52"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="how to use" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5n-HU-s8K">
+                                    <rect key="frame" x="106.33333333333333" y="150" width="201.66666666666669" height="52"/>
                                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
