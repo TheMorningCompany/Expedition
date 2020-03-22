@@ -97,7 +97,11 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="b9I-UI-kI0"/>
-                                    <barButtonItem image="square.on.square" catalog="system" id="keJ-Tu-SlC"/>
+                                    <barButtonItem image="square.on.square" catalog="system" id="keJ-Tu-SlC">
+                                        <connections>
+                                            <segue destination="8Vy-GK-B2m" kind="presentation" id="JBm-zf-sww"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="BZ9-yw-SyL"/>
                                     <barButtonItem image="square.and.arrow.up" catalog="system" id="Kxq-0C-tHm">
                                         <connections>
@@ -812,7 +816,7 @@ We do not collect any data or personal information in Expedition. We simply do n
             <objects>
                 <tableViewController title="History" id="0vd-be-p7o" customClass="TabsTableViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Kdi-jF-hAI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -857,6 +861,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         <constraint firstItem="Mf0-qE-pYi" firstAttribute="top" secondItem="Kcc-h5-kxb" secondAttribute="bottom" constant="1" id="wTi-By-Q4D"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" name="Expedition White"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -864,13 +869,34 @@ We do not collect any data or personal information in Expedition. We simply do n
                             <outlet property="delegate" destination="0vd-be-p7o" id="FWI-4n-vo7"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="adB-Kv-WKe">
+                        <barButtonItem key="rightBarButtonItem" image="plus.app" catalog="system" id="bc6-Nk-85C"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="historyTableView" destination="Kdi-jF-hAI" id="biR-r4-Ged"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXw-eP-tMF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11.25" y="-737.32394366197184"/>
+            <point key="canvasLocation" x="920.28985507246387" y="-737.94642857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gGN-C6-c9S">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Vy-GK-B2m" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4VH-NK-VvF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0vd-be-p7o" kind="relationship" relationship="rootViewController" id="gTJ-vn-pKV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fhR-cA-Ug8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10.144927536231885" y="-737.94642857142856"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -891,6 +917,7 @@ We do not collect any data or personal information in Expedition. We simply do n
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="gearBlue" width="1024" height="1024"/>
+        <image name="plus.app" catalog="system" width="128" height="114"/>
         <image name="selected" width="731.66668701171875" height="731.66668701171875"/>
         <image name="shieldBlue" width="1024" height="1024"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>

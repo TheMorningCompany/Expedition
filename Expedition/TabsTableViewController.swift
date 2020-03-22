@@ -12,7 +12,9 @@ class TabsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController!.navigationBar.layer.borderWidth = 0.50
+        self.navigationController!.navigationBar.layer.borderColor = UIColor.clear.cgColor
+        self.navigationController?.navigationBar.clipsToBounds = true
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -86,5 +88,22 @@ class TabsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+           let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
+               //delete tab from memory
+               do {
+                   
+                   completion(true)
+               } catch {
+                   print("delete failed: \(error)")
+                   completion(false)
+               }
+               
+           }
+           action.image = #imageLiteral(resourceName: "closeTab")
+           action.backgroundColor = UIColor(named: "Expedition White")
+           return UISwipeActionsConfiguration(actions: [action])
+           
+       }
 
 }
