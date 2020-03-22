@@ -509,10 +509,10 @@
             </objects>
             <point key="canvasLocation" x="12" y="753"/>
         </scene>
-        <!--Options View Controller-->
+        <!--App Icons View Controller-->
         <scene sceneID="QuR-wR-hu7">
             <objects>
-                <viewController id="U62-Qg-juO" customClass="OptionsViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="U62-Qg-juO" customClass="AppIconsViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DFH-uf-RX0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -529,6 +529,7 @@
                                 </state>
                                 <state key="highlighted" image="selected"/>
                                 <connections>
+                                    <action selector="didTapGlyphIcon:" destination="U62-Qg-juO" eventType="touchUpInside" id="A2z-Nv-Sy7"/>
                                     <action selector="didTapGlyphIcon:" destination="bgj-w0-VgC" eventType="touchUpInside" id="s58-pd-tYd"/>
                                 </connections>
                             </button>
@@ -546,6 +547,7 @@
                                 <state key="highlighted" image="selected"/>
                                 <connections>
                                     <action selector="didTapShadowIcon:" destination="bgj-w0-VgC" eventType="touchUpInside" id="Mxz-jz-cy7"/>
+                                    <action selector="didTapShadowIcon:" destination="U62-Qg-juO" eventType="touchUpInside" id="dox-mF-F76"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EjO-qK-3UI" userLabel="Light">
@@ -562,6 +564,7 @@
                                 <state key="highlighted" image="selected"/>
                                 <connections>
                                     <action selector="didTapLightIcon:" destination="bgj-w0-VgC" eventType="touchUpInside" id="X5e-VR-HcL"/>
+                                    <action selector="didTapLightIcon:" destination="U62-Qg-juO" eventType="touchUpInside" id="oq7-dI-WxU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKb-VK-j4g" userLabel="FadeBG">
@@ -576,6 +579,7 @@
                                 </state>
                                 <state key="highlighted" image="selected"/>
                                 <connections>
+                                    <action selector="didTapFadingIcon:" destination="U62-Qg-juO" eventType="touchUpInside" id="L2F-2X-qSK"/>
                                     <action selector="didTapFadingIcon:" destination="bgj-w0-VgC" eventType="touchUpInside" id="m5v-gZ-AlG"/>
                                 </connections>
                             </button>
@@ -592,6 +596,7 @@
                                 <state key="highlighted" image="selected"/>
                                 <connections>
                                     <action selector="didTapLightBlueIcon:" destination="bgj-w0-VgC" eventType="touchUpInside" id="Qyu-15-pPP"/>
+                                    <action selector="didTapLightBlueIcon:" destination="U62-Qg-juO" eventType="touchUpInside" id="nQv-XL-WKA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ijr-wN-NRb" userLabel="Dark">
@@ -609,6 +614,7 @@
                                 </state>
                                 <state key="highlighted" image="selected"/>
                                 <connections>
+                                    <action selector="didTapDarkIcon:" destination="U62-Qg-juO" eventType="touchUpInside" id="5IS-Wr-0m8"/>
                                     <action selector="didTapDarkIcon:" destination="bgj-w0-VgC" eventType="touchUpInside" id="nXy-DI-3kP"/>
                                 </connections>
                             </button>

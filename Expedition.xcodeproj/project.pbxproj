@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0003C0E323CC08A200111AA1 /* Soft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0003C0E223CC08A200111AA1 /* Soft@2x.png */; };
+		000D80272427F5CA005E0CA1 /* AppIconsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000D80262427F5CA005E0CA1 /* AppIconsViewController.swift */; };
 		001366B82307B61F009A102E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001366B72307B61F009A102E /* AppDelegate.swift */; };
 		001366BA2307B61F009A102E /* SearchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001366B92307B61F009A102E /* SearchingViewController.swift */; };
 		001366BD2307B61F009A102E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001366BB2307B61F009A102E /* Main.storyboard */; };
@@ -78,6 +79,7 @@
 
 /* Begin PBXFileReference section */
 		0003C0E223CC08A200111AA1 /* Soft@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Soft@2x.png"; sourceTree = "<group>"; };
+		000D80262427F5CA005E0CA1 /* AppIconsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconsViewController.swift; sourceTree = "<group>"; };
 		001366B42307B61F009A102E /* Expedition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expedition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		001366B72307B61F009A102E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		001366B92307B61F009A102E /* SearchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingViewController.swift; sourceTree = "<group>"; usesTabs = 0; };
@@ -185,6 +187,7 @@
 				5D793D0623D4E02D00539A44 /* IntroViewController.swift */,
 				001366B92307B61F009A102E /* SearchingViewController.swift */,
 				5D41CBF223C5745C003A16F9 /* OptionsViewController.swift */,
+				000D80262427F5CA005E0CA1 /* AppIconsViewController.swift */,
 				5D5BA2E123C5910C00D98050 /* HistoryTableViewController.swift */,
 				5D865CC323E1013700374B07 /* BlankViewController.swift */,
 				5D41CBF023C569B6003A16F9 /* SettingsBundleHelper.swift */,
@@ -472,6 +475,7 @@
 				5D865CC423E1013700374B07 /* BlankViewController.swift in Sources */,
 				5D1D0D5E23C6F1CB00B4377E /* HistoryElement+CoreDataProperties.swift in Sources */,
 				0062526124208C02004B3136 /* Onb1ViewController.swift in Sources */,
+				000D80272427F5CA005E0CA1 /* AppIconsViewController.swift in Sources */,
 				D6F21CB023C409AE004C79EC /* code.swift in Sources */,
 				5D793D0523D4DF5C00539A44 /* Swift+Gif.swift in Sources */,
 				5D41CBF323C5745C003A16F9 /* OptionsViewController.swift in Sources */,
