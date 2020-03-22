@@ -13,10 +13,12 @@ class Onb2ViewController: UIViewController {
     @IBOutlet weak var keepCookiesSwitch: UISwitch!
     @IBOutlet weak var reopenTabsSwitch: UISwitch!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         optionsChanged()
         // Do any additional setup after loading the view.
+
     }
     
     @IBAction func continuePressed(_ sender: Any) {

@@ -9,7 +9,11 @@
 import UIKit
 
 class Onb3ViewController: UIViewController {
-
+    
+    @IBOutlet weak var titleImage: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var illustration: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
