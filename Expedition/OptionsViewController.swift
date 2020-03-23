@@ -11,7 +11,7 @@ import WebKit
 import Foundation
 import CoreData
 
-class OptionsViewController: UIViewController {
+class OptionsViewController: UITableViewController {
     let notification = UINotificationFeedbackGenerator()//Haptics
     let impact = UIImpactFeedbackGenerator() // Haptics
     @IBOutlet weak var historySwitch: UISwitch!

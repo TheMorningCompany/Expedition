@@ -67,20 +67,6 @@
                                     <outletCollection property="gestureRecognizers" destination="AN3-pI-gg7" appends="YES" id="7Mv-b0-R3Q"/>
                                 </connections>
                             </textField>
-                            <wkWebView contentMode="scaleToFill" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Sr-kh-OPV">
-                                <rect key="frame" x="0.0" y="90" width="414" height="806"/>
-                                <color key="backgroundColor" name="Expedition White"/>
-                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <gestureRecognizers/>
-                                <wkWebViewConfiguration key="configuration" allowsInlineMediaPlayback="YES" applicationNameForUserAgent="Expedition">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                                <string key="customUserAgent">Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/5.2 Mobile/15E148 Expedition/604.1</string>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Gli-I6-TVR" appends="YES" id="RBe-9s-JSI"/>
-                                </connections>
-                            </wkWebView>
                             <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdo-tH-OsN">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <color key="backgroundColor" name="Expedition White"/>
@@ -111,12 +97,26 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="OWn-sv-M0a"/>
                                     <barButtonItem image="gear" catalog="system" id="f5j-7z-w5L">
                                         <connections>
-                                            <segue destination="bgj-w0-VgC" kind="presentation" id="FPf-sT-8iH"/>
+                                            <segue destination="9OM-wm-4ti" kind="presentation" id="Mca-ek-37V"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
                                 <color key="barTintColor" name="Expedition White"/>
                             </toolbar>
+                            <wkWebView contentMode="scaleToFill" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Sr-kh-OPV">
+                                <rect key="frame" x="0.0" y="90" width="414" height="806"/>
+                                <color key="backgroundColor" name="Expedition White"/>
+                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <gestureRecognizers/>
+                                <wkWebViewConfiguration key="configuration" allowsInlineMediaPlayback="YES" applicationNameForUserAgent="Expedition">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                                <string key="customUserAgent">Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/5.2 Mobile/15E148 Expedition/604.1</string>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Gli-I6-TVR" appends="YES" id="RBe-9s-JSI"/>
+                                </connections>
+                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -161,9 +161,9 @@
                         <segue destination="65v-MH-vlF" kind="presentation" id="zo6-DM-YYL"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="ltd-91-b5P" userLabel="Credits Swipe">
+                <swipeGestureRecognizer direction="right" id="ltd-91-b5P" userLabel="options swipe">
                     <connections>
-                        <segue destination="bgj-w0-VgC" kind="presentation" id="dyC-su-jYw"/>
+                        <segue destination="9OM-wm-4ti" kind="presentation" id="mbe-fC-xhx"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="up" id="0xN-Ym-Ghr" userLabel="UserAgentSwipe">
@@ -245,263 +245,6 @@
             </objects>
             <point key="canvasLocation" x="1312" y="-36"/>
         </scene>
-        <!--Options-->
-        <scene sceneID="oyU-ty-4iq">
-            <objects>
-                <viewController storyboardIdentifier="Options" title="Options" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bgj-w0-VgC" customClass="OptionsViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
-                    <visualEffectView key="view" opaque="NO" contentMode="scaleToFill" id="qSP-HF-leV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0UT-MA-a3z">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <subviews>
-                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KY2-RF-tBX">
-                                    <rect key="frame" x="8" y="0.0" width="398" height="842"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="keep history" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ul4-TQ-1nE">
-                                            <rect key="frame" x="18" y="259" width="96" height="24"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="24" id="1ZE-Dd-byG"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4S2-tN-yD7">
-                                            <rect key="frame" x="331" y="255.66666666666663" width="51" height="31"/>
-                                            <color key="onTintColor" name="Expedition Blue"/>
-                                            <connections>
-                                                <action selector="historySwitchValueChange:" destination="bgj-w0-VgC" eventType="valueChanged" id="5L1-5F-Bbx"/>
-                                            </connections>
-                                        </switch>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fade on close" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LhN-FL-P2C">
-                                            <rect key="frame" x="18" y="295" width="105" height="24"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="8rU-B0-UJG"/>
-                                                <constraint firstAttribute="height" constant="24" id="YVQ-Os-2Xl"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yal-xU-wbO">
-                                            <rect key="frame" x="331" y="291.66666666666669" width="51" height="31"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="31" id="yCT-Lp-V8j"/>
-                                            </constraints>
-                                            <color key="onTintColor" name="Expedition Blue"/>
-                                            <connections>
-                                                <action selector="fadeSwitchValueChanged:" destination="bgj-w0-VgC" eventType="valueChanged" id="z8V-eP-8AZ"/>
-                                            </connections>
-                                        </switch>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="show toolbar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ZM-So-EHN">
-                                            <rect key="frame" x="18" y="331" width="103" height="24"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="24" id="QdR-bd-9pP"/>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="tHJ-Iu-DAI"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5CU-yf-rhg">
-                                            <rect key="frame" x="331" y="327.66666666666669" width="51" height="31"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="31" id="wn3-1s-5yM"/>
-                                            </constraints>
-                                            <color key="onTintColor" name="Expedition Blue"/>
-                                            <connections>
-                                                <action selector="toolbarSwitchValueChanged:" destination="bgj-w0-VgC" eventType="valueChanged" id="CdA-Sd-jXa"/>
-                                            </connections>
-                                        </switch>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4em-CD-h6R">
-                                            <rect key="frame" x="18" y="403" width="95" height="24"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="24" id="trJ-UX-rNj"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                            <state key="normal" title="clear history">
-                                                <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="clearHistory:" destination="bgj-w0-VgC" eventType="touchUpInside" id="PzQ-EP-xh4"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="es1-Lj-mt9">
-                                            <rect key="frame" x="18" y="367" width="154" height="24"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="24" id="AyS-32-ZoS"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                            <state key="normal" title="clear browsing data">
-                                                <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="clearBrowsingData:" destination="bgj-w0-VgC" eventType="touchUpInside" id="UuC-gB-l9p"/>
-                                                <action selector="clearBrowsingData:" destination="U2w-H1-PkZ" eventType="touchUpInside" id="VkQ-JB-rHa"/>
-                                                <action selector="clearHistory:" destination="bgj-w0-VgC" eventType="touchUpInside" id="eNd-gX-FXO"/>
-                                            </connections>
-                                        </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="keep cookies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fe1-Jp-GEO">
-                                            <rect key="frame" x="18" y="223" width="103" height="24"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="24" id="VkH-rG-9dQ"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="upf-2I-yKl">
-                                            <rect key="frame" x="331" y="219.66666666666666" width="51" height="31"/>
-                                            <color key="onTintColor" name="Expedition Blue"/>
-                                            <connections>
-                                                <action selector="cookiesSwitchValueChange:" destination="bgj-w0-VgC" eventType="valueChanged" id="I75-oW-yD2"/>
-                                            </connections>
-                                        </switch>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reopen on last page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAD-S2-yJa">
-                                            <rect key="frame" x="18" y="187" width="157" height="24"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="24" id="3hg-Or-srb"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5RC-3q-jpM">
-                                            <rect key="frame" x="331" y="183.66666666666666" width="51" height="31"/>
-                                            <color key="onTintColor" name="Expedition Blue"/>
-                                            <connections>
-                                                <action selector="reopenTabsSwitchValueChanged:" destination="bgj-w0-VgC" eventType="valueChanged" id="TfA-nO-YOJ"/>
-                                            </connections>
-                                        </switch>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZR-it-taf">
-                                            <rect key="frame" x="18" y="475" width="86" height="24"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="24" id="gee-du-oeu"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                            <state key="normal" title="how to use">
-                                                <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="didTapHowToUse:" destination="bgj-w0-VgC" eventType="touchUpInside" id="I4e-gS-ElR"/>
-                                                <segue destination="VIU-GY-pak" kind="presentation" id="Sog-fL-QSg"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eoo-g9-Ees">
-                                            <rect key="frame" x="18" y="511" width="76" height="24"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="24" id="9CI-64-4YK"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                            <state key="normal" title="app icons">
-                                                <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            </state>
-                                            <connections>
-                                                <segue destination="U62-Qg-juO" kind="presentation" id="S6y-Te-hsR"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b04-xd-9wp">
-                                            <rect key="frame" x="18" y="439" width="108" height="24"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="24" id="ify-G4-spW"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                            <state key="normal" title="privacy policy">
-                                                <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            </state>
-                                            <connections>
-                                                <segue destination="ITb-Tq-qem" kind="presentation" id="4zN-aQ-N27"/>
-                                            </connections>
-                                        </button>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gearBlue" translatesAutoresizingMaskIntoConstraints="NO" id="MwZ-KF-2ip">
-                                            <rect key="frame" x="149" y="15" width="100" height="100"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="100" id="6Cb-7K-bIC"/>
-                                                <constraint firstAttribute="width" secondItem="MwZ-KF-2ip" secondAttribute="height" multiplier="1:1" id="VLe-Sh-PAm"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="options" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbE-pg-tsi">
-                                            <rect key="frame" x="129" y="125" width="140" height="52"/>
-                                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="Fe1-Jp-GEO" firstAttribute="leading" secondItem="ihG-mg-cLZ" secondAttribute="leading" constant="18" id="28T-iV-rH0"/>
-                                        <constraint firstAttribute="trailing" secondItem="gbE-pg-tsi" secondAttribute="trailing" constant="129" id="2PT-y0-C20"/>
-                                        <constraint firstItem="MwZ-KF-2ip" firstAttribute="width" secondItem="MwZ-KF-2ip" secondAttribute="height" multiplier="1:1" id="52D-gG-hLA"/>
-                                        <constraint firstItem="XjT-db-CDc" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4em-CD-h6R" secondAttribute="trailing" symbolic="YES" id="68d-Jm-4Zh"/>
-                                        <constraint firstItem="upf-2I-yKl" firstAttribute="centerY" secondItem="Fe1-Jp-GEO" secondAttribute="centerY" id="6C3-Mk-SFu"/>
-                                        <constraint firstItem="ul4-TQ-1nE" firstAttribute="leading" secondItem="ihG-mg-cLZ" secondAttribute="leading" constant="18" id="6Dl-Ae-ni9"/>
-                                        <constraint firstItem="iZR-it-taf" firstAttribute="top" secondItem="b04-xd-9wp" secondAttribute="bottom" constant="12" id="7dh-wC-a4f"/>
-                                        <constraint firstItem="Yal-xU-wbO" firstAttribute="centerY" secondItem="LhN-FL-P2C" secondAttribute="centerY" id="7ic-g0-6DL"/>
-                                        <constraint firstItem="Fe1-Jp-GEO" firstAttribute="top" secondItem="TAD-S2-yJa" secondAttribute="bottom" constant="12" id="85W-cb-8dZ"/>
-                                        <constraint firstItem="b04-xd-9wp" firstAttribute="leading" secondItem="ihG-mg-cLZ" secondAttribute="leading" constant="18" id="G59-nx-tv1"/>
-                                        <constraint firstItem="ihG-mg-cLZ" firstAttribute="trailing" secondItem="upf-2I-yKl" secondAttribute="trailing" constant="18" id="GhT-pG-3RL"/>
-                                        <constraint firstItem="8ZM-So-EHN" firstAttribute="top" secondItem="LhN-FL-P2C" secondAttribute="bottom" constant="12" id="Het-3r-7f7"/>
-                                        <constraint firstItem="5CU-yf-rhg" firstAttribute="centerY" secondItem="8ZM-So-EHN" secondAttribute="centerY" id="L1V-hN-2dk"/>
-                                        <constraint firstItem="Eoo-g9-Ees" firstAttribute="leading" secondItem="XjT-db-CDc" secondAttribute="leading" constant="18" id="LXy-MU-vJP"/>
-                                        <constraint firstItem="es1-Lj-mt9" firstAttribute="leading" secondItem="ihG-mg-cLZ" secondAttribute="leading" constant="18" id="MRE-Db-v3k"/>
-                                        <constraint firstItem="TAD-S2-yJa" firstAttribute="top" secondItem="gbE-pg-tsi" secondAttribute="bottom" constant="10" id="T17-Qb-hBD"/>
-                                        <constraint firstItem="MwZ-KF-2ip" firstAttribute="centerX" secondItem="KY2-RF-tBX" secondAttribute="centerX" id="T2i-BO-j5w"/>
-                                        <constraint firstItem="ul4-TQ-1nE" firstAttribute="top" secondItem="Fe1-Jp-GEO" secondAttribute="bottom" constant="12" id="VZu-ae-i8Z"/>
-                                        <constraint firstItem="gbE-pg-tsi" firstAttribute="top" secondItem="MwZ-KF-2ip" secondAttribute="bottom" constant="10" id="WrR-Xw-AbY"/>
-                                        <constraint firstItem="XjT-db-CDc" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iZR-it-taf" secondAttribute="trailing" symbolic="YES" id="a0l-V9-aTl"/>
-                                        <constraint firstItem="es1-Lj-mt9" firstAttribute="top" secondItem="8ZM-So-EHN" secondAttribute="bottom" constant="12" id="c6J-fJ-kD5"/>
-                                        <constraint firstItem="XjT-db-CDc" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="b04-xd-9wp" secondAttribute="trailing" symbolic="YES" id="dLT-pn-Zff"/>
-                                        <constraint firstItem="4S2-tN-yD7" firstAttribute="centerY" secondItem="ul4-TQ-1nE" secondAttribute="centerY" id="dTq-Qu-pO1"/>
-                                        <constraint firstItem="iZR-it-taf" firstAttribute="leading" secondItem="ihG-mg-cLZ" secondAttribute="leading" constant="18" id="ddc-Jo-9AR"/>
-                                        <constraint firstItem="b04-xd-9wp" firstAttribute="top" secondItem="4em-CD-h6R" secondAttribute="bottom" constant="12" id="ejN-Fs-Zct"/>
-                                        <constraint firstAttribute="bottom" secondItem="gbE-pg-tsi" secondAttribute="bottom" constant="660" id="fAQ-xH-kj2"/>
-                                        <constraint firstItem="TAD-S2-yJa" firstAttribute="leading" secondItem="ihG-mg-cLZ" secondAttribute="leading" constant="18" id="ft7-TC-zTc"/>
-                                        <constraint firstItem="ihG-mg-cLZ" firstAttribute="trailing" secondItem="5RC-3q-jpM" secondAttribute="trailing" constant="18" id="gTk-ms-y6L"/>
-                                        <constraint firstItem="MwZ-KF-2ip" firstAttribute="top" secondItem="ihG-mg-cLZ" secondAttribute="top" constant="15" id="hZB-vh-h29"/>
-                                        <constraint firstItem="ihG-mg-cLZ" firstAttribute="trailing" secondItem="4S2-tN-yD7" secondAttribute="trailing" constant="18" id="jDc-Sd-kPv"/>
-                                        <constraint firstItem="ihG-mg-cLZ" firstAttribute="trailing" secondItem="Yal-xU-wbO" secondAttribute="trailing" constant="18" id="ld9-E7-HOV"/>
-                                        <constraint firstItem="4em-CD-h6R" firstAttribute="top" secondItem="es1-Lj-mt9" secondAttribute="bottom" constant="12" id="ngy-15-oEf"/>
-                                        <constraint firstItem="ihG-mg-cLZ" firstAttribute="trailing" secondItem="5CU-yf-rhg" secondAttribute="trailing" constant="18" id="osE-Qz-RPq"/>
-                                        <constraint firstItem="8ZM-So-EHN" firstAttribute="leading" secondItem="ihG-mg-cLZ" secondAttribute="leading" constant="18" id="ovc-xh-1Pj"/>
-                                        <constraint firstItem="5RC-3q-jpM" firstAttribute="centerY" secondItem="TAD-S2-yJa" secondAttribute="centerY" id="rFI-di-6ls"/>
-                                        <constraint firstItem="LhN-FL-P2C" firstAttribute="leading" secondItem="ihG-mg-cLZ" secondAttribute="leading" constant="18" id="sEq-Az-nqh"/>
-                                        <constraint firstItem="4em-CD-h6R" firstAttribute="leading" secondItem="ihG-mg-cLZ" secondAttribute="leading" constant="18" id="sZA-N8-vRw"/>
-                                        <constraint firstItem="XjT-db-CDc" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="es1-Lj-mt9" secondAttribute="trailing" symbolic="YES" id="vhM-IJ-xhM"/>
-                                        <constraint firstItem="LhN-FL-P2C" firstAttribute="top" secondItem="ul4-TQ-1nE" secondAttribute="bottom" constant="12" id="vvq-Pc-Ptn"/>
-                                        <constraint firstItem="Eoo-g9-Ees" firstAttribute="top" secondItem="iZR-it-taf" secondAttribute="bottom" constant="12" id="xEa-4w-zPr"/>
-                                        <constraint firstItem="gbE-pg-tsi" firstAttribute="centerX" secondItem="MwZ-KF-2ip" secondAttribute="centerX" id="zBt-d1-Cdz"/>
-                                    </constraints>
-                                    <viewLayoutGuide key="contentLayoutGuide" id="XjT-db-CDc"/>
-                                    <viewLayoutGuide key="frameLayoutGuide" id="ihG-mg-cLZ"/>
-                                </scrollView>
-                            </subviews>
-                            <color key="backgroundColor" name="Expedition White"/>
-                            <gestureRecognizers/>
-                            <constraints>
-                                <constraint firstItem="KY2-RF-tBX" firstAttribute="trailing" secondItem="0UT-MA-a3z" secondAttribute="trailingMargin" id="1D9-Ks-5ti"/>
-                                <constraint firstAttribute="bottom" secondItem="KY2-RF-tBX" secondAttribute="bottom" id="3P7-2G-Xkl"/>
-                                <constraint firstItem="KY2-RF-tBX" firstAttribute="leading" secondItem="0UT-MA-a3z" secondAttribute="leadingMargin" id="EMk-GP-6Xk"/>
-                                <constraint firstItem="KY2-RF-tBX" firstAttribute="top" secondItem="0UT-MA-a3z" secondAttribute="top" id="Xve-z8-gEx"/>
-                            </constraints>
-                        </view>
-                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <gestureRecognizers/>
-                        <blurEffect style="systemChromeMaterial"/>
-                    </visualEffectView>
-                    <connections>
-                        <outlet property="fadeOnCloseSwitch" destination="Yal-xU-wbO" id="856-pj-kBJ"/>
-                        <outlet property="historySwitch" destination="4S2-tN-yD7" id="WTe-wa-xHc"/>
-                        <outlet property="keepCookiesSwitch" destination="upf-2I-yKl" id="SmG-0j-0J0"/>
-                        <outlet property="reopenTabsSwitch" destination="5RC-3q-jpM" id="etq-nJ-uT8"/>
-                        <outlet property="showToolbarSwitch" destination="5CU-yf-rhg" id="8cr-Nl-Gdw"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tzH-Lv-A1d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="U2w-H1-PkZ" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="12" y="753"/>
-        </scene>
         <!--App Icons View Controller-->
         <scene sceneID="QuR-wR-hu7">
             <objects>
@@ -523,7 +266,6 @@
                                 <state key="highlighted" image="selected"/>
                                 <connections>
                                     <action selector="didTapGlyphIcon:" destination="U62-Qg-juO" eventType="touchUpInside" id="A2z-Nv-Sy7"/>
-                                    <action selector="didTapGlyphIcon:" destination="bgj-w0-VgC" eventType="touchUpInside" id="s58-pd-tYd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rx-PT-3CM" userLabel="Shadow">
@@ -539,7 +281,6 @@
                                 </state>
                                 <state key="highlighted" image="selected"/>
                                 <connections>
-                                    <action selector="didTapShadowIcon:" destination="bgj-w0-VgC" eventType="touchUpInside" id="Mxz-jz-cy7"/>
                                     <action selector="didTapShadowIcon:" destination="U62-Qg-juO" eventType="touchUpInside" id="dox-mF-F76"/>
                                 </connections>
                             </button>
@@ -556,7 +297,6 @@
                                 </state>
                                 <state key="highlighted" image="selected"/>
                                 <connections>
-                                    <action selector="didTapLightIcon:" destination="bgj-w0-VgC" eventType="touchUpInside" id="X5e-VR-HcL"/>
                                     <action selector="didTapLightIcon:" destination="U62-Qg-juO" eventType="touchUpInside" id="oq7-dI-WxU"/>
                                 </connections>
                             </button>
@@ -573,7 +313,6 @@
                                 <state key="highlighted" image="selected"/>
                                 <connections>
                                     <action selector="didTapFadingIcon:" destination="U62-Qg-juO" eventType="touchUpInside" id="L2F-2X-qSK"/>
-                                    <action selector="didTapFadingIcon:" destination="bgj-w0-VgC" eventType="touchUpInside" id="m5v-gZ-AlG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xma-fM-5kk" userLabel="Blue">
@@ -588,7 +327,6 @@
                                 </state>
                                 <state key="highlighted" image="selected"/>
                                 <connections>
-                                    <action selector="didTapLightBlueIcon:" destination="bgj-w0-VgC" eventType="touchUpInside" id="Qyu-15-pPP"/>
                                     <action selector="didTapLightBlueIcon:" destination="U62-Qg-juO" eventType="touchUpInside" id="nQv-XL-WKA"/>
                                 </connections>
                             </button>
@@ -608,7 +346,6 @@
                                 <state key="highlighted" image="selected"/>
                                 <connections>
                                     <action selector="didTapDarkIcon:" destination="U62-Qg-juO" eventType="touchUpInside" id="5IS-Wr-0m8"/>
-                                    <action selector="didTapDarkIcon:" destination="bgj-w0-VgC" eventType="touchUpInside" id="nXy-DI-3kP"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blueapp" translatesAutoresizingMaskIntoConstraints="NO" id="Vwu-51-KUd">
@@ -811,6 +548,355 @@ We do not collect any data or personal information in Expedition. We simply do n
             </objects>
             <point key="canvasLocation" x="1312" y="753"/>
         </scene>
+        <!--Options View Controller-->
+        <scene sceneID="Rta-78-hTe">
+            <objects>
+                <tableViewController id="9OM-wm-4ti" customClass="OptionsViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="tCM-8D-bll">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="Expedition White"/>
+                        <color key="separatorColor" name="Expedition White"/>
+                        <color key="sectionIndexBackgroundColor" name="Expedition White"/>
+                        <color key="sectionIndexTrackingBackgroundColor" name="Expedition White"/>
+                        <sections>
+                            <tableViewSection id="uvQ-jX-yWd">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="196" id="BJf-m0-cAD">
+                                        <rect key="frame" x="0.0" y="18" width="414" height="196"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BJf-m0-cAD" id="161-v2-uzh">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="196"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gearBlue" translatesAutoresizingMaskIntoConstraints="NO" id="vOt-Cb-wAH">
+                                                    <rect key="frame" x="157" y="26" width="100" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="RjR-aG-3u5"/>
+                                                        <constraint firstAttribute="width" secondItem="vOt-Cb-wAH" secondAttribute="height" multiplier="1:1" id="tJt-Lr-OIe"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="options" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tI5-Jc-FcH">
+                                                    <rect key="frame" x="137" y="141" width="140" height="52"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vOt-Cb-wAH" firstAttribute="centerX" secondItem="161-v2-uzh" secondAttribute="centerX" id="EpY-Fc-cJ6"/>
+                                                <constraint firstItem="tI5-Jc-FcH" firstAttribute="top" secondItem="vOt-Cb-wAH" secondAttribute="bottom" constant="15" id="b5d-2k-fP5"/>
+                                                <constraint firstItem="tI5-Jc-FcH" firstAttribute="centerX" secondItem="161-v2-uzh" secondAttribute="centerX" id="qrX-z7-MgH"/>
+                                                <constraint firstItem="vOt-Cb-wAH" firstAttribute="top" secondItem="161-v2-uzh" secondAttribute="topMargin" constant="15" id="vbL-Bi-gxT"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="1uj-i3-ex1">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="69" id="TBQ-Lz-gVd">
+                                        <rect key="frame" x="0.0" y="250" width="414" height="69"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TBQ-Lz-gVd" id="Aje-gw-LnU">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reopen on last page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4w-8a-u0R">
+                                                    <rect key="frame" x="29.999999999999986" y="21" width="203.66666666666663" height="27"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lzI-nA-pMd">
+                                                    <rect key="frame" x="325" y="19" width="51" height="31"/>
+                                                    <color key="onTintColor" name="Expedition Blue"/>
+                                                    <color key="thumbTintColor" name="Expedition White"/>
+                                                    <connections>
+                                                        <action selector="reopenTabsSwitchValueChanged:" destination="9OM-wm-4ti" eventType="valueChanged" id="j63-Xq-J15"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="u4w-8a-u0R" firstAttribute="top" secondItem="Aje-gw-LnU" secondAttribute="topMargin" constant="10" id="BK2-mW-PfS"/>
+                                                <constraint firstItem="lzI-nA-pMd" firstAttribute="centerY" secondItem="Aje-gw-LnU" secondAttribute="centerY" id="Zce-Xy-5OQ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="lzI-nA-pMd" secondAttribute="trailing" constant="20" id="cmO-da-YYh"/>
+                                                <constraint firstItem="u4w-8a-u0R" firstAttribute="leading" secondItem="Aje-gw-LnU" secondAttribute="leadingMargin" constant="10" id="hMV-we-cWq"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="u4w-8a-u0R" secondAttribute="bottom" constant="10" id="unl-tn-BeF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="69" id="rBw-vi-dfr">
+                                        <rect key="frame" x="0.0" y="319" width="414" height="69"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rBw-vi-dfr" id="87n-AM-Ys6">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="keep cookies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYj-as-QeZ">
+                                                    <rect key="frame" x="30" y="21" width="134.33333333333334" height="27"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0TR-qU-X2e">
+                                                    <rect key="frame" x="325" y="19" width="51" height="31"/>
+                                                    <color key="onTintColor" name="Expedition Blue"/>
+                                                    <color key="thumbTintColor" name="Expedition White"/>
+                                                    <connections>
+                                                        <action selector="cookiesSwitchValueChange:" destination="9OM-wm-4ti" eventType="valueChanged" id="mga-U3-l9y"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0TR-qU-X2e" firstAttribute="centerY" secondItem="87n-AM-Ys6" secondAttribute="centerY" id="4rf-Mq-tkM"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="0TR-qU-X2e" secondAttribute="trailing" constant="20" id="ANa-eL-dPx"/>
+                                                <constraint firstItem="HYj-as-QeZ" firstAttribute="top" secondItem="87n-AM-Ys6" secondAttribute="topMargin" constant="10" id="V7k-X6-KEh"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="HYj-as-QeZ" secondAttribute="bottom" constant="10" id="s7c-WH-XPr"/>
+                                                <constraint firstItem="HYj-as-QeZ" firstAttribute="leading" secondItem="87n-AM-Ys6" secondAttribute="leadingMargin" constant="10" id="w37-cI-JV4"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="69" id="Nn0-7N-owO">
+                                        <rect key="frame" x="0.0" y="388" width="414" height="69"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Nn0-7N-owO" id="pz5-AY-vhb">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="keep history" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDu-8J-HA7">
+                                                    <rect key="frame" x="30" y="21" width="125" height="27"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BEd-DA-YmL">
+                                                    <rect key="frame" x="325" y="19" width="51" height="31"/>
+                                                    <color key="onTintColor" name="Expedition Blue"/>
+                                                    <color key="thumbTintColor" name="Expedition White"/>
+                                                    <connections>
+                                                        <action selector="historySwitchValueChange:" destination="9OM-wm-4ti" eventType="valueChanged" id="FYG-bj-vaZ"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="PDu-8J-HA7" secondAttribute="bottom" constant="10" id="2W5-fh-dCh"/>
+                                                <constraint firstItem="BEd-DA-YmL" firstAttribute="centerY" secondItem="pz5-AY-vhb" secondAttribute="centerY" id="4no-Q9-nOi"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="BEd-DA-YmL" secondAttribute="trailing" constant="20" id="IXO-Zu-vcs"/>
+                                                <constraint firstItem="PDu-8J-HA7" firstAttribute="top" secondItem="pz5-AY-vhb" secondAttribute="topMargin" constant="10" id="Zue-s0-wqf"/>
+                                                <constraint firstItem="PDu-8J-HA7" firstAttribute="leading" secondItem="pz5-AY-vhb" secondAttribute="leadingMargin" constant="10" id="kHn-xZ-p1A"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="69" id="vcd-gi-SMq">
+                                        <rect key="frame" x="0.0" y="457" width="414" height="69"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vcd-gi-SMq" id="Gea-qm-mDU">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fade on close" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RlU-Fy-YKn">
+                                                    <rect key="frame" x="30" y="21" width="135.66666666666666" height="27"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bk1-S5-ZcQ">
+                                                    <rect key="frame" x="325" y="19" width="51" height="31"/>
+                                                    <color key="onTintColor" name="Expedition Blue"/>
+                                                    <color key="thumbTintColor" name="Expedition White"/>
+                                                    <connections>
+                                                        <action selector="fadeSwitchValueChanged:" destination="9OM-wm-4ti" eventType="valueChanged" id="iUN-0i-C8T"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Bk1-S5-ZcQ" secondAttribute="trailing" constant="20" id="00f-Vl-Hta"/>
+                                                <constraint firstItem="RlU-Fy-YKn" firstAttribute="top" secondItem="Gea-qm-mDU" secondAttribute="topMargin" constant="10" id="4DS-YY-6Q1"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="RlU-Fy-YKn" secondAttribute="bottom" constant="10" id="aFx-EW-wWT"/>
+                                                <constraint firstItem="Bk1-S5-ZcQ" firstAttribute="centerY" secondItem="Gea-qm-mDU" secondAttribute="centerY" id="qzB-O0-AJH"/>
+                                                <constraint firstItem="RlU-Fy-YKn" firstAttribute="leading" secondItem="Gea-qm-mDU" secondAttribute="leadingMargin" constant="10" id="zHY-lx-eUp"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="69" id="n85-Nm-M8r">
+                                        <rect key="frame" x="0.0" y="526" width="414" height="69"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n85-Nm-M8r" id="xPv-DJ-Iy3">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="show toolbar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xW-TH-Czm">
+                                                    <rect key="frame" x="30" y="21" width="133.66666666666666" height="27"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9U5-3B-LEh">
+                                                    <rect key="frame" x="325" y="19" width="51" height="31"/>
+                                                    <color key="onTintColor" name="Expedition Blue"/>
+                                                    <color key="thumbTintColor" name="Expedition White"/>
+                                                    <connections>
+                                                        <action selector="toolbarSwitchValueChanged:" destination="9OM-wm-4ti" eventType="valueChanged" id="eyg-9S-iMa"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="2xW-TH-Czm" firstAttribute="leading" secondItem="xPv-DJ-Iy3" secondAttribute="leadingMargin" constant="10" id="1MH-Ol-rMp"/>
+                                                <constraint firstItem="9U5-3B-LEh" firstAttribute="centerY" secondItem="xPv-DJ-Iy3" secondAttribute="centerY" id="2Bj-GP-BhO"/>
+                                                <constraint firstItem="2xW-TH-Czm" firstAttribute="top" secondItem="xPv-DJ-Iy3" secondAttribute="topMargin" constant="10" id="Rkc-u7-bIr"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="2xW-TH-Czm" secondAttribute="bottom" constant="10" id="id3-lv-uJd"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="9U5-3B-LEh" secondAttribute="trailing" constant="20" id="ugR-At-Stl"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="69" id="uNX-RX-Jec">
+                                        <rect key="frame" x="0.0" y="595" width="414" height="69"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uNX-RX-Jec" id="FDe-lD-cDo">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e22-9f-5aR">
+                                                    <rect key="frame" x="30" y="21" width="201" height="27"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                                    <state key="normal" title="clear browsing data"/>
+                                                    <connections>
+                                                        <action selector="clearBrowsingData:" destination="9OM-wm-4ti" eventType="touchUpInside" id="bQD-l2-OVS"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="e22-9f-5aR" secondAttribute="bottom" constant="10" id="2vd-gd-afs"/>
+                                                <constraint firstItem="e22-9f-5aR" firstAttribute="leading" secondItem="FDe-lD-cDo" secondAttribute="leadingMargin" constant="10" id="Eyr-oe-AcQ"/>
+                                                <constraint firstItem="e22-9f-5aR" firstAttribute="top" secondItem="FDe-lD-cDo" secondAttribute="topMargin" constant="10" id="sBm-wM-Id9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="69" id="jGT-iu-AiC">
+                                        <rect key="frame" x="0.0" y="664" width="414" height="69"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jGT-iu-AiC" id="hQb-Wk-xAW">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uau-Wj-Mzh">
+                                                    <rect key="frame" x="30" y="21" width="124" height="27"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                                    <state key="normal" title="clear history"/>
+                                                    <connections>
+                                                        <action selector="clearHistory:" destination="9OM-wm-4ti" eventType="touchUpInside" id="Doq-8O-hFa"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Uau-Wj-Mzh" firstAttribute="leading" secondItem="hQb-Wk-xAW" secondAttribute="leadingMargin" constant="10" id="8fs-iU-c42"/>
+                                                <constraint firstItem="Uau-Wj-Mzh" firstAttribute="top" secondItem="hQb-Wk-xAW" secondAttribute="topMargin" constant="10" id="qz2-Tk-Q2x"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Uau-Wj-Mzh" secondAttribute="bottom" constant="10" id="yDA-Lh-myh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="69" id="yWR-WZ-Sqx">
+                                        <rect key="frame" x="0.0" y="733" width="414" height="69"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yWR-WZ-Sqx" id="whm-hc-D65">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6t-kO-MfL">
+                                                    <rect key="frame" x="30" y="21" width="140" height="27"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                                    <state key="normal" title="privacy policy"/>
+                                                    <connections>
+                                                        <segue destination="ITb-Tq-qem" kind="presentation" id="DRO-o9-eD4"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="R6t-kO-MfL" firstAttribute="leading" secondItem="whm-hc-D65" secondAttribute="leadingMargin" constant="10" id="EhX-GU-SEP"/>
+                                                <constraint firstItem="R6t-kO-MfL" firstAttribute="top" secondItem="whm-hc-D65" secondAttribute="topMargin" constant="10" id="TjU-gk-ZDD"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="R6t-kO-MfL" secondAttribute="bottom" constant="10" id="irS-Mf-fZR"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="69" id="iB3-cx-CC6">
+                                        <rect key="frame" x="0.0" y="802" width="414" height="69"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iB3-cx-CC6" id="l9j-hV-Hag">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTJ-TB-W1Q">
+                                                    <rect key="frame" x="30" y="21" width="112" height="27"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                                    <state key="normal" title="how to use"/>
+                                                    <connections>
+                                                        <action selector="didTapHowToUse:" destination="9OM-wm-4ti" eventType="touchUpInside" id="oET-FX-24d"/>
+                                                        <segue destination="VIU-GY-pak" kind="presentation" id="R7q-6M-pfa"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="fTJ-TB-W1Q" secondAttribute="bottom" constant="10" id="2SL-wS-obX"/>
+                                                <constraint firstItem="fTJ-TB-W1Q" firstAttribute="top" secondItem="l9j-hV-Hag" secondAttribute="topMargin" constant="10" id="8iF-cc-b2G"/>
+                                                <constraint firstItem="fTJ-TB-W1Q" firstAttribute="leading" secondItem="l9j-hV-Hag" secondAttribute="leadingMargin" constant="10" id="w8W-nu-bHf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="69" id="bxL-bp-79o">
+                                        <rect key="frame" x="0.0" y="871" width="414" height="69"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bxL-bp-79o" id="hkW-hC-hrx">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Or-IC-Yag">
+                                                    <rect key="frame" x="18" y="21" width="167" height="27"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                                    <state key="normal" title="choose app icon"/>
+                                                    <connections>
+                                                        <segue destination="U62-Qg-juO" kind="presentation" id="MQn-nc-IIw"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="4Or-IC-Yag" firstAttribute="top" secondItem="hkW-hC-hrx" secondAttribute="topMargin" constant="10" id="34J-gV-41r"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="4Or-IC-Yag" secondAttribute="bottom" constant="10" id="YlZ-pc-zGz"/>
+                                                <constraint firstItem="4Or-IC-Yag" firstAttribute="leading" secondItem="hkW-hC-hrx" secondAttribute="leadingMargin" constant="10" id="cEw-ZU-2fd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="9OM-wm-4ti" id="kdg-fj-XHd"/>
+                            <outlet property="delegate" destination="9OM-wm-4ti" id="FGU-gi-H8L"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="fadeOnCloseSwitch" destination="Bk1-S5-ZcQ" id="3QW-Vy-Y4h"/>
+                        <outlet property="historySwitch" destination="BEd-DA-YmL" id="YD6-Iv-Wmu"/>
+                        <outlet property="keepCookiesSwitch" destination="0TR-qU-X2e" id="xvQ-jr-pMX"/>
+                        <outlet property="reopenTabsSwitch" destination="lzI-nA-pMd" id="soN-PL-CtV"/>
+                        <outlet property="showToolbarSwitch" destination="9U5-3B-LEh" id="JLj-ww-zHh"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7sf-Lc-ShS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="12" y="729"/>
+        </scene>
         <!--History-->
         <scene sceneID="bQU-Vf-4jX">
             <objects>
@@ -900,8 +986,7 @@ We do not collect any data or personal information in Expedition. We simply do n
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="J6e-BP-JhY"/>
-        <segue reference="dyC-su-jYw"/>
+        <segue reference="Mca-ek-37V"/>
         <segue reference="fET-hm-iSD"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
