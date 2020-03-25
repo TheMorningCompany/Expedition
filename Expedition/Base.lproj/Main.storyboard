@@ -67,6 +67,20 @@
                                     <outletCollection property="gestureRecognizers" destination="AN3-pI-gg7" appends="YES" id="7Mv-b0-R3Q"/>
                                 </connections>
                             </textField>
+                            <wkWebView contentMode="scaleToFill" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Sr-kh-OPV">
+                                <rect key="frame" x="0.0" y="90" width="414" height="806"/>
+                                <color key="backgroundColor" name="Expedition White"/>
+                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <gestureRecognizers/>
+                                <wkWebViewConfiguration key="configuration" allowsInlineMediaPlayback="YES" applicationNameForUserAgent="Expedition">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                                <string key="customUserAgent">Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/5.2 Mobile/15E148 Expedition/604.1</string>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Gli-I6-TVR" appends="YES" id="RBe-9s-JSI"/>
+                                </connections>
+                            </wkWebView>
                             <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdo-tH-OsN">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <color key="backgroundColor" name="Expedition White"/>
@@ -103,20 +117,6 @@
                                 </items>
                                 <color key="barTintColor" name="Expedition White"/>
                             </toolbar>
-                            <wkWebView contentMode="scaleToFill" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Sr-kh-OPV">
-                                <rect key="frame" x="0.0" y="90" width="414" height="806"/>
-                                <color key="backgroundColor" name="Expedition White"/>
-                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <gestureRecognizers/>
-                                <wkWebViewConfiguration key="configuration" allowsInlineMediaPlayback="YES" applicationNameForUserAgent="Expedition">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                                <string key="customUserAgent">Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/5.2 Mobile/15E148 Expedition/604.1</string>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Gli-I6-TVR" appends="YES" id="RBe-9s-JSI"/>
-                                </connections>
-                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -596,7 +596,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                             </tableViewSection>
                             <tableViewSection id="1uj-i3-ex1">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="69" id="TBQ-Lz-gVd">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="69" id="TBQ-Lz-gVd">
                                         <rect key="frame" x="0.0" y="250" width="414" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TBQ-Lz-gVd" id="Aje-gw-LnU">
@@ -628,7 +628,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="Expedition White"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="69" id="rBw-vi-dfr">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="69" id="rBw-vi-dfr">
                                         <rect key="frame" x="0.0" y="319" width="414" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rBw-vi-dfr" id="87n-AM-Ys6">
@@ -660,7 +660,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="Expedition White"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="69" id="Nn0-7N-owO">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="69" id="Nn0-7N-owO">
                                         <rect key="frame" x="0.0" y="388" width="414" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Nn0-7N-owO" id="pz5-AY-vhb">
@@ -692,7 +692,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="Expedition White"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="69" id="vcd-gi-SMq">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="69" id="vcd-gi-SMq">
                                         <rect key="frame" x="0.0" y="457" width="414" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vcd-gi-SMq" id="Gea-qm-mDU">
@@ -724,7 +724,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="Expedition White"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="69" id="n85-Nm-M8r">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="69" id="n85-Nm-M8r">
                                         <rect key="frame" x="0.0" y="526" width="414" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n85-Nm-M8r" id="xPv-DJ-Iy3">
@@ -756,7 +756,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="Expedition White"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="69" id="uNX-RX-Jec">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="69" id="uNX-RX-Jec">
                                         <rect key="frame" x="0.0" y="595" width="414" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uNX-RX-Jec" id="FDe-lD-cDo">
@@ -780,7 +780,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="Expedition White"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="69" id="jGT-iu-AiC">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="69" id="jGT-iu-AiC">
                                         <rect key="frame" x="0.0" y="664" width="414" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jGT-iu-AiC" id="hQb-Wk-xAW">
@@ -804,7 +804,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="Expedition White"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="69" id="yWR-WZ-Sqx">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="69" id="yWR-WZ-Sqx">
                                         <rect key="frame" x="0.0" y="733" width="414" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yWR-WZ-Sqx" id="whm-hc-D65">
@@ -828,7 +828,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="Expedition White"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="69" id="iB3-cx-CC6">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="69" id="iB3-cx-CC6">
                                         <rect key="frame" x="0.0" y="802" width="414" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iB3-cx-CC6" id="l9j-hV-Hag">
@@ -853,7 +853,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="Expedition White"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="69" id="bxL-bp-79o">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="69" id="bxL-bp-79o">
                                         <rect key="frame" x="0.0" y="871" width="414" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bxL-bp-79o" id="hkW-hC-hrx">
@@ -986,6 +986,7 @@ We do not collect any data or personal information in Expedition. We simply do n
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="J6e-BP-JhY"/>
         <segue reference="Mca-ek-37V"/>
         <segue reference="fET-hm-iSD"/>
     </inferredMetricsTieBreakers>

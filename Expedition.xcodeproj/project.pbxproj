@@ -122,8 +122,6 @@
 		5D793D0423D4DF5C00539A44 /* Swift+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift+Gif.swift"; sourceTree = "<group>"; };
 		5D793D0623D4E02D00539A44 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		5D865CC323E1013700374B07 /* BlankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankViewController.swift; sourceTree = "<group>"; };
-		5DFC236423D58840004A3DF9 /* Stickers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Stickers.xcassets; sourceTree = "<group>"; };
-		5DFC236623D58840004A3DF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DFC236E23D58C3E004A3DF9 /* ExpeditionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpeditionTests.swift; sourceTree = "<group>"; };
 		5DFC236F23D58C3E004A3DF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6030CDB23A89669003C6911 /* Gestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gestures.swift; sourceTree = "<group>"; };
@@ -162,7 +160,6 @@
 				001366B62307B61F009A102E /* Expedition */,
 				5DFC236D23D58C3E004A3DF9 /* ExpeditionTests */,
 				001366D62307B620009A102E /* ExpeditionUITests */,
-				5DFC236323D5883C004A3DF9 /* Expedition Stickers */,
 				001366B52307B61F009A102E /* Products */,
 				001366E52307BEA9009A102E /* Frameworks */,
 			);
@@ -304,15 +301,6 @@
 				006302BB23CC04760074BE1C /* IOS6@2x.png */,
 			);
 			path = TotallyNotSecretIcons;
-			sourceTree = "<group>";
-		};
-		5DFC236323D5883C004A3DF9 /* Expedition Stickers */ = {
-			isa = PBXGroup;
-			children = (
-				5DFC236423D58840004A3DF9 /* Stickers.xcassets */,
-				5DFC236623D58840004A3DF9 /* Info.plist */,
-			);
-			path = "Expedition Stickers";
 			sourceTree = "<group>";
 		};
 		5DFC236D23D58C3E004A3DF9 /* ExpeditionTests */ = {
