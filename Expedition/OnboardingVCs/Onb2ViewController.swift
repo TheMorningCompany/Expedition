@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Onb2ViewController: UIViewController {
+class Onb2ViewController: UITableViewController {
     @IBOutlet weak var historySwitch: UISwitch!
     @IBOutlet weak var keepCookiesSwitch: UISwitch!
     @IBOutlet weak var reopenTabsSwitch: UISwitch!
@@ -21,9 +21,7 @@ class Onb2ViewController: UIViewController {
 
     }
     
-    @IBAction func continuePressed(_ sender: Any) {
-        self.performSegue(withIdentifier: "PrivacyToGesture", sender: self)
-    }
+
     
     @IBAction func switchValueChanged(_ sender: UISwitch) {
         optionsChanged()

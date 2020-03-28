@@ -24,6 +24,7 @@ class Onb3ViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainVC = storyboard.instantiateViewController(identifier: "IntroViewController") as! IntroViewController
         mainVC.modalPresentationStyle = .fullScreen
+        mainVC.modalTransitionStyle = .crossDissolve
         self.present(mainVC, animated: true, completion: nil)
     }
     
