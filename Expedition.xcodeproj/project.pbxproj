@@ -31,6 +31,7 @@
 		00AB6BA623CD37DE0088E269 /* Metal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AB6BA523CD37DD0088E269 /* Metal@2x.png */; };
 		00C4A4C623C509E800C18F65 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00C4A4C523C509E800C18F65 /* Settings.bundle */; };
 		00F7071123D16FB400C0B8E2 /* Diamond@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F7071023D16FB400C0B8E2 /* Diamond@2x.png */; };
+		00F82097243029DF006B6650 /* WebsiteImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F82096243029DF006B6650 /* WebsiteImg.swift */; };
 		5D1D0D5823C6AE7600B4377E /* History.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D0D5623C6AE7600B4377E /* History.xcdatamodeld */; };
 		5D1D0D5A23C6B0B300B4377E /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D0D5923C6B0B300B4377E /* PersistenceService.swift */; };
 		5D1D0D5D23C6F1CB00B4377E /* HistoryElement+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D0D5B23C6F1CB00B4377E /* HistoryElement+CoreDataClass.swift */; };
@@ -111,6 +112,7 @@
 		00AD59F623CB98AC007C6495 /* Fading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fading@2x.png"; sourceTree = "<group>"; };
 		00C4A4C523C509E800C18F65 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		00F7071023D16FB400C0B8E2 /* Diamond@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Diamond@2x.png"; sourceTree = "<group>"; };
+		00F82096243029DF006B6650 /* WebsiteImg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteImg.swift; sourceTree = "<group>"; };
 		5D1D0D5723C6AE7600B4377E /* History.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = History.xcdatamodel; sourceTree = "<group>"; };
 		5D1D0D5923C6B0B300B4377E /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		5D1D0D5B23C6F1CB00B4377E /* HistoryElement+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryElement+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			children = (
 				00C4A4C523C509E800C18F65 /* Settings.bundle */,
 				5D2FA89F23D5490B00A68AF5 /* LightIntro.gif */,
+				00F82095243029C7006B6650 /* Tabs */,
 				0062525E24208B61004B3136 /* AltAppIcons */,
 				0062525F24208BD2004B3136 /* OnboardingVCs */,
 				5D793D0623D4E02D00539A44 /* IntroViewController.swift */,
@@ -287,6 +290,14 @@
 				0053E05E23F640330012DB78 /* GlyphFade@2x.png */,
 			);
 			path = GlyphFadeAppIcon;
+			sourceTree = "<group>";
+		};
+		00F82095243029C7006B6650 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				00F82096243029DF006B6650 /* WebsiteImg.swift */,
+			);
+			path = Tabs;
 			sourceTree = "<group>";
 		};
 		5DE81BC623CBB83400F6FA33 /* TotallyNotSecretIcons */ = {
@@ -474,6 +485,7 @@
 				5D1D0D5823C6AE7600B4377E /* History.xcdatamodeld in Sources */,
 				5D1D0D5D23C6F1CB00B4377E /* HistoryElement+CoreDataClass.swift in Sources */,
 				0062526524208C26004B3136 /* Onb3ViewController.swift in Sources */,
+				00F82097243029DF006B6650 /* WebsiteImg.swift in Sources */,
 				5D5BA2E223C5910C00D98050 /* HistoryTableViewController.swift in Sources */,
 				001366BA2307B61F009A102E /* SearchingViewController.swift in Sources */,
 				001366B82307B61F009A102E /* AppDelegate.swift in Sources */,

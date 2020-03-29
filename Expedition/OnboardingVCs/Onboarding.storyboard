@@ -31,7 +31,7 @@
                                 <state key="normal" image="continueBtn"/>
                                 <state key="highlighted" image="continueBtn-P"/>
                                 <connections>
-                                    <segue destination="ztO-an-HGT" kind="show" id="cVi-dQ-bWr"/>
+                                    <segue destination="ztO-an-HGT" kind="presentation" modalPresentationStyle="fullScreen" id="cVi-dQ-bWr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -217,7 +217,7 @@
                                 <state key="normal" image="continueBtn"/>
                                 <state key="highlighted" image="continueBtn-P"/>
                                 <connections>
-                                    <segue destination="GVe-fO-E15" kind="show" id="RG4-ex-dqu"/>
+                                    <segue destination="GVe-fO-E15" kind="presentation" modalPresentationStyle="fullScreen" id="RG4-ex-dqu"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -99,7 +99,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="b9I-UI-kI0"/>
                                     <barButtonItem image="square.on.square" catalog="system" id="keJ-Tu-SlC">
                                         <connections>
-                                            <segue destination="8Vy-GK-B2m" kind="presentation" id="JBm-zf-sww"/>
+                                            <segue destination="5yK-Au-Llm" kind="presentation" id="5PD-VS-Fhr"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="BZ9-yw-SyL"/>
@@ -917,8 +917,8 @@ We do not collect any data or personal information in Expedition. We simply do n
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="225"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Go-ff-tMi">
-                                            <rect key="frame" x="-5" y="-5" width="384" height="159"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Go-ff-tMi" customClass="WebsiteImg" customModule="Expedition" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="154"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="www.website.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mf0-qE-pYi">
                                             <rect key="frame" x="22" y="192" width="118" height="20"/>
@@ -941,15 +941,15 @@ We do not collect any data or personal information in Expedition. We simply do n
                                     </subviews>
                                     <color key="backgroundColor" name="Expedition White"/>
                                     <constraints>
-                                        <constraint firstItem="0Go-ff-tMi" firstAttribute="top" secondItem="XpU-BK-32t" secondAttribute="top" constant="-5" id="2Qu-7w-mSB"/>
+                                        <constraint firstItem="0Go-ff-tMi" firstAttribute="top" secondItem="XpU-BK-32t" secondAttribute="top" id="2Qu-7w-mSB"/>
                                         <constraint firstItem="Kcc-h5-kxb" firstAttribute="leading" secondItem="XpU-BK-32t" secondAttribute="leadingMargin" constant="2" id="6az-mF-68R"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Kcc-h5-kxb" secondAttribute="trailing" constant="20" symbolic="YES" id="8f9-z3-Qg6"/>
                                         <constraint firstItem="Kcc-h5-kxb" firstAttribute="top" secondItem="0Go-ff-tMi" secondAttribute="bottom" constant="5" id="EMI-VK-uUz"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Mf0-qE-pYi" secondAttribute="trailing" constant="20" symbolic="YES" id="Grt-Fg-ubg"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Mf0-qE-pYi" secondAttribute="bottom" constant="2" id="Il9-Pn-Y1z"/>
-                                        <constraint firstItem="0Go-ff-tMi" firstAttribute="leading" secondItem="XpU-BK-32t" secondAttribute="leading" constant="-5" id="gYt-SU-hej"/>
+                                        <constraint firstItem="0Go-ff-tMi" firstAttribute="leading" secondItem="XpU-BK-32t" secondAttribute="leading" id="gYt-SU-hej"/>
                                         <constraint firstItem="Mf0-qE-pYi" firstAttribute="leading" secondItem="XpU-BK-32t" secondAttribute="leadingMargin" constant="2" id="gcZ-gf-H6B"/>
-                                        <constraint firstAttribute="trailing" secondItem="0Go-ff-tMi" secondAttribute="trailing" constant="-5" id="tAQ-MO-JDI"/>
+                                        <constraint firstAttribute="trailing" secondItem="0Go-ff-tMi" secondAttribute="trailing" id="tAQ-MO-JDI"/>
                                         <constraint firstItem="Mf0-qE-pYi" firstAttribute="top" secondItem="Kcc-h5-kxb" secondAttribute="bottom" constant="1" id="wTi-By-Q4D"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -962,7 +962,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="adB-Kv-WKe">
-                        <barButtonItem key="rightBarButtonItem" image="plus.app" catalog="system" id="bc6-Nk-85C"/>
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="bc6-Nk-85C"/>
                     </navigationItem>
                     <connections>
                         <outlet property="historyTableView" destination="Kdi-jF-hAI" id="biR-r4-Ged"/>
@@ -970,25 +970,27 @@ We do not collect any data or personal information in Expedition. We simply do n
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXw-eP-tMF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="920.28985507246387" y="-737.94642857142856"/>
+            <point key="canvasLocation" x="921.73913043478262" y="-729.24107142857144"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="gGN-C6-c9S">
+        <scene sceneID="lva-9f-vrT">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Vy-GK-B2m" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5yK-Au-Llm" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4VH-NK-VvF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mCA-pG-Ynt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="Expedition White"/>
+                        <color key="barTintColor" name="Expedition White"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="0vd-be-p7o" kind="relationship" relationship="rootViewController" id="gTJ-vn-pKV"/>
+                        <segue destination="0vd-be-p7o" kind="relationship" relationship="rootViewController" id="rq2-YF-gFv"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fhR-cA-Ug8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e1q-tc-ebO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10.144927536231885" y="-737.94642857142856"/>
+            <point key="canvasLocation" x="11.594202898550726" y="-729.24107142857144"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -1008,7 +1010,7 @@ We do not collect any data or personal information in Expedition. We simply do n
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="gearBlue" width="1024" height="1024"/>
-        <image name="plus.app" catalog="system" width="128" height="114"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="selected" width="731.66668701171875" height="731.66668701171875"/>
         <image name="shieldBlue" width="1024" height="1024"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
