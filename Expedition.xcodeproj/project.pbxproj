@@ -188,11 +188,10 @@
 				0062525F24208BD2004B3136 /* OnboardingVCs */,
 				00748156243057430035ED94 /* Options */,
 				00748157243057830035ED94 /* Searching */,
-				005932CF234D747100DC2323 /* Expedition.entitlements */,
-				5D1D0D5623C6AE7600B4377E /* History.xcdatamodeld */,
 				001366BB2307B61F009A102E /* Main.storyboard */,
 				001366BE2307B620009A102E /* Assets.xcassets */,
 				001366C02307B620009A102E /* LaunchScreen.storyboard */,
+				005932CF234D747100DC2323 /* Expedition.entitlements */,
 				001366C32307B620009A102E /* Info.plist */,
 			);
 			path = Expedition;
@@ -229,6 +228,17 @@
 				0037F18B24170A8300275CD0 /* LightBlue@2x.png */,
 			);
 			path = LightBlueAppIcon;
+			sourceTree = "<group>";
+		};
+		00476DA624313AC300BDE254 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				5D5BA2E123C5910C00D98050 /* HistoryTableViewController.swift */,
+				5D1D0D5B23C6F1CB00B4377E /* HistoryElement+CoreDataClass.swift */,
+				5D1D0D5C23C6F1CB00B4377E /* HistoryElement+CoreDataProperties.swift */,
+				5D1D0D5623C6AE7600B4377E /* History.xcdatamodeld */,
+			);
+			path = History;
 			sourceTree = "<group>";
 		};
 		0062525E24208B61004B3136 /* AltAppIcons */ = {
@@ -270,11 +280,9 @@
 		00748157243057830035ED94 /* Searching */ = {
 			isa = PBXGroup;
 			children = (
+				00476DA624313AC300BDE254 /* History */,
 				D6030CDB23A89669003C6911 /* Gestures.swift */,
 				001366B92307B61F009A102E /* SearchingViewController.swift */,
-				5D5BA2E123C5910C00D98050 /* HistoryTableViewController.swift */,
-				5D1D0D5B23C6F1CB00B4377E /* HistoryElement+CoreDataClass.swift */,
-				5D1D0D5C23C6F1CB00B4377E /* HistoryElement+CoreDataProperties.swift */,
 			);
 			path = Searching;
 			sourceTree = "<group>";
