@@ -46,7 +46,6 @@
 		5DE81BC323CBB45000F6FA33 /* ColorShadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AD59E923CB986E007C6495 /* ColorShadow@2x.png */; };
 		5DE81BC423CBB45300F6FA33 /* Fading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AD59F623CB98AC007C6495 /* Fading@2x.png */; };
 		D6030CDC23A89669003C6911 /* Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6030CDB23A89669003C6911 /* Gestures.swift */; };
-		D6F21CB023C409AE004C79EC /* code.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F21CAF23C409AE004C79EC /* code.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,7 +126,6 @@
 		5DFC236E23D58C3E004A3DF9 /* ExpeditionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpeditionTests.swift; sourceTree = "<group>"; };
 		5DFC236F23D58C3E004A3DF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6030CDB23A89669003C6911 /* Gestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gestures.swift; sourceTree = "<group>"; };
-		D6F21CAF23C409AE004C79EC /* code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = code.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,27 +181,16 @@
 			children = (
 				00C4A4C523C509E800C18F65 /* Settings.bundle */,
 				5D2FA89F23D5490B00A68AF5 /* LightIntro.gif */,
+				001366B72307B61F009A102E /* AppDelegate.swift */,
+				00748158243057C10035ED94 /* Intro */,
 				00F82095243029C7006B6650 /* Tabs */,
 				0062525E24208B61004B3136 /* AltAppIcons */,
 				0062525F24208BD2004B3136 /* OnboardingVCs */,
-				5D793D0623D4E02D00539A44 /* IntroViewController.swift */,
-				001366B92307B61F009A102E /* SearchingViewController.swift */,
-				5D41CBF223C5745C003A16F9 /* OptionsViewController.swift */,
-				000D80262427F5CA005E0CA1 /* AppIconsViewController.swift */,
-				5D5BA2E123C5910C00D98050 /* HistoryTableViewController.swift */,
-				5D865CC323E1013700374B07 /* BlankViewController.swift */,
-				5D41CBF023C569B6003A16F9 /* SettingsBundleHelper.swift */,
-				5D1D0D5923C6B0B300B4377E /* PersistenceService.swift */,
-				001366B72307B61F009A102E /* AppDelegate.swift */,
+				00748156243057430035ED94 /* Options */,
+				00748157243057830035ED94 /* Searching */,
 				005932CF234D747100DC2323 /* Expedition.entitlements */,
 				5D1D0D5623C6AE7600B4377E /* History.xcdatamodeld */,
-				5D793D0423D4DF5C00539A44 /* Swift+Gif.swift */,
-				5D1D0D5B23C6F1CB00B4377E /* HistoryElement+CoreDataClass.swift */,
-				5D1D0D5C23C6F1CB00B4377E /* HistoryElement+CoreDataProperties.swift */,
-				D6F21CAF23C409AE004C79EC /* code.swift */,
-				D6030CDB23A89669003C6911 /* Gestures.swift */,
 				001366BB2307B61F009A102E /* Main.storyboard */,
-				0081CCE124280A720097C2C6 /* TabsTableViewController.swift */,
 				001366BE2307B620009A102E /* Assets.xcassets */,
 				001366C02307B620009A102E /* LaunchScreen.storyboard */,
 				001366C32307B620009A102E /* Info.plist */,
@@ -260,12 +247,45 @@
 		0062525F24208BD2004B3136 /* OnboardingVCs */ = {
 			isa = PBXGroup;
 			children = (
+				5D1D0D5923C6B0B300B4377E /* PersistenceService.swift */,
 				0062525C242080AE004B3136 /* Onboarding.storyboard */,
 				0062526024208C02004B3136 /* Onb1ViewController.swift */,
 				0062526224208C08004B3136 /* Onb2ViewController.swift */,
 				0062526424208C26004B3136 /* Onb3ViewController.swift */,
 			);
 			path = OnboardingVCs;
+			sourceTree = "<group>";
+		};
+		00748156243057430035ED94 /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				5D41CBF023C569B6003A16F9 /* SettingsBundleHelper.swift */,
+				5D865CC323E1013700374B07 /* BlankViewController.swift */,
+				5D41CBF223C5745C003A16F9 /* OptionsViewController.swift */,
+				000D80262427F5CA005E0CA1 /* AppIconsViewController.swift */,
+			);
+			path = Options;
+			sourceTree = "<group>";
+		};
+		00748157243057830035ED94 /* Searching */ = {
+			isa = PBXGroup;
+			children = (
+				D6030CDB23A89669003C6911 /* Gestures.swift */,
+				001366B92307B61F009A102E /* SearchingViewController.swift */,
+				5D5BA2E123C5910C00D98050 /* HistoryTableViewController.swift */,
+				5D1D0D5B23C6F1CB00B4377E /* HistoryElement+CoreDataClass.swift */,
+				5D1D0D5C23C6F1CB00B4377E /* HistoryElement+CoreDataProperties.swift */,
+			);
+			path = Searching;
+			sourceTree = "<group>";
+		};
+		00748158243057C10035ED94 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				5D793D0423D4DF5C00539A44 /* Swift+Gif.swift */,
+				5D793D0623D4E02D00539A44 /* IntroViewController.swift */,
+			);
+			path = Intro;
 			sourceTree = "<group>";
 		};
 		00AD59E723CB9865007C6495 /* ColorShadowAppIcon */ = {
@@ -295,6 +315,7 @@
 		00F82095243029C7006B6650 /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
+				0081CCE124280A720097C2C6 /* TabsTableViewController.swift */,
 				00F82096243029DF006B6650 /* WebsiteImg.swift */,
 			);
 			path = Tabs;
@@ -479,7 +500,6 @@
 				0081CCE224280A720097C2C6 /* TabsTableViewController.swift in Sources */,
 				0062526124208C02004B3136 /* Onb1ViewController.swift in Sources */,
 				000D80272427F5CA005E0CA1 /* AppIconsViewController.swift in Sources */,
-				D6F21CB023C409AE004C79EC /* code.swift in Sources */,
 				5D793D0523D4DF5C00539A44 /* Swift+Gif.swift in Sources */,
 				5D41CBF323C5745C003A16F9 /* OptionsViewController.swift in Sources */,
 				5D1D0D5823C6AE7600B4377E /* History.xcdatamodeld in Sources */,

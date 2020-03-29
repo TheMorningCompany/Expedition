@@ -109,8 +109,9 @@ class HistoryTableViewController: UITableViewController {
         
     }
     
+    //Open with swipe
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-         let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
+         let action = UIContextualAction(style: .destructive, title: "Open") { (action, view, completion) in
              
              
              do {

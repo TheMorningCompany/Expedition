@@ -52,7 +52,6 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         webView?.navigationDelegate = self
         ActInd?.hidesWhenStopped = true
         
-        Code().work()
         
         NotificationCenter.default.addObserver(self, selector: #selector(toolbarVisible), name: NSNotification.Name(rawValue: "toolbar"), object: nil)
         

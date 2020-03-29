@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E3a-YU-zsV">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -211,7 +211,7 @@
                         <color key="sectionIndexTrackingBackgroundColor" name="Expedition White"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextCell" textLabel="7dK-fL-zc3" style="IBUITableViewCellStyleDefault" id="jPf-bm-8lT">
-                                <rect key="frame" x="20" y="55.333332061767578" width="374" height="47"/>
+                                <rect key="frame" x="20" y="55.5" width="374" height="47"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jPf-bm-8lT" id="7Wr-Ex-Ulu" customClass="UITableView">
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="47"/>
@@ -356,7 +356,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="app icon" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whv-xV-yu4">
-                                <rect key="frame" x="127.66666666666669" y="130" width="159" height="52"/>
+                                <rect key="frame" x="127.5" y="130" width="159" height="52"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -410,7 +410,7 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="privacy policy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0g-pc-Dks">
-                                    <rect key="frame" x="78.666666666666686" y="130" width="257" height="52"/>
+                                    <rect key="frame" x="78.5" y="130" width="257" height="52"/>
                                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -518,7 +518,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reopen on last page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4w-8a-u0R">
-                                                    <rect key="frame" x="29.999999999999986" y="21" width="203.66666666666663" height="27"/>
+                                                    <rect key="frame" x="30" y="21" width="204" height="27"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -535,6 +535,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                             <constraints>
                                                 <constraint firstItem="u4w-8a-u0R" firstAttribute="top" secondItem="Aje-gw-LnU" secondAttribute="topMargin" constant="10" id="BK2-mW-PfS"/>
                                                 <constraint firstItem="lzI-nA-pMd" firstAttribute="centerY" secondItem="Aje-gw-LnU" secondAttribute="centerY" id="Zce-Xy-5OQ"/>
+                                                <constraint firstItem="lzI-nA-pMd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="u4w-8a-u0R" secondAttribute="trailing" constant="8" symbolic="YES" id="ayX-L2-Zy2"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="lzI-nA-pMd" secondAttribute="trailing" constant="20" id="cmO-da-YYh"/>
                                                 <constraint firstItem="u4w-8a-u0R" firstAttribute="leading" secondItem="Aje-gw-LnU" secondAttribute="leadingMargin" constant="10" id="hMV-we-cWq"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="u4w-8a-u0R" secondAttribute="bottom" constant="10" id="unl-tn-BeF"/>
@@ -550,7 +551,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="keep cookies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYj-as-QeZ">
-                                                    <rect key="frame" x="30" y="21" width="134.33333333333334" height="27"/>
+                                                    <rect key="frame" x="30" y="21" width="134.5" height="27"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -566,6 +567,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="0TR-qU-X2e" firstAttribute="centerY" secondItem="87n-AM-Ys6" secondAttribute="centerY" id="4rf-Mq-tkM"/>
+                                                <constraint firstItem="0TR-qU-X2e" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HYj-as-QeZ" secondAttribute="trailing" constant="8" symbolic="YES" id="60U-5a-qGI"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="0TR-qU-X2e" secondAttribute="trailing" constant="20" id="ANa-eL-dPx"/>
                                                 <constraint firstItem="HYj-as-QeZ" firstAttribute="top" secondItem="87n-AM-Ys6" secondAttribute="topMargin" constant="10" id="V7k-X6-KEh"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="HYj-as-QeZ" secondAttribute="bottom" constant="10" id="s7c-WH-XPr"/>
@@ -602,6 +604,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                 <constraint firstAttribute="trailingMargin" secondItem="BEd-DA-YmL" secondAttribute="trailing" constant="20" id="IXO-Zu-vcs"/>
                                                 <constraint firstItem="PDu-8J-HA7" firstAttribute="top" secondItem="pz5-AY-vhb" secondAttribute="topMargin" constant="10" id="Zue-s0-wqf"/>
                                                 <constraint firstItem="PDu-8J-HA7" firstAttribute="leading" secondItem="pz5-AY-vhb" secondAttribute="leadingMargin" constant="10" id="kHn-xZ-p1A"/>
+                                                <constraint firstItem="BEd-DA-YmL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PDu-8J-HA7" secondAttribute="trailing" constant="8" symbolic="YES" id="yWx-vi-PqE"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="Expedition White"/>
@@ -614,7 +617,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fade on close" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RlU-Fy-YKn">
-                                                    <rect key="frame" x="30" y="21" width="135.66666666666666" height="27"/>
+                                                    <rect key="frame" x="30" y="21" width="135.5" height="27"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -631,6 +634,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Bk1-S5-ZcQ" secondAttribute="trailing" constant="20" id="00f-Vl-Hta"/>
                                                 <constraint firstItem="RlU-Fy-YKn" firstAttribute="top" secondItem="Gea-qm-mDU" secondAttribute="topMargin" constant="10" id="4DS-YY-6Q1"/>
+                                                <constraint firstItem="Bk1-S5-ZcQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="RlU-Fy-YKn" secondAttribute="trailing" constant="8" symbolic="YES" id="9ZU-Z7-bQK"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="RlU-Fy-YKn" secondAttribute="bottom" constant="10" id="aFx-EW-wWT"/>
                                                 <constraint firstItem="Bk1-S5-ZcQ" firstAttribute="centerY" secondItem="Gea-qm-mDU" secondAttribute="centerY" id="qzB-O0-AJH"/>
                                                 <constraint firstItem="RlU-Fy-YKn" firstAttribute="leading" secondItem="Gea-qm-mDU" secondAttribute="leadingMargin" constant="10" id="zHY-lx-eUp"/>
@@ -646,7 +650,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="show toolbar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xW-TH-Czm">
-                                                    <rect key="frame" x="30" y="21" width="133.66666666666666" height="27"/>
+                                                    <rect key="frame" x="30" y="21" width="134" height="27"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -664,6 +668,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                 <constraint firstItem="2xW-TH-Czm" firstAttribute="leading" secondItem="xPv-DJ-Iy3" secondAttribute="leadingMargin" constant="10" id="1MH-Ol-rMp"/>
                                                 <constraint firstItem="9U5-3B-LEh" firstAttribute="centerY" secondItem="xPv-DJ-Iy3" secondAttribute="centerY" id="2Bj-GP-BhO"/>
                                                 <constraint firstItem="2xW-TH-Czm" firstAttribute="top" secondItem="xPv-DJ-Iy3" secondAttribute="topMargin" constant="10" id="Rkc-u7-bIr"/>
+                                                <constraint firstItem="9U5-3B-LEh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2xW-TH-Czm" secondAttribute="trailing" constant="8" symbolic="YES" id="dBh-ip-qCI"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="2xW-TH-Czm" secondAttribute="bottom" constant="10" id="id3-lv-uJd"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="9U5-3B-LEh" secondAttribute="trailing" constant="20" id="ugR-At-Stl"/>
                                             </constraints>
@@ -689,6 +694,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="e22-9f-5aR" secondAttribute="bottom" constant="10" id="2vd-gd-afs"/>
                                                 <constraint firstItem="e22-9f-5aR" firstAttribute="leading" secondItem="FDe-lD-cDo" secondAttribute="leadingMargin" constant="10" id="Eyr-oe-AcQ"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="e22-9f-5aR" secondAttribute="trailing" constant="20" symbolic="YES" id="fNc-zB-bZw"/>
                                                 <constraint firstItem="e22-9f-5aR" firstAttribute="top" secondItem="FDe-lD-cDo" secondAttribute="topMargin" constant="10" id="sBm-wM-Id9"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -712,6 +718,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Uau-Wj-Mzh" firstAttribute="leading" secondItem="hQb-Wk-xAW" secondAttribute="leadingMargin" constant="10" id="8fs-iU-c42"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Uau-Wj-Mzh" secondAttribute="trailing" constant="20" symbolic="YES" id="OIs-oa-QG7"/>
                                                 <constraint firstItem="Uau-Wj-Mzh" firstAttribute="top" secondItem="hQb-Wk-xAW" secondAttribute="topMargin" constant="10" id="qz2-Tk-Q2x"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Uau-Wj-Mzh" secondAttribute="bottom" constant="10" id="yDA-Lh-myh"/>
                                             </constraints>
@@ -737,6 +744,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                             <constraints>
                                                 <constraint firstItem="R6t-kO-MfL" firstAttribute="leading" secondItem="whm-hc-D65" secondAttribute="leadingMargin" constant="10" id="EhX-GU-SEP"/>
                                                 <constraint firstItem="R6t-kO-MfL" firstAttribute="top" secondItem="whm-hc-D65" secondAttribute="topMargin" constant="10" id="TjU-gk-ZDD"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="R6t-kO-MfL" secondAttribute="trailing" constant="20" symbolic="YES" id="axZ-MM-W8z"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="R6t-kO-MfL" secondAttribute="bottom" constant="10" id="irS-Mf-fZR"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -761,6 +769,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="fTJ-TB-W1Q" secondAttribute="bottom" constant="10" id="2SL-wS-obX"/>
                                                 <constraint firstItem="fTJ-TB-W1Q" firstAttribute="top" secondItem="l9j-hV-Hag" secondAttribute="topMargin" constant="10" id="8iF-cc-b2G"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fTJ-TB-W1Q" secondAttribute="trailing" constant="20" symbolic="YES" id="MgF-0W-pP2"/>
                                                 <constraint firstItem="fTJ-TB-W1Q" firstAttribute="leading" secondItem="l9j-hV-Hag" secondAttribute="leadingMargin" constant="10" id="w8W-nu-bHf"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -787,6 +796,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="4Or-IC-Yag" firstAttribute="top" secondItem="hkW-hC-hrx" secondAttribute="topMargin" constant="10" id="34J-gV-41r"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4Or-IC-Yag" secondAttribute="trailing" constant="20" symbolic="YES" id="SRx-nR-6dG"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="4Or-IC-Yag" secondAttribute="bottom" constant="10" id="YlZ-pc-zGz"/>
                                                 <constraint firstItem="4Or-IC-Yag" firstAttribute="leading" secondItem="hkW-hC-hrx" secondAttribute="leadingMargin" constant="10" id="cEw-ZU-2fd"/>
                                             </constraints>
@@ -818,7 +828,7 @@ We do not collect any data or personal information in Expedition. We simply do n
             <objects>
                 <tableViewController title="History" id="0vd-be-p7o" customClass="TabsTableViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Kdi-jF-hAI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -826,8 +836,8 @@ We do not collect any data or personal information in Expedition. We simply do n
                         <color key="sectionIndexBackgroundColor" name="Expedition White"/>
                         <color key="sectionIndexTrackingBackgroundColor" name="Expedition White"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="225" id="52n-sw-DpG">
-                                <rect key="frame" x="20" y="55.333332061767578" width="374" height="225"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tabCell" rowHeight="225" id="52n-sw-DpG">
+                                <rect key="frame" x="20" y="55.5" width="374" height="225"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="52n-sw-DpG" id="XpU-BK-32t">
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="225"/>
@@ -886,7 +896,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXw-eP-tMF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="921.73913043478262" y="-729.24107142857144"/>
+            <point key="canvasLocation" x="1312" y="-794"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lva-9f-vrT">
@@ -906,7 +916,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e1q-tc-ebO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11.594202898550726" y="-729.24107142857144"/>
+            <point key="canvasLocation" x="12" y="-794"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="c0B-zO-c8h">
@@ -936,7 +946,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="how to use" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYd-ZS-avc">
-                                                    <rect key="frame" x="106.33333333333333" y="156" width="201.66666666666669" height="52"/>
+                                                    <rect key="frame" x="106" y="156" width="202" height="52"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -963,7 +973,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe down on the search bar to reload" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKd-fe-tJX">
-                                                    <rect key="frame" x="20" y="30.333333333333336" width="374" height="23.333333333333336"/>
+                                                    <rect key="frame" x="20" y="30.5" width="374" height="23.5"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -985,7 +995,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe right on the search bar for options" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhW-Ve-Stf">
-                                                    <rect key="frame" x="20" y="30.333333333333336" width="374" height="23.333333333333336"/>
+                                                    <rect key="frame" x="20" y="30.5" width="374" height="23.5"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1007,7 +1017,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe left on the search bar for history" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P62-1R-cCF">
-                                                    <rect key="frame" x="20" y="30.333333333333336" width="374" height="23.333333333333336"/>
+                                                    <rect key="frame" x="20" y="30.5" width="374" height="23.5"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1029,7 +1039,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe up on the search bar for desktop website" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqu-P3-ocU">
-                                                    <rect key="frame" x="20" y="30.333333333333336" width="374" height="23.333333333333336"/>
+                                                    <rect key="frame" x="20" y="30.5" width="374" height="23.5"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1051,7 +1061,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tap with three fingers to share" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbh-TR-Y2z">
-                                                    <rect key="frame" x="20" y="30.333333333333336" width="374" height="23.333333333333336"/>
+                                                    <rect key="frame" x="20" y="30.5" width="374" height="23.5"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1062,15 +1072,6 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                 <constraint firstItem="lbh-TR-Y2z" firstAttribute="centerY" secondItem="PSe-Sb-a01" secondAttribute="centerY" id="fiI-5w-qvv"/>
                                                 <constraint firstItem="lbh-TR-Y2z" firstAttribute="leading" secondItem="PSe-Sb-a01" secondAttribute="leadingMargin" id="gXe-7t-NO1"/>
                                             </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" name="Expedition White"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="84" id="v4h-3w-tfF">
-                                        <rect key="frame" x="0.0" y="670" width="414" height="84"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v4h-3w-tfF" id="noU-PP-WkH">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="84"/>
-                                            <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="Expedition White"/>
                                     </tableViewCell>
@@ -1094,19 +1095,19 @@ We do not collect any data or personal information in Expedition. We simply do n
     </inferredMetricsTieBreakers>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
     <resources>
-        <image name="BlueLightUI" width="731.66668701171875" height="731.66668701171875"/>
-        <image name="DarkUI" width="731.66668701171875" height="731.66668701171875"/>
-        <image name="FadeUI" width="731.66668701171875" height="731.66668701171875"/>
-        <image name="GlyphFadeUI" width="731.66668701171875" height="731.66668701171875"/>
-        <image name="LightUI" width="731.66668701171875" height="731.66668701171875"/>
-        <image name="ShadowUI" width="731.66668701171875" height="731.66668701171875"/>
+        <image name="BlueLightUI" width="731.5" height="732"/>
+        <image name="DarkUI" width="731.5" height="732"/>
+        <image name="FadeUI" width="731.5" height="732"/>
+        <image name="GlyphFadeUI" width="731.5" height="732"/>
+        <image name="LightUI" width="731.5" height="732"/>
+        <image name="ShadowUI" width="731.5" height="732"/>
         <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="blueapp" width="1024" height="1024"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="gearBlue" width="1024" height="1024"/>
         <image name="plus" catalog="system" width="128" height="113"/>
-        <image name="selected" width="731.66668701171875" height="731.66668701171875"/>
+        <image name="selected" width="731.5" height="732"/>
         <image name="shieldBlue" width="1024" height="1024"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="square.on.square" catalog="system" width="128" height="113"/>
