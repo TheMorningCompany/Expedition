@@ -111,7 +111,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="OWn-sv-M0a"/>
                                     <barButtonItem image="gear" catalog="system" id="f5j-7z-w5L">
                                         <connections>
-                                            <segue destination="9OM-wm-4ti" kind="presentation" id="Mca-ek-37V"/>
+                                            <segue destination="bPB-G8-doO" kind="presentation" id="Mca-ek-37V"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -163,7 +163,7 @@
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="right" id="ltd-91-b5P" userLabel="options swipe">
                     <connections>
-                        <segue destination="9OM-wm-4ti" kind="presentation" id="mbe-fC-xhx"/>
+                        <segue destination="bPB-G8-doO" kind="presentation" id="mbe-fC-xhx"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="up" id="0xN-Ym-Ghr" userLabel="UserAgentSwipe">
@@ -250,7 +250,7 @@
             <objects>
                 <viewController id="U62-Qg-juO" customClass="AppIconsViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DFH-uf-RX0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUL-hf-Ghr" userLabel="GlyphFade">
@@ -386,88 +386,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Unv-Bs-hsy"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Lhm-Mo-KI6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vQX-P7-3WD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12" y="1433"/>
-        </scene>
-        <!--PrivacyPolicy-->
-        <scene sceneID="Wyd-Ju-5DR">
-            <objects>
-                <viewController storyboardIdentifier="privacyPolicyView" title="PrivacyPolicy" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ITb-Tq-qem" sceneMemberID="viewController">
-                    <visualEffectView key="view" opaque="NO" contentMode="scaleToFill" id="IEF-PY-Mgv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bMA-ik-RRg">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shieldBlue" translatesAutoresizingMaskIntoConstraints="NO" id="oaf-gP-Dcm">
-                                    <rect key="frame" x="157" y="15" width="100" height="100"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="oaf-gP-Dcm" secondAttribute="height" multiplier="1:1" id="U9I-LB-hPO"/>
-                                        <constraint firstAttribute="width" constant="100" id="akf-to-e01"/>
-                                    </constraints>
-                                </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="privacy policy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0g-pc-Dks">
-                                    <rect key="frame" x="78.5" y="130" width="257" height="52"/>
-                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h53-2p-CD2">
-                                    <rect key="frame" x="20" y="197" width="374" height="625"/>
-                                    <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0r-eN-2Ro">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="625"/>
-                                            <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <string key="text">In this document, “we”, “us”, “TMC” and “our” are taken to be in reference to The Morning Company. “The app” will mean Expedition
-
-We do not collect any data or personal information in Expedition. We simply do not have a way to store this information, and we have not looked for a way as all of us at The Morning Company believe that personal information is just that—personal, and should not be shared with anyone else. Nothing is shared with third parties whatsoever.
-</string>
-                                            <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        </textView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="W0r-eN-2Ro" firstAttribute="top" secondItem="i9c-KO-KIJ" secondAttribute="top" id="2wq-Of-rad"/>
-                                        <constraint firstItem="W0r-eN-2Ro" firstAttribute="bottom" secondItem="oU1-jj-duR" secondAttribute="bottom" id="AGd-q7-hbI"/>
-                                        <constraint firstAttribute="trailing" secondItem="W0r-eN-2Ro" secondAttribute="trailing" id="Cqv-NE-mgH"/>
-                                        <constraint firstItem="W0r-eN-2Ro" firstAttribute="leading" secondItem="h53-2p-CD2" secondAttribute="leading" id="FGc-FO-7uE"/>
-                                        <constraint firstItem="W0r-eN-2Ro" firstAttribute="centerX" secondItem="h53-2p-CD2" secondAttribute="centerX" id="nFp-aC-yxX"/>
-                                        <constraint firstAttribute="bottom" secondItem="W0r-eN-2Ro" secondAttribute="bottom" id="w6L-F7-a8k"/>
-                                    </constraints>
-                                    <viewLayoutGuide key="contentLayoutGuide" id="i9c-KO-KIJ"/>
-                                    <viewLayoutGuide key="frameLayoutGuide" id="oU1-jj-duR"/>
-                                </scrollView>
-                            </subviews>
-                            <color key="backgroundColor" name="Expedition White"/>
-                            <constraints>
-                                <constraint firstItem="K0g-pc-Dks" firstAttribute="centerX" secondItem="bMA-ik-RRg" secondAttribute="centerX" id="0ST-nE-XaR"/>
-                                <constraint firstItem="h53-2p-CD2" firstAttribute="top" secondItem="K0g-pc-Dks" secondAttribute="bottom" constant="15" id="JIg-Wb-tQ8"/>
-                                <constraint firstAttribute="bottom" secondItem="h53-2p-CD2" secondAttribute="bottom" constant="20" id="NAG-Cr-w4U"/>
-                                <constraint firstItem="h53-2p-CD2" firstAttribute="leading" secondItem="bMA-ik-RRg" secondAttribute="leading" constant="20" id="VIc-1J-0Tw"/>
-                                <constraint firstAttribute="trailing" secondItem="h53-2p-CD2" secondAttribute="trailing" constant="20" id="aq3-ey-Nky"/>
-                                <constraint firstItem="oaf-gP-Dcm" firstAttribute="top" secondItem="bMA-ik-RRg" secondAttribute="top" constant="15" id="k1A-Aq-8gl"/>
-                                <constraint firstItem="oaf-gP-Dcm" firstAttribute="centerX" secondItem="bMA-ik-RRg" secondAttribute="centerX" id="wvj-F5-ta6"/>
-                                <constraint firstItem="K0g-pc-Dks" firstAttribute="top" secondItem="oaf-gP-Dcm" secondAttribute="bottom" constant="15" id="ysh-d0-9gc"/>
-                            </constraints>
-                        </view>
-                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <blurEffect style="systemChromeMaterial"/>
-                    </visualEffectView>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Yc-B9-wG2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1312" y="753"/>
+            <point key="canvasLocation" x="922" y="1479"/>
         </scene>
         <!--Options View Controller-->
         <scene sceneID="Rta-78-hTe">
             <objects>
                 <tableViewController id="9OM-wm-4ti" customClass="OptionsViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="tCM-8D-bll">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -737,7 +667,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
                                                     <state key="normal" title="privacy policy"/>
                                                     <connections>
-                                                        <segue destination="ITb-Tq-qem" kind="presentation" id="DRO-o9-eD4"/>
+                                                        <segue destination="7xe-KY-LMm" kind="show" id="6jg-SH-Uaw"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -758,11 +688,12 @@ We do not collect any data or personal information in Expedition. We simply do n
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTJ-TB-W1Q">
-                                                    <rect key="frame" x="30" y="21" width="112" height="27"/>
+                                                    <rect key="frame" x="18" y="21" width="112" height="27"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
                                                     <state key="normal" title="how to use"/>
                                                     <connections>
                                                         <action selector="didTapHowToUse:" destination="9OM-wm-4ti" eventType="touchUpInside" id="oET-FX-24d"/>
+                                                        <segue destination="WlA-qs-nnO" kind="show" id="qEb-ks-OUJ"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -774,9 +705,6 @@ We do not collect any data or personal information in Expedition. We simply do n
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="Expedition White"/>
-                                        <connections>
-                                            <segue destination="WlA-qs-nnO" kind="presentation" trigger="accessoryAction" id="hfK-sB-maS"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="69" id="bxL-bp-79o">
                                         <rect key="frame" x="0.0" y="871" width="414" height="69"/>
@@ -790,7 +718,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
                                                     <state key="normal" title="choose app icon"/>
                                                     <connections>
-                                                        <segue destination="U62-Qg-juO" kind="presentation" id="MQn-nc-IIw"/>
+                                                        <segue destination="U62-Qg-juO" kind="show" id="MQn-nc-IIw"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -811,6 +739,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                             <outlet property="delegate" destination="9OM-wm-4ti" id="FGU-gi-H8L"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="DZ3-i7-3vU"/>
                     <connections>
                         <outlet property="fadeOnCloseSwitch" destination="Bk1-S5-ZcQ" id="3QW-Vy-Y4h"/>
                         <outlet property="historySwitch" destination="BEd-DA-YmL" id="YD6-Iv-Wmu"/>
@@ -821,7 +750,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7sf-Lc-ShS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12" y="729"/>
+            <point key="canvasLocation" x="921.73913043478262" y="752.67857142857144"/>
         </scene>
         <!--History-->
         <scene sceneID="bQU-Vf-4jX">
@@ -923,7 +852,7 @@ We do not collect any data or personal information in Expedition. We simply do n
             <objects>
                 <tableViewController id="WlA-qs-nnO" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Aps-Yt-xYK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -1083,14 +1012,103 @@ We do not collect any data or personal information in Expedition. We simply do n
                             <outlet property="delegate" destination="WlA-qs-nnO" id="cdA-mq-bvm"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="EfW-Bi-OQz"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rvu-sb-Syq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1312" y="1432"/>
+            <point key="canvasLocation" x="1883" y="1479"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BWS-gy-lqO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bPB-G8-doO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="YqI-Jx-NS9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="Expedition White"/>
+                        <color key="barTintColor" name="Expedition White"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9OM-wm-4ti" kind="relationship" relationship="rootViewController" id="02W-MI-dJj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i9H-Ax-DQy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="11.594202898550726" y="752.67857142857144"/>
+        </scene>
+        <!--App Icons View Controller-->
+        <scene sceneID="AxT-Ol-OCP">
+            <objects>
+                <viewController id="7xe-KY-LMm" customClass="AppIconsViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xfx-CW-8Ns">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shieldBlue" translatesAutoresizingMaskIntoConstraints="NO" id="zY3-ox-cvg">
+                                <rect key="frame" x="157" y="15" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="hMP-rf-DyJ"/>
+                                    <constraint firstAttribute="width" secondItem="zY3-ox-cvg" secondAttribute="height" multiplier="1:1" id="vFa-hX-JqA"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="privacy policy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIf-EG-g2D">
+                                <rect key="frame" x="78.5" y="130" width="257" height="52"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="608-tl-8Ij">
+                                <rect key="frame" x="16" y="197" width="374" height="574"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DkZ-rX-ydI">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="574"/>
+                                        <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <string key="text">In this document, “we”, “us”, “TMC” and “our” are taken to be in reference to The Morning Company. “The app” will mean Expedition
+
+We do not collect any data or personal information in Expedition. We simply do not have a way to store this information, and we have not looked for a way as all of us at The Morning Company believe that personal information is just that—personal, and should not be shared with anyone else. Nothing is shared with third parties whatsoever.
+</string>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="DkZ-rX-ydI" secondAttribute="trailing" id="ePY-Gc-eW5"/>
+                                    <constraint firstItem="DkZ-rX-ydI" firstAttribute="top" secondItem="VPq-aG-fdM" secondAttribute="top" id="h3E-yB-qJD"/>
+                                    <constraint firstAttribute="bottom" secondItem="DkZ-rX-ydI" secondAttribute="bottom" constant="-123" id="j0V-oq-ojI"/>
+                                    <constraint firstItem="DkZ-rX-ydI" firstAttribute="bottom" secondItem="c77-iX-9rA" secondAttribute="bottom" id="l9b-cw-kVg"/>
+                                    <constraint firstItem="DkZ-rX-ydI" firstAttribute="leading" secondItem="608-tl-8Ij" secondAttribute="leading" id="pGS-zL-Rlq"/>
+                                    <constraint firstItem="DkZ-rX-ydI" firstAttribute="centerX" secondItem="608-tl-8Ij" secondAttribute="centerX" id="rR8-2B-TmF"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="VPq-aG-fdM"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="c77-iX-9rA"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" name="Expedition White"/>
+                        <constraints>
+                            <constraint firstItem="Sjy-QE-lNu" firstAttribute="trailing" secondItem="608-tl-8Ij" secondAttribute="trailing" constant="24" id="1oH-iT-a7s"/>
+                            <constraint firstItem="608-tl-8Ij" firstAttribute="top" secondItem="aIf-EG-g2D" secondAttribute="bottom" constant="15" id="6UN-cv-MAz"/>
+                            <constraint firstItem="Sjy-QE-lNu" firstAttribute="bottom" secondItem="608-tl-8Ij" secondAttribute="bottom" constant="15" id="Rjs-of-AwO"/>
+                            <constraint firstItem="608-tl-8Ij" firstAttribute="leading" secondItem="Sjy-QE-lNu" secondAttribute="leading" constant="16" id="ZTp-qs-fYU"/>
+                            <constraint firstItem="aIf-EG-g2D" firstAttribute="top" secondItem="zY3-ox-cvg" secondAttribute="bottom" constant="15" id="azk-5M-2vF"/>
+                            <constraint firstItem="zY3-ox-cvg" firstAttribute="width" secondItem="zY3-ox-cvg" secondAttribute="height" multiplier="1:1" id="b3c-Qe-pbN"/>
+                            <constraint firstItem="aIf-EG-g2D" firstAttribute="centerX" secondItem="Xfx-CW-8Ns" secondAttribute="centerX" id="dTW-Eh-H6t"/>
+                            <constraint firstItem="zY3-ox-cvg" firstAttribute="top" secondItem="Sjy-QE-lNu" secondAttribute="top" constant="15" id="dsG-ga-5xo"/>
+                            <constraint firstItem="zY3-ox-cvg" firstAttribute="centerX" secondItem="Xfx-CW-8Ns" secondAttribute="centerX" id="whS-f0-tXW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Sjy-QE-lNu"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cMF-83-LZt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b3l-Tg-Qvf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1884" y="753"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Mca-ek-37V"/>
+        <segue reference="mbe-fC-xhx"/>
         <segue reference="fET-hm-iSD"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>

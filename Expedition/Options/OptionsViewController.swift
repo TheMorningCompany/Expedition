@@ -28,7 +28,13 @@ class OptionsViewController: UITableViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(defaultsChanged), name: UserDefaults.didChangeNotification, object: nil)
         defaultsChanged()
         
-        // Do any additional setup after loading the view.
+        //Make nav controller titlebar have no shadow and back button have no text
+        
+        self.navigationController!.navigationBar.layer.borderWidth = 0.50
+        self.navigationController!.navigationBar.layer.borderColor = UIColor.clear.cgColor
+        self.navigationController?.navigationBar.clipsToBounds = true
+        let backBarButtton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backBarButtton
     }
     
     @IBAction func didTapHowToUse(_ sender: UIButton) {
