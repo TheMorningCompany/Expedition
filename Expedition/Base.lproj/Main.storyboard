@@ -99,7 +99,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="b9I-UI-kI0"/>
                                     <barButtonItem image="square.on.square" catalog="system" id="keJ-Tu-SlC">
                                         <connections>
-                                            <segue destination="5yK-Au-Llm" kind="presentation" id="5PD-VS-Fhr"/>
+                                            <segue destination="5yK-Au-Llm" kind="presentation" identifier="searchToTabs" id="5PD-VS-Fhr"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="BZ9-yw-SyL"/>
@@ -1067,7 +1067,7 @@
                                         <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <string key="text">In this document, “we”, “us”, “TMC” and “our” are taken to be in reference to The Morning Company. “The app” will mean Expedition
 
-We do not collect any data or personal information in Expedition. We simply do not have a way to store this information, and we have not looked for a way as all of us at The Morning Company believe that personal information is just that—personal, and should not be shared with anyone else. Nothing is shared with third parties whatsoever.
+We do not collect any data or personal information in Expedition. We simply do not have a way to store this information as all of us at The Morning Company believe that personal information is just that—personal, and should not be shared with anyone else. Nothing is shared with third parties whatsoever and nothing is shared with The Morning Company either.
 </string>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
@@ -1108,6 +1108,7 @@ We do not collect any data or personal information in Expedition. We simply do n
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="J6e-BP-JhY"/>
         <segue reference="mbe-fC-xhx"/>
         <segue reference="fET-hm-iSD"/>
     </inferredMetricsTieBreakers>

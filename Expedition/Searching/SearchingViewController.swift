@@ -98,11 +98,11 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     }
     
     //Supposed to hide the toolbar on scroll but doesn't work yet
-    func scrollViewWillBeginDragging(scrollView: UIScrollView){
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView){
         lastOffsetY = webView.scrollView.contentOffset.y
     }
 
-    func scrollViewWillBeginDecelerating(scrollView: UIScrollView){
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView){
 
         let hide = webView.scrollView.contentOffset.y > self.lastOffsetY
         self.navigationController?.setNavigationBarHidden(hide, animated: true)
@@ -340,6 +340,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     @IBAction func shareButton(_ sender: Any) {
         displayShareSheet(shareContent: searchBar.text!)
     }
+    
 }
 
 
