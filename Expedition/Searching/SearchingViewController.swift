@@ -45,6 +45,12 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         components?.host = "duckduckgo.com"
         
         webView?.load(request)
+       
+        if UIDevice.current.userInterfaceIdiom == .pad {
+        webView.customUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/7.4 Expedition/605.1.15"
+        } else {
+        webView.customUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/5.2 Mobile/15E148 Expedition/604.1"
+        }
         
         webView?.addSubview(ActInd)
         ActInd?.startAnimating()
@@ -178,7 +184,12 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         impact.impactOccurred() // Haptics
-        webView.customUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/5.2 Mobile/15E148 Expedition/604.1"
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            self.webView.customUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/5.2 Mobile/15E148 Expedition/604.1"
+        } else {
+            self.webView.customUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/7.4 Expedition/605.1.15"
+            
+        }
         ActInd?.startAnimating()
          
      }
@@ -299,7 +310,9 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     }
 
     @IBAction func desktopSiteSwipe(_ sender: Any) {
+        if UIDevice.current.userInterfaceIdiom == .phone {
         impact.impactOccurred()//haptic
+       
         if userAgentVar == "mobile" {
             // switches to desktop useragent
             webView.customUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/7.4 Expedition/605.1.15"
@@ -318,6 +331,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             self?.searchBar.text = self?.userAgentVar
         }, completion: nil)
     
+        }
     }
     
     @IBAction func backButton(_ sender: Any) {
