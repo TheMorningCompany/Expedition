@@ -27,6 +27,9 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     var searchEngine: String = "https://duckduckgo.com/" //Search engine initialization
     var components = URLComponents(string: "https://duckduckgo.com/") //Search engine
     
+    //constants
+    let timeoutDelay = 5.0
+    
     @IBOutlet weak var searchBar: UITextField!
     
     override func viewDidLoad() { //Called when the app loads
@@ -37,6 +40,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         //MARK: SCROLLING STUFF
         webView.scrollView.delegate = self
 
+        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         
         accessibilityToolbar.barTintColor = UIColor(named: "Expedition White")
         accessibilityToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
@@ -95,6 +99,11 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
         
+    }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        standoutMessage(message: "FAILED PROVISIONAL NAVIGATION")
+        pageNotFound()
     }
     
     @objc func toolbarVisible() {
@@ -210,7 +219,10 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         impact.impactOccurred()//haptics
 
         ActInd?.stopAnimating()
-        searchBar.text = webView.url?.absoluteString
+        if (!(webView.url?.absoluteString.starts(with: "file://"))!) {
+            searchBar.text = webView.url?.absoluteString
+        }
+        
         if (UserDefaults.standard.bool(forKey: "save_history")) {
             let historyElementToAdd = HistoryElement(context: PersistenceService.context)
             historyElementToAdd.url = searchBar.text
@@ -224,7 +236,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
      func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
          notification.notificationOccurred(.error)//Haptic
          ActInd?.stopAnimating()
-         
+         standoutMessage(message: "FAILED NAVIGATION")
      }
     
     func verifyUrl (urlString: String?) -> Bool { //tests for url
@@ -261,11 +273,18 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             let request = URLRequest(url: url!)
             
             webView?.load(request)
-        }
-        else {
-            let request = searchText(urlString: urlString)
+            
+            standoutMessage(message: "VALID URL!")
+        } else if (verifyUrl(urlString: urlToString(url: searchText(urlString: urlString)))) {
+            let request = generateRequest(url: searchText(urlString: urlString))
             
             webView?.load(request)
+            
+            standoutMessage(message: "VALID SEARCH!")
+        } else {
+            pageNotFound()
+            
+            standoutMessage(message: "PAGE NOT FOUND!")
         }
     }
     
@@ -287,14 +306,22 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     }
     
     
-    func searchText(urlString: String) -> URLRequest { //creates the url for a query using duckduckgo
+    func searchText(urlString: String) -> URL { //creates the url for a query using duckduckgo
         let queryItemQuery = URLQueryItem(name: "q", value: urlString);
         
         components?.queryItems = [queryItemQuery]
         
-        let request = URLRequest(url: (components?.url)!)
+        return (components?.url)!
+    }
+    
+    func generateRequest(url: URL) -> URLRequest {
+        let request = URLRequest(url: url)
         
         return request
+    }
+    
+    func urlToString(url: URL) -> String {
+        return "\(url)"
     }
     
 
@@ -343,6 +370,23 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             self?.searchBar.text = self?.userAgentVar
         }, completion: nil)
     
+        }
+    }
+    
+    // MARK: HANDLING PAGE ERRORS
+    // such as timeouts and stuff
+    
+    func pageNotFound() {
+        if let url = Bundle.main.url(forResource: "NotFound", withExtension: "html") {
+            webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
+        }
+    }
+    
+    // MARK: MONITORING
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "estimatedProgress" {
+            print(Float(webView.estimatedProgress))
         }
     }
     

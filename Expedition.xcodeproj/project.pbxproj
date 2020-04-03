@@ -44,6 +44,7 @@
 		5D793D0523D4DF5C00539A44 /* Swift+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D793D0423D4DF5C00539A44 /* Swift+Gif.swift */; };
 		5D793D0723D4E02D00539A44 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D793D0623D4E02D00539A44 /* IntroViewController.swift */; };
 		5D865CC423E1013700374B07 /* BlankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D865CC323E1013700374B07 /* BlankViewController.swift */; };
+		5D9AE08F24371ABE00239559 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9AE08E24371ABE00239559 /* Util.swift */; };
 		5DE81BC323CBB45000F6FA33 /* ColorShadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AD59E923CB986E007C6495 /* ColorShadow@2x.png */; };
 		5DE81BC423CBB45300F6FA33 /* Fading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AD59F623CB98AC007C6495 /* Fading@2x.png */; };
 		D6030CDC23A89669003C6911 /* Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6030CDB23A89669003C6911 /* Gestures.swift */; };
@@ -125,6 +126,7 @@
 		5D793D0423D4DF5C00539A44 /* Swift+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift+Gif.swift"; sourceTree = "<group>"; };
 		5D793D0623D4E02D00539A44 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		5D865CC323E1013700374B07 /* BlankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankViewController.swift; sourceTree = "<group>"; };
+		5D9AE08E24371ABE00239559 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		5DFC236E23D58C3E004A3DF9 /* ExpeditionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpeditionTests.swift; sourceTree = "<group>"; };
 		5DFC236F23D58C3E004A3DF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6030CDB23A89669003C6911 /* Gestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gestures.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				00748156243057430035ED94 /* Options */,
 				00476DA624313AC300BDE254 /* History */,
 				00748157243057830035ED94 /* Searching */,
+				5D9AE08D24371AA900239559 /* Util */,
 				001366BB2307B61F009A102E /* Main.storyboard */,
 				001366BE2307B620009A102E /* Assets.xcassets */,
 				001366C02307B620009A102E /* LaunchScreen.storyboard */,
@@ -330,6 +333,14 @@
 				00F82096243029DF006B6650 /* WebsiteImg.swift */,
 			);
 			path = Tabs;
+			sourceTree = "<group>";
+		};
+		5D9AE08D24371AA900239559 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				5D9AE08E24371ABE00239559 /* Util.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		5DE81BC623CBB83400F6FA33 /* TotallyNotSecretIcons */ = {
@@ -510,6 +521,7 @@
 				5D865CC423E1013700374B07 /* BlankViewController.swift in Sources */,
 				5D1D0D5E23C6F1CB00B4377E /* HistoryElement+CoreDataProperties.swift in Sources */,
 				0081CCE224280A720097C2C6 /* TabsTableViewController.swift in Sources */,
+				5D9AE08F24371ABE00239559 /* Util.swift in Sources */,
 				0062526124208C02004B3136 /* Onb1ViewController.swift in Sources */,
 				000D80272427F5CA005E0CA1 /* AppIconsViewController.swift in Sources */,
 				5D793D0523D4DF5C00539A44 /* Swift+Gif.swift in Sources */,
