@@ -10,11 +10,13 @@ import WebKit
 import Foundation
 import CoreData
 
-class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegate, UIScrollViewDelegate {
+class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegate, UIScrollViewDelegate, WKUIDelegate {
 
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var ActInd: UIActivityIndicatorView!
     @IBOutlet weak var accessibilityToolbar: UIToolbar!
+    @IBOutlet weak var webViewTop: NSLayoutConstraint!
+    @IBOutlet weak var toolbarBottom: NSLayoutConstraint!
     let notification = UINotificationFeedbackGenerator()//Haptics
     
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -23,16 +25,18 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     var userAgentVar: String = "mobile" //User agent
     let credits: String = "zeqe golomb:ui designer;finbarr oconnell:programmer;jackson yan:programmer;julian wright:programmer" //Credits
     var searchEngine: String = "https://duckduckgo.com/" //Search engine initialization
-    var components = URLComponents(string: "https://duckduckgo.com/") //search engine
+    var components = URLComponents(string: "https://duckduckgo.com/") //Search engine
     
     @IBOutlet weak var searchBar: UITextField!
     
-    override func viewDidLoad() { //Setup stuff
+    override func viewDidLoad() { //Called when the app loads
         super.viewDidLoad()
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).font = UIFont(name: "AvenirNext-Medium", size: UIFont.labelFontSize)
         var components = URLComponents(string: searchEngine)
-        
+       
+        //MARK: SCROLLING STUFF
         webView.scrollView.delegate = self
+
         
         accessibilityToolbar.barTintColor = UIColor(named: "Expedition White")
         accessibilityToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
@@ -103,18 +107,6 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         }
     }
     
-    //Supposed to hide the toolbar on scroll but doesn't work yet
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView){
-        lastOffsetY = webView.scrollView.contentOffset.y
-    }
-
-    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView){
-
-        let hide = webView.scrollView.contentOffset.y > self.lastOffsetY
-        self.navigationController?.setNavigationBarHidden(hide, animated: true)
-        accessibilityToolbar.isHidden = hide
-    }
-    
     @objc func appMovedToBackground() {
         if let fadeOnClose:Bool = UserDefaults.standard.bool(forKey: "fade_on_close") {
             if (fadeOnClose) {
@@ -181,6 +173,26 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
 
         webView?.load(request)
     }
+    
+    //MARK: MORE Scrolling
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+
+        if(scrollView.panGestureRecognizer.translation(in: scrollView.superview).y > 0) {
+            print("scroll up")
+            UIView.animate(withDuration: 1) {
+                self.webViewTop.constant = 46
+                self.toolbarBottom.constant = 0
+            }
+        }
+        else {
+            print("scroll down")
+            UIView.animate(withDuration: 1) {
+                self.webViewTop.constant = 0
+                self.toolbarBottom.constant = 100
+            }
+        }
+    }
+    
     
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         impact.impactOccurred() // Haptics

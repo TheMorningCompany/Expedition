@@ -187,6 +187,7 @@
 				0062525E24208B61004B3136 /* AltAppIcons */,
 				0062525F24208BD2004B3136 /* OnboardingVCs */,
 				00748156243057430035ED94 /* Options */,
+				00476DA624313AC300BDE254 /* History */,
 				00748157243057830035ED94 /* Searching */,
 				001366BB2307B61F009A102E /* Main.storyboard */,
 				001366BE2307B620009A102E /* Assets.xcassets */,
@@ -280,7 +281,6 @@
 		00748157243057830035ED94 /* Searching */ = {
 			isa = PBXGroup;
 			children = (
-				00476DA624313AC300BDE254 /* History */,
 				D6030CDB23A89669003C6911 /* Gestures.swift */,
 				001366B92307B61F009A102E /* SearchingViewController.swift */,
 			);
