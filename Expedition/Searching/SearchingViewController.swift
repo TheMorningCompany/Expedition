@@ -167,6 +167,12 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         present(activityViewController, animated: true, completion: {})
     }
     
+    func displayShareSheet(shareContent:UIImage) {
+        notification.notificationOccurred(.success) //Haptic
+        let activityViewController = UIActivityViewController(activityItems: [shareContent], applicationActivities: nil)
+        present(activityViewController, animated: true, completion: {})
+    }
+    
     func socialMedia(urlString: String) {
         let url = URL(string: urlString)
 
@@ -418,7 +424,41 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         
     }
     @IBAction func shareButton(_ sender: Any) {
-        displayShareSheet(shareContent: searchBar.text!)
+        let alert = UIAlertController(title: "Clear Browsing Data", message: "Are you sure you want to clear cookies and history?", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "URL", style: .default, handler: { action in
+            self.displayShareSheet(shareContent: self.searchBar.text!)
+            self.impact.impactOccurred() //Haptics
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Page Snapshot", style: .default, handler: { action in
+            let config = WKSnapshotConfiguration()
+            var pageHeight:CGFloat = self.webView.scrollView.contentSize.height
+            var pageWidth:CGFloat = self.webView.scrollView.contentSize.width
+            
+//            self.webView.evaluateJavaScript("document.body.offsetHeight", completionHandler: { (height, error) in
+//                pageHeight = height
+//            })
+//
+//            self.webView.evaluateJavaScript("document.body.offsetWidth", completionHandler: { (width, error) in
+//                pageWidth = width
+//            })
+            
+            standoutMessage(message: "DIMENSIONS: \(pageWidth), \(pageHeight)")
+            
+            config.rect = CGRect(x: 0, y: 0, width: pageWidth, height: pageHeight)
+
+            self.webView.takeSnapshot(with: config) { image, error in
+                if let image = image {
+                    print(image.size)
+                    self.displayShareSheet(shareContent: image)
+                }
+            }
+        }))
+        
+        self.present(alert, animated: true)
     }
 }
 
