@@ -39,8 +39,6 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
        
         //MARK: SCROLLING STUFF
         webView.scrollView.delegate = self
-
-        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         
         accessibilityToolbar.barTintColor = UIColor(named: "Expedition White")
         accessibilityToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
@@ -99,11 +97,6 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
         
-    }
-    
-    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        standoutMessage(message: "FAILED PROVISIONAL NAVIGATION")
-        pageNotFound()
     }
     
     @objc func toolbarVisible() {
@@ -376,19 +369,36 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     // MARK: HANDLING PAGE ERRORS
     // such as timeouts and stuff
     
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        standoutMessage(message: "FAILED PROVISIONAL NAVIGATION")
+        pageNotFound()
+    }
+    
     func pageNotFound() {
         if let url = Bundle.main.url(forResource: "NotFound", withExtension: "html") {
             webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
         }
     }
     
-    // MARK: MONITORING
+    //MARK: UTIL FUNCTIONS
     
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "estimatedProgress" {
-            print(Float(webView.estimatedProgress))
+    public func doTheDeleteCookies() {
+        if #available(iOS 11, *) {
+            let dataStore = WKWebsiteDataStore.default()
+            dataStore.httpCookieStore.getAllCookies({ (cookies) in
+                for cookie in cookies {
+                    dataStore.httpCookieStore.delete(cookie)
+                }
+            })
+        } else {
+            guard let cookies = HTTPCookieStorage.shared.cookies else {
+                return
+            }
+            print(cookies)
         }
     }
+    
+    //MARK: BUTTONS
     
     @IBAction func backButton(_ sender: Any) {
         if webView.canGoBack{

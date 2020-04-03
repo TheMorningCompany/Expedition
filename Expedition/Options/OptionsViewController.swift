@@ -74,15 +74,7 @@ class OptionsViewController: UITableViewController {
     
     func removeCookies(){
         // Remove all cache
-        URLCache.shared.removeAllCachedResponses()
-
-        // Delete any associated cookies
-        if let cookies = HTTPCookieStorage.shared.cookies {
-            for cookie in cookies {
-                print("COOKIE: " + cookie.name)
-                HTTPCookieStorage.shared.deleteCookie(cookie)
-            }
-        }
+        ViewController().doTheDeleteCookies()
     }
     
     func doTheClearHistory() {

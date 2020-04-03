@@ -10,6 +10,9 @@ import Foundation
 
 func standoutMessage(message: String) {
     var messageToPrint = message.uppercased()
+    if (!(messageToPrint.hasSuffix("!"))) {
+        messageToPrint += "!"
+    }
     print("\n\n-----------------------------------------\n\n")
     print("\(messageToPrint)")
     print("\n\n-----------------------------------------\n\n")

@@ -277,8 +277,8 @@
 			children = (
 				5D41CBF023C569B6003A16F9 /* SettingsBundleHelper.swift */,
 				5D865CC323E1013700374B07 /* BlankViewController.swift */,
-				5D41CBF223C5745C003A16F9 /* OptionsViewController.swift */,
 				000D80262427F5CA005E0CA1 /* AppIconsViewController.swift */,
+				5D41CBF223C5745C003A16F9 /* OptionsViewController.swift */,
 			);
 			path = Options;
 			sourceTree = "<group>";
