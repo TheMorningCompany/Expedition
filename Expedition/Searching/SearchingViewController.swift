@@ -187,16 +187,18 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
 
         if(scrollView.panGestureRecognizer.translation(in: scrollView.superview).y > 0) {
             print("scroll up")
-            UIView.animate(withDuration: 1) {
-                self.webViewTop.constant = 46
-                self.toolbarBottom.constant = 0
+            self.webViewTop.constant = 46
+            self.toolbarBottom.constant = 0
+            UIView.animate(withDuration: 0.15) {
+                self.view.layoutIfNeeded()
             }
         }
         else {
             print("scroll down")
-            UIView.animate(withDuration: 1) {
-                self.webViewTop.constant = 0
-                self.toolbarBottom.constant = 100
+            self.webViewTop.constant = 0
+            self.toolbarBottom.constant = 100
+            UIView.animate(withDuration: 0.15) {
+                self.view.layoutIfNeeded()
             }
         }
     }
@@ -205,7 +207,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         impact.impactOccurred() // Haptics
         if UIDevice.current.userInterfaceIdiom == .phone {
-            self.webView.customUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/5.2 Mobile/15E148 Expedition/604.1"
+            self.webView.customUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/7.4 Mobile/15E148 Expedition/604.1"
         } else {
             self.webView.customUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/7.4 Expedition/605.1.15"
             
@@ -381,10 +383,16 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     }
     
     func pageNotFound() {
-        if let url = Bundle.main.url(forResource: "NotFound", withExtension: "html") {
+        if self.traitCollection.userInterfaceStyle == .light {
+            if let url = Bundle.main.url(forResource: "NotFound", withExtension: "html") {
+                webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
+            }
+        } else {
+            if let url = Bundle.main.url(forResource: "NotFoundDark", withExtension: "html") {
             webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
         }
     }
+}
     
     //MARK: UTIL FUNCTIONS
     
@@ -424,9 +432,9 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         
     }
     @IBAction func shareButton(_ sender: Any) {
-        let alert = UIAlertController(title: "Clear Browsing Data", message: "Are you sure you want to clear cookies and history?", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Clear Browsing Data", message: "What do you want to  do?", preferredStyle: .actionSheet)
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Nothing", style: .cancel, handler: nil))
         
         alert.addAction(UIAlertAction(title: "URL", style: .default, handler: { action in
             self.displayShareSheet(shareContent: self.searchBar.text!)
