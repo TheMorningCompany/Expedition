@@ -52,7 +52,7 @@
                                 <color key="color" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                             </activityIndicatorView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="poK-nr-9UJ">
-                                <rect key="frame" x="15" y="55" width="356" height="36"/>
+                                <rect key="frame" x="50" y="55" width="321" height="36"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="2Fp-Z7-fL9"/>
@@ -116,19 +116,28 @@
                                 </items>
                                 <color key="barTintColor" name="Expedition White"/>
                             </toolbar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4tK-qr-jG7">
+                                <rect key="frame" x="15" y="63" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="NoS-iK-XmR"/>
+                                    <constraint firstAttribute="height" constant="20" id="sO2-aV-VFQ"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="poK-nr-9UJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="17b-j5-Kmq"/>
                             <constraint firstItem="JeA-nV-CKj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="39F-Su-Buy"/>
                             <constraint firstItem="Fdo-tH-OsN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CrI-hR-rt3"/>
                             <constraint firstItem="1Sr-kh-OPV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="46" id="D18-Ng-MKO"/>
+                            <constraint firstItem="poK-nr-9UJ" firstAttribute="centerY" secondItem="4tK-qr-jG7" secondAttribute="centerY" id="DqU-nB-gcH"/>
+                            <constraint firstItem="poK-nr-9UJ" firstAttribute="leading" secondItem="4tK-qr-jG7" secondAttribute="trailing" constant="15" id="O4w-X5-6FV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JeA-nV-CKj" secondAttribute="trailing" constant="15" id="RHd-kV-I4C"/>
                             <constraint firstAttribute="trailing" secondItem="Fdo-tH-OsN" secondAttribute="trailing" id="SzA-vb-RCt"/>
                             <constraint firstItem="poK-nr-9UJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="11" id="UrB-UL-i1P"/>
                             <constraint firstItem="1Sr-kh-OPV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Usw-fi-elu"/>
+                            <constraint firstItem="4tK-qr-jG7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="ZE3-SF-QbF"/>
                             <constraint firstItem="Fdo-tH-OsN" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="amA-Sl-vM7"/>
                             <constraint firstAttribute="bottom" secondItem="1Sr-kh-OPV" secondAttribute="bottom" id="efN-sm-YhT"/>
                             <constraint firstItem="JeA-nV-CKj" firstAttribute="leading" secondItem="poK-nr-9UJ" secondAttribute="trailing" constant="8" id="qJB-og-y2a"/>
@@ -143,6 +152,7 @@
                         <outlet property="ActInd" destination="JeA-nV-CKj" id="Nec-3V-7Ni"/>
                         <outlet property="accessibilityToolbar" destination="Fdo-tH-OsN" id="Qcj-w5-Wbl"/>
                         <outlet property="searchBar" destination="poK-nr-9UJ" id="UQR-wf-BEh"/>
+                        <outlet property="secureImg" destination="4tK-qr-jG7" id="mHe-U1-w0Q"/>
                         <outlet property="toolbarBottom" destination="amA-Sl-vM7" id="CpZ-K6-w56"/>
                         <outlet property="webView" destination="1Sr-kh-OPV" id="AbH-gy-eSn"/>
                         <outlet property="webViewTop" destination="D18-Ng-MKO" id="8iz-dy-O9r"/>
@@ -250,7 +260,7 @@
             <objects>
                 <viewController id="U62-Qg-juO" customClass="AppIconsViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DFH-uf-RX0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUL-hf-Ghr" userLabel="GlyphFade">
@@ -397,7 +407,7 @@
             <objects>
                 <tableViewController id="9OM-wm-4ti" customClass="OptionsViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="tCM-8D-bll">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -768,7 +778,7 @@
             <objects>
                 <tableViewController title="History" id="0vd-be-p7o" customClass="TabsTableViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Kdi-jF-hAI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -863,7 +873,7 @@
             <objects>
                 <tableViewController id="WlA-qs-nnO" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Aps-Yt-xYK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -1055,7 +1065,7 @@
             <objects>
                 <viewController id="7xe-KY-LMm" customClass="AppIconsViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xfx-CW-8Ns">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shieldBlue" translatesAutoresizingMaskIntoConstraints="NO" id="zY3-ox-cvg">

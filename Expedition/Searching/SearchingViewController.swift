@@ -17,6 +17,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     @IBOutlet weak var accessibilityToolbar: UIToolbar!
     @IBOutlet weak var webViewTop: NSLayoutConstraint!
     @IBOutlet weak var toolbarBottom: NSLayoutConstraint!
+    @IBOutlet weak var secureImg: UIImageView!
     let notification = UINotificationFeedbackGenerator()//Haptics
     
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -282,6 +283,11 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             webView?.load(request)
             
             standoutMessage(message: "VALID SEARCH!")
+            if urlString.contains("https") {
+                secureImg.image = UIImage(named: "lockBlue")
+            } else {
+                secureImg.image = UIImage(named: "lockRed")
+            }
         } else {
             pageNotFound()
             
@@ -346,7 +352,6 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
 
     @IBAction func reloadSwipe(_ sender: Any) {
         webView.reload()
-    
     }
 
     @IBAction func desktopSiteSwipe(_ sender: Any) {
@@ -429,6 +434,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     
     @IBAction func reloadButton(_ sender: Any) {
         webView.reload()
+        
         
     }
     @IBAction func shareButton(_ sender: Any) {
