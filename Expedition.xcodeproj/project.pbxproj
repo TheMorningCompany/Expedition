@@ -8,10 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0003C0E323CC08A200111AA1 /* Soft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0003C0E223CC08A200111AA1 /* Soft@2x.png */; };
-		0007DADF2437B808007BF62C /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0007DADE2437B808007BF62C /* Media.xcassets */; };
-		0007DAE12437B808007BF62C /* ActionRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0007DAE02437B808007BF62C /* ActionRequestHandler.swift */; };
-		0007DAE32437B808007BF62C /* Action.js in Resources */ = {isa = PBXBuildFile; fileRef = 0007DAE22437B808007BF62C /* Action.js */; };
-		0007DAE72437B808007BF62C /* FullpageScreenshot.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0007DADC2437B808007BF62C /* FullpageScreenshot.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		000D80272427F5CA005E0CA1 /* AppIconsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000D80262427F5CA005E0CA1 /* AppIconsViewController.swift */; };
 		001366B82307B61F009A102E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001366B72307B61F009A102E /* AppDelegate.swift */; };
 		001366BA2307B61F009A102E /* SearchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001366B92307B61F009A102E /* SearchingViewController.swift */; };
@@ -56,13 +52,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0007DAE52437B808007BF62C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 001366AC2307B61F009A102E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0007DADB2437B808007BF62C;
-			remoteInfo = FullpageScreenshot;
-		};
 		001366C92307B620009A102E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 001366AC2307B61F009A102E /* Project object */;
@@ -86,7 +75,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				0007DAE72437B808007BF62C /* FullpageScreenshot.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,7 +83,6 @@
 
 /* Begin PBXFileReference section */
 		0003C0E223CC08A200111AA1 /* Soft@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Soft@2x.png"; sourceTree = "<group>"; };
-		0007DADC2437B808007BF62C /* FullpageScreenshot.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FullpageScreenshot.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		0007DADE2437B808007BF62C /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		0007DAE02437B808007BF62C /* ActionRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRequestHandler.swift; sourceTree = "<group>"; };
 		0007DAE22437B808007BF62C /* Action.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
@@ -152,13 +139,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0007DAD92437B808007BF62C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		001366B12307B61F009A102E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -214,7 +194,6 @@
 				001366B42307B61F009A102E /* Expedition.app */,
 				001366C82307B620009A102E /* ExpeditionTests.xctest */,
 				001366D32307B620009A102E /* ExpeditionUITests.xctest */,
-				0007DADC2437B808007BF62C /* FullpageScreenshot.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -409,23 +388,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0007DADB2437B808007BF62C /* FullpageScreenshot */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0007DAEA2437B808007BF62C /* Build configuration list for PBXNativeTarget "FullpageScreenshot" */;
-			buildPhases = (
-				0007DAD82437B808007BF62C /* Sources */,
-				0007DAD92437B808007BF62C /* Frameworks */,
-				0007DADA2437B808007BF62C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = FullpageScreenshot;
-			productName = FullpageScreenshot;
-			productReference = 0007DADC2437B808007BF62C /* FullpageScreenshot.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		001366B32307B61F009A102E /* Expedition */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 001366DC2307B620009A102E /* Build configuration list for PBXNativeTarget "Expedition" */;
@@ -438,7 +400,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				0007DAE62437B808007BF62C /* PBXTargetDependency */,
 			);
 			name = Expedition;
 			productName = Expedition;
@@ -491,9 +452,6 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "The Morning Company";
 				TargetAttributes = {
-					0007DADB2437B808007BF62C = {
-						CreatedOnToolsVersion = 11.4;
-					};
 					001366B32307B61F009A102E = {
 						CreatedOnToolsVersion = 10.3;
 					};
@@ -523,21 +481,11 @@
 				001366B32307B61F009A102E /* Expedition */,
 				001366C72307B620009A102E /* ExpeditionTests */,
 				001366D22307B620009A102E /* ExpeditionUITests */,
-				0007DADB2437B808007BF62C /* FullpageScreenshot */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0007DADA2437B808007BF62C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0007DAE32437B808007BF62C /* Action.js in Resources */,
-				0007DADF2437B808007BF62C /* Media.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		001366B22307B61F009A102E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -582,14 +530,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0007DAD82437B808007BF62C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0007DAE12437B808007BF62C /* ActionRequestHandler.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		001366B02307B61F009A102E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -635,11 +575,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0007DAE62437B808007BF62C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0007DADB2437B808007BF62C /* FullpageScreenshot */;
-			targetProxy = 0007DAE52437B808007BF62C /* PBXContainerItemProxy */;
-		};
 		001366CA2307B620009A102E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 001366B32307B61F009A102E /* Expedition */;
@@ -672,50 +607,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		0007DAE82437B808007BF62C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CQ7CSQ6XS5;
-				INFOPLIST_FILE = FullpageScreenshot/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.themorningcompany.expedition.FullpageScreenshot;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		0007DAE92437B808007BF62C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CQ7CSQ6XS5;
-				INFOPLIST_FILE = FullpageScreenshot/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.themorningcompany.expedition.FullpageScreenshot;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		001366DA2307B620009A102E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -969,15 +860,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0007DAEA2437B808007BF62C /* Build configuration list for PBXNativeTarget "FullpageScreenshot" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0007DAE82437B808007BF62C /* Debug */,
-				0007DAE92437B808007BF62C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		001366AF2307B61F009A102E /* Build configuration list for PBXProject "Expedition" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
