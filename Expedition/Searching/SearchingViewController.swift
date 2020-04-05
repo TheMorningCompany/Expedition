@@ -85,6 +85,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             }
         } else {
             openUrl(urlString: url!.absoluteString)
+            
         }
         
         if let showToolbar:Bool = UserDefaults.standard.bool(forKey: "show_toolbar") {
@@ -283,6 +284,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             webView?.load(request)
             
             standoutMessage(message: "VALID SEARCH!")
+           //MARK: Set lock image to be red or blue if its https encrypted
             if urlString.contains("https") {
                 secureImg.image = UIImage(named: "lockBlue")
             } else {
@@ -397,6 +399,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
         }
     }
+        secureImg.image = UIImage(named: "lockBlue")
 }
     
     //MARK: UTIL FUNCTIONS
