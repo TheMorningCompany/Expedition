@@ -33,14 +33,16 @@
 		00AB6BA623CD37DE0088E269 /* Metal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AB6BA523CD37DD0088E269 /* Metal@2x.png */; };
 		00C4A4C623C509E800C18F65 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00C4A4C523C509E800C18F65 /* Settings.bundle */; };
 		00F7071123D16FB400C0B8E2 /* Diamond@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F7071023D16FB400C0B8E2 /* Diamond@2x.png */; };
-		00F82097243029DF006B6650 /* WebsiteImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F82096243029DF006B6650 /* WebsiteImg.swift */; };
 		5D1D0D5823C6AE7600B4377E /* History.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D0D5623C6AE7600B4377E /* History.xcdatamodeld */; };
 		5D1D0D5A23C6B0B300B4377E /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D0D5923C6B0B300B4377E /* PersistenceService.swift */; };
-		5D1D0D5D23C6F1CB00B4377E /* HistoryElement+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D0D5B23C6F1CB00B4377E /* HistoryElement+CoreDataClass.swift */; };
 		5D1D0D5E23C6F1CB00B4377E /* HistoryElement+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D0D5C23C6F1CB00B4377E /* HistoryElement+CoreDataProperties.swift */; };
 		5D2FA8A023D5490B00A68AF5 /* LightIntro.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5D2FA89F23D5490B00A68AF5 /* LightIntro.gif */; };
 		5D41CBF123C569B6003A16F9 /* SettingsBundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D41CBF023C569B6003A16F9 /* SettingsBundleHelper.swift */; };
 		5D41CBF323C5745C003A16F9 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D41CBF223C5745C003A16F9 /* OptionsViewController.swift */; };
+		5D56ABCC243C1CD00073677F /* WebUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D56ABCB243C1CD00073677F /* WebUtil.swift */; };
+		5D56ABD0243C1D140073677F /* Website.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D56ABCF243C1D140073677F /* Website.swift */; };
+		5D56ABD6243C1EBE0073677F /* HistoryElement+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D56ABD5243C1EBE0073677F /* HistoryElement+CoreDataClass.swift */; };
+		5D56ABD9243C1F540073677F /* Sharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D56ABD8243C1F540073677F /* Sharing.swift */; };
 		5D5BA2E223C5910C00D98050 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BA2E123C5910C00D98050 /* HistoryTableViewController.swift */; };
 		5D793D0523D4DF5C00539A44 /* Swift+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D793D0423D4DF5C00539A44 /* Swift+Gif.swift */; };
 		5D793D0723D4E02D00539A44 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D793D0623D4E02D00539A44 /* IntroViewController.swift */; };
@@ -120,14 +122,16 @@
 		00AD59F623CB98AC007C6495 /* Fading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fading@2x.png"; sourceTree = "<group>"; };
 		00C4A4C523C509E800C18F65 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		00F7071023D16FB400C0B8E2 /* Diamond@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Diamond@2x.png"; sourceTree = "<group>"; };
-		00F82096243029DF006B6650 /* WebsiteImg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteImg.swift; sourceTree = "<group>"; };
 		5D1D0D5723C6AE7600B4377E /* History.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = History.xcdatamodel; sourceTree = "<group>"; };
 		5D1D0D5923C6B0B300B4377E /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
-		5D1D0D5B23C6F1CB00B4377E /* HistoryElement+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryElement+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5D1D0D5C23C6F1CB00B4377E /* HistoryElement+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryElement+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5D2FA89F23D5490B00A68AF5 /* LightIntro.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LightIntro.gif; sourceTree = "<group>"; };
 		5D41CBF023C569B6003A16F9 /* SettingsBundleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBundleHelper.swift; sourceTree = "<group>"; };
 		5D41CBF223C5745C003A16F9 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
+		5D56ABCB243C1CD00073677F /* WebUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebUtil.swift; sourceTree = "<group>"; };
+		5D56ABCF243C1D140073677F /* Website.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Website.swift; sourceTree = "<group>"; };
+		5D56ABD5243C1EBE0073677F /* HistoryElement+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HistoryElement+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5D56ABD8243C1F540073677F /* Sharing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sharing.swift; sourceTree = "<group>"; };
 		5D5BA2E123C5910C00D98050 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		5D793D0423D4DF5C00539A44 /* Swift+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift+Gif.swift"; sourceTree = "<group>"; };
 		5D793D0623D4E02D00539A44 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
@@ -201,20 +205,15 @@
 		001366B62307B61F009A102E /* Expedition */ = {
 			isa = PBXGroup;
 			children = (
-				00C4A4C523C509E800C18F65 /* Settings.bundle */,
-				5D2FA89F23D5490B00A68AF5 /* LightIntro.gif */,
 				001366B72307B61F009A102E /* AppDelegate.swift */,
+				5D56ABD1243C1D760073677F /* View Controllers */,
+				5D56ABCD243C1CF50073677F /* Classes */,
 				5D9AE08D24371AA900239559 /* Util */,
-				00748158243057C10035ED94 /* Intro */,
-				00F82095243029C7006B6650 /* Tabs */,
-				0062525E24208B61004B3136 /* AltAppIcons */,
-				0062525F24208BD2004B3136 /* OnboardingVCs */,
-				00748156243057430035ED94 /* Options */,
+				0062525F24208BD2004B3136 /* Storyboards */,
 				00476DA624313AC300BDE254 /* History */,
-				00748157243057830035ED94 /* Searching */,
-				001366BB2307B61F009A102E /* Main.storyboard */,
+				5D56ABD4243C1DC10073677F /* Resources */,
+				00C4A4C523C509E800C18F65 /* Settings.bundle */,
 				001366BE2307B620009A102E /* Assets.xcassets */,
-				001366C02307B620009A102E /* LaunchScreen.storyboard */,
 				005932CF234D747100DC2323 /* Expedition.entitlements */,
 				001366C32307B620009A102E /* Info.plist */,
 			);
@@ -257,9 +256,8 @@
 		00476DA624313AC300BDE254 /* History */ = {
 			isa = PBXGroup;
 			children = (
-				5D5BA2E123C5910C00D98050 /* HistoryTableViewController.swift */,
-				5D1D0D5B23C6F1CB00B4377E /* HistoryElement+CoreDataClass.swift */,
 				5D1D0D5C23C6F1CB00B4377E /* HistoryElement+CoreDataProperties.swift */,
+				5D56ABD5243C1EBE0073677F /* HistoryElement+CoreDataClass.swift */,
 				5D1D0D5623C6AE7600B4377E /* History.xcdatamodeld */,
 			);
 			path = History;
@@ -278,47 +276,14 @@
 			path = AltAppIcons;
 			sourceTree = "<group>";
 		};
-		0062525F24208BD2004B3136 /* OnboardingVCs */ = {
+		0062525F24208BD2004B3136 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				5D1D0D5923C6B0B300B4377E /* PersistenceService.swift */,
+				001366BB2307B61F009A102E /* Main.storyboard */,
 				0062525C242080AE004B3136 /* Onboarding.storyboard */,
-				0062526024208C02004B3136 /* Onb1ViewController.swift */,
-				0062526224208C08004B3136 /* Onb2ViewController.swift */,
-				0062526424208C26004B3136 /* Onb3ViewController.swift */,
+				001366C02307B620009A102E /* LaunchScreen.storyboard */,
 			);
-			path = OnboardingVCs;
-			sourceTree = "<group>";
-		};
-		00748156243057430035ED94 /* Options */ = {
-			isa = PBXGroup;
-			children = (
-				5D41CBF023C569B6003A16F9 /* SettingsBundleHelper.swift */,
-				5D865CC323E1013700374B07 /* BlankViewController.swift */,
-				000D80262427F5CA005E0CA1 /* AppIconsViewController.swift */,
-				5D41CBF223C5745C003A16F9 /* OptionsViewController.swift */,
-			);
-			path = Options;
-			sourceTree = "<group>";
-		};
-		00748157243057830035ED94 /* Searching */ = {
-			isa = PBXGroup;
-			children = (
-				007C7EB02437D01F00B476F1 /* NotFound.html */,
-				007C7EAF2437D01F00B476F1 /* NotFoundDark.html */,
-				D6030CDB23A89669003C6911 /* Gestures.swift */,
-				001366B92307B61F009A102E /* SearchingViewController.swift */,
-			);
-			path = Searching;
-			sourceTree = "<group>";
-		};
-		00748158243057C10035ED94 /* Intro */ = {
-			isa = PBXGroup;
-			children = (
-				5D793D0423D4DF5C00539A44 /* Swift+Gif.swift */,
-				5D793D0623D4E02D00539A44 /* IntroViewController.swift */,
-			);
-			path = Intro;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		00AD59E723CB9865007C6495 /* ColorShadowAppIcon */ = {
@@ -345,19 +310,68 @@
 			path = GlyphFadeAppIcon;
 			sourceTree = "<group>";
 		};
-		00F82095243029C7006B6650 /* Tabs */ = {
+		5D56ABCD243C1CF50073677F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				0081CCE124280A720097C2C6 /* TabsTableViewController.swift */,
-				00F82096243029DF006B6650 /* WebsiteImg.swift */,
+				5D56ABCE243C1D040073677F /* Web */,
 			);
-			path = Tabs;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		5D56ABCE243C1D040073677F /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				5D56ABCF243C1D140073677F /* Website.swift */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+		5D56ABD1243C1D760073677F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				001366B92307B61F009A102E /* SearchingViewController.swift */,
+				5D793D0623D4E02D00539A44 /* IntroViewController.swift */,
+				5D5BA2E123C5910C00D98050 /* HistoryTableViewController.swift */,
+				5D41CBF223C5745C003A16F9 /* OptionsViewController.swift */,
+				0081CCE124280A720097C2C6 /* TabsTableViewController.swift */,
+				000D80262427F5CA005E0CA1 /* AppIconsViewController.swift */,
+				5D865CC323E1013700374B07 /* BlankViewController.swift */,
+				5D56ABD3243C1D970073677F /* Onboarding */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		5D56ABD3243C1D970073677F /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				0062526024208C02004B3136 /* Onb1ViewController.swift */,
+				0062526224208C08004B3136 /* Onb2ViewController.swift */,
+				0062526424208C26004B3136 /* Onb3ViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		5D56ABD4243C1DC10073677F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5D2FA89F23D5490B00A68AF5 /* LightIntro.gif */,
+				007C7EB02437D01F00B476F1 /* NotFound.html */,
+				007C7EAF2437D01F00B476F1 /* NotFoundDark.html */,
+				0062525E24208B61004B3136 /* AltAppIcons */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		5D9AE08D24371AA900239559 /* Util */ = {
 			isa = PBXGroup;
 			children = (
 				5D9AE08E24371ABE00239559 /* Util.swift */,
+				5D56ABCB243C1CD00073677F /* WebUtil.swift */,
+				5D793D0423D4DF5C00539A44 /* Swift+Gif.swift */,
+				D6030CDB23A89669003C6911 /* Gestures.swift */,
+				5D1D0D5923C6B0B300B4377E /* PersistenceService.swift */,
+				5D41CBF023C569B6003A16F9 /* SettingsBundleHelper.swift */,
+				5D56ABD8243C1F540073677F /* Sharing.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -539,17 +553,19 @@
 				5D41CBF123C569B6003A16F9 /* SettingsBundleHelper.swift in Sources */,
 				0062526324208C08004B3136 /* Onb2ViewController.swift in Sources */,
 				5D865CC423E1013700374B07 /* BlankViewController.swift in Sources */,
+				5D56ABD0243C1D140073677F /* Website.swift in Sources */,
 				5D1D0D5E23C6F1CB00B4377E /* HistoryElement+CoreDataProperties.swift in Sources */,
 				0081CCE224280A720097C2C6 /* TabsTableViewController.swift in Sources */,
+				5D56ABCC243C1CD00073677F /* WebUtil.swift in Sources */,
 				5D9AE08F24371ABE00239559 /* Util.swift in Sources */,
 				0062526124208C02004B3136 /* Onb1ViewController.swift in Sources */,
 				000D80272427F5CA005E0CA1 /* AppIconsViewController.swift in Sources */,
+				5D56ABD9243C1F540073677F /* Sharing.swift in Sources */,
 				5D793D0523D4DF5C00539A44 /* Swift+Gif.swift in Sources */,
 				5D41CBF323C5745C003A16F9 /* OptionsViewController.swift in Sources */,
 				5D1D0D5823C6AE7600B4377E /* History.xcdatamodeld in Sources */,
-				5D1D0D5D23C6F1CB00B4377E /* HistoryElement+CoreDataClass.swift in Sources */,
+				5D56ABD6243C1EBE0073677F /* HistoryElement+CoreDataClass.swift in Sources */,
 				0062526524208C26004B3136 /* Onb3ViewController.swift in Sources */,
-				00F82097243029DF006B6650 /* WebsiteImg.swift in Sources */,
 				5D5BA2E223C5910C00D98050 /* HistoryTableViewController.swift in Sources */,
 				001366BA2307B61F009A102E /* SearchingViewController.swift in Sources */,
 				001366B82307B61F009A102E /* AppDelegate.swift in Sources */,

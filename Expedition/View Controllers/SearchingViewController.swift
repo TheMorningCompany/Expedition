@@ -242,25 +242,6 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
          standoutMessage(message: "FAILED NAVIGATION")
      }
     
-    func verifyUrl (urlString: String?) -> Bool { //tests for url
-        let url: URL?
-        if (urlString!.contains(" ")){
-            return false
-        } else if urlString!.hasPrefix("http://") {
-            url = URL(string: urlString!)
-        } else {
-            url = URL(string: "http://" + urlString!)
-        }
-        if let url = url {
-            if (urlString!.contains(".") && !(urlString!.hasPrefix(".")) && !(urlString!.hasSuffix("."))) {
-                if (UIApplication.shared.canOpenURL(url)) {
-                    return true
-                }
-            }
-        }
-            return false
-    }
-    
     func openUrl(urlString: String) {
         if (verifyUrl(urlString: urlString)) {
             
@@ -323,15 +304,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         return (components?.url)!
     }
     
-    func generateRequest(url: URL) -> URLRequest {
-        let request = URLRequest(url: url)
-        
-        return request
-    }
     
-    func urlToString(url: URL) -> String {
-        return "\(url)"
-    }
     
 
 
@@ -358,25 +331,16 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
 
     @IBAction func desktopSiteSwipe(_ sender: Any) {
         if UIDevice.current.userInterfaceIdiom == .phone {
-        impact.impactOccurred()//haptic
+            impact.impactOccurred()//haptic
        
-        if userAgentVar == "mobile" {
-            // switches to desktop useragent
-            webView.customUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/7.4 Expedition/605.1.15"
-            userAgentVar = "desktop"
-            print("USER AGENT: " + userAgentVar)
-            webView.reload()
-        } else {
-            impact.impactOccurred()//Haptic // switchtes to mobile useragent
-            webView.customUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/7.4 Mobile/15E148 Expedition/604.1"
-            userAgentVar = "mobile"
-            print("USER AGENT: " + userAgentVar)
-            webView.reload()
-        }
+            let response = switchUserAgent(agent: userAgentVar)
+            
+            userAgentVar = response[0]
+            webView.customUserAgent = response[1]
         
-        UIView.transition(with: searchBar, duration: 0.5, options: .transitionCrossDissolve, animations: { [weak self] in
-            self?.searchBar.text = self?.userAgentVar
-        }, completion: nil)
+            UIView.transition(with: searchBar, duration: 0.5, options: .transitionCrossDissolve, animations: { [weak self] in
+                self?.searchBar.text = self?.userAgentVar
+            }, completion: nil)
     
         }
     }
@@ -437,46 +401,45 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     
     @IBAction func reloadButton(_ sender: Any) {
         webView.reload()
-        
-        
     }
+    
     @IBAction func shareButton(_ sender: Any) {
-        let alert = UIAlertController(title: "Clear Browsing Data", message: "What do you want to  do?", preferredStyle: .actionSheet)
-        
-        alert.addAction(UIAlertAction(title: "Nothing", style: .cancel, handler: nil))
-        
-        alert.addAction(UIAlertAction(title: "URL", style: .default, handler: { action in
-            self.displayShareSheet(shareContent: self.searchBar.text!)
-            self.impact.impactOccurred() //Haptics
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Page Snapshot", style: .default, handler: { action in
-            let config = WKSnapshotConfiguration()
-            var pageHeight:CGFloat = self.webView.scrollView.contentSize.height
-            var pageWidth:CGFloat = self.webView.scrollView.contentSize.width
+            let alert = UIAlertController(title: "Clear Browsing Data", message: "What do you want to  do?", preferredStyle: .actionSheet)
             
-//            self.webView.evaluateJavaScript("document.body.offsetHeight", completionHandler: { (height, error) in
-//                pageHeight = height
-//            })
-//
-//            self.webView.evaluateJavaScript("document.body.offsetWidth", completionHandler: { (width, error) in
-//                pageWidth = width
-//            })
+            alert.addAction(UIAlertAction(title: "Nothing", style: .cancel, handler: nil))
             
-            standoutMessage(message: "DIMENSIONS: \(pageWidth), \(pageHeight)")
+            alert.addAction(UIAlertAction(title: "URL", style: .default, handler: { action in
+                self.displayShareSheet(shareContent: self.searchBar.text!)
+                self.impact.impactOccurred() //Haptics
+            }))
             
-            config.rect = CGRect(x: 0, y: 0, width: pageWidth, height: pageHeight)
+            alert.addAction(UIAlertAction(title: "Page Snapshot", style: .default, handler: { action in
+                let config = WKSnapshotConfiguration()
+                var pageHeight:CGFloat = self.webView.scrollView.contentSize.height
+                var pageWidth:CGFloat = self.webView.scrollView.contentSize.width
+                
+    //            self.webView.evaluateJavaScript("document.body.offsetHeight", completionHandler: { (height, error) in
+    //                pageHeight = height
+    //            })
+    //
+    //            self.webView.evaluateJavaScript("document.body.offsetWidth", completionHandler: { (width, error) in
+    //                pageWidth = width
+    //            })
+                
+                standoutMessage(message: "DIMENSIONS: \(pageWidth), \(pageHeight)")
+                
+                config.rect = CGRect(x: 0, y: 0, width: pageWidth, height: pageHeight)
 
-            self.webView.takeSnapshot(with: config) { image, error in
-                if let image = image {
-                    print(image.size)
-                    self.displayShareSheet(shareContent: image)
+                self.webView.takeSnapshot(with: config) { image, error in
+                    if let image = image {
+                        print(image.size)
+                        self.displayShareSheet(shareContent: image)
+                    }
                 }
-            }
-        }))
-        
-        self.present(alert, animated: true)
-    }
+            }))
+            
+            self.present(alert, animated: true)
+        }
 }
 
 
