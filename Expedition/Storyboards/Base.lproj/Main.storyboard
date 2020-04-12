@@ -116,7 +116,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="OWn-sv-M0a"/>
-                                    <barButtonItem image="gear" catalog="system" id="f5j-7z-w5L">
+                                    <barButtonItem image="ellipsis" catalog="system" id="f5j-7z-w5L">
                                         <connections>
                                             <segue destination="bPB-G8-doO" kind="presentation" id="Mca-ek-37V"/>
                                         </connections>
@@ -167,14 +167,10 @@
                         <action selector="searchBarShare:" destination="BYZ-38-t0r" id="bkJ-9e-51l"/>
                     </connections>
                 </pongPressGestureRecognizer>
-                <swipeGestureRecognizer direction="left" id="Srt-5a-Pr4" userLabel="HistorySwipe">
+                <swipeGestureRecognizer direction="left" id="Srt-5a-Pr4" userLabel="bookmarksSwipe"/>
+                <swipeGestureRecognizer direction="right" id="ltd-91-b5P" userLabel="tabsSwipe">
                     <connections>
-                        <segue destination="65v-MH-vlF" kind="presentation" id="zo6-DM-YYL"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="ltd-91-b5P" userLabel="options swipe">
-                    <connections>
-                        <segue destination="bPB-G8-doO" kind="presentation" id="mbe-fC-xhx"/>
+                        <segue destination="5yK-Au-Llm" kind="presentation" id="2d6-6s-Pj0"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="up" id="0xN-Ym-Ghr" userLabel="UserAgentSwipe">
@@ -213,7 +209,7 @@
             <objects>
                 <tableViewController title="History" id="65v-MH-vlF" customClass="HistoryTableViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="26q-fx-QMl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -248,6 +244,9 @@
                             <outlet property="delegate" destination="65v-MH-vlF" id="2H6-jB-AjU"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="AcP-IQ-ecP">
+                        <barButtonItem key="backBarButtonItem" title=" " id="gUT-Z5-cgn"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="historyTableView" destination="26q-fx-QMl" id="rAi-HP-iFQ"/>
                     </connections>
@@ -583,8 +582,34 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="Expedition White"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="69" id="uNX-RX-Jec">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="69" id="c9o-nE-4tE">
                                         <rect key="frame" x="0.0" y="526" width="414" height="69"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c9o-nE-4tE" id="xqg-8D-Gwe">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Jo-Vo-HEo">
+                                                    <rect key="frame" x="30" y="21" width="69" height="27"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                                    <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <state key="normal" title="history"/>
+                                                    <connections>
+                                                        <segue destination="65v-MH-vlF" kind="show" id="nw9-GB-K5b"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6Jo-Vo-HEo" firstAttribute="leading" secondItem="xqg-8D-Gwe" secondAttribute="leadingMargin" constant="10" id="8Td-wj-oB9"/>
+                                                <constraint firstItem="6Jo-Vo-HEo" firstAttribute="top" secondItem="xqg-8D-Gwe" secondAttribute="topMargin" constant="10" id="KA3-UK-o9k"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6Jo-Vo-HEo" secondAttribute="trailing" constant="20" symbolic="YES" id="QVM-xg-I4f"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="6Jo-Vo-HEo" secondAttribute="bottom" constant="10" id="TVw-m5-Eir"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="69" id="uNX-RX-Jec">
+                                        <rect key="frame" x="0.0" y="595" width="414" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uNX-RX-Jec" id="FDe-lD-cDo">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
@@ -610,7 +635,7 @@
                                         <color key="backgroundColor" name="Expedition White"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="69" id="jGT-iu-AiC">
-                                        <rect key="frame" x="0.0" y="595" width="414" height="69"/>
+                                        <rect key="frame" x="0.0" y="664" width="414" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jGT-iu-AiC" id="hQb-Wk-xAW">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
@@ -636,7 +661,7 @@
                                         <color key="backgroundColor" name="Expedition White"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="69" id="yWR-WZ-Sqx">
-                                        <rect key="frame" x="0.0" y="664" width="414" height="69"/>
+                                        <rect key="frame" x="0.0" y="733" width="414" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yWR-WZ-Sqx" id="whm-hc-D65">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
@@ -662,14 +687,14 @@
                                         <color key="backgroundColor" name="Expedition White"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="69" id="iB3-cx-CC6">
-                                        <rect key="frame" x="0.0" y="733" width="414" height="69"/>
+                                        <rect key="frame" x="0.0" y="802" width="414" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iB3-cx-CC6" id="l9j-hV-Hag">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTJ-TB-W1Q">
-                                                    <rect key="frame" x="30" y="21" width="112" height="27"/>
+                                                    <rect key="frame" x="18" y="21" width="112" height="27"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
                                                     <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <state key="normal" title="how to use"/>
@@ -689,7 +714,7 @@
                                         <color key="backgroundColor" name="Expedition White"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="69" id="bxL-bp-79o">
-                                        <rect key="frame" x="0.0" y="802" width="414" height="69"/>
+                                        <rect key="frame" x="0.0" y="871" width="414" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bxL-bp-79o" id="hkW-hC-hrx">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
@@ -715,7 +740,7 @@
                                         <color key="backgroundColor" name="Expedition White"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="69" id="tJg-bv-Hdr">
-                                        <rect key="frame" x="0.0" y="871" width="414" height="69"/>
+                                        <rect key="frame" x="0.0" y="940" width="414" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tJg-bv-Hdr" id="fvS-zj-69b">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
@@ -1187,7 +1212,7 @@ We do not collect any data or personal information in Expedition. We simply do n
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="J6e-BP-JhY"/>
-        <segue reference="mbe-fC-xhx"/>
+        <segue reference="5PD-VS-Fhr"/>
         <segue reference="fET-hm-iSD"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1204,7 +1229,7 @@ We do not collect any data or personal information in Expedition. We simply do n
         <image name="donateBtn" width="959" height="420"/>
         <image name="donateBtn-P" width="959" height="420"/>
         <image name="donations" width="1024" height="1024"/>
-        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="gearBlue" width="1024" height="1024"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="selected" width="731.66668701171875" height="731.66668701171875"/>

@@ -337,15 +337,10 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     }
     
     func pageNotFound() {
-        if self.traitCollection.userInterfaceStyle == .light {
             if let url = Bundle.main.url(forResource: "NotFound", withExtension: "html") {
                 webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
             }
-        } else {
-            if let url = Bundle.main.url(forResource: "NotFoundDark", withExtension: "html") {
-            webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
-        }
-    }
+    
         secureImg.image = UIImage(named: "lockBlue")
 }
     
