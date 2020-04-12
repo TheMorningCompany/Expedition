@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0003C0E323CC08A200111AA1 /* Soft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0003C0E223CC08A200111AA1 /* Soft@2x.png */; };
 		000D80272427F5CA005E0CA1 /* AppIconsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000D80262427F5CA005E0CA1 /* AppIconsViewController.swift */; };
+		000EB4FF2443B96B008ECDDE /* NotFound.html in Resources */ = {isa = PBXBuildFile; fileRef = 000EB4FD2443B96B008ECDDE /* NotFound.html */; };
+		000EB5002443B96B008ECDDE /* NotFoundDark.html in Resources */ = {isa = PBXBuildFile; fileRef = 000EB4FE2443B96B008ECDDE /* NotFoundDark.html */; };
 		001366B82307B61F009A102E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001366B72307B61F009A102E /* AppDelegate.swift */; };
 		001366BA2307B61F009A102E /* SearchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001366B92307B61F009A102E /* SearchingViewController.swift */; };
 		001366BD2307B61F009A102E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001366BB2307B61F009A102E /* Main.storyboard */; };
@@ -27,8 +29,6 @@
 		0077891823D14005002AEE78 /* LightShatter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0077891623D14005002AEE78 /* LightShatter@2x.png */; };
 		0077891923D14005002AEE78 /* DarkShatter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0077891723D14005002AEE78 /* DarkShatter@2x.png */; };
 		0078502F23CD688E00BDB94C /* Prism@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078502E23CD688E00BDB94C /* Prism@2x.png */; };
-		007C7EB12437D01F00B476F1 /* NotFoundDark.html in Resources */ = {isa = PBXBuildFile; fileRef = 007C7EAF2437D01F00B476F1 /* NotFoundDark.html */; };
-		007C7EB22437D01F00B476F1 /* NotFound.html in Resources */ = {isa = PBXBuildFile; fileRef = 007C7EB02437D01F00B476F1 /* NotFound.html */; };
 		0081CCE224280A720097C2C6 /* TabsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081CCE124280A720097C2C6 /* TabsTableViewController.swift */; };
 		00A91DBD23A84AFF00F045F7 /* DarkIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A91DBB23A84AFF00F045F7 /* DarkIcon@2x.png */; };
 		00AB6BA623CD37DE0088E269 /* Metal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AB6BA523CD37DD0088E269 /* Metal@2x.png */; };
@@ -91,6 +91,8 @@
 		0007DAE22437B808007BF62C /* Action.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
 		0007DAE42437B808007BF62C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		000D80262427F5CA005E0CA1 /* AppIconsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconsViewController.swift; sourceTree = "<group>"; };
+		000EB4FD2443B96B008ECDDE /* NotFound.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = NotFound.html; sourceTree = "<group>"; };
+		000EB4FE2443B96B008ECDDE /* NotFoundDark.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = NotFoundDark.html; sourceTree = "<group>"; };
 		001366B42307B61F009A102E /* Expedition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expedition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		001366B72307B61F009A102E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		001366B92307B61F009A102E /* SearchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingViewController.swift; sourceTree = "<group>"; usesTabs = 0; };
@@ -115,8 +117,6 @@
 		0077891623D14005002AEE78 /* LightShatter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LightShatter@2x.png"; sourceTree = "<group>"; };
 		0077891723D14005002AEE78 /* DarkShatter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DarkShatter@2x.png"; sourceTree = "<group>"; };
 		0078502E23CD688E00BDB94C /* Prism@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Prism@2x.png"; sourceTree = "<group>"; };
-		007C7EAF2437D01F00B476F1 /* NotFoundDark.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = NotFoundDark.html; sourceTree = "<group>"; };
-		007C7EB02437D01F00B476F1 /* NotFound.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = NotFound.html; sourceTree = "<group>"; };
 		0081CCE124280A720097C2C6 /* TabsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsTableViewController.swift; sourceTree = "<group>"; };
 		00A91DBB23A84AFF00F045F7 /* DarkIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DarkIcon@2x.png"; sourceTree = "<group>"; };
 		00AB6BA523CD37DD0088E269 /* Metal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Metal@2x.png"; sourceTree = "<group>"; };
@@ -358,8 +358,8 @@
 			isa = PBXGroup;
 			children = (
 				5D2FA89F23D5490B00A68AF5 /* LightIntro.gif */,
-				007C7EB02437D01F00B476F1 /* NotFound.html */,
-				007C7EAF2437D01F00B476F1 /* NotFoundDark.html */,
+				000EB4FD2443B96B008ECDDE /* NotFound.html */,
+				000EB4FE2443B96B008ECDDE /* NotFoundDark.html */,
 				0062525E24208B61004B3136 /* AltAppIcons */,
 			);
 			path = Resources;
@@ -512,21 +512,21 @@
 				00F7071123D16FB400C0B8E2 /* Diamond@2x.png in Resources */,
 				0077891823D14005002AEE78 /* LightShatter@2x.png in Resources */,
 				00A91DBD23A84AFF00F045F7 /* DarkIcon@2x.png in Resources */,
-				007C7EB22437D01F00B476F1 /* NotFound.html in Resources */,
 				0037F18C24170A8300275CD0 /* LightBlue@2x.png in Resources */,
 				0003C0E323CC08A200111AA1 /* Soft@2x.png in Resources */,
 				001366C22307B620009A102E /* LaunchScreen.storyboard in Resources */,
-				007C7EB12437D01F00B476F1 /* NotFoundDark.html in Resources */,
 				006302BE23CC04760074BE1C /* IOS6@2x.png in Resources */,
 				001366BF2307B620009A102E /* Assets.xcassets in Resources */,
 				0062525D242080AE004B3136 /* Onboarding.storyboard in Resources */,
 				0053E05F23F640330012DB78 /* GlyphFade@2x.png in Resources */,
+				000EB4FF2443B96B008ECDDE /* NotFound.html in Resources */,
 				5DE81BC323CBB45000F6FA33 /* ColorShadow@2x.png in Resources */,
 				5DE81BC423CBB45300F6FA33 /* Fading@2x.png in Resources */,
 				00C4A4C623C509E800C18F65 /* Settings.bundle in Resources */,
 				001366BD2307B61F009A102E /* Main.storyboard in Resources */,
 				0078502F23CD688E00BDB94C /* Prism@2x.png in Resources */,
 				00AB6BA623CD37DE0088E269 /* Metal@2x.png in Resources */,
+				000EB5002443B96B008ECDDE /* NotFoundDark.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
