@@ -66,8 +66,6 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         ActInd?.hidesWhenStopped = true
         
         
-        NotificationCenter.default.addObserver(self, selector: #selector(toolbarVisible), name: NSNotification.Name(rawValue: "toolbar"), object: nil)
-        
         if UserDefaults.standard.bool(forKey: "reopen_tabs") {
             let fetchRequest: NSFetchRequest<HistoryElement> = HistoryElement.fetchRequest()
             
@@ -88,28 +86,13 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             
         }
         
-        if let showToolbar:Bool = UserDefaults.standard.bool(forKey: "show_toolbar") {
-            if (showToolbar) {
-                accessibilityToolbar.isHidden = false
-            } else {
-                accessibilityToolbar.isHidden = true
-            }
-        }
+
         
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
         
     }
     
-    @objc func toolbarVisible() {
-        if let showToolbar:Bool = UserDefaults.standard.bool(forKey: "show_toolbar") {
-            if (showToolbar) {
-                accessibilityToolbar.isHidden = false
-            } else {
-                accessibilityToolbar.isHidden = true
-            }
-        }
-    }
     
     @objc func appMovedToBackground() {
         if let fadeOnClose:Bool = UserDefaults.standard.bool(forKey: "fade_on_close") {

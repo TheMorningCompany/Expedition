@@ -18,7 +18,6 @@ class OptionsViewController: UITableViewController {
     @IBOutlet weak var keepCookiesSwitch: UISwitch!
     @IBOutlet weak var reopenTabsSwitch: UISwitch!
     @IBOutlet weak var fadeOnCloseSwitch: UISwitch!
-    @IBOutlet weak var showToolbarSwitch: UISwitch!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -107,11 +106,7 @@ class OptionsViewController: UITableViewController {
         UserDefaults.standard.set(fadeOnCloseSwitch.isOn, forKey: "fade_on_close")
         UserDefaults.standard.synchronize()
     }
-    @IBAction func toolbarSwitchValueChanged(_ sender: UISwitch) {
-        UserDefaults.standard.set(showToolbarSwitch.isOn, forKey: "show_toolbar")
-        UserDefaults.standard.synchronize()
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "toolbar"), object: nil)
-    }
+
     func registerSettingsBundle(){
         let appDefaults = [String:AnyObject]()
         UserDefaults.standard.register(defaults: appDefaults)
@@ -129,9 +124,6 @@ class OptionsViewController: UITableViewController {
         }
         if let fadeOnClose:Bool = UserDefaults.standard.bool(forKey: "fade_on_close") {
             fadeOnCloseSwitch.setOn(fadeOnClose, animated: false)
-        }
-        if let showToolbar:Bool = UserDefaults.standard.bool(forKey: "show_toolbar") {
-            showToolbarSwitch.setOn(showToolbar, animated: false)
         }
     }
     

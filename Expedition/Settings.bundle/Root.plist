@@ -54,16 +54,6 @@
 			<key>DefaultValue</key>
 			<true/>
 		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>Show Accessibility Toolbar</string>
-			<key>Key</key>
-			<string>show_toolbar</string>
-			<key>DefaultValue</key>
-			<false/>
-		</dict>
 	</array>
 </dict>
 </plist>
