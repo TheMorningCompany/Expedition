@@ -41,53 +41,7 @@ class OptionsViewController: UITableViewController {
         //present(, animated: true)
     }
     
-    @IBAction func clearHistory(_ sender: UIButton) {
-        impact.impactOccurred() // Haptics
-        let alert = UIAlertController(title: "Clear History", message: "Are you sure you want to clear history?", preferredStyle: .actionSheet)
-        
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
-        alert.addAction(UIAlertAction(title: "Clear", style: .destructive, handler: { action in
-          
-            self.doTheClearHistory()
-            self.notification.notificationOccurred(.success)//Haptics
-        }))
-        
-        self.present(alert, animated: true)
-    }
-    
-    @IBAction func clearBrowsingData(_ sender: UIButton) {
-        impact.impactOccurred() // Haptics
-        let alert = UIAlertController(title: "Clear Browsing Data", message: "Are you sure you want to clear cookies and history?", preferredStyle: .actionSheet)
-        
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
-        alert.addAction(UIAlertAction(title: "Clear", style: .destructive, handler: { action in
-            self.doTheClearHistory()
-            self.removeCookies()
-            self.notification.notificationOccurred(.success)//Haptics
-        }))
 
-        self.present(alert, animated: true)
-    }
-    
-    func removeCookies(){
-        // Remove all cache
-        ViewController().doTheDeleteCookies()
-    }
-    
-    func doTheClearHistory() {
-        HistoryTableViewController().historyArray = [HistoryElement]()
-        let fetchRequest: NSFetchRequest<HistoryElement> = HistoryElement.fetchRequest()
-        if let result = try? PersistenceService.context.fetch(fetchRequest) {
-           for object in result {
-               PersistenceService.context.delete(object)
-           }
-           PersistenceService.saveContext()
-           HistoryTableViewController().tableView.reloadData()
-        }
-        print("history cleared", HistoryTableViewController().historyArray)
-    }
     
     @IBAction func historySwitchValueChange(_ sender: Any) {
         UserDefaults.standard.set(historySwitch.isOn, forKey: "save_history")
