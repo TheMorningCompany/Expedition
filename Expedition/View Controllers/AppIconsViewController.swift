@@ -8,12 +8,13 @@
 
 import UIKit
 
-class AppIconsViewController: UIViewController {
+class AppIconsViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
     
     @IBAction func didTapLightIcon(_ sender: UIButton) {

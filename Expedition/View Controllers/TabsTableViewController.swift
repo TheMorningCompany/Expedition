@@ -12,6 +12,7 @@ class TabsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         self.navigationController!.navigationBar.layer.borderWidth = 0.50
         self.navigationController!.navigationBar.layer.borderColor = UIColor.clear.cgColor
         self.navigationController?.navigationBar.clipsToBounds = true
