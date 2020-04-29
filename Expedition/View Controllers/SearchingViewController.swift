@@ -198,6 +198,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             
         }
         ActInd?.startAnimating()
+        
          
      }
      
@@ -216,7 +217,9 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             PersistenceService.saveContext()
             HistoryTableViewController().historyArray.append(historyElementToAdd)
             HistoryTableViewController().tableView.reloadData()
+            
         }
+
      }
      
      func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
