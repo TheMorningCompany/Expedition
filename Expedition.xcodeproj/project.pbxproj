@@ -16,6 +16,7 @@
 		001366C22307B620009A102E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001366C02307B620009A102E /* LaunchScreen.storyboard */; };
 		001366D82307B620009A102E /* ExpeditionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001366D72307B620009A102E /* ExpeditionUITests.swift */; };
 		001366E72307BEA9009A102E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001366E62307BEA9009A102E /* WebKit.framework */; };
+		0028F4F9245CC29500FB89B3 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0028F4F8245CC29500FB89B3 /* ContactViewController.swift */; };
 		0037F18C24170A8300275CD0 /* LightBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0037F18B24170A8300275CD0 /* LightBlue@2x.png */; };
 		004C1AC524457D5E00247132 /* NotFound.html in Resources */ = {isa = PBXBuildFile; fileRef = 004C1AC424457D5E00247132 /* NotFound.html */; };
 		0053E05F23F640330012DB78 /* GlyphFade@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0053E05E23F640330012DB78 /* GlyphFade@2x.png */; };
@@ -102,6 +103,7 @@
 		001366D72307B620009A102E /* ExpeditionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpeditionUITests.swift; sourceTree = "<group>"; };
 		001366D92307B620009A102E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		001366E62307BEA9009A102E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		0028F4F8245CC29500FB89B3 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		0037F18B24170A8300275CD0 /* LightBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LightBlue@2x.png"; sourceTree = "<group>"; };
 		004C1AC424457D5E00247132 /* NotFound.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = NotFound.html; sourceTree = SOURCE_ROOT; };
 		0053E05E23F640330012DB78 /* GlyphFade@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GlyphFade@2x.png"; sourceTree = "<group>"; };
@@ -237,22 +239,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		0016FC3C23A6B801000D0022 /* DarkAppIcon */ = {
-			isa = PBXGroup;
-			children = (
-				00A91DBB23A84AFF00F045F7 /* DarkIcon@2x.png */,
-			);
-			path = DarkAppIcon;
-			sourceTree = "<group>";
-		};
-		0037F18824170A5F00275CD0 /* LightBlueAppIcon */ = {
-			isa = PBXGroup;
-			children = (
-				0037F18B24170A8300275CD0 /* LightBlue@2x.png */,
-			);
-			path = LightBlueAppIcon;
-			sourceTree = "<group>";
-		};
 		00476DA624313AC300BDE254 /* History */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,12 +252,12 @@
 		0062525E24208B61004B3136 /* AltAppIcons */ = {
 			isa = PBXGroup;
 			children = (
+				00A91DBB23A84AFF00F045F7 /* DarkIcon@2x.png */,
+				00AD59E923CB986E007C6495 /* ColorShadow@2x.png */,
+				0037F18B24170A8300275CD0 /* LightBlue@2x.png */,
+				0053E05E23F640330012DB78 /* GlyphFade@2x.png */,
+				00AD59F623CB98AC007C6495 /* Fading@2x.png */,
 				5DE81BC623CBB83400F6FA33 /* TotallyNotSecretIcons */,
-				0016FC3C23A6B801000D0022 /* DarkAppIcon */,
-				00AD59E723CB9865007C6495 /* ColorShadowAppIcon */,
-				00AD59F523CB98A5007C6495 /* FadingAppIcon */,
-				00AD59FC23CB98B8007C6495 /* GlyphFadeAppIcon */,
-				0037F18824170A5F00275CD0 /* LightBlueAppIcon */,
 			);
 			path = AltAppIcons;
 			sourceTree = "<group>";
@@ -284,30 +270,6 @@
 				001366C02307B620009A102E /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		00AD59E723CB9865007C6495 /* ColorShadowAppIcon */ = {
-			isa = PBXGroup;
-			children = (
-				00AD59E923CB986E007C6495 /* ColorShadow@2x.png */,
-			);
-			path = ColorShadowAppIcon;
-			sourceTree = "<group>";
-		};
-		00AD59F523CB98A5007C6495 /* FadingAppIcon */ = {
-			isa = PBXGroup;
-			children = (
-				00AD59F623CB98AC007C6495 /* Fading@2x.png */,
-			);
-			path = FadingAppIcon;
-			sourceTree = "<group>";
-		};
-		00AD59FC23CB98B8007C6495 /* GlyphFadeAppIcon */ = {
-			isa = PBXGroup;
-			children = (
-				0053E05E23F640330012DB78 /* GlyphFade@2x.png */,
-			);
-			path = GlyphFadeAppIcon;
 			sourceTree = "<group>";
 		};
 		5D56ABCD243C1CF50073677F /* Classes */ = {
@@ -333,6 +295,7 @@
 				0074A5A12442A672003C92D2 /* DonationBoxViewController.swift */,
 				5D793D0623D4E02D00539A44 /* IntroViewController.swift */,
 				5D5BA2E123C5910C00D98050 /* HistoryTableViewController.swift */,
+				0028F4F8245CC29500FB89B3 /* ContactViewController.swift */,
 				5D41CBF223C5745C003A16F9 /* OptionsViewController.swift */,
 				0081CCE124280A720097C2C6 /* TabsTableViewController.swift */,
 				000D80262427F5CA005E0CA1 /* AppIconsViewController.swift */,
@@ -564,6 +527,7 @@
 				5D793D0523D4DF5C00539A44 /* Swift+Gif.swift in Sources */,
 				5D41CBF323C5745C003A16F9 /* OptionsViewController.swift in Sources */,
 				5D1D0D5823C6AE7600B4377E /* History.xcdatamodeld in Sources */,
+				0028F4F9245CC29500FB89B3 /* ContactViewController.swift in Sources */,
 				5D56ABD6243C1EBE0073677F /* HistoryElement+CoreDataClass.swift in Sources */,
 				0062526524208C26004B3136 /* Onb3ViewController.swift in Sources */,
 				5D5BA2E223C5910C00D98050 /* HistoryTableViewController.swift in Sources */,
@@ -750,7 +714,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CQ7CSQ6XS5;
+				DEVELOPMENT_TEAM = 3HNBGF82F9;
 				INFOPLIST_FILE = Expedition/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -758,7 +722,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 7.4;
-				PRODUCT_BUNDLE_IDENTIFIER = com.themorningcompany.expedition;
+				PRODUCT_BUNDLE_IDENTIFIER = a.expedition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
@@ -777,7 +741,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CQ7CSQ6XS5;
+				DEVELOPMENT_TEAM = 3HNBGF82F9;
 				INFOPLIST_FILE = Expedition/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -785,7 +749,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 7.4;
-				PRODUCT_BUNDLE_IDENTIFIER = com.themorningcompany.expedition;
+				PRODUCT_BUNDLE_IDENTIFIER = a.expedition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
