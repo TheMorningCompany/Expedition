@@ -18,7 +18,6 @@
 		001366E72307BEA9009A102E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001366E62307BEA9009A102E /* WebKit.framework */; };
 		0028F4F9245CC29500FB89B3 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0028F4F8245CC29500FB89B3 /* ContactViewController.swift */; };
 		0037F18C24170A8300275CD0 /* LightBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0037F18B24170A8300275CD0 /* LightBlue@2x.png */; };
-		004C1AC524457D5E00247132 /* NotFound.html in Resources */ = {isa = PBXBuildFile; fileRef = 004C1AC424457D5E00247132 /* NotFound.html */; };
 		0053E05F23F640330012DB78 /* GlyphFade@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0053E05E23F640330012DB78 /* GlyphFade@2x.png */; };
 		0062525D242080AE004B3136 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0062525C242080AE004B3136 /* Onboarding.storyboard */; };
 		0062526124208C02004B3136 /* Onb1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0062526024208C02004B3136 /* Onb1ViewController.swift */; };
@@ -30,6 +29,7 @@
 		0077891923D14005002AEE78 /* DarkShatter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0077891723D14005002AEE78 /* DarkShatter@2x.png */; };
 		0078502F23CD688E00BDB94C /* Prism@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078502E23CD688E00BDB94C /* Prism@2x.png */; };
 		0081CCE224280A720097C2C6 /* TabsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081CCE124280A720097C2C6 /* TabsTableViewController.swift */; };
+		0090B57D245F55A900EFBB6C /* NotFound.html in Resources */ = {isa = PBXBuildFile; fileRef = 0090B57C245F55A900EFBB6C /* NotFound.html */; };
 		00A91DBD23A84AFF00F045F7 /* DarkIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A91DBB23A84AFF00F045F7 /* DarkIcon@2x.png */; };
 		00AB6BA623CD37DE0088E269 /* Metal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AB6BA523CD37DD0088E269 /* Metal@2x.png */; };
 		00C4A4C623C509E800C18F65 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00C4A4C523C509E800C18F65 /* Settings.bundle */; };
@@ -105,7 +105,6 @@
 		001366E62307BEA9009A102E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		0028F4F8245CC29500FB89B3 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		0037F18B24170A8300275CD0 /* LightBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LightBlue@2x.png"; sourceTree = "<group>"; };
-		004C1AC424457D5E00247132 /* NotFound.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = NotFound.html; sourceTree = SOURCE_ROOT; };
 		0053E05E23F640330012DB78 /* GlyphFade@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GlyphFade@2x.png"; sourceTree = "<group>"; };
 		005932CF234D747100DC2323 /* Expedition.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Expedition.entitlements; sourceTree = "<group>"; };
 		0062525C242080AE004B3136 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
@@ -118,6 +117,7 @@
 		0077891723D14005002AEE78 /* DarkShatter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DarkShatter@2x.png"; sourceTree = "<group>"; };
 		0078502E23CD688E00BDB94C /* Prism@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Prism@2x.png"; sourceTree = "<group>"; };
 		0081CCE124280A720097C2C6 /* TabsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsTableViewController.swift; sourceTree = "<group>"; };
+		0090B57C245F55A900EFBB6C /* NotFound.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = NotFound.html; path = ../../../../../Desktop/NotFound.html; sourceTree = "<group>"; };
 		00A91DBB23A84AFF00F045F7 /* DarkIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DarkIcon@2x.png"; sourceTree = "<group>"; };
 		00AB6BA523CD37DD0088E269 /* Metal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Metal@2x.png"; sourceTree = "<group>"; };
 		00AD59E923CB986E007C6495 /* ColorShadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ColorShadow@2x.png"; sourceTree = "<group>"; };
@@ -318,7 +318,7 @@
 		5D56ABD4243C1DC10073677F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				004C1AC424457D5E00247132 /* NotFound.html */,
+				0090B57C245F55A900EFBB6C /* NotFound.html */,
 				5D2FA89F23D5490B00A68AF5 /* LightIntro.gif */,
 				0062525E24208B61004B3136 /* AltAppIcons */,
 			);
@@ -472,6 +472,7 @@
 				00F7071123D16FB400C0B8E2 /* Diamond@2x.png in Resources */,
 				0077891823D14005002AEE78 /* LightShatter@2x.png in Resources */,
 				00A91DBD23A84AFF00F045F7 /* DarkIcon@2x.png in Resources */,
+				0090B57D245F55A900EFBB6C /* NotFound.html in Resources */,
 				0037F18C24170A8300275CD0 /* LightBlue@2x.png in Resources */,
 				0003C0E323CC08A200111AA1 /* Soft@2x.png in Resources */,
 				001366C22307B620009A102E /* LaunchScreen.storyboard in Resources */,
@@ -479,7 +480,6 @@
 				001366BF2307B620009A102E /* Assets.xcassets in Resources */,
 				0062525D242080AE004B3136 /* Onboarding.storyboard in Resources */,
 				0053E05F23F640330012DB78 /* GlyphFade@2x.png in Resources */,
-				004C1AC524457D5E00247132 /* NotFound.html in Resources */,
 				5DE81BC323CBB45000F6FA33 /* ColorShadow@2x.png in Resources */,
 				5DE81BC423CBB45300F6FA33 /* Fading@2x.png in Resources */,
 				00C4A4C623C509E800C18F65 /* Settings.bundle in Resources */,
