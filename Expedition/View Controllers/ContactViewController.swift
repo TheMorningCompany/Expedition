@@ -24,8 +24,7 @@ class ContactViewController: UITableViewController {
     }
     @IBAction func emailOpen(_ sender: Any) {
     }
-    @IBAction func reviewOpen(_ sender: Any) {
-    }
+
     
     /*
     // MARK: - Navigation
