@@ -1,0 +1,2533 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>cannot find server</title>
+<style id="applicationStylesheet" type="text/css">
+	.mediaViewInfo {
+		--web-view-name: NotFound;
+		--web-view-id: NotFound;
+		--web-scale-to-fit: true;
+		--web-scale-to-fit-type: height;
+		--web-enable-deep-linking: true;
+	}
+	:root {
+		--web-view-ids: NotFound;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#NotFound {
+		position: absolute;
+		width: 720px;
+		height: 1280px;
+		background-color: rgba(247,247,247,0);
+		overflow: hidden;
+		--web-view-name: NotFound;
+		--web-view-id: NotFound;
+		--web-scale-to-fit: true;
+		--web-scale-to-fit-type: height;
+		--web-enable-deep-linking: true;
+	}
+	#Group_282 {
+		position: absolute;
+		width: 251.36px;
+		height: 170.142px;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		top: 50%;
+		overflow: visible;
+	}
+	#Group_292 {
+		position: absolute;
+		width: 109.47px;
+		height: 110.446px;
+		left: 71.229px;
+		top: 0px;
+		overflow: visible;
+	}
+	.Path_134_do {
+		overflow: visible;
+		position: absolute;
+		width: 103.729px;
+		height: 110.446px;
+		left: 5.741px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Path_135_dq {
+		overflow: visible;
+		position: absolute;
+		width: 70.561px;
+		height: 67.854px;
+		left: 0px;
+		top: 23.733px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Path_139 {
+		overflow: visible;
+		position: absolute;
+		width: 251.36px;
+		height: 32.136px;
+		left: 0px;
+		top: 138.006px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+</style>
+<script id="applicationScript">
+///////////////////////////////////////
+// INITIALIZATION
+///////////////////////////////////////
+
+/**
+ * Functionality for scaling, showing by media query, and navigation between multiple pages on a single page. 
+ * Code subject to change.
+ **/
+
+if (window.console==null) { window["console"] = { log : function() {} } }; // some browsers do not set console
+
+var Application = function() {
+	// event constants
+	this.NAVIGATION_CHANGE = "viewChange";
+	this.VIEW_NOT_FOUND = "viewNotFound";
+	this.VIEW_CHANGE = "viewChange";
+	this.STATE_NOT_FOUND = "stateNotFound";
+	this.APPLICATION_COMPLETE = "applicationComplete";
+	this.APPLICATION_RESIZE = "applicationResize";
+	this.SIZE_STATE_NAME = "data-is-view-scaled";
+
+	this.lastView = null;
+	this.lastState = null;
+	this.lastOverlay = null;
+	this.currentView = null;
+	this.currentState = null;
+	this.currentOverlay = null;
+	this.currentQuery = {index: 0, rule: null, mediaText: null, id: null};
+	this.inclusionQuery = "(min-width: 0px)";
+	this.exclusionQuery = "none and (min-width: 99999px)";
+	this.LastModifiedDateLabelName = "LastModifiedDateLabel";
+	this.viewScaleSliderId = "ViewScaleSliderInput";
+	this.pageRefreshedName = "showPageRefreshedNotification";
+	this.prefix = "--web-";
+	this.applicationStylesheet = null;
+	this.mediaQueryDictionary = {};
+	this.viewsDictionary = {};
+	this.addedViews = [];
+	this.views = {};
+	this.viewIds = [];
+	this.viewIds = [];
+	this.viewQueries = {};
+	this.overlays = {};
+	this.overlayIds = [];
+	this.numberOfViews = 0;
+	this.verticalPadding = 0;
+	this.horizontalPadding = 0;
+	this.stateName = null;
+	this.viewScale = 1;
+	this.viewLeft = 0;
+	this.viewTop = 0;
+
+	// view settings
+	this.showUpdateNotification = false;
+	this.showNavigationControls = false;
+	this.scaleViewsToFit = false;
+	this.scaleToFitOnDoubleClick = false;
+	this.actualSizeOnDoubleClick = false;
+	this.scaleViewsOnResize = false;
+	this.navigationOnKeypress = false;
+	this.showViewName = false;
+	this.enableDeepLinking = true;
+	this.refreshPageForChanges = false;
+	this.showRefreshNotifications = true;
+
+	// view controls
+	this.scaleViewSlider = null;
+	this.lastModifiedLabel = null;
+	this.supportsPopState = false; // window.history.pushState!=null;
+	this.initialized = false;
+
+	// refresh properties
+	this.refreshDuration = 250;
+	this.lastModifiedDate = null;
+	this.refreshRequest = null;
+	this.refreshInterval = null;
+	this.refreshContent = null;
+	this.refreshContentSize = null;
+	this.refreshCheckContent = false;
+	this.refreshCheckContentSize = false;
+
+	var self = this;
+
+	self.initialize = function(event) {
+		var view = self.getVisibleView();
+		if (view==null) view = self.getInitialView();
+		self.collectViews();
+		self.collectOverlays();
+		self.collectMediaQueries();
+		self.setViewOptions(view);
+		self.setViewVariables(view);
+
+		// sometimes the body size is 0 so we call this now and again later
+		if (self.initialized) {
+			window.addEventListener(self.NAVIGATION_CHANGE, self.viewChangeHandler);
+			window.addEventListener("keyup", self.keypressHandler);
+			window.addEventListener("keypress", self.keypressHandler);
+			window.addEventListener("resize", self.resizeHandler);
+			window.document.addEventListener("dblclick", self.doubleClickHandler);
+
+			if (self.supportsPopState) {
+				window.addEventListener('popstate', self.popStateHandler);
+			}
+			else {
+				window.addEventListener('hashchange', self.hashChangeHandler);
+			}
+
+			// we are ready to go
+			window.dispatchEvent(new Event(self.APPLICATION_COMPLETE));
+		}
+
+		if (self.initialized==false) {
+			if (self.showNavigationControls || (self.singlePageApplication && self.showByMediaQuery==false)) {
+				self.syncronizeViewToURL();
+			}
+	
+			if (self.refreshPageForChanges) {
+				self.setupRefreshForChanges();
+			}
+	
+			self.initialized = true;
+		}
+		
+		if (self.scaleViewsToFit) {
+			self.viewScale = self.scaleViewToFit(view);
+			
+			if (self.viewScale<0) {
+				setTimeout(self.scaleViewToFit, 500, view);
+			}
+		}
+		else if (view) {
+			self.viewScale = self.getViewScaleValue(view);
+			self.centerView(view);
+			self.updateSliderValue(self.viewScale);
+		}
+		else {
+			// no view found
+		}
+	
+		if (self.showUpdateNotification) {
+			self.showNotification();
+		}
+	
+		//"addEventListener" in window ? null : window.addEventListener = window.attachEvent;
+		//"addEventListener" in document ? null : document.addEventListener = document.attachEvent;
+	}
+
+
+	///////////////////////////////////////
+	// AUTO REFRESH 
+	///////////////////////////////////////
+
+	self.setupRefreshForChanges = function() {
+		self.refreshRequest = new XMLHttpRequest();
+
+		if (!self.refreshRequest) {
+			return false;
+		}
+
+		// get document start values immediately
+		self.requestRefreshUpdate();
+	}
+
+	/**
+	 * Attempt to check the last modified date by the headers 
+	 * or the last modified property from the byte array (experimental)
+	 **/
+	self.requestRefreshUpdate = function() {
+		var url = document.location.href;
+		var protocol = window.location.protocol;
+		var method;
+		
+		try {
+
+			if (self.refreshCheckContentSize) {
+				self.refreshRequest.open('HEAD', url, true);
+			}
+			else if (self.refreshCheckContent) {
+				self.refreshContent = document.documentElement.outerHTML;
+				self.refreshRequest.open('GET', url, true);
+				self.refreshRequest.responseType = "text";
+			}
+			else {
+
+				// get page last modified date for the first call to compare to later
+				if (self.lastModifiedDate==null) {
+
+					// File system does not send headers in FF so get blob if possible
+					if (protocol=="file:") {
+						self.refreshRequest.open("GET", url, true);
+						self.refreshRequest.responseType = "blob";
+					}
+					else {
+						self.refreshRequest.open("HEAD", url, true);
+						self.refreshRequest.responseType = "blob";
+					}
+
+					self.refreshRequest.onload = self.refreshOnLoadOnceHandler;
+
+					// In some browsers (Chrome & Safari) this error occurs at send: 
+					// 
+					// Chrome - Access to XMLHttpRequest at 'file:///index.html' from origin 'null' 
+					// has been blocked by CORS policy: 
+					// Cross origin requests are only supported for protocol schemes: 
+					// http, data, chrome, chrome-extension, https.
+					// 
+					// Safari - XMLHttpRequest cannot load file:///Users/user/Public/index.html. Cross origin requests are only supported for HTTP.
+					// 
+					// Solution is to run a local server, set local permissions or test in another browser
+					self.refreshRequest.send(null);
+
+					// In MS browsers the following behavior occurs possibly due to an AJAX call to check last modified date: 
+					// 
+					// DOM7011: The code on this page disabled back and forward caching.
+
+					// In Brave (Chrome) error when on the server
+					// index.js:221 HEAD https://www.example.com/ net::ERR_INSUFFICIENT_RESOURCES
+					// self.refreshRequest.send(null);
+
+				}
+				else {
+					self.refreshRequest = new XMLHttpRequest();
+					self.refreshRequest.onreadystatechange = self.refreshHandler;
+					self.refreshRequest.ontimeout = function() {
+						self.log("Couldn't find page to check for updates");
+					}
+					
+					var method;
+					if (protocol=="file:") {
+						method = "GET";
+					}
+					else {
+						method = "HEAD";
+					}
+
+					//refreshRequest.open('HEAD', url, true);
+					self.refreshRequest.open(method, url, true);
+					self.refreshRequest.responseType = "blob";
+					self.refreshRequest.send(null);
+				}
+			}
+		}
+		catch (error) {
+			self.log("Refresh failed for the following reason:")
+			self.log(error);
+		}
+	}
+
+	self.refreshHandler = function() {
+		var contentSize;
+
+		try {
+
+			if (self.refreshRequest.readyState === XMLHttpRequest.DONE) {
+				
+				if (self.refreshRequest.status === 2 || 
+					self.refreshRequest.status === 200) {
+					var pageChanged = false;
+
+					self.updateLastModifiedLabel();
+
+					if (self.refreshCheckContentSize) {
+						var lastModifiedHeader = self.refreshRequest.getResponseHeader("Last-Modified");
+						contentSize = self.refreshRequest.getResponseHeader("Content-Length");
+						//lastModifiedDate = refreshRequest.getResponseHeader("Last-Modified");
+						var headers = self.refreshRequest.getAllResponseHeaders();
+						var hasContentHeader = headers.indexOf("Content-Length")!=-1;
+						
+						if (hasContentHeader) {
+							contentSize = self.refreshRequest.getResponseHeader("Content-Length");
+
+							// size has not been set yet
+							if (self.refreshContentSize==null) {
+								self.refreshContentSize = contentSize;
+								// exit and let interval call this method again
+								return;
+							}
+
+							if (contentSize!=self.refreshContentSize) {
+								pageChanged = true;
+							}
+						}
+					}
+					else if (self.refreshCheckContent) {
+
+						if (self.refreshRequest.responseText!=self.refreshContent) {
+							pageChanged = true;
+						}
+					}
+					else {
+						lastModifiedHeader = self.getLastModified(self.refreshRequest);
+
+						if (self.lastModifiedDate!=lastModifiedHeader) {
+							self.log("lastModifiedDate:" + self.lastModifiedDate + ",lastModifiedHeader:" +lastModifiedHeader);
+							pageChanged = true;
+						}
+
+					}
+
+					
+					if (pageChanged) {
+						clearInterval(self.refreshInterval);
+						self.refreshUpdatedPage();
+						return;
+					}
+
+				}
+				else {
+					self.log('There was a problem with the request.');
+				}
+
+			}
+		}
+		catch( error ) {
+			//console.log('Caught Exception: ' + error);
+		}
+	}
+
+	self.refreshOnLoadOnceHandler = function(event) {
+
+		// get the last modified date
+		if (self.refreshRequest.response) {
+			self.lastModifiedDate = self.getLastModified(self.refreshRequest);
+
+			if (self.lastModifiedDate!=null) {
+
+				if (self.refreshInterval==null) {
+					self.refreshInterval = setInterval(self.requestRefreshUpdate, self.refreshDuration);
+				}
+			}
+			else {
+				self.log("Could not get last modified date from the server");
+			}
+		}
+	}
+
+	self.refreshUpdatedPage = function() {
+		if (self.showRefreshNotifications) {
+			var date = new Date().setTime((new Date().getTime()+10000));
+			document.cookie = encodeURIComponent(self.pageRefreshedName) + "=true" + "; max-age=6000;" + " path=/";
+		}
+
+		document.location.reload(true);
+	}
+
+	self.showNotification = function(duration) {
+		var notificationID = self.pageRefreshedName+"ID";
+		var notification = document.getElementById(notificationID);
+		if (duration==null) duration = 4000;
+
+		if (notification!=null) {return;}
+
+		notification = document.createElement("div");
+		notification.id = notificationID;
+		notification.textContent = "PAGE UPDATED";
+		var styleRule = ""
+		styleRule = "position: fixed; padding: 7px 16px 6px 16px; font-family: Arial, sans-serif; font-size: 10px; font-weight: bold; left: 50%;";
+		styleRule += "top: 20px; background-color: rgba(0,0,0,.5); border-radius: 12px; color:rgb(235, 235, 235); transition: all 2s linear;";
+		styleRule += "transform: translateX(-50%); letter-spacing: .5px; filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, .1))";
+		notification.setAttribute("style", styleRule);
+
+		notification.className= "PageRefreshedClass";
+		
+		document.body.appendChild(notification);
+
+		setTimeout(function() {
+			notification.style.opacity = "0";
+			notification.style.filter = "drop-shadow( 0px 0px 0px rgba(0,0,0, .5))";
+			setTimeout(function() {
+				notification.parentNode.removeChild(notification);
+			}, duration)
+		}, duration);
+
+		document.cookie = encodeURIComponent(self.pageRefreshedName) + "=; max-age=1; path=/";
+	}
+
+	/**
+	 * Get the last modified date from the header 
+	 * or file object after request has been received
+	 **/
+	self.getLastModified = function(request) {
+		var date;
+
+		// file protocol - FILE object with last modified property
+		if (request.response && request.response.lastModified) {
+			date = request.response.lastModified;
+		}
+		
+		// http protocol - check headers
+		if (date==null) {
+			date = request.getResponseHeader("Last-Modified");
+		}
+
+		return date;
+	}
+
+	self.updateLastModifiedLabel = function() {
+		var labelValue = "";
+		
+		if (self.lastModifiedLabel==null) {
+			self.lastModifiedLabel = document.getElementById("LastModifiedLabel");
+		}
+
+		if (self.lastModifiedLabel) {
+			var seconds = parseInt(((new Date().getTime() - Date.parse(document.lastModified)) / 1000 / 60) * 100 + "");
+			var minutes = 0;
+			var hours = 0;
+
+			if (seconds < 60) {
+				seconds = Math.floor(seconds/10)*10;
+				labelValue = seconds + " seconds";
+			}
+			else {
+				minutes = parseInt((seconds/60) + "");
+
+				if (minutes>60) {
+					hours = parseInt((seconds/60/60) +"");
+					labelValue += hours==1 ? " hour" : " hours";
+				}
+				else {
+					labelValue = minutes+"";
+					labelValue += minutes==1 ? " minute" : " minutes";
+				}
+			}
+			
+			if (seconds<10) {
+				labelValue = "Updated now";
+			}
+			else {
+				labelValue = "Updated " + labelValue + " ago";
+			}
+
+			if (self.lastModifiedLabel.firstElementChild) {
+				self.lastModifiedLabel.firstElementChild.textContent = labelValue;
+
+			}
+			else if ("textContent" in self.lastModifiedLabel) {
+				self.lastModifiedLabel.textContent = labelValue;
+			}
+		}
+	}
+
+	self.getShortString = function(string, length) {
+		if (length==null) length = 30;
+		string = string!=null ? string.substr(0, length).replace(/\n/g, "") : "[String is null]";
+		return string;
+	}
+
+	self.getShortNumber = function(value, places) {
+		if (places==null || places<1) places = 4;
+		value = Math.round(value * Math.pow(10,places)) / Math.pow(10, places);
+		return value;
+	}
+
+	///////////////////////////////////////
+	// NAVIGATION CONTROLS
+	///////////////////////////////////////
+
+	self.updateViewLabel = function() {
+		var viewNavigationLabel = document.getElementById("ViewNavigationLabel");
+		var view = self.getVisibleView();
+		var viewIndex = view ? self.getViewIndex(view) : -1;
+		var viewName = view ? self.getViewPreferenceValue(view, self.prefix + "view-name") : null;
+		var viewId = view ? view.id : null;
+
+		if (viewNavigationLabel && view) {
+			if (viewName && viewName.indexOf('"')!=-1) {
+				viewName = viewName.replace(/"/g, "");
+			}
+
+			if (self.showViewName) {
+				viewNavigationLabel.textContent = viewName;
+				self.setTooltip(viewNavigationLabel, viewIndex + 1 + " of " + self.numberOfViews);
+			}
+			else {
+				viewNavigationLabel.textContent = viewIndex + 1 + " of " + self.numberOfViews;
+				self.setTooltip(viewNavigationLabel, viewName);
+			}
+
+		}
+	}
+
+	self.updateURL = function(view) {
+		view = view == null ? self.getVisibleView() : view;
+		var viewId = view ? view.id : null
+		var viewFragment = view ? "#"+ viewId : null;
+
+		if (viewId && self.viewIds.length>1 && self.enableDeepLinking) {
+
+			if (self.supportsPopState==false) {
+				self.setFragment(viewId);
+			}
+			else {
+				if (viewFragment!=window.location.hash) {
+
+					if (window.location.hash==null) {
+						window.history.replaceState({name:viewId}, null, viewFragment);
+					}
+					else {
+						window.history.pushState({name:viewId}, null, viewFragment);
+					}
+				}
+			}
+		}
+	}
+
+	self.setFragment = function(value) {
+		window.location.hash = "#" + value;
+	}
+
+	self.setTooltip = function(element, value) {
+		// setting the tooltip in edge causes a page crash on hover
+		if (/Edge/.test(navigator.userAgent)) { return; }
+
+		if ("title" in element) {
+			element.title = value;
+		}
+	}
+
+	self.getStylesheetRules = function(styleSheet) {
+		try {
+			if (styleSheet) return styleSheet.cssRules || styleSheet.rules;
+	
+			return document.styleSheets[0]["cssRules"] || document.styleSheets[0]["rules"];
+		}
+		catch (error) {
+			// ERRORS:
+			// SecurityError: The operation is insecure.
+			// Errors happen when script loads before stylesheet or loading an external css locally
+
+			// InvalidAccessError: A parameter or an operation is not supported by the underlying object
+			// Place script after stylesheet
+
+			console.log(error);
+			if (error.toString().indexOf("The operation is insecure")!=-1) {
+				console.log("Load the stylesheet before the script or load the stylesheet inline until it can be loaded on a server")
+			}
+			return [];
+		}
+	}
+
+	/**
+	 * If single page application hide all of the views. 
+	 * @param {Number} selectedIndex if provided shows the view at index provided
+	 **/
+	self.hideViews = function(selectedIndex, animation) {
+		var rules = self.getStylesheetRules();
+		var queryIndex = 0;
+		var numberOfRules = rules!=null ? rules.length : 0;
+
+		// loop through rules and hide media queries except selected
+		for (var i=0;i<numberOfRules;i++) {
+			var rule = rules[i];
+
+			if (rule.media!=null) {
+
+				if (queryIndex==selectedIndex) {
+					self.currentQuery.mediaText = rule.conditionText;
+					self.currentQuery.index = selectedIndex;
+					self.currentQuery.rule = rule;
+					self.enableMediaQuery(rule);
+				}
+				else {
+					if (animation) {
+						self.fadeOut(rule)
+					}
+					else {
+						self.disableMediaQuery(rule);
+					}
+				}
+				
+				queryIndex++;
+			}
+		}
+
+		self.numberOfViews = queryIndex;
+		self.updateViewLabel();
+		self.updateURL();
+
+		self.dispatchViewChange();
+
+		var view = self.getVisibleView();
+		var viewIndex = view ? self.getViewIndex(view) : -1;
+
+		return viewIndex==selectedIndex ? view : null;
+	}
+
+	/**
+	 * Hide view
+	 * @param {Object} view element to hide
+	 **/
+	self.hideView = function(view) {
+		var rule = view ? self.mediaQueryDictionary[view.id] : null;
+
+		if (rule) {
+			self.disableMediaQuery(rule);
+		}
+	}
+
+	/**
+	 * Hide overlay
+	 * @param {Object} overlay element to hide
+	 **/
+	self.hideOverlay = function(overlay) {
+		var rule = overlay ? self.mediaQueryDictionary[overlay.id] : null;
+
+		if (rule) {
+			self.disableMediaQuery(rule);
+
+			//if (self.showByMediaQuery) {
+				overlay.style.display = "none";
+			//}
+		}
+	}
+
+	/**
+	 * Show the view by media query. Does not hide current views
+	 * Sets view options by default
+	 * @param {Object} view element to show
+	 * @param {Boolean} setViewOptions sets view options if null or true
+	 */
+	self.showViewByMediaQuery = function(view, setViewOptions) {
+		var id = view ? view.id : null;
+		var query = id ? self.mediaQueryDictionary[id] : null;
+		var display = null;
+		setViewOptions = setViewOptions==null ? true : setViewOptions;
+
+		if (query) {
+			self.enableMediaQuery(query);
+			if (view && setViewOptions) self.setViewOptions(view);
+			if (view && setViewOptions) self.setViewVariables(view);
+		}
+	}
+
+	/**
+	 * Show the view. Does not hide current views
+	 */
+	self.showView = function(view, setViewOptions) {
+		var id = view ? view.id : null;
+		var query = id ? self.mediaQueryDictionary[id] : null;
+		var display = null;
+		setViewOptions = setViewOptions==null ? true : setViewOptions;
+
+		if (query) {
+			self.enableMediaQuery(query);
+			if (view==null) view =self.getVisibleView();
+			if (view && setViewOptions) self.setViewOptions(view);
+		}
+		else if (id) {
+			display = window.getComputedStyle(view).getPropertyValue("display");
+			if (display=="" || display=="none") {
+				view.style.display = "block";
+			}
+		}
+
+		if (view) {
+			if (self.currentView!=null) {
+				self.lastView = self.currentView;
+			}
+
+			self.currentView = view;
+		}
+	}
+
+	self.showViewById = function(id, setViewOptions) {
+		var view = id ? self.getViewById(id) : null;
+
+		if (view) {
+			self.showView(view);
+			return;
+		}
+
+		self.log("View not found '" + id + "'");
+	}
+
+	/**
+	 * Show overlay over view
+	 * @param {String} id id of view or view reference
+	 * @param {Number} x x location
+	 * @param {Number} y y location
+	 * @param {Event | HTMLElement} event event or html element with styles applied
+	 */
+	self.showOverlay = function(id, x, y, event) {
+		var overlay = id && typeof id === 'string' ? self.getViewById(id) : id ? id : null;
+		var query = overlay ? self.mediaQueryDictionary[overlay.id] : null;
+		var centerHorizontally = false;
+		var centerVertically = false;
+		var display = null;
+
+		// get enter animation - event target must have css variables declared
+		if (event) {
+			var button = event.currentTarget || event; // can be event or htmlelement
+			var buttonComputedStyles = getComputedStyle(button);
+			var actionTargetValue = buttonComputedStyles.getPropertyValue(self.prefix+"action-target").trim();
+			var animation = buttonComputedStyles.getPropertyValue(self.prefix+"animation").trim();
+			var targetType = buttonComputedStyles.getPropertyValue(self.prefix+"action-type").trim();
+			var actionTarget = self.application ? null : self.getElement(actionTargetValue);
+			var actionTargetStyles = actionTarget ? actionTarget.style : null;
+
+			if (actionTargetStyles) {
+				actionTargetStyles.setProperty("animation", animation);
+			}
+
+			if ("stopImmediatePropagation" in event) {
+				event.stopImmediatePropagation();
+			}
+		}
+		
+		if (self.application==false || targetType=="page") {
+			document.location.href = "./" + actionTargetValue;
+			return;
+		}
+
+		// remove any current overlays
+		if (self.currentOverlay) {
+			self.removeOverlay();
+		}
+
+		if (query) {
+			//self.setElementAnimation(overlay, null);
+			//overlay.style.animation = animation;
+			self.enableMediaQuery(query);
+			
+			var display = overlay && overlay.style.display;
+			
+			if (overlay && display=="" || display=="none") {
+				overlay.style.display = "block";
+				self.setViewOptions(overlay);
+			}
+
+			// add animation defined in event target style declaration
+			if (animation && self.supportAnimations) {
+				self.fadeIn(overlay, false, animation);
+			}
+		}
+		else if (id) {
+			if (overlay==null || overlay==false) {
+				self.log("Overlay not found, '"+ id + "'");
+				return;
+			}
+
+			display = window.getComputedStyle(overlay).getPropertyValue("display");
+
+			if (display=="" || display=="none") {
+				overlay.style.display = "block";
+			}
+
+			// add animation defined in event target style declaration
+			if (animation && self.supportAnimations) {
+				self.fadeIn(overlay, false, animation);
+			}
+		}
+
+		// do not set x or y position if centering
+		centerHorizontally = self.getViewPreferenceBoolean(overlay, self.prefix + "center-horizontally", false);
+		centerVertically = self.getViewPreferenceBoolean(overlay, self.prefix + "center-vertically", false);
+
+		if (overlay && centerHorizontally==false) {
+			overlay.style.left = x + "px";
+		}
+		
+		if (overlay && centerVertically==false) {
+			overlay.style.top = y + "px";
+		}
+
+		self.currentOverlay = overlay;
+	}
+
+	self.goBack = function() {
+		if (self.currentOverlay) {
+			self.removeOverlay();
+		}
+		else if (self.lastView) {
+			self.goToView(self.lastView.id);
+		}
+	}
+
+	self.removeOverlay = function(animate) {
+		var overlay = self.currentOverlay;
+		animate = animate===false ? false : true;
+
+		if (overlay) {
+			var style = overlay.style;
+			
+			if (style.animation && self.supportAnimations && animate) {
+				self.reverseAnimation(overlay, true);
+
+				var duration = self.getAnimationDuration(style.animation, true);
+		
+				setTimeout(function() {
+					self.setElementAnimation(overlay, null);
+					self.hideOverlay(overlay);
+				}, duration);
+			}
+			else {
+				self.setElementAnimation(overlay, null);
+				self.hideOverlay(overlay);
+			}
+		}
+	}
+
+	/**
+	 * Reverse the animation and hide after
+	 * @param {Object} target element with animation
+	 * @param {Boolean} hide hide after animation ends
+	 */
+	self.reverseAnimation = function(target, hide) {
+		var lastAnimation = null;
+		var style = target.style;
+
+		style.animationPlayState = "paused";
+		lastAnimation = style.animation;
+		style.animation = null;
+		style.animationPlayState = "paused";
+
+		if (hide) {
+			//target.addEventListener("animationend", self.animationEndHideHandler);
+	
+			var duration = self.getAnimationDuration(lastAnimation, true);
+			var isOverlay = self.isOverlay(target);
+	
+			setTimeout(function() {
+				self.setElementAnimation(target, null);
+
+				if (isOverlay) {
+					self.hideOverlay(target);
+				}
+				else {
+					self.hideView(target);
+				}
+			}, duration);
+		}
+
+		setTimeout(function() {
+			style.animation = lastAnimation;
+			style.animationPlayState = "paused";
+			style.animationDirection = "reverse";
+			style.animationPlayState = "running";
+		}, 30);
+	}
+
+	self.animationEndHandler = function(event) {
+		var target = event.currentTarget;
+		self.dispatchEvent(new Event(event.type));
+	}
+
+	self.isOverlay = function(view) {
+		var result = view ? self.getViewPreferenceBoolean(view, self.prefix + "is-overlay") : false;
+
+		return result;
+	}
+
+	self.animationEndHideHandler = function(event) {
+		var target = event.currentTarget;
+		self.setViewVariables(null, target);
+		self.hideView(target);
+		target.removeEventListener("animationend", self.animationEndHideHandler);
+	}
+
+	self.animationEndShowHandler = function(event) {
+		var target = event.currentTarget;
+		target.removeEventListener("animationend", self.animationEndShowHandler);
+	}
+
+	self.setViewOptions = function(view) {
+
+		if (view) {
+			self.minimumScale = self.getViewPreferenceValue(view, self.prefix + "minimum-scale");
+			self.maximumScale = self.getViewPreferenceValue(view, self.prefix + "maximum-scale");
+			self.scaleViewsToFit = self.getViewPreferenceBoolean(view, self.prefix + "scale-to-fit");
+			self.scaleToFitType = self.getViewPreferenceValue(view, self.prefix + "scale-to-fit-type");
+			self.scaleToFitOnDoubleClick = self.getViewPreferenceBoolean(view, self.prefix + "scale-on-double-click");
+			self.actualSizeOnDoubleClick = self.getViewPreferenceBoolean(view, self.prefix + "actual-size-on-double-click");
+			self.scaleViewsOnResize = self.getViewPreferenceBoolean(view, self.prefix + "scale-on-resize");
+			self.enableScaleUp = self.getViewPreferenceBoolean(view, self.prefix + "enable-scale-up");
+			self.centerHorizontally = self.getViewPreferenceBoolean(view, self.prefix + "center-horizontally");
+			self.centerVertically = self.getViewPreferenceBoolean(view, self.prefix + "center-vertically");
+			self.navigationOnKeypress = self.getViewPreferenceBoolean(view, self.prefix + "navigate-on-keypress");
+			self.showViewName = self.getViewPreferenceBoolean(view, self.prefix + "show-view-name");
+			self.refreshPageForChanges = self.getViewPreferenceBoolean(view, self.prefix + "refresh-for-changes");
+			self.refreshPageForChangesInterval = self.getViewPreferenceValue(view, self.prefix + "refresh-interval");
+			self.showNavigationControls = self.getViewPreferenceBoolean(view, self.prefix + "show-navigation-controls");
+			self.scaleViewSlider = self.getViewPreferenceBoolean(view, self.prefix + "show-scale-controls");
+			self.enableDeepLinking = self.getViewPreferenceBoolean(view, self.prefix + "enable-deep-linking");
+			self.singlePageApplication = self.getViewPreferenceBoolean(view, self.prefix + "application");
+			self.showByMediaQuery = self.getViewPreferenceBoolean(view, self.prefix + "show-by-media-query");
+			self.showUpdateNotification = document.cookie!="" ? document.cookie.indexOf(self.pageRefreshedName)!=-1 : false;
+			self.imageComparisonDuration = self.getViewPreferenceValue(view, self.prefix + "image-comparison-duration");
+			self.supportAnimations = self.getViewPreferenceBoolean(view, self.prefix + "enable-animations", true);
+
+			if (self.scaleViewsToFit) {
+				var newScaleValue = self.scaleViewToFit(view);
+				
+				if (newScaleValue<0) {
+					setTimeout(self.scaleViewToFit, 500, view);
+				}
+			}
+			else {
+				self.viewScale = self.getViewScaleValue(view);
+				self.viewToFitWidthScale = self.getViewFitToViewportWidthScale(view, self.enableScaleUp)
+				self.viewToFitHeightScale = self.getViewFitToViewportScale(view, self.enableScaleUp);
+				self.updateSliderValue(self.viewScale);
+			}
+
+			if (self.imageComparisonDuration!=null) {
+				// todo
+			}
+
+			if (self.refreshPageForChangesInterval!=null) {
+				self.refreshDuration = Number(self.refreshPageForChangesInterval);
+			}
+		}
+	}
+
+	self.previousView = function(event) {
+		var rules = self.getStylesheetRules();
+		var view = self.getVisibleView()
+		var index = view ? self.getViewIndex(view) : -1;
+		var prevQueryIndex = index!=-1 ? index-1 : self.currentQuery.index-1;
+		var queryIndex = 0;
+		var numberOfRules = rules!=null ? rules.length : 0;
+
+		if (event) {
+			event.stopImmediatePropagation();
+		}
+
+		if (prevQueryIndex<0) {
+			return;
+		}
+
+		// loop through rules and hide media queries except selected
+		for (var i=0;i<numberOfRules;i++) {
+			var rule = rules[i];
+			
+			if (rule.media!=null) {
+
+				if (queryIndex==prevQueryIndex) {
+					self.currentQuery.mediaText = rule.conditionText;
+					self.currentQuery.index = prevQueryIndex;
+					self.currentQuery.rule = rule;
+					self.enableMediaQuery(rule);
+					self.updateViewLabel();
+					self.updateURL();
+					self.dispatchViewChange();
+				}
+				else {
+					self.disableMediaQuery(rule);
+				}
+
+				queryIndex++;
+			}
+		}
+	}
+
+	self.nextView = function(event) {
+		var rules = self.getStylesheetRules();
+		var view = self.getVisibleView();
+		var index = view ? self.getViewIndex(view) : -1;
+		var nextQueryIndex = index!=-1 ? index+1 : self.currentQuery.index+1;
+		var queryIndex = 0;
+		var numberOfRules = rules!=null ? rules.length : 0;
+		var numberOfMediaQueries = self.getNumberOfMediaRules();
+
+		if (event) {
+			event.stopImmediatePropagation();
+		}
+
+		if (nextQueryIndex>=numberOfMediaQueries) {
+			return;
+		}
+
+		// loop through rules and hide media queries except selected
+		for (var i=0;i<numberOfRules;i++) {
+			var rule = rules[i];
+			
+			if (rule.media!=null) {
+
+				if (queryIndex==nextQueryIndex) {
+					self.currentQuery.mediaText = rule.conditionText;
+					self.currentQuery.index = nextQueryIndex;
+					self.currentQuery.rule = rule;
+					self.enableMediaQuery(rule);
+					self.updateViewLabel();
+					self.updateURL();
+					self.dispatchViewChange();
+				}
+				else {
+					self.disableMediaQuery(rule);
+				}
+
+				queryIndex++;
+			}
+		}
+	}
+
+	/**
+	 * Enables a view via media query
+	 */
+	self.enableMediaQuery = function(rule) {
+
+		try {
+			rule.media.mediaText = self.inclusionQuery;
+		}
+		catch(error) {
+			//self.log(error);
+			rule.conditionText = self.inclusionQuery;
+		}
+	}
+
+	self.disableMediaQuery = function(rule) {
+
+		try {
+			rule.media.mediaText = self.exclusionQuery;
+		}
+		catch(error) {
+			rule.conditionText = self.exclusionQuery;
+		}
+	}
+
+	self.dispatchViewChange = function() {
+		try {
+			var event = new Event(self.NAVIGATION_CHANGE);
+			window.dispatchEvent(event);
+		}
+		catch (error) {
+			// In IE 11: Object doesn't support this action
+		}
+	}
+
+	self.getNumberOfMediaRules = function() {
+		var rules = self.getStylesheetRules();
+		var numberOfRules = rules ? rules.length : 0;
+		var numberOfQueries = 0;
+
+		for (var i=0;i<numberOfRules;i++) {
+			if (rules[i].media!=null) { numberOfQueries++; }
+		}
+		
+		return numberOfQueries;
+	}
+
+	/////////////////////////////////////////
+	// VIEW SCALE 
+	/////////////////////////////////////////
+
+	self.sliderChangeHandler = function(event) {
+		var value = self.getShortNumber(event.currentTarget.value/100);
+		var view = self.getVisibleView();
+		self.setViewScaleValue(view, false, value, true);
+	}
+
+	self.updateSliderValue = function(scale) {
+		var slider = document.getElementById(self.viewScaleSliderId);
+		var tooltip = parseInt(scale * 100 + "") + "%";
+		var inputType;
+		var inputValue;
+		
+		if (slider) {
+			inputValue = self.getShortNumber(scale * 100);
+			if (inputValue!=slider["value"]) {
+				slider["value"] = inputValue;
+			}
+			inputType = slider.getAttributeNS(null, "type");
+
+			if (inputType!="range") {
+				// input range is not supported
+				slider.style.display = "none";
+			}
+
+			self.setTooltip(slider, tooltip);
+		}
+	}
+
+	self.viewChangeHandler = function(event) {
+		var view = self.getVisibleView();
+		var matrix = view ? getComputedStyle(view).transform : null;
+		
+		if (matrix) {
+			self.viewScale = self.getViewScaleValue(view);
+			
+			var scaleNeededToFit = self.getViewFitToViewportScale(view);
+			var isViewLargerThanViewport = scaleNeededToFit<1;
+			
+			// scale large view to fit if scale to fit is enabled
+			if (self.scaleViewsToFit) {
+				self.scaleViewToFit(view);
+			}
+			else {
+				self.updateSliderValue(self.viewScale);
+			}
+		}
+	}
+
+	self.getViewScaleValue = function(view) {
+		var matrix = getComputedStyle(view).transform;
+
+		if (matrix) {
+			var matrixArray = matrix.replace("matrix(", "").split(",");
+			var scaleX = parseFloat(matrixArray[0]);
+			var scaleY = parseFloat(matrixArray[3]);
+			var scale = Math.min(scaleX, scaleY);
+		}
+
+		return scale;
+	}
+
+	/**
+	 * Scales view to scale. 
+	 * @param {Object} view view to scale. views are in views array
+	 * @param {Boolean} scaleToFit set to true to scale to fit. set false to use desired scale value
+	 * @param {Number} desiredScale scale to define. not used if scale to fit is false
+	 * @param {Boolean} isSliderChange indicates if slider is callee
+	 */
+	self.setViewScaleValue = function(view, scaleToFit, desiredScale, isSliderChange) {
+		var enableScaleUp = self.enableScaleUp;
+		var scaleToFitType = self.scaleToFitType;
+		var minimumScale = self.minimumScale;
+		var maximumScale = self.maximumScale;
+		var hasMinimumScale = !isNaN(minimumScale) && minimumScale!="";
+		var hasMaximumScale = !isNaN(maximumScale) && maximumScale!="";
+		var scaleNeededToFit = self.getViewFitToViewportScale(view, enableScaleUp);
+		var scaleNeededToFitWidth = self.getViewFitToViewportWidthScale(view, enableScaleUp);
+		var scaleNeededToFitHeight = self.getViewFitToViewportHeightScale(view, enableScaleUp);
+		var scaleToFitFull = self.getViewFitToViewportScale(view, true);
+		var scaleToFitFullWidth = self.getViewFitToViewportWidthScale(view, true);
+		var scaleToFitFullHeight = self.getViewFitToViewportHeightScale(view, true);
+		var scaleToWidth = scaleToFitType=="width";
+		var scaleToHeight = scaleToFitType=="height";
+		var shrunkToFit = false;
+		var topPosition = null;
+		var leftPosition = null;
+		var translateY = null;
+		var translateX = null;
+		var transformValue = "";
+		var canCenterVertically = true;
+		var canCenterHorizontally = true;
+
+		if (scaleToFit && isSliderChange!=true) {
+			if (scaleToFitType=="fit" || scaleToFitType=="") {
+				desiredScale = scaleNeededToFit;
+			}
+			else if (scaleToFitType=="width") {
+				desiredScale = scaleNeededToFitWidth;
+			}
+			else if (scaleToFitType=="height") {
+				desiredScale = scaleNeededToFitHeight;
+			}
+		}
+		else {
+			if (isNaN(desiredScale)) {
+				desiredScale = 1;
+			}
+		}
+
+		self.updateSliderValue(desiredScale);
+		
+		// scale to fit width
+		if (scaleToWidth && scaleToHeight==false) {
+			canCenterVertically = scaleNeededToFitHeight>=scaleNeededToFitWidth;
+			canCenterHorizontally = scaleNeededToFitWidth>=1 && enableScaleUp==false;
+
+			if (isSliderChange) {
+				canCenterHorizontally = desiredScale<scaleToFitFullWidth;
+			}
+			else if (scaleToFit) {
+				desiredScale = scaleNeededToFitWidth;
+			}
+
+			if (hasMinimumScale) {
+				desiredScale = Math.max(desiredScale, Number(minimumScale));
+			}
+
+			if (hasMaximumScale) {
+				desiredScale = Math.min(desiredScale, Number(maximumScale));
+			}
+
+			desiredScale = self.getShortNumber(desiredScale);
+
+			canCenterHorizontally = self.canCenterHorizontally(view, "width", enableScaleUp, desiredScale, minimumScale, maximumScale);
+			canCenterVertically = self.canCenterVertically(view, "width", enableScaleUp, desiredScale, minimumScale, maximumScale);
+
+			if (desiredScale>1 && (enableScaleUp || isSliderChange)) {
+				transformValue = "scale(" + desiredScale + ")";
+			}
+			else if (desiredScale>=1 && enableScaleUp==false) {
+				transformValue = "scale(" + 1 + ")";
+			}
+			else {
+				transformValue = "scale(" + desiredScale + ")";
+			}
+
+			if (self.centerVertically) {
+				if (canCenterVertically) {
+					translateY = "-50%";
+					topPosition = "50%";
+				}
+				else {
+					translateY = "0";
+					topPosition = "0";
+				}
+				
+				if (view.style.top != topPosition) {
+					view.style.top = topPosition + "";
+				}
+
+				if (canCenterVertically) {
+					transformValue += " translateY(" + translateY+ ")";
+				}
+			}
+
+			if (self.centerHorizontally) {
+				if (canCenterHorizontally) {
+					translateX = "-50%";
+					leftPosition = "50%";
+				}
+				else {
+					translateX = "0";
+					leftPosition = "0";
+				}
+
+				if (view.style.left != leftPosition) {
+					view.style.left = leftPosition + "";
+				}
+
+				if (canCenterHorizontally) {
+					transformValue += " translateX(" + translateX+ ")";
+				}
+			}
+
+			view.style.transformOrigin = "0 0";
+			view.style.transform = transformValue;
+
+			self.viewScale = desiredScale;
+			self.viewToFitWidthScale = scaleNeededToFitWidth;
+			self.viewToFitHeightScale = scaleNeededToFitHeight;
+			self.viewLeft = leftPosition;
+			self.viewTop = topPosition;
+
+			return desiredScale;
+		}
+
+		// scale to fit height
+		if (scaleToHeight && scaleToWidth==false) {
+			//canCenterVertically = scaleNeededToFitHeight>=scaleNeededToFitWidth;
+			//canCenterHorizontally = scaleNeededToFitHeight<=scaleNeededToFitWidth && enableScaleUp==false;
+			canCenterVertically = scaleNeededToFitHeight>=scaleNeededToFitWidth;
+			canCenterHorizontally = scaleNeededToFitWidth>=1 && enableScaleUp==false;
+			
+			if (isSliderChange) {
+				canCenterHorizontally = desiredScale<scaleToFitFullHeight;
+			}
+			else if (scaleToFit) {
+				desiredScale = scaleNeededToFitHeight;
+			}
+
+			if (hasMinimumScale) {
+				desiredScale = Math.max(desiredScale, Number(minimumScale));
+			}
+
+			if (hasMaximumScale) {
+				desiredScale = Math.min(desiredScale, Number(maximumScale));
+				//canCenterVertically = desiredScale>=scaleNeededToFitHeight && enableScaleUp==false;
+			}
+
+			desiredScale = self.getShortNumber(desiredScale);
+
+			canCenterHorizontally = self.canCenterHorizontally(view, "height", enableScaleUp, desiredScale, minimumScale, maximumScale);
+			canCenterVertically = self.canCenterVertically(view, "height", enableScaleUp, desiredScale, minimumScale, maximumScale);
+
+			if (desiredScale>1 && (enableScaleUp || isSliderChange)) {
+				transformValue = "scale(" + desiredScale + ")";
+			}
+			else if (desiredScale>=1 && enableScaleUp==false) {
+				transformValue = "scale(" + 1 + ")";
+			}
+			else {
+				transformValue = "scale(" + desiredScale + ")";
+			}
+
+			if (self.centerHorizontally) {
+				if (canCenterHorizontally) {
+					translateX = "-50%";
+					leftPosition = "50%";
+				}
+				else {
+					translateX = "0";
+					leftPosition = "0";
+				}
+
+				if (view.style.left != leftPosition) {
+					view.style.left = leftPosition + "";
+				}
+
+				if (canCenterHorizontally) {
+					transformValue += " translateX(" + translateX+ ")";
+				}
+			}
+
+			if (self.centerVertically) {
+				if (canCenterVertically) {
+					translateY = "-50%";
+					topPosition = "50%";
+				}
+				else {
+					translateY = "0";
+					topPosition = "0";
+				}
+				
+				if (view.style.top != topPosition) {
+					view.style.top = topPosition + "";
+				}
+
+				if (canCenterVertically) {
+					transformValue += " translateY(" + translateY+ ")";
+				}
+			}
+
+			view.style.transformOrigin = "0 0";
+			view.style.transform = transformValue;
+
+			self.viewScale = desiredScale;
+			self.viewToFitWidthScale = scaleNeededToFitWidth;
+			self.viewToFitHeightScale = scaleNeededToFitHeight;
+			self.viewLeft = leftPosition;
+			self.viewTop = topPosition;
+
+			return scaleNeededToFitHeight;
+		}
+
+		if (scaleToFitType=="fit") {
+			//canCenterVertically = scaleNeededToFitHeight>=scaleNeededToFitWidth;
+			//canCenterHorizontally = scaleNeededToFitWidth>=scaleNeededToFitHeight;
+			canCenterVertically = scaleNeededToFitHeight>=scaleNeededToFit;
+			canCenterHorizontally = scaleNeededToFitWidth>=scaleNeededToFit;
+
+			if (hasMinimumScale) {
+				desiredScale = Math.max(desiredScale, Number(minimumScale));
+			}
+
+			desiredScale = self.getShortNumber(desiredScale);
+
+			if (isSliderChange || scaleToFit==false) {
+				canCenterVertically = scaleToFitFullHeight>=desiredScale;
+				canCenterHorizontally = desiredScale<scaleToFitFullWidth;
+			}
+			else if (scaleToFit) {
+				desiredScale = scaleNeededToFit;
+			}
+
+			transformValue = "scale(" + desiredScale + ")";
+
+			//canCenterHorizontally = self.canCenterHorizontally(view, "fit", false, desiredScale);
+			//canCenterVertically = self.canCenterVertically(view, "fit", false, desiredScale);
+			
+			if (self.centerVertically) {
+				if (canCenterVertically) {
+					translateY = "-50%";
+					topPosition = "50%";
+				}
+				else {
+					translateY = "0";
+					topPosition = "0";
+				}
+				
+				if (view.style.top != topPosition) {
+					view.style.top = topPosition + "";
+				}
+
+				if (canCenterVertically) {
+					transformValue += " translateY(" + translateY+ ")";
+				}
+			}
+
+			if (self.centerHorizontally) {
+				if (canCenterHorizontally) {
+					translateX = "-50%";
+					leftPosition = "50%";
+				}
+				else {
+					translateX = "0";
+					leftPosition = "0";
+				}
+
+				if (view.style.left != leftPosition) {
+					view.style.left = leftPosition + "";
+				}
+
+				if (canCenterHorizontally) {
+					transformValue += " translateX(" + translateX+ ")";
+				}
+			}
+
+			view.style.transformOrigin = "0 0";
+			view.style.transform = transformValue;
+
+			self.viewScale = desiredScale;
+			self.viewToFitWidthScale = scaleNeededToFitWidth;
+			self.viewToFitHeightScale = scaleNeededToFitHeight;
+			self.viewLeft = leftPosition;
+			self.viewTop = topPosition;
+
+			self.updateSliderValue(desiredScale);
+			
+			return desiredScale;
+		}
+
+		if (scaleToFitType=="default" || scaleToFitType=="") {
+			desiredScale = 1;
+
+			if (hasMinimumScale) {
+				desiredScale = Math.max(desiredScale, Number(minimumScale));
+			}
+			if (hasMaximumScale) {
+				desiredScale = Math.min(desiredScale, Number(maximumScale));
+			}
+
+			canCenterHorizontally = self.canCenterHorizontally(view, "none", false, desiredScale, minimumScale, maximumScale);
+			canCenterVertically = self.canCenterVertically(view, "none", false, desiredScale, minimumScale, maximumScale);
+
+			if (self.centerVertically) {
+				if (canCenterVertically) {
+					translateY = "-50%";
+					topPosition = "50%";
+				}
+				else {
+					translateY = "0";
+					topPosition = "0";
+				}
+				
+				if (view.style.top != topPosition) {
+					view.style.top = topPosition + "";
+				}
+
+				if (canCenterVertically) {
+					transformValue += " translateY(" + translateY+ ")";
+				}
+			}
+
+			if (self.centerHorizontally) {
+				if (canCenterHorizontally) {
+					translateX = "-50%";
+					leftPosition = "50%";
+				}
+				else {
+					translateX = "0";
+					leftPosition = "0";
+				}
+
+				if (view.style.left != leftPosition) {
+					view.style.left = leftPosition + "";
+				}
+
+				if (canCenterHorizontally) {
+					transformValue += " translateX(" + translateX+ ")";
+				}
+				else {
+					transformValue += " translateX(" + 0 + ")";
+				}
+			}
+
+			view.style.transformOrigin = "0 0";
+			view.style.transform = transformValue;
+
+
+			self.viewScale = desiredScale;
+			self.viewToFitWidthScale = scaleNeededToFitWidth;
+			self.viewToFitHeightScale = scaleNeededToFitHeight;
+			self.viewLeft = leftPosition;
+			self.viewTop = topPosition;
+
+			self.updateSliderValue(desiredScale);
+			
+			return desiredScale;
+		}
+	}
+
+	/**
+	 * Returns true if view can be centered horizontally
+	 * @param {HTMLElement} view view
+	 * @param {String} type type of scaling - width, height, all, none
+	 * @param {Boolean} scaleUp if scale up enabled 
+	 * @param {Number} scale target scale value 
+	 */
+	self.canCenterHorizontally = function(view, type, scaleUp, scale, minimumScale, maximumScale) {
+		var scaleNeededToFit = self.getViewFitToViewportScale(view, scaleUp);
+		var scaleNeededToFitHeight = self.getViewFitToViewportHeightScale(view, scaleUp);
+		var scaleNeededToFitWidth = self.getViewFitToViewportWidthScale(view, scaleUp);
+		var canCenter = false;
+		var minScale;
+
+		type = type==null ? "none" : type;
+		scale = scale==null ? scale : scaleNeededToFitWidth;
+		scaleUp = scaleUp == null ? false : scaleUp;
+
+		if (type=="width") {
+	
+			if (scaleUp && maximumScale==null) {
+				canCenter = false;
+			}
+			else if (scaleNeededToFitWidth>=1) {
+				canCenter = true;
+			}
+		}
+		else if (type=="height") {
+			minScale = Math.min(1, scaleNeededToFitHeight);
+			if (minimumScale!="" && maximumScale!="") {
+				minScale = Math.max(minimumScale, Math.min(maximumScale, scaleNeededToFitHeight));
+			}
+			else {
+				if (minimumScale!="") {
+					minScale = Math.max(minimumScale, scaleNeededToFitHeight);
+				}
+				if (maximumScale!="") {
+					minScale = Math.max(minimumScale, Math.min(maximumScale, scaleNeededToFitHeight));
+				}
+			}
+	
+			if (scaleUp && maximumScale=="") {
+				canCenter = false;
+			}
+			else if (scaleNeededToFitWidth>=minScale) {
+				canCenter = true;
+			}
+		}
+		else if (type=="fit") {
+			canCenter = scaleNeededToFitWidth>=scaleNeededToFit;
+		}
+		else {
+			if (scaleUp) {
+				canCenter = false;
+			}
+			else if (scaleNeededToFitWidth>=1) {
+				canCenter = true;
+			}
+		}
+
+		self.horizontalScrollbarsNeeded = canCenter;
+		
+		return canCenter;
+	}
+
+	/**
+	 * Returns true if view can be centered horizontally
+	 * @param {HTMLElement} view view to scale
+	 * @param {String} type type of scaling
+	 * @param {Boolean} scaleUp if scale up enabled 
+	 * @param {Number} scale target scale value 
+	 */
+	self.canCenterVertically = function(view, type, scaleUp, scale, minimumScale, maximumScale) {
+		var scaleNeededToFit = self.getViewFitToViewportScale(view, scaleUp);
+		var scaleNeededToFitWidth = self.getViewFitToViewportWidthScale(view, scaleUp);
+		var scaleNeededToFitHeight = self.getViewFitToViewportHeightScale(view, scaleUp);
+		var canCenter = false;
+		var minScale;
+
+		type = type==null ? "none" : type;
+		scale = scale==null ? 1 : scale;
+		scaleUp = scaleUp == null ? false : scaleUp;
+	
+		if (type=="width") {
+			canCenter = scaleNeededToFitHeight>=scaleNeededToFitWidth;
+		}
+		else if (type=="height") {
+			minScale = Math.max(minimumScale, Math.min(maximumScale, scaleNeededToFit));
+			canCenter = scaleNeededToFitHeight>=minScale;
+		}
+		else if (type=="fit") {
+			canCenter = scaleNeededToFitHeight>=scaleNeededToFit;
+		}
+		else {
+			if (scaleUp) {
+				canCenter = false;
+			}
+			else if (scaleNeededToFitHeight>=1) {
+				canCenter = true;
+			}
+		}
+
+		self.verticalScrollbarsNeeded = canCenter;
+		
+		return canCenter;
+	}
+
+	self.getViewFitToViewportScale = function(view, scaleUp) {
+		var enableScaleUp = scaleUp;
+		var availableWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+		var availableHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+		var elementWidth = parseFloat(getComputedStyle(view, "style").width);
+		var elementHeight = parseFloat(getComputedStyle(view, "style").height);
+		var newScale = 1;
+
+		// if element is not added to the document computed values are NaN
+		if (isNaN(elementWidth) || isNaN(elementHeight)) {
+			return newScale;
+		}
+
+		availableWidth -= self.horizontalPadding;
+		availableHeight -= self.verticalPadding;
+
+		if (enableScaleUp) {
+			newScale = Math.min(availableHeight/elementHeight, availableWidth/elementWidth);
+		}
+		else if (elementWidth > availableWidth || elementHeight > availableHeight) {
+			newScale = Math.min(availableHeight/elementHeight, availableWidth/elementWidth);
+		}
+		
+		return newScale;
+	}
+
+	self.getViewFitToViewportWidthScale = function(view, scaleUp) {
+		// need to get browser viewport width when element
+		var isParentWindow = view && view.parentNode && view.parentNode===document.body;
+		var enableScaleUp = scaleUp;
+		var availableWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+		var elementWidth = parseFloat(getComputedStyle(view, "style").width);
+		var newScale = 1;
+
+		// if element is not added to the document computed values are NaN
+		if (isNaN(elementWidth)) {
+			return newScale;
+		}
+
+		availableWidth -= self.horizontalPadding;
+
+		if (enableScaleUp) {
+			newScale = availableWidth/elementWidth;
+		}
+		else if (elementWidth > availableWidth) {
+			newScale = availableWidth/elementWidth;
+		}
+		
+		return newScale;
+	}
+
+	self.getViewFitToViewportHeightScale = function(view, scaleUp) {
+		var enableScaleUp = scaleUp;
+		var availableHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+		var elementHeight = parseFloat(getComputedStyle(view, "style").height);
+		var newScale = 1;
+
+		// if element is not added to the document computed values are NaN
+		if (isNaN(elementHeight)) {
+			return newScale;
+		}
+
+		availableHeight -= self.verticalPadding;
+
+		if (enableScaleUp) {
+			newScale = availableHeight/elementHeight;
+		}
+		else if (elementHeight > availableHeight) {
+			newScale = availableHeight/elementHeight;
+		}
+		
+		return newScale;
+	}
+
+	self.keypressHandler = function(event) {
+		var rightKey = 39;
+		var leftKey = 37;
+		
+		// listen for both events 
+		if (event.type=="keypress") {
+			window.removeEventListener("keyup", self.keypressHandler);
+		}
+		else {
+			window.removeEventListener("keypress", self.keypressHandler);
+		}
+		
+		if (self.showNavigationControls) {
+			if (self.navigationOnKeypress) {
+				if (event.keyCode==rightKey) {
+					self.nextView();
+				}
+				if (event.keyCode==leftKey) {
+					self.previousView();
+				}
+			}
+		}
+		else if (self.navigationOnKeypress) {
+			if (event.keyCode==rightKey) {
+				self.nextView();
+			}
+			if (event.keyCode==leftKey) {
+				self.previousView();
+			}
+		}
+	}
+
+	///////////////////////////////////
+	// GENERAL FUNCTIONS
+	///////////////////////////////////
+
+	self.getViewById = function(id) {
+		id = id ? id.replace("#", "") : "";
+		var view = self.viewIds.indexOf(id)!=-1 && self.getElement(id);
+		return view;
+	}
+
+	self.getViewIds = function() {
+		var viewIds = self.getViewPreferenceValue(document.body, self.prefix + "view-ids");
+		var viewId = null;
+
+		viewIds = viewIds!=null && viewIds!="" ? viewIds.split(",") : [];
+
+		if (viewIds.length==0) {
+			viewId = self.getViewPreferenceValue(document.body, self.prefix + "view-id");
+			viewIds = viewId ? [viewId] : [];
+		}
+
+		return viewIds;
+	}
+
+	self.getInitialViewId = function() {
+		var viewId = self.getViewPreferenceValue(document.body, self.prefix + "view-id");
+		return viewId;
+	}
+
+	self.getApplicationStylesheet = function() {
+		var stylesheetId = self.getViewPreferenceValue(document.body, self.prefix + "stylesheet-id");
+		self.applicationStylesheet = document.getElementById("applicationStylesheet");
+		return self.applicationStylesheet.sheet;
+	}
+
+	self.getVisibleView = function() {
+		var viewIds = self.getViewIds();
+		
+		for (var i=0;i<viewIds.length;i++) {
+			var viewId = viewIds[i].replace(/[\#?\.?](.*)/, "$" + "1");
+			var view = self.getElement(viewId);
+			var postName = "_Class";
+
+			if (view==null && viewId && viewId.lastIndexOf(postName)!=-1) {
+				view = self.getElement(viewId.replace(postName, ""));
+			}
+			
+			if (view) {
+				var display = getComputedStyle(view).display;
+		
+				if (display=="block" || display=="flex") {
+					return view;
+				}
+			}
+		}
+
+		return null;
+	}
+
+	self.getInitialView = function() {
+		var viewId = self.getInitialViewId();
+		viewId = viewId.replace(/[\#?\.?](.*)/, "$" + "1");
+		var view = self.getElement(viewId);
+		var postName = "_Class";
+
+		if (view==null && viewId && viewId.lastIndexOf(postName)!=-1) {
+			view = self.getElement(viewId.replace(postName, ""));
+		}
+
+		return view;
+	}
+
+	self.getViewIndex = function(view) {
+		var viewIds = self.getViewIds();
+		var id = view ? view.id : null;
+		var index = id && viewIds ? viewIds.indexOf(id) : -1;
+
+		return index;
+	}
+
+	self.syncronizeViewToURL = function() {
+		var fragment = window.location.hash;
+		var view = self.getViewById(fragment);
+		var index = view ? self.getViewIndex(view) : 0;
+		if (index==-1) index = 0;
+		var currentView = self.hideViews(index);
+
+		if (self.supportsPopState && currentView) {
+
+			if (fragment==null) {
+				window.history.replaceState({name:currentView.id}, null, "#"+ currentView.id);
+			}
+			else {
+				window.history.pushState({name:currentView.id}, null, "#"+ currentView.id);
+			}
+		}
+		
+		self.setViewVariables(view);
+		return view;
+	}
+
+	/**
+	 * Set the currentView or currentOverlay properties and set the lastView or lastOverlay properties
+	 */
+	self.setViewVariables = function(view, overlay, parentView) {
+		if (view) {
+			if (self.currentView) {
+				self.lastView = self.currentView;
+			}
+			self.currentView = view;
+		}
+
+		if (overlay) {
+			if (self.currentOverlay) {
+				self.lastOverlay = self.currentOverlay;
+			}
+			self.currentOverlay = overlay;
+		}
+	}
+
+	self.getViewPreferenceBoolean = function(view, property, altValue) {
+		var computedStyle = window.getComputedStyle(view);
+		var value = computedStyle.getPropertyValue(property);
+		var type = typeof value;
+		
+		if (value=="true" || (type=="string" && value.indexOf("true")!=-1)) {
+			return true;
+		}
+		else if (value=="" && arguments.length==3) {
+			return altValue;
+		}
+
+		return false;
+	}
+
+	self.getViewPreferenceValue = function(view, property, defaultValue) {
+		var value = window.getComputedStyle(view).getPropertyValue(property);
+
+		if (value===undefined) {
+			return defaultValue;
+		}
+		
+		value = value.replace(/^[\s\"]*/, "");
+		value = value.replace(/[\s\"]*$/, "");
+		value = value.replace(/^[\s"]*(.*?)[\s"]*$/, function (match, capture) { 
+			return capture;
+		});
+
+		return value;
+	}
+
+	self.getStyleRuleValue = function(cssRule, property) {
+		var value = cssRule ? cssRule.style.getPropertyValue(property) : null;
+
+		if (value===undefined) {
+			return null;
+		}
+		
+		value = value.replace(/^[\s\"]*/, "");
+		value = value.replace(/[\s\"]*$/, "");
+		value = value.replace(/^[\s"]*(.*?)[\s"]*$/, function (match, capture) { 
+			return capture;
+		});
+
+		return value;
+	}
+
+	self.getCSSPropertyValueForElement = function(id, property) {
+		var styleSheets = document.styleSheets;
+		var numOfStylesheets = styleSheets.length;
+		var values = [];
+		var selectorIDText = "#" + id;
+		var selectorClassText = "." + id + "_Class";
+		var value;
+
+		for(var i=0;i<numOfStylesheets;i++) {
+			var styleSheet = styleSheets[i];
+			var cssRules = self.getStylesheetRules(styleSheet);
+			var numOfCSSRules = cssRules.length;
+			var cssRule;
+			
+			for (var j=0;j<numOfCSSRules;j++) {
+				cssRule = cssRules[j];
+				
+				if (cssRule.media) {
+					var mediaRules = cssRule.cssRules;
+					var numOfMediaRules = mediaRules ? mediaRules.length : 0;
+					
+					for(var k=0;k<numOfMediaRules;k++) {
+						var mediaRule = mediaRules[k];
+						
+						if (mediaRule.selectorText==selectorIDText || mediaRule.selectorText==selectorClassText) {
+							
+							if (mediaRule.style && property in mediaRule.style) {
+								value = mediaRule.style.getPropertyValue(property);
+								values.push(value);
+							}
+						}
+					}
+				}
+				else {
+
+					if (cssRule.selectorText==selectorIDText || cssRule.selectorText==selectorClassText) {
+						if (cssRule.style && property in cssRule.style) {
+							value = cssRule.style.getPropertyValue(property);
+							values.push(value);
+						}
+					}
+				}
+			}
+		}
+		
+		return values.pop();
+	}
+
+	self.collectViews = function() {
+		var viewIds = self.getViewIds();
+
+		for (let index = 0; index < viewIds.length; index++) {
+			const id = viewIds[index];
+			const view = self.getViewById(id);
+			//view && view.addEventListener("animationend", self.animationEndHandler);
+			self.views[id] = view;
+		}
+		
+		self.viewIds = viewIds;
+	}
+
+	self.collectOverlays = function() {
+		var viewIds = self.getViewIds();
+		var ids = [];
+
+		for (let index = 0; index < viewIds.length; index++) {
+			const id = viewIds[index];
+			const view = self.getViewById(id);
+			const isOverlay = view && self.isOverlay(view);
+			
+			if (isOverlay) {
+				ids.push(id);
+				self.overlays[id] = view;
+			}
+		}
+		
+		self.overlayIds = ids;
+	}
+
+	self.collectMediaQueries = function() {
+		var viewIds = self.getViewIds();
+		var styleSheet = self.getApplicationStylesheet();
+		var cssRules = self.getStylesheetRules(styleSheet);
+		var numOfCSSRules = cssRules ? cssRules.length : 0;
+		var cssRule;
+		var id = viewIds.length ? viewIds[0]: ""; // single view
+		var selectorIDText = "#" + id;
+		var selectorClassText = "." + id + "_Class";
+		var viewsNotFound = viewIds.slice();
+		var viewsFound = [];
+		var selectorText = null;
+		var property = self.prefix + "view-id";
+		
+		for (var j=0;j<numOfCSSRules;j++) {
+			cssRule = cssRules[j];
+			
+			if (cssRule.media) {
+				var mediaRules = cssRule.cssRules;
+				var numOfMediaRules = mediaRules ? mediaRules.length : 0;
+				
+				for(var k=0;k<numOfMediaRules;k++) {
+					var mediaRule = mediaRules[k];
+					var mediaId = null;
+
+					selectorText = mediaRule.selectorText;
+					
+					if (selectorText==".mediaViewInfo") {
+
+						mediaId = self.getStyleRuleValue(mediaRule, property);
+
+						self.addView(mediaId, cssRule);
+						viewsFound.push(mediaId);
+
+						if (viewsNotFound.indexOf(mediaId)!=-1) {
+							viewsNotFound.splice(viewsNotFound.indexOf(mediaId));
+						}
+
+						break;
+					}
+				}
+			}
+			else {
+				selectorText = cssRule.selectorText.replace(/[#|\s|*]?/g, "");
+
+				if (viewIds.indexOf(selectorText)!=-1) {
+					self.addView(selectorText, cssRule);
+
+					if (viewsNotFound.indexOf(selectorText)!=-1) {
+						viewsNotFound.splice(viewsNotFound.indexOf(selectorText));
+					}
+
+					break;
+				}
+			}
+		}
+
+		if (viewsNotFound.length) {
+			console.log("Could not find the following views:" + viewsNotFound.join(",") + "");
+			console.log("Views found:" + viewsFound.join(",") + "");
+		}
+	}
+
+	/**
+	 * Adds a view. A view object contains the id of the view and the style rule
+	 * Use enableMediaQuery(rule) to enable
+	 * An array of view names are in self.views array
+	 */
+	self.addView = function(name, cssRule, parentId) {
+		var state = {name:name, rule:cssRule, id:name, parentId:parentId};
+		self.addedViews.push(name);
+		self.viewsDictionary[name] = state;
+		self.mediaQueryDictionary[name] = cssRule;
+	}
+
+	self.hasView = function(name) {
+
+		if (self.addedViews.indexOf(name)!=-1) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * Go to view by id. Views are added in addView()
+	 * @param {String} name id of view in current
+	 * @param {String} parent id of parent view
+	 * @param {Boolean} maintainPreviousState if true then do not hide other views
+	 */
+	self.goToView = function(name, maintainPreviousState, parent) {
+		var state = self.viewsDictionary[name];
+
+		if (state) {
+			if (maintainPreviousState==false || maintainPreviousState==null) {
+				self.hideViews();
+			}
+			self.enableMediaQuery(state.rule);
+			self.updateViewLabel();
+			self.updateURL();
+		}
+		else {
+			var event = new Event(self.STATE_NOT_FOUND);
+			self.stateName = name;
+			window.dispatchEvent(event);
+		}
+	}
+
+	/**
+	 * Go to the view in the event targets CSS variable
+	 */
+	self.goToTargetView = function(event) {
+		var button = event.currentTarget;
+		var buttonComputedStyles = getComputedStyle(button);
+		var actionTargetValue = buttonComputedStyles.getPropertyValue(self.prefix+"action-target").trim();
+		var animation = buttonComputedStyles.getPropertyValue(self.prefix+"animation").trim();
+		var targetType = buttonComputedStyles.getPropertyValue(self.prefix+"action-type").trim();
+		var targetView = self.application ? null : self.getElement(actionTargetValue);
+		var actionTargetStyles = targetView ? targetView.style : null;
+		var state = self.viewsDictionary[actionTargetValue];
+		
+		// navigate to page
+		if (self.application==false || targetType=="page") {
+			document.location.href = "./" + actionTargetValue;
+			return;
+		}
+
+		// if view is found
+		if (targetView) {
+
+			if (self.currentOverlay) {
+				self.removeOverlay(false);
+			}
+
+			// add animation set in event target style declaration
+			if (animation && self.supportAnimations) {
+				self.crossFade(self.currentView, targetView, false, animation);
+			}
+			else {
+				self.setViewVariables(self.currentView);
+				self.hideViews();
+				self.enableMediaQuery(state.rule);
+				self.scaleViewIfNeeded(targetView);
+				self.centerView(targetView);
+				self.updateViewLabel();
+				self.updateURL();
+			}
+		}
+		else {
+			var stateEvent = new Event(self.STATE_NOT_FOUND);
+			self.stateName = name;
+			window.dispatchEvent(stateEvent);
+		}
+
+		event.stopImmediatePropagation();
+	}
+
+	/**
+	 * Cross fade between views
+	 **/
+	self.crossFade = function(from, to, update, animation) {
+		var targetIndex = to.parentNode
+		var fromIndex = Array.prototype.slice.call(from.parentElement.children).indexOf(from);
+		var toIndex = Array.prototype.slice.call(to.parentElement.children).indexOf(to);
+
+		if (from.parentNode==to.parentNode) {
+			var reverse = self.getReverseAnimation(animation);
+			var duration = self.getAnimationDuration(animation, true);
+
+			// if target view is above (higher index)
+			// then fade in target view 
+			// and after fade in then hide previous view instantly
+			if (fromIndex<toIndex) {
+				self.setElementAnimation(from, null);
+				self.setElementAnimation(to, null);
+				self.showViewByMediaQuery(to);
+				self.fadeIn(to, update, animation);
+
+				setTimeout(function() {
+					self.setElementAnimation(to, null);
+					self.setElementAnimation(from, null);
+					self.hideView(from);
+					self.updateURL();
+					self.setViewVariables(to);
+					self.updateViewLabel();
+				}, duration)
+			}
+			// if target view is on bottom
+			// then show target view instantly 
+			// and fade out current view
+			else if (fromIndex>toIndex) {
+				self.setElementAnimation(to, null);
+				self.setElementAnimation(from, null);
+				self.showViewByMediaQuery(to);
+				self.fadeOut(from, update, reverse);
+
+				setTimeout(function() {
+					self.setElementAnimation(to, null);
+					self.setElementAnimation(from, null);
+					self.hideView(from);
+					self.updateURL();
+					self.setViewVariables(to);
+				}, duration)
+			}
+		}
+	}
+
+	self.fadeIn = function(element, update, animation) {
+		self.showViewByMediaQuery(element);
+
+		if (update) {
+			self.updateURL(element);
+
+			element.addEventListener("animationend", function(event) {
+				element.style.animation = null;
+				self.setViewVariables(element);
+				self.updateViewLabel();
+				element.removeEventListener("animationend", arguments.callee);
+			});
+		}
+
+		self.setElementAnimation(element, null);
+		
+		element.style.animation = animation;
+	}
+
+	self.fadeOutCurrentView = function(animation, update) {
+		if (self.currentView) {
+			self.fadeOut(self.currentView, update, animation);
+		}
+		if (self.currentOverlay) {
+			self.fadeOut(self.currentOverlay, update, animation);
+		}
+	}
+
+	self.fadeOut = function(element, update, animation) {
+		if (update) {
+			element.addEventListener("animationend", function(event) {
+				element.style.animation = null;
+				self.hideView(element);
+				element.removeEventListener("animationend", arguments.callee);
+			});
+		}
+
+		element.style.animationPlayState = "paused";
+		element.style.animation = animation;
+		element.style.animationPlayState = "running";
+	}
+
+	self.getReverseAnimation = function(animation) {
+		if (animation && animation.indexOf("reverse")==-1) {
+			animation += " reverse";
+		}
+
+		return animation;
+	}
+
+	/**
+	 * Get duration in animation string
+	 * @param {String} animation animation value
+	 * @param {Boolean} inMilliseconds length in milliseconds if true
+	 */
+	self.getAnimationDuration = function(animation, inMilliseconds) {
+		var duration = 0;
+		var expression = /.+(\d\.\d)s.+/;
+
+		if (animation && animation.match(expression)) {
+			duration = parseFloat(animation.replace(expression, "$" + "1"));
+			if (duration && inMilliseconds) duration = duration * 1000;
+		}
+
+		return duration;
+	}
+
+	self.setElementAnimation = function(element, animation, priority) {
+		element.style.setProperty("animation", animation, "important");
+	}
+
+	self.getElement = function(id) {
+		var elementId = id ? id.trim() : id;
+		var element = elementId ? document.getElementById(elementId) : null;
+
+		return element;
+	}
+
+	self.resizeHandler = function(event) {
+		var view = self.getVisibleView();
+
+		if (self.showByMediaQuery && view) {
+			self.setViewOptions(view);
+			self.setViewVariables(view);
+		}
+		else {
+			self.scaleViewIfNeeded();
+		}
+
+		window.dispatchEvent(new Event(self.APPLICATION_RESIZE));
+	}
+
+	self.scaleViewIfNeeded = function(view) {
+
+		if (self.scaleViewsOnResize) {
+			if (view==null) {
+				view = self.getVisibleView();
+			}
+
+			var isViewScaled = view.getAttributeNS(null, self.SIZE_STATE_NAME)=="false" ? false : true;
+
+			if (isViewScaled) {
+				self.scaleViewToFit(view, true);
+			}
+			else {
+				self.scaleViewToActualSize(view);
+			}
+		}
+		else if (view) {
+			self.centerView(view);
+		}
+	}
+
+	self.centerView = function(view) {
+
+		if (self.scaleToFit) {
+			self.scaleViewToFit(view, true);
+		}
+		else {
+			self.scaleViewToActualSize(view);  // for centering support for now
+		}
+	}
+
+	self.preventDoubleClick = function(event) {
+		event.stopImmediatePropagation();
+	}
+
+	self.hashChangeHandler = function(event) {
+		var fragment = window.location.hash ? window.location.hash.replace("#", "") : "";
+		var view = self.getViewById(fragment);
+
+		if (view) {
+			self.hideViews();
+			self.showView(view);
+			self.setViewVariables(view);
+			self.updateViewLabel();
+			window.dispatchEvent(new Event(self.VIEW_CHANGE));
+		}
+		else {
+			window.dispatchEvent(new Event(self.VIEW_NOT_FOUND));
+		}
+	}
+
+	self.popStateHandler = function(event) {
+		var state = event.state;
+		var fragment = state ? state.name : window.location.hash;
+		var view = self.getViewById(fragment);
+
+		if (view) {
+			self.hideViews();
+			self.showView(view);
+			self.updateViewLabel();
+		}
+		else {
+			window.dispatchEvent(new Event(self.VIEW_NOT_FOUND));
+		}
+	}
+
+	self.doubleClickHandler = function(event) {
+		var view = self.getVisibleView();
+		var scaleValue = view ? self.getViewScaleValue(view) : 1;
+		var scaleNeededToFit = view ? self.getViewFitToViewportScale(view) : 1;
+		var scaleNeededToFitWidth = view ? self.getViewFitToViewportWidthScale(view) : 1;
+		var scaleNeededToFitHeight = view ? self.getViewFitToViewportHeightScale(view) : 1;
+		var scaleToFitType = self.scaleToFitType;
+
+		// Three scenarios
+		// - scale to fit on double click
+		// - set scale to actual size on double click
+		// - switch between scale to fit and actual page size
+
+		if (scaleToFitType=="width") {
+			scaleNeededToFit = scaleNeededToFitWidth;
+		}
+		else if (scaleToFitType=="height") {
+			scaleNeededToFit = scaleNeededToFitHeight;
+		}
+
+		// if scale and actual size enabled then switch between
+		if (self.scaleToFitOnDoubleClick && self.actualSizeOnDoubleClick) {
+			var isViewScaled = view.getAttributeNS(null, self.SIZE_STATE_NAME);
+			var isScaled = false;
+			
+			// if scale is not 1 then view needs scaling
+			if (scaleNeededToFit!=1) {
+
+				// if current scale is at 1 it is at actual size
+				// scale it to fit
+				if (scaleValue==1) {
+					self.scaleViewToFit(view);
+					isScaled = true;
+				}
+				else {
+					// scale is not at 1 so switch to actual size
+					self.scaleViewToActualSize(view);
+					isScaled = false;
+				}
+			}
+			else {
+				// view is smaller than viewport 
+				// so scale to fit() is scale actual size
+				// actual size and scaled size are the same
+				// but call scale to fit to retain centering
+				self.scaleViewToFit(view);
+				isScaled = false;
+			}
+			
+			view.setAttributeNS(null, self.SIZE_STATE_NAME, isScaled+"");
+			isViewScaled = view.getAttributeNS(null, self.SIZE_STATE_NAME);
+		}
+		else if (self.scaleToFitOnDoubleClick) {
+			self.scaleViewToFit(view);
+		}
+		else if (self.actualSizeOnDoubleClick) {
+			self.scaleViewToActualSize(view);
+		}
+
+	}
+
+	self.scaleViewToFit = function(view) {
+		return self.setViewScaleValue(view, true);
+	}
+
+	self.scaleViewToActualSize = function(view) {
+		self.setViewScaleValue(view, false, 1);
+	}
+
+	self.onloadHandler = function(event) {
+		self.initialize();
+	}
+
+	self.getStackArray = function(error) {
+		var value = "";
+		
+		if (error==null) {
+		  try {
+			 error = new Error("Stack");
+		  }
+		  catch (e) {
+			 
+		  }
+		}
+		
+		if ("stack" in error) {
+		  value = error.stack;
+		  var methods = value.split(/\n/g);
+	 
+		  var newArray = methods ? methods.map(function (value, index, array) {
+			 value = value.replace(/\@.*/,"");
+			 return value;
+		  }) : null;
+	 
+		  if (newArray && newArray[0].includes("getStackTrace")) {
+			 newArray.shift();
+		  }
+		  if (newArray && newArray[0].includes("getStackArray")) {
+			 newArray.shift();
+		  }
+		  if (newArray && newArray[0]=="") {
+			 newArray.shift();
+		  }
+	 
+			return newArray;
+		}
+		
+		return null;
+	}
+
+	self.log = function(value) {
+		console.log.apply(this, [value]);
+	}
+	
+	// initialize on load
+	// sometimes the body size is 0 so we call this now and again later
+	window.addEventListener("load", self.onloadHandler);
+	window.document.addEventListener("DOMContentLoaded", self.onloadHandler);
+}
+
+window.application = new Application();
+</script>
+</head>
+<body>
+<div id="NotFound">
+	<div id="Group_282">
+		<div id="Group_292">
+			<svg class="Path_134_do" viewBox="360.151 348.282 103.729 110.446">
+				<linearGradient id="Path_134_do" spreadMethod="pad" x1="0.377" x2="0.921" y1="0.199" y2="1.174">
+					<stop offset="0" stop-color="#0bf" stop-opacity="1"></stop>
+					<stop offset="1" stop-color="#1864ff" stop-opacity="1"></stop>
+				</linearGradient>
+				<path fill="url(#Path_134_do)" id="Path_134_do" d="M 460.3026733398438 438.1346130371094 L 439.4925537109375 417.4322814941406 C 443.6114501953125 410.6047058105469 445.8872375488281 402.5839538574219 445.8872375488281 394.0212707519531 C 445.8872375488281 368.8752136230469 425.4019775390625 348.2819519042969 400.1493835449219 348.2819519042969 C 383.0585632324219 348.2819519042969 367.9958801269531 357.9314270019531 360.1510009765625 372.0151977539062 L 373.9978332519531 385.8621215820312 C 377.5133666992188 374.8249816894531 387.9391784667969 366.7084350585938 400.1493835449219 366.7084350585938 C 415.2147216796875 366.7084350585938 427.5700378417969 379.0638427734375 427.5700378417969 394.0212707519531 C 427.5700378417969 406.4272155761719 408.3458557128906 420.2100524902344 408.3458557128906 420.2100524902344 L 443.0694274902344 454.9337158203125 C 445.7780456542969 457.5358276367188 448.8130187988281 458.7276306152344 452.2820434570312 458.7276306152344 C 458.8937683105469 458.7276306152344 463.8796997070312 453.6339416503906 463.8796997070312 446.6971740722656 C 463.8796997070312 443.662353515625 462.7943420410156 440.6273803710938 460.3026733398438 438.1346130371094 Z">
+				</path>
+			</svg>
+			<svg class="Path_135_dq" viewBox="355.84 366.104 70.56 67.854">
+				<linearGradient id="Path_135_dq" spreadMethod="pad" x1="0.076" x2="0.778" y1="0.345" y2="1.003">
+					<stop offset="0" stop-color="#0bf" stop-opacity="1"></stop>
+					<stop offset="1" stop-color="#1864ff" stop-opacity="1"></stop>
+				</linearGradient>
+				<path fill="url(#Path_135_dq)" id="Path_135_dq" d="M 401.5791625976562 415.531982421875 C 386.5125732421875 415.531982421875 374.1571655273438 403.3923645019531 374.1571655273438 388.1099243164062 C 374.1571655273438 385.2734680175781 374.6046447753906 382.5328979492188 375.4277038574219 379.9507751464844 L 361.5807800292969 366.10400390625 C 357.9320373535156 372.6544799804688 355.8399658203125 380.1625671386719 355.8399658203125 388.1099243164062 C 355.8399658203125 413.3639831542969 376.5409851074219 433.95849609375 401.5791625976562 433.95849609375 C 408.2815856933594 433.95849609375 414.6069946289062 432.5188903808594 420.3638916015625 429.8941650390625 C 422.4093322753906 428.9619445800781 424.8116455078125 429.3347778320312 426.4003601074219 430.9248657226562 L 409.7756958007812 414.2987670898438 C 407.1882629394531 415.0991516113281 404.4356689453125 415.531982421875 401.5791625976562 415.531982421875 Z">
+				</path>
+			</svg>
+		</div>
+		<svg class="Path_139" viewBox="-164.141 -41.075 251.36 32.136">
+			<path fill="rgba(10,152,255,1)" id="Path_139" d="M -150.6121368408203 -9.588923454284668 L -150.6121368408203 -12.39219951629639 L -150.6933898925781 -12.39219951629639 C -150.9371490478516 -11.93175888061523 -151.2553863525391 -11.4984016418457 -151.6481323242188 -11.09212970733643 C -152.0408477783203 -10.68585777282715 -152.5012969970703 -10.33375549316406 -153.0294494628906 -10.03582286834717 C -153.5576019287109 -9.737890243530273 -154.1399230957031 -9.494126319885254 -154.7764129638672 -9.304533004760742 C -155.4129180908203 -9.11493968963623 -156.0832672119141 -9.020142555236816 -156.7874603271484 -9.020142555236816 C -158.1417083740234 -9.020142555236816 -159.2860412597656 -9.26390552520752 -160.220458984375 -9.751432418823242 C -161.1548919677734 -10.23895835876465 -161.9132690429688 -10.86868000030518 -162.4955902099609 -11.64059638977051 C -163.0779113769531 -12.41251373291016 -163.4977264404297 -13.29276943206787 -163.7550354003906 -14.28136444091797 C -164.0123443603516 -15.26995944976807 -164.1409912109375 -16.27886772155762 -164.1409912109375 -17.30809020996094 L -164.1409912109375 -29.82126617431641 L -157.4375152587891 -29.82126617431641 L -157.4375152587891 -18.85192489624023 C -157.4375152587891 -18.28314208984375 -157.3968811035156 -17.74144744873047 -157.3156127929688 -17.22683525085449 C -157.2343597412109 -16.71222496032715 -157.0786285400391 -16.25178337097168 -156.8484039306641 -15.84551048278809 C -156.6181793212891 -15.43923950195312 -156.3134918212891 -15.12099266052246 -155.9342956542969 -14.89077186584473 C -155.5551147460938 -14.66055107116699 -155.0540313720703 -14.54544067382812 -154.4310913085938 -14.54544067382812 C -153.2664337158203 -14.54544067382812 -152.3794097900391 -14.97879791259766 -151.7700042724609 -15.84551048278809 C -151.1605987548828 -16.71222496032715 -150.8558959960938 -17.7279052734375 -150.8558959960938 -18.89255142211914 L -150.8558959960938 -29.82126617431641 L -144.1930236816406 -29.82126617431641 L -144.1930236816406 -9.588923454284668 L -150.6121368408203 -9.588923454284668 Z M -125.8701629638672 -24.37722206115723 C -126.1680908203125 -24.45847702026367 -126.4592590332031 -24.51264572143555 -126.74365234375 -24.53973007202148 C -127.0280456542969 -24.56681442260742 -127.3056640625 -24.58035659790039 -127.5765075683594 -24.58035659790039 C -128.4703063964844 -24.58035659790039 -129.2219085693359 -24.41784858703613 -129.8313140869141 -24.09283065795898 C -130.4407196044922 -23.76781463623047 -130.9282531738281 -23.37508392333984 -131.2938995361328 -22.91464424133301 C -131.6595458984375 -22.45420074462891 -131.9236145019531 -21.95313262939453 -132.0861206054688 -21.41143798828125 C -132.2486419677734 -20.86974143981934 -132.3298950195312 -20.3957576751709 -132.3298950195312 -19.98948669433594 L -132.3298950195312 -9.588923454284668 L -138.9927520751953 -9.588923454284668 L -138.9927520751953 -29.82126617431641 L -132.5736541748047 -29.82126617431641 L -132.5736541748047 -26.8961067199707 L -132.4924011230469 -26.8961067199707 C -131.977783203125 -27.92533111572266 -131.2465057373047 -28.76495742797852 -130.2985382080078 -29.41499328613281 C -129.3505706787109 -30.06502914428711 -128.2536315917969 -30.39004898071289 -127.0077362060547 -30.39004898071289 C -126.7368774414062 -30.39004898071289 -126.4728088378906 -30.37650680541992 -126.2154998779297 -30.34941864013672 C -125.9581909179688 -30.32233428955078 -125.7482757568359 -30.28170776367188 -125.5857696533203 -30.2275390625 L -125.8701629638672 -24.37722206115723 Z M -122.8231353759766 -9.588923454284668 L -122.8231353759766 -40.30308151245117 L -116.0790252685547 -40.30308151245117 L -116.0790252685547 -9.588923454284668 L -122.8231353759766 -9.588923454284668 Z M -87.3555908203125 -9.588923454284668 L -87.3555908203125 -20.6395206451416 C -87.3555908203125 -21.20830154418945 -87.40299987792969 -21.74999618530273 -87.49778747558594 -22.26461029052734 C -87.59259033203125 -22.77921867370605 -87.74832916259766 -23.23288917541504 -87.96499633789062 -23.62561988830566 C -88.18168640136719 -24.01834869384766 -88.48638916015625 -24.32982444763184 -88.87911987304688 -24.56004524230957 C -89.27184295654297 -24.79026412963867 -89.76613616943359 -24.90537643432617 -90.36200714111328 -24.90537643432617 C -90.95787048339844 -24.90537643432617 -91.47925567626953 -24.79026412963867 -91.92615509033203 -24.56004524230957 C -92.37305450439453 -24.32982444763184 -92.74546813964844 -24.01157760620117 -93.04339599609375 -23.60530471801758 C -93.34133148193359 -23.19903182983398 -93.56478881835938 -22.73182106018066 -93.71375274658203 -22.20366668701172 C -93.86271667480469 -21.67551422119141 -93.93719482421875 -21.12704658508301 -93.93719482421875 -20.55826568603516 L -93.93719482421875 -9.588923454284668 L -100.6406860351562 -9.588923454284668 L -100.6406860351562 -29.82126617431641 L -94.18096160888672 -29.82126617431641 L -94.18096160888672 -27.01799011230469 L -94.09971618652344 -27.01799011230469 C -93.85594940185547 -27.45134735107422 -93.53770446777344 -27.87793350219727 -93.14497375488281 -28.29774475097656 C -92.75223541259766 -28.71755981445312 -92.29179382324219 -29.07643508911133 -91.76364898681641 -29.37436676025391 C -91.23548889160156 -29.67229843139648 -90.65994262695312 -29.91606140136719 -90.0369873046875 -30.10565567016602 C -89.41403961181641 -30.29524993896484 -88.75045776367188 -30.39004898071289 -88.04625701904297 -30.39004898071289 C -86.6920166015625 -30.39004898071289 -85.54090881347656 -30.14628601074219 -84.59294128417969 -29.65875625610352 C -83.64497375488281 -29.17123031616211 -82.87983703613281 -28.54151153564453 -82.29750823974609 -27.76959228515625 C -81.71518707275391 -26.99767684936523 -81.29537200927734 -26.11064910888672 -81.03807067871094 -25.10851287841797 C -80.78076171875 -24.10637474060059 -80.65210723876953 -23.1042366027832 -80.65210723876953 -22.10209846496582 L -80.65210723876953 -9.588923454284668 L -87.3555908203125 -9.588923454284668 Z M -54.16317749023438 -19.78635025024414 C -54.16317749023438 -18.13417625427246 -54.46110534667969 -16.63774108886719 -55.05697631835938 -15.29704475402832 C -55.65283966064453 -13.95634651184082 -56.46538543701172 -12.81878566741943 -57.49460601806641 -11.88435935974121 C -58.52382659912109 -10.9499340057373 -59.71555709838867 -10.22541618347168 -61.06980133056641 -9.71080493927002 C -62.42403793334961 -9.196193695068359 -63.87307739257812 -8.938888549804688 -65.41690826416016 -8.938888549804688 C -66.93365478515625 -8.938888549804688 -68.37592315673828 -9.196193695068359 -69.74370574951172 -9.71080493927002 C -71.11148071289062 -10.22541618347168 -72.30321502685547 -10.9499340057373 -73.31889343261719 -11.88435935974121 C -74.33457946777344 -12.81878566741943 -75.14035034179688 -13.95634651184082 -75.73621368408203 -15.29704475402832 C -76.33207702636719 -16.63774108886719 -76.63001251220703 -18.13417625427246 -76.63001251220703 -19.78635025024414 C -76.63001251220703 -21.43852233886719 -76.33207702636719 -22.92818450927734 -75.73621368408203 -24.25534057617188 C -75.14035034179688 -25.58249473571777 -74.33457946777344 -26.70651245117188 -73.31889343261719 -27.62739562988281 C -72.30321502685547 -28.54828262329102 -71.11148071289062 -29.25248718261719 -69.74370574951172 -29.74001312255859 C -68.37592315673828 -30.2275390625 -66.93365478515625 -30.4713020324707 -65.41690826416016 -30.4713020324707 C -63.87307739257812 -30.4713020324707 -62.42403793334961 -30.2275390625 -61.06980133056641 -29.74001312255859 C -59.71555709838867 -29.25248718261719 -58.52382659912109 -28.54828262329102 -57.49460601806641 -27.62739562988281 C -56.46538543701172 -26.70651245117188 -55.65283966064453 -25.58249473571777 -55.05697631835938 -24.25534057617188 C -54.46110534667969 -22.92818450927734 -54.16317749023438 -21.43852233886719 -54.16317749023438 -19.78635025024414 Z M -60.582275390625 -19.78635025024414 C -60.582275390625 -20.4363842010498 -60.69061279296875 -21.0728759765625 -60.90728759765625 -21.69582748413086 C -61.12397003173828 -22.31877899169922 -61.43544006347656 -22.86724472045898 -61.84171295166016 -23.34122848510742 C -62.24798583984375 -23.81521224975586 -62.74905395507812 -24.201171875 -63.34491729736328 -24.49910354614258 C -63.9407844543457 -24.79703521728516 -64.63144683837891 -24.94600296020508 -65.41690826416016 -24.94600296020508 C -66.20236206054688 -24.94600296020508 -66.89302825927734 -24.79703521728516 -67.4888916015625 -24.49910354614258 C -68.08476257324219 -24.201171875 -68.57905578613281 -23.81521224975586 -68.97178649902344 -23.34122848510742 C -69.36451721191406 -22.86724472045898 -69.66244506835938 -22.31877899169922 -69.86558532714844 -21.69582748413086 C -70.0687255859375 -21.0728759765625 -70.1702880859375 -20.4363842010498 -70.1702880859375 -19.78635025024414 C -70.1702880859375 -19.13631439208984 -70.0687255859375 -18.49982070922852 -69.86558532714844 -17.87687110900879 C -69.66244506835938 -17.25392150878906 -69.35774230957031 -16.69190979003906 -68.95147705078125 -16.19084167480469 C -68.54520416259766 -15.68977355957031 -68.04413604736328 -15.29027271270752 -67.44827270507812 -14.99234008789062 C -66.85240173339844 -14.69440841674805 -66.1617431640625 -14.54544067382812 -65.37628173828125 -14.54544067382812 C -64.5908203125 -14.54544067382812 -63.9001579284668 -14.69440841674805 -63.30429077148438 -14.99234008789062 C -62.70842742919922 -15.29027271270752 -62.20735931396484 -15.68977355957031 -61.80108642578125 -16.19084167480469 C -61.39481353759766 -16.69190979003906 -61.09011077880859 -17.25392150878906 -60.88697814941406 -17.87687110900879 C -60.683837890625 -18.49982070922852 -60.582275390625 -19.13631439208984 -60.582275390625 -19.78635025024414 Z M -42.70630264282227 -24.82412147521973 L -42.70630264282227 -17.10495376586914 C -42.70630264282227 -16.15698623657227 -42.52348327636719 -15.44601058959961 -42.1578369140625 -14.97202682495117 C -41.79219436645508 -14.49804306030273 -41.1353874206543 -14.26105117797852 -40.18741989135742 -14.26105117797852 C -39.86240005493164 -14.26105117797852 -39.51707077026367 -14.28813552856445 -39.15142440795898 -14.34230518341064 C -38.78578186035156 -14.39647483825684 -38.48107528686523 -14.47772979736328 -38.23731231689453 -14.58606910705566 L -38.15605926513672 -9.71080493927002 C -38.61650085449219 -9.548295974731445 -39.19882202148438 -9.406101226806641 -39.90302658081055 -9.284219741821289 C -40.60723114013672 -9.162338256835938 -41.31143951416016 -9.101397514343262 -42.01564025878906 -9.101397514343262 C -43.36988067626953 -9.101397514343262 -44.50744247436523 -9.27067756652832 -45.42832565307617 -9.609236717224121 C -46.34920883178711 -9.947796821594238 -47.08727264404297 -10.43532371520996 -47.64250946044922 -11.07181644439697 C -48.19774627685547 -11.70830917358398 -48.59724807739258 -12.46668243408203 -48.84101104736328 -13.34693908691406 C -49.08477401733398 -14.22719573974609 -49.20665740966797 -15.20901870727539 -49.20665740966797 -16.29240989685059 L -49.20665740966797 -24.82412147521973 L -52.45682907104492 -24.82412147521973 L -52.45682907104492 -29.82126617431641 L -49.24728393554688 -29.82126617431641 L -49.24728393554688 -35.14342880249023 L -42.70630264282227 -35.14342880249023 L -42.70630264282227 -29.82126617431641 L -37.95292282104492 -29.82126617431641 L -37.95292282104492 -24.82412147521973 L -42.70630264282227 -24.82412147521973 Z M -12.11402702331543 -35.38719177246094 C -12.3577880859375 -35.46844482421875 -12.64217948913574 -35.53615570068359 -12.96719741821289 -35.59032821655273 C -13.29221343994141 -35.64449691772461 -13.61723136901855 -35.67158126831055 -13.94224739074707 -35.67158126831055 C -14.5651969909668 -35.67158126831055 -15.0662670135498 -35.5632438659668 -15.44545364379883 -35.34656524658203 C -15.82464218139648 -35.12988662719727 -16.12257385253906 -34.83872222900391 -16.33925247192383 -34.47307968139648 C -16.55593109130859 -34.1074333190918 -16.70489692687988 -33.69438934326172 -16.78615188598633 -33.23395156860352 C -16.86740684509277 -32.77350997924805 -16.90803337097168 -32.31306838989258 -16.90803337097168 -31.85262680053711 L -16.90803337097168 -29.82126617431641 L -12.39841270446777 -29.82126617431641 L -12.39841270446777 -24.82412147521973 L -16.90803337097168 -24.82412147521973 L -16.90803337097168 -9.588923454284668 L -23.57089233398438 -9.588923454284668 L -23.57089233398438 -24.82412147521973 L -27.26796722412109 -24.82412147521973 L -27.26796722412109 -29.82126617431641 L -23.57089233398438 -29.82126617431641 L -23.57089233398438 -31.77136993408203 C -23.57089233398438 -33.01727294921875 -23.43547058105469 -34.20223236083984 -23.16461944580078 -35.32625198364258 C -22.89377212524414 -36.45027160644531 -22.42656135559082 -37.43886566162109 -21.76298332214355 -38.29203796386719 C -21.09940528869629 -39.14520645141602 -20.20560646057129 -39.82232666015625 -19.08158874511719 -40.32339859008789 C -17.95756912231445 -40.824462890625 -16.55593109130859 -41.07499694824219 -14.87667274475098 -41.07499694824219 C -14.30789375305176 -41.07499694824219 -13.74588203430176 -41.04114151000977 -13.19064331054688 -40.97343063354492 C -12.63540649414062 -40.90571594238281 -12.1275691986084 -40.80414962768555 -11.66712760925293 -40.66872406005859 L -12.11402702331543 -35.38719177246094 Z M 11.57162475585938 -19.78635025024414 C 11.57162475585938 -18.13417625427246 11.2736930847168 -16.63774108886719 10.67782592773438 -15.29704475402832 C 10.08195877075195 -13.95634651184082 9.269416809082031 -12.81878566741943 8.240192413330078 -11.88435935974121 C 7.210971832275391 -10.9499340057373 6.019237518310547 -10.22541618347168 4.664997100830078 -9.71080493927002 C 3.310760498046875 -9.196193695068359 1.861724853515625 -8.938888549804688 0.3178901672363281 -8.938888549804688 C -1.198856353759766 -8.938888549804688 -2.641120910644531 -9.196193695068359 -4.008907318115234 -9.71080493927002 C -5.376686096191406 -10.22541618347168 -6.568416595458984 -10.9499340057373 -7.584096908569336 -11.88435935974121 C -8.599777221679688 -12.81878566741943 -9.405550003051758 -13.95634651184082 -10.00141525268555 -15.29704475402832 C -10.59728050231934 -16.63774108886719 -10.89521408081055 -18.13417625427246 -10.89521408081055 -19.78635025024414 C -10.89521408081055 -21.43852233886719 -10.59728050231934 -22.92818450927734 -10.00141525268555 -24.25534057617188 C -9.405550003051758 -25.58249473571777 -8.599777221679688 -26.70651245117188 -7.584096908569336 -27.62739562988281 C -6.568416595458984 -28.54828262329102 -5.376686096191406 -29.25248718261719 -4.008907318115234 -29.74001312255859 C -2.641120910644531 -30.2275390625 -1.198856353759766 -30.4713020324707 0.3178901672363281 -30.4713020324707 C 1.861724853515625 -30.4713020324707 3.310760498046875 -30.2275390625 4.664997100830078 -29.74001312255859 C 6.019237518310547 -29.25248718261719 7.210971832275391 -28.54828262329102 8.240192413330078 -27.62739562988281 C 9.269416809082031 -26.70651245117188 10.08195877075195 -25.58249473571777 10.67782592773438 -24.25534057617188 C 11.2736930847168 -22.92818450927734 11.57162475585938 -21.43852233886719 11.57162475585938 -19.78635025024414 Z M 5.15252685546875 -19.78635025024414 C 5.15252685546875 -20.4363842010498 5.044185638427734 -21.0728759765625 4.827510833740234 -21.69582748413086 C 4.610832214355469 -22.31877899169922 4.299354553222656 -22.86724472045898 3.893085479736328 -23.34122848510742 C 3.486812591552734 -23.81521224975586 2.985744476318359 -24.201171875 2.389881134033203 -24.49910354614258 C 1.794013977050781 -24.79703521728516 1.103351593017578 -24.94600296020508 0.3178901672363281 -24.94600296020508 C -0.4675674438476562 -24.94600296020508 -1.158229827880859 -24.79703521728516 -1.754096984863281 -24.49910354614258 C -2.349960327148438 -24.201171875 -2.844261169433594 -23.81521224975586 -3.236988067626953 -23.34122848510742 C -3.629718780517578 -22.86724472045898 -3.927650451660156 -22.31877899169922 -4.130783081054688 -21.69582748413086 C -4.33392333984375 -21.0728759765625 -4.435489654541016 -20.4363842010498 -4.435489654541016 -19.78635025024414 C -4.435489654541016 -19.13631439208984 -4.33392333984375 -18.49982070922852 -4.130783081054688 -17.87687110900879 C -3.927650451660156 -17.25392150878906 -3.622947692871094 -16.69190979003906 -3.2166748046875 -16.19084167480469 C -2.810405731201172 -15.68977355957031 -2.309333801269531 -15.29027271270752 -1.713470458984375 -14.99234008789062 C -1.117607116699219 -14.69440841674805 -0.42694091796875 -14.54544067382812 0.3585205078125 -14.54544067382812 C 1.143978118896484 -14.54544067382812 1.834640502929688 -14.69440841674805 2.430503845214844 -14.99234008789062 C 3.026371002197266 -15.29027271270752 3.527439117431641 -15.68977355957031 3.933712005615234 -16.19084167480469 C 4.339984893798828 -16.69190979003906 4.644687652587891 -17.25392150878906 4.847824096679688 -17.87687110900879 C 5.050960540771484 -18.49982070922852 5.15252685546875 -19.13631439208984 5.15252685546875 -19.78635025024414 Z M 29.12257766723633 -9.588923454284668 L 29.12257766723633 -12.39219951629639 L 29.04131698608398 -12.39219951629639 C 28.79755783081055 -11.93175888061523 28.47931289672852 -11.4984016418457 28.08658218383789 -11.09212970733643 C 27.69385147094727 -10.68585777282715 27.2334098815918 -10.33375549316406 26.70525741577148 -10.03582286834717 C 26.17709732055664 -9.737890243530273 25.59477615356445 -9.494126319885254 24.95828628540039 -9.304533004760742 C 24.32179641723633 -9.11493968963623 23.65144348144531 -9.020142555236816 22.94724273681641 -9.020142555236816 C 21.59299850463867 -9.020142555236816 20.44866943359375 -9.26390552520752 19.51424407958984 -9.751432418823242 C 18.57981491088867 -10.23895835876465 17.82144165039062 -10.86868000030518 17.23911666870117 -11.64059638977051 C 16.65679550170898 -12.41251373291016 16.23698425292969 -13.29276943206787 15.97967529296875 -14.28136444091797 C 15.72237014770508 -15.26995944976807 15.59371566772461 -16.27886772155762 15.59371566772461 -17.30809020996094 L 15.59371566772461 -29.82126617431641 L 22.29720687866211 -29.82126617431641 L 22.29720687866211 -18.85192489624023 C 22.29720687866211 -18.28314208984375 22.33783340454102 -17.74144744873047 22.41908645629883 -17.22683525085449 C 22.50034332275391 -16.71222496032715 22.65608215332031 -16.25178337097168 22.88630294799805 -15.84551048278809 C 23.11651992797852 -15.43923950195312 23.42122268676758 -15.12099266052246 23.80041122436523 -14.89077186584473 C 24.17959976196289 -14.66055107116699 24.6806640625 -14.54544067382812 25.30361557006836 -14.54544067382812 C 26.46826553344727 -14.54544067382812 27.35528945922852 -14.97879791259766 27.96470260620117 -15.84551048278809 C 28.5741081237793 -16.71222496032715 28.87881088256836 -17.7279052734375 28.87881088256836 -18.89255142211914 L 28.87881088256836 -29.82126617431641 L 35.54166793823242 -29.82126617431641 L 35.54166793823242 -9.588923454284668 L 29.12257766723633 -9.588923454284668 Z M 54.02705001831055 -9.588923454284668 L 54.02705001831055 -20.6395206451416 C 54.02705001831055 -21.20830154418945 53.97964859008789 -21.74999618530273 53.88485336303711 -22.26461029052734 C 53.79005813598633 -22.77921867370605 53.63431930541992 -23.23288917541504 53.41764450073242 -23.62561988830566 C 53.20096206665039 -24.01834869384766 52.89625930786133 -24.32982444763184 52.50353622436523 -24.56004524230957 C 52.11079788208008 -24.79026412963867 51.61650466918945 -24.90537643432617 51.0206413269043 -24.90537643432617 C 50.42477035522461 -24.90537643432617 49.90338516235352 -24.79026412963867 49.45648574829102 -24.56004524230957 C 49.00958633422852 -24.32982444763184 48.63717269897461 -24.01157760620117 48.3392448425293 -23.60530471801758 C 48.04130935668945 -23.19903182983398 47.8178596496582 -22.73182106018066 47.66888809204102 -22.20366668701172 C 47.51993179321289 -21.67551422119141 47.4454460144043 -21.12704658508301 47.4454460144043 -20.55826568603516 L 47.4454460144043 -9.588923454284668 L 40.7419548034668 -9.588923454284668 L 40.7419548034668 -29.82126617431641 L 47.20167922973633 -29.82126617431641 L 47.20167922973633 -27.01799011230469 L 47.28293991088867 -27.01799011230469 C 47.52669906616211 -27.45134735107422 47.84494400024414 -27.87793350219727 48.23767471313477 -28.29774475097656 C 48.63040542602539 -28.71755981445312 49.09084701538086 -29.07643508911133 49.61899948120117 -29.37436676025391 C 50.14715194702148 -29.67229843139648 50.72270584106445 -29.91606140136719 51.34565353393555 -30.10565567016602 C 51.96860122680664 -30.29524993896484 52.63218307495117 -30.39004898071289 53.33638381958008 -30.39004898071289 C 54.69063186645508 -30.39004898071289 55.84173202514648 -30.14628601074219 56.78969192504883 -29.65875625610352 C 57.73766708374023 -29.17123031616211 58.50281143188477 -28.54151153564453 59.08514022827148 -27.76959228515625 C 59.66746139526367 -26.99767684936523 60.0872688293457 -26.11064910888672 60.34458541870117 -25.10851287841797 C 60.60188674926758 -24.10637474060059 60.73054122924805 -23.1042366027832 60.73054122924805 -22.10209846496582 L 60.73054122924805 -9.588923454284668 L 54.02705001831055 -9.588923454284668 Z M 81.08474731445312 -9.588923454284668 L 81.08474731445312 -12.22969055175781 L 81.00349426269531 -12.22969055175781 C 80.35345458984375 -11.20046901702881 79.42579650878906 -10.40823841094971 78.22053527832031 -9.853000640869141 C 77.0152587890625 -9.297761917114258 75.73550415039062 -9.020142555236816 74.38125610351562 -9.020142555236816 C 72.86451721191406 -9.020142555236816 71.51026916503906 -9.318075180053711 70.31854248046875 -9.913941383361816 C 69.12680053710938 -10.50980663299561 68.11790466308594 -11.30203628540039 67.29180908203125 -12.2906322479248 C 66.46572875976562 -13.2792272567749 65.83599853515625 -14.42355918884277 65.40264892578125 -15.72362899780273 C 64.96929931640625 -17.02370071411133 64.75260925292969 -18.3779411315918 64.75260925292969 -19.78635025024414 C 64.75260925292969 -21.19475936889648 64.97607421875 -22.54222869873047 65.42295837402344 -23.82875442504883 C 65.86985778808594 -25.11528396606445 66.50634765625 -26.24607467651367 67.33244323730469 -27.22112655639648 C 68.15852355957031 -28.1961784362793 69.16067504882812 -28.96809387207031 70.33885192871094 -29.5368766784668 C 71.51704406738281 -30.10565948486328 72.83741760253906 -30.39004898071289 74.30000305175781 -30.39004898071289 C 75.7896728515625 -30.39004898071289 77.04911804199219 -30.10565948486328 78.07833862304688 -29.5368766784668 C 79.10755920410156 -28.96809387207031 79.90655517578125 -28.34514236450195 80.475341796875 -27.66802597045898 L 80.55659484863281 -27.66802597045898 L 80.55659484863281 -40.30308151245117 L 87.21945190429688 -40.30308151245117 L 87.21945190429688 -9.588923454284668 L 81.08474731445312 -9.588923454284668 Z M 80.84098815917969 -19.7457218170166 C 80.84098815917969 -20.39575576782227 80.72587585449219 -21.03224945068359 80.49565124511719 -21.65520095825195 C 80.26542663574219 -22.27814865112305 79.94041442871094 -22.83338928222656 79.52059936523438 -23.32091522216797 C 79.10078430175781 -23.80844116210938 78.59294128417969 -24.201171875 77.99708557128906 -24.49910354614258 C 77.40121459960938 -24.79703521728516 76.72409057617188 -24.94600296020508 75.96571350097656 -24.94600296020508 C 75.18026733398438 -24.94600296020508 74.48959350585938 -24.79703521728516 73.89373779296875 -24.49910354614258 C 73.29786682128906 -24.201171875 72.79679870605469 -23.81521224975586 72.39053344726562 -23.34122848510742 C 71.9842529296875 -22.86724472045898 71.67955017089844 -22.31877899169922 71.47640991210938 -21.69582748413086 C 71.27328491210938 -21.0728759765625 71.17170715332031 -20.4363842010498 71.17170715332031 -19.78635025024414 C 71.17170715332031 -19.13631439208984 71.27328491210938 -18.49304962158203 71.47640991210938 -17.85655784606934 C 71.67955017089844 -17.22006607055664 71.9842529296875 -16.65805435180664 72.39053344726562 -16.17052841186523 C 72.79679870605469 -15.68300247192383 73.29786682128906 -15.29027271270752 73.89373779296875 -14.99234008789062 C 74.48959350585938 -14.69440841674805 75.18026733398438 -14.54544067382812 75.96571350097656 -14.54544067382812 C 76.72409057617188 -14.54544067382812 77.40121459960938 -14.69440841674805 77.99708557128906 -14.99234008789062 C 78.59294128417969 -15.29027271270752 79.10078430175781 -15.68300247192383 79.52059936523438 -16.17052841186523 C 79.94041442871094 -16.65805435180664 80.26542663574219 -17.21329307556152 80.49565124511719 -17.83624267578125 C 80.72587585449219 -18.45919418334961 80.84098815917969 -19.09568786621094 80.84098815917969 -19.7457218170166 Z">
+			</path>
+		</svg>
+	</div>
+</div>
+</body>
+</html>
