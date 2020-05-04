@@ -73,7 +73,7 @@
 				<key>UIPrerenderedIcon</key>
 				<false/>
 			</dict>
-			<key>glyphicon</key>
+			<key>neonIcon</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
 				<array>

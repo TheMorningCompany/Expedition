@@ -3,7 +3,7 @@
 //  Expedition
 //
 //  Created by Julian Wright on 1/19/20.
-//  Copyright © 2020 Zeqe Golomb. All rights reserved.
+//  Copyright © 2020 The Morning Company. All rights reserved.
 //
 
 import UIKit
@@ -31,7 +31,7 @@ class IntroViewController: UIViewController {
         } else {
             UserDefaults.standard.set(true, forKey: "has_opened")
             gifView.loadGif(name: "LightIntro")
-            let timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.switchToSearchView), userInfo: nil, repeats: false)
+            let timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.switchToSearchView), userInfo: nil, repeats: false)
             
         }
     }
