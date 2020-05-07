@@ -57,7 +57,7 @@
             <objects>
                 <tableViewController id="FG7-ud-6Gh" customClass="Onb1ViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="NoA-hO-hbh">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="747.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="747"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -138,6 +138,9 @@
                     </tableView>
                     <connections>
                         <outlet property="fadeOnCloseSwitch" destination="Igv-H1-0Rv" id="nLe-Hs-FtW"/>
+                        <outlet property="image" destination="z27-Cz-Xlu" id="DRF-L7-zLB"/>
+                        <outlet property="imageHeight" destination="Peb-YW-Xfu" id="Xdi-GK-Vcc"/>
+                        <outlet property="imageWidth" destination="7EX-mg-Km5" id="69G-mX-zya"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0kV-DG-ONr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -381,6 +384,7 @@
                                     <constraint firstAttribute="width" secondItem="XIc-wu-hx8" secondAttribute="height" multiplier="137:60" id="XS9-oe-2ZB"/>
                                 </constraints>
                                 <state key="normal" image="continueBtn"/>
+                                <state key="disabled" image="continueBtn-P"/>
                                 <state key="highlighted" image="continueBtn-P"/>
                                 <connections>
                                     <action selector="continuePressed:" destination="GVe-fO-E15" eventType="touchUpInside" id="cGh-95-ASb"/>
@@ -399,6 +403,9 @@
                         <viewLayoutGuide key="safeArea" id="sDk-dw-uP0"/>
                     </view>
                     <navigationItem key="navigationItem" id="cHA-1E-075"/>
+                    <connections>
+                        <outlet property="continueBtn" destination="XIc-wu-hx8" id="oQv-OT-nx0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HfW-zn-ahL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -412,6 +419,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="747.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
+                        <gestureRecognizers/>
                         <color key="separatorColor" name="Expedition White"/>
                         <color key="sectionIndexBackgroundColor" name="Expedition White"/>
                         <sections>
@@ -561,25 +569,23 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="Expedition White"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="84" id="wUk-dN-U1I">
-                                        <rect key="frame" x="0.0" y="733" width="414" height="84"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wUk-dN-U1I" id="6lM-3T-4Nn">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="84"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" name="Expedition White"/>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="WpT-AJ-97r" id="xQG-y3-Q9A"/>
                             <outlet property="delegate" destination="WpT-AJ-97r" id="tZe-Ga-ch3"/>
+                            <outletCollection property="gestureRecognizers" destination="kTx-oA-7TP" appends="YES" id="ODx-2Q-aYt"/>
                         </connections>
                     </tableView>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U5w-82-sqZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="ghD-wS-OMZ" userLabel="Exit" sceneMemberID="exit"/>
+                <swipeGestureRecognizer direction="right" id="kTx-oA-7TP">
+                    <connections>
+                        <action selector="enableBtn:" destination="ghD-wS-OMZ" id="XVy-ag-EUb"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2198.5507246376815" y="-988.39285714285711"/>
         </scene>

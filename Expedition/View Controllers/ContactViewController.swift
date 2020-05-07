@@ -17,10 +17,13 @@ class ContactViewController: UITableViewController {
     }
     
     @IBAction func youtubeOpen(_ sender: Any) {
+        dismiss(animated: true)
     }
     @IBAction func instagramOpen(_ sender: Any) {
+        dismiss(animated: true)
     }
     @IBAction func githubOpen(_ sender: Any) {
+        dismiss(animated: true)
     }
     @IBAction func emailOpen(_ sender: Any) {
         //Doesn't work in Simulator
@@ -62,6 +65,8 @@ extension ContactViewController: MFMailComposeViewControllerDelegate {
         print("saved")
         case .sent:
               print("sent")
+        @unknown default:
+            print("unknown")
         }
         controller.dismiss(animated: true)
     }

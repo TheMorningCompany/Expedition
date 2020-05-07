@@ -285,7 +285,7 @@
 		<true/>
 	</dict>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Allowing access to your photo library will let you save website snapshots you take, as well as images from webpages you visit.</string>
+	<string>Allow access to save fullpage screenshots</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
