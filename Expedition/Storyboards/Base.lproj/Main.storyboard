@@ -213,7 +213,7 @@
             <objects>
                 <tableViewController title="History" id="65v-MH-vlF" customClass="HistoryTableViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="26q-fx-QMl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -269,7 +269,7 @@
             <objects>
                 <tableViewController id="9OM-wm-4ti" customClass="OptionsViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="tCM-8D-bll">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -632,7 +632,7 @@
             <objects>
                 <tableViewController id="DpS-9H-eTc" customClass="TabsTableViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="w6d-vX-c8d">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <prototypes>
@@ -650,13 +650,13 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="website title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lk4-gx-BpT">
-                                            <rect key="frame" x="25" y="465" width="151.33333333333334" height="34.333333333333314"/>
+                                            <rect key="frame" x="25" y="465" width="151.66666666666666" height="34"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="website url" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGb-6P-Elf">
-                                            <rect key="frame" x="25" y="501.33333333333331" width="92" height="24.666666666666686"/>
+                                            <rect key="frame" x="25" y="501" width="92" height="25"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -698,7 +698,7 @@
             <objects>
                 <tableViewController id="WlA-qs-nnO" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Aps-Yt-xYK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -890,7 +890,7 @@
             <objects>
                 <viewController id="7xe-KY-LMm" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xfx-CW-8Ns">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shieldBlue" translatesAutoresizingMaskIntoConstraints="NO" id="zY3-ox-cvg">
@@ -958,7 +958,7 @@ We do not collect any data or personal information in Expedition. We simply do n
             <objects>
                 <viewController id="x1h-gE-UGJ" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JxV-4U-geT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="donations" translatesAutoresizingMaskIntoConstraints="NO" id="giF-d3-vde">
@@ -1020,7 +1020,7 @@ We do not collect any data or personal information in Expedition. We simply do n
             <objects>
                 <tableViewController id="9km-4P-Tvs" customClass="AppIconsViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="JlY-hT-bu4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -1317,7 +1317,7 @@ We do not collect any data or personal information in Expedition. We simply do n
             <objects>
                 <tableViewController id="If3-Iy-N99" customClass="ContactViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="8UY-ce-B6q">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -1483,7 +1483,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="90j-4S-5Zv">
-                                                    <rect key="frame" x="90" y="36.666666666666664" width="53.666666666666657" height="28.999999999999993"/>
+                                                    <rect key="frame" x="90" y="36.666666666666664" width="54" height="28.999999999999993"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1565,6 +1565,66 @@ We do not collect any data or personal information in Expedition. We simply do n
             </objects>
             <point key="canvasLocation" x="1831.8840579710147" y="-36.160714285714285"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="mv3-4A-3HS">
+            <objects>
+                <viewController id="j0F-EH-7Ds" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="217-id-mb8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lockBlue" translatesAutoresizingMaskIntoConstraints="NO" id="F0V-hY-Ftg">
+                                <rect key="frame" x="147" y="99" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="SvB-KJ-14p"/>
+                                    <constraint firstAttribute="width" secondItem="F0V-hY-Ftg" secondAttribute="height" multiplier="1:1" id="Wac-ZF-s2Q"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="security" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="soL-YJ-RFx">
+                                <rect key="frame" x="134.33333333333331" y="234" width="145.33333333333331" height="52"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="expedition is using an encrypted connection to [URL.DOMAIN]" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4k-3I-QSe">
+                                <rect key="frame" x="20" y="301" width="374" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="oYl-xx-ffb"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="certificate: blahblahblah" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaX-jC-Adw">
+                                <rect key="frame" x="20" y="401" width="374" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="5y7-2w-ds3"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" name="Expedition White"/>
+                        <constraints>
+                            <constraint firstItem="eaX-jC-Adw" firstAttribute="leading" secondItem="MRb-pe-6eV" secondAttribute="leading" constant="20" id="3hM-wT-6Kn"/>
+                            <constraint firstItem="F0V-hY-Ftg" firstAttribute="centerX" secondItem="217-id-mb8" secondAttribute="centerX" id="DEy-b1-7pe"/>
+                            <constraint firstItem="MRb-pe-6eV" firstAttribute="trailing" secondItem="eaX-jC-Adw" secondAttribute="trailing" constant="20" id="Eb5-4a-sTR"/>
+                            <constraint firstItem="soL-YJ-RFx" firstAttribute="centerX" secondItem="217-id-mb8" secondAttribute="centerX" id="IUu-An-Xhb"/>
+                            <constraint firstItem="F0V-hY-Ftg" firstAttribute="top" secondItem="MRb-pe-6eV" secondAttribute="top" constant="55" id="NcD-Dq-U4J"/>
+                            <constraint firstItem="W4k-3I-QSe" firstAttribute="leading" secondItem="MRb-pe-6eV" secondAttribute="leading" constant="20" id="Phq-8Q-dmA"/>
+                            <constraint firstItem="MRb-pe-6eV" firstAttribute="trailing" secondItem="W4k-3I-QSe" secondAttribute="trailing" constant="20" id="Xl1-7e-vRW"/>
+                            <constraint firstItem="eaX-jC-Adw" firstAttribute="top" secondItem="W4k-3I-QSe" secondAttribute="bottom" id="ZMu-Ev-VG6"/>
+                            <constraint firstItem="soL-YJ-RFx" firstAttribute="top" secondItem="F0V-hY-Ftg" secondAttribute="bottom" constant="15" id="eM7-wW-VHo"/>
+                            <constraint firstItem="W4k-3I-QSe" firstAttribute="top" secondItem="soL-YJ-RFx" secondAttribute="bottom" constant="15" id="mmY-Kv-lYh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MRb-pe-6eV"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Qb-5x-YFM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2721.739130434783" y="-36.160714285714285"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="9iR-BM-GXu">
             <objects>
@@ -1585,7 +1645,7 @@ We do not collect any data or personal information in Expedition. We simply do n
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fQc-WF-jgl"/>
+        <segue reference="AfM-93-8mC"/>
         <segue reference="tOY-Um-AMB"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1609,6 +1669,7 @@ We do not collect any data or personal information in Expedition. We simply do n
         <image name="donations" width="1024" height="1024"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="gearBlue" width="1024" height="1024"/>
+        <image name="lockBlue" width="1024" height="1024"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="selected" width="731.66668701171875" height="731.66668701171875"/>
         <image name="shieldBlue" width="1024" height="1024"/>
