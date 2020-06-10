@@ -165,6 +165,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         print(request.url?.absoluteString as Any)
 
         webView?.load(request)
+
     }
     
     //MARK: MORE Scrolling
@@ -217,6 +218,11 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             PersistenceService.saveContext()
             HistoryTableViewController().historyArray.append(historyElementToAdd)
             HistoryTableViewController().tableView.reloadData()
+            if webView.hasOnlySecureContent {
+                secureImg.image = UIImage(named: "lockBlue")
+            } else {
+                secureImg.image = UIImage(named: "lockRed")
+            }
             
         }
 
@@ -252,11 +258,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             
             standoutMessage(message: "VALID SEARCH!")
            //MARK: Set lock image to be red or blue if its https encrypted
-            if urlString.contains("https") {
-                secureImg.image = UIImage(named: "lockBlue")
-            } else {
-                secureImg.image = UIImage(named: "lockRed")
-            }
+
         } else {
             pageNotFound()
             
@@ -344,7 +346,6 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
                 webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
             }
     
-        secureImg.image = UIImage(named: "lockBlue")
 }
     
     //MARK: UTIL FUNCTIONS
