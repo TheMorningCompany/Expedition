@@ -213,7 +213,7 @@
             <objects>
                 <tableViewController title="History" id="65v-MH-vlF" customClass="HistoryTableViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="26q-fx-QMl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -268,8 +268,8 @@
         <scene sceneID="Rta-78-hTe">
             <objects>
                 <tableViewController id="9OM-wm-4ti" customClass="OptionsViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="tCM-8D-bll">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="tCM-8D-bll">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -549,34 +549,8 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="Expedition White"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="69" id="tJg-bv-Hdr">
-                                        <rect key="frame" x="0.0" y="802" width="414" height="69"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tJg-bv-Hdr" id="fvS-zj-69b">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYl-BD-MHF">
-                                                    <rect key="frame" x="18" y="21" width="137" height="27"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
-                                                    <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <state key="normal" title="donation box"/>
-                                                    <connections>
-                                                        <segue destination="x1h-gE-UGJ" kind="show" id="Elf-1x-VTU"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="cYl-BD-MHF" secondAttribute="bottom" constant="10" id="KsF-EV-aFq"/>
-                                                <constraint firstItem="cYl-BD-MHF" firstAttribute="leading" secondItem="fvS-zj-69b" secondAttribute="leadingMargin" constant="10" id="S9N-QE-jKc"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cYl-BD-MHF" secondAttribute="trailing" constant="20" symbolic="YES" id="q7e-Pa-Pf7"/>
-                                                <constraint firstItem="cYl-BD-MHF" firstAttribute="top" secondItem="fvS-zj-69b" secondAttribute="topMargin" constant="10" id="vLm-A9-Iy7"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" name="Expedition White"/>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="69" id="XhU-Qt-RFr">
-                                        <rect key="frame" x="0.0" y="871" width="414" height="69"/>
+                                        <rect key="frame" x="0.0" y="802" width="414" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XhU-Qt-RFr" id="tgC-lH-1kP">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
@@ -631,8 +605,8 @@
         <scene sceneID="ts0-qg-RZW">
             <objects>
                 <tableViewController id="DpS-9H-eTc" customClass="TabsTableViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="w6d-vX-c8d">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="w6d-vX-c8d">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <prototypes>
@@ -697,8 +671,8 @@
         <scene sceneID="c0B-zO-c8h">
             <objects>
                 <tableViewController id="WlA-qs-nnO" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Aps-Yt-xYK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Aps-Yt-xYK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -890,7 +864,7 @@
             <objects>
                 <viewController id="7xe-KY-LMm" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xfx-CW-8Ns">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shieldBlue" translatesAutoresizingMaskIntoConstraints="NO" id="zY3-ox-cvg">
@@ -953,74 +927,12 @@ We do not collect any data or personal information in Expedition. We simply do n
             </objects>
             <point key="canvasLocation" x="1884" y="753"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="kH6-9P-3Nt">
-            <objects>
-                <viewController id="x1h-gE-UGJ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="JxV-4U-geT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="donations" translatesAutoresizingMaskIntoConstraints="NO" id="giF-d3-vde">
-                                <rect key="frame" x="157" y="25" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="ffR-ug-Trv"/>
-                                    <constraint firstAttribute="width" secondItem="giF-d3-vde" secondAttribute="height" multiplier="1:1" id="gSI-m1-CWQ"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="donation box" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUI-xX-kHP">
-                                <rect key="frame" x="83.666666666666671" y="140" width="246.66666666666663" height="52"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="a donation would be very beneficial to our team to continue to develop our products. it is entirely optional, however. " selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeW-oK-4Ye">
-                                <rect key="frame" x="20" y="212" width="374" height="243"/>
-                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="243" id="rIc-qc-I2s"/>
-                                </constraints>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WK9-aX-84O">
-                                <rect key="frame" x="82" y="661.66666666666663" width="250" height="109.33333333333337"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="agd-kh-M7W"/>
-                                    <constraint firstAttribute="width" secondItem="WK9-aX-84O" secondAttribute="height" multiplier="137:60" id="is7-By-pXX"/>
-                                </constraints>
-                                <state key="normal" image="donateBtn"/>
-                                <state key="highlighted" image="donateBtn-P"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" name="Expedition White"/>
-                        <constraints>
-                            <constraint firstItem="CUI-xX-kHP" firstAttribute="centerX" secondItem="JxV-4U-geT" secondAttribute="centerX" id="3iP-CE-HS7"/>
-                            <constraint firstItem="WK9-aX-84O" firstAttribute="centerX" secondItem="JxV-4U-geT" secondAttribute="centerX" id="7yv-XI-SbS"/>
-                            <constraint firstItem="giF-d3-vde" firstAttribute="top" secondItem="egp-eU-i81" secondAttribute="top" constant="25" id="95c-YG-QAq"/>
-                            <constraint firstItem="CUI-xX-kHP" firstAttribute="top" secondItem="giF-d3-vde" secondAttribute="bottom" constant="15" id="AgR-YX-uyg"/>
-                            <constraint firstItem="giF-d3-vde" firstAttribute="width" secondItem="giF-d3-vde" secondAttribute="height" multiplier="1:1" id="BrP-zP-klA"/>
-                            <constraint firstItem="egp-eU-i81" firstAttribute="bottom" secondItem="WK9-aX-84O" secondAttribute="bottom" constant="15" id="T0S-8N-bbt"/>
-                            <constraint firstItem="giF-d3-vde" firstAttribute="centerX" secondItem="JxV-4U-geT" secondAttribute="centerX" id="U5T-fe-jfz"/>
-                            <constraint firstItem="WeW-oK-4Ye" firstAttribute="top" secondItem="CUI-xX-kHP" secondAttribute="bottom" constant="20" id="XoC-D9-oaE"/>
-                            <constraint firstItem="WeW-oK-4Ye" firstAttribute="leading" secondItem="egp-eU-i81" secondAttribute="leading" constant="20" id="Yna-FG-wTK"/>
-                            <constraint firstItem="egp-eU-i81" firstAttribute="trailing" secondItem="WeW-oK-4Ye" secondAttribute="trailing" constant="20" id="mGl-HI-Cve"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="egp-eU-i81"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="cjl-as-L1v"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UTW-Fh-auK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="12" y="1479"/>
-        </scene>
         <!--App Icons View Controller-->
         <scene sceneID="hcv-X3-56H">
             <objects>
                 <tableViewController id="9km-4P-Tvs" customClass="AppIconsViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="JlY-hT-bu4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="JlY-hT-bu4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -1316,8 +1228,8 @@ We do not collect any data or personal information in Expedition. We simply do n
         <scene sceneID="ur2-dj-PR4">
             <objects>
                 <tableViewController id="If3-Iy-N99" customClass="ContactViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="8UY-ce-B6q">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="8UY-ce-B6q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -1511,13 +1423,13 @@ We do not collect any data or personal information in Expedition. We simply do n
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qd4-6h-5ai" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-926" y="1479"/>
+            <point key="canvasLocation" x="61" y="1479"/>
         </scene>
         <!--Bookmarks-->
         <scene sceneID="LXf-U2-yf7">
             <objects>
                 <tableViewController title="Bookmarks" id="ed1-S0-drB" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="bfC-kH-yak" userLabel="BookmarkTableView">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="bfC-kH-yak" userLabel="BookmarkTableView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
@@ -1664,9 +1576,6 @@ We do not collect any data or personal information in Expedition. We simply do n
         <image name="blueapp" width="1024" height="1024"/>
         <image name="chat" width="1024" height="1024"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
-        <image name="donateBtn" width="959" height="420"/>
-        <image name="donateBtn-P" width="959" height="420"/>
-        <image name="donations" width="1024" height="1024"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="gearBlue" width="1024" height="1024"/>
         <image name="lockBlue" width="1024" height="1024"/>
