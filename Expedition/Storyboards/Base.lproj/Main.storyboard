@@ -37,7 +37,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lsQ-Iq-tM5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1175" y="-36"/>
+            <point key="canvasLocation" x="-925" y="-36"/>
         </scene>
         <!--Web-->
         <scene sceneID="tne-QT-ifu">
@@ -206,14 +206,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WCs-2j-rrh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1175" y="753"/>
+            <point key="canvasLocation" x="-926" y="753"/>
         </scene>
         <!--History-->
         <scene sceneID="4gg-kz-CRd">
             <objects>
                 <tableViewController title="History" id="65v-MH-vlF" customClass="HistoryTableViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="26q-fx-QMl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -269,7 +269,7 @@
             <objects>
                 <tableViewController id="9OM-wm-4ti" customClass="OptionsViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="tCM-8D-bll">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -610,7 +610,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="DZ3-i7-3vU">
-                        <barButtonItem key="rightBarButtonItem" image="xmark.circle" catalog="system" id="n1E-Rn-I5e">
+                        <barButtonItem key="rightBarButtonItem" image="xmark" catalog="system" id="n1E-Rn-I5e">
                             <connections>
                                 <action selector="close:" destination="9OM-wm-4ti" id="mi2-rw-Xma"/>
                             </connections>
@@ -632,7 +632,7 @@
             <objects>
                 <tableViewController id="DpS-9H-eTc" customClass="TabsTableViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="w6d-vX-c8d">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <prototypes>
@@ -691,14 +691,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7HJ-ZH-Mih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1311.5942028985507" y="-772.09821428571422"/>
+            <point key="canvasLocation" x="922" y="-772"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="c0B-zO-c8h">
             <objects>
                 <tableViewController id="WlA-qs-nnO" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Aps-Yt-xYK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -890,7 +890,7 @@
             <objects>
                 <viewController id="7xe-KY-LMm" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xfx-CW-8Ns">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shieldBlue" translatesAutoresizingMaskIntoConstraints="NO" id="zY3-ox-cvg">
@@ -958,7 +958,7 @@ We do not collect any data or personal information in Expedition. We simply do n
             <objects>
                 <viewController id="x1h-gE-UGJ" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JxV-4U-geT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="donations" translatesAutoresizingMaskIntoConstraints="NO" id="giF-d3-vde">
@@ -1013,14 +1013,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UTW-Fh-auK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="299" y="1479"/>
+            <point key="canvasLocation" x="12" y="1479"/>
         </scene>
         <!--App Icons View Controller-->
         <scene sceneID="hcv-X3-56H">
             <objects>
                 <tableViewController id="9km-4P-Tvs" customClass="AppIconsViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="JlY-hT-bu4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -1290,7 +1290,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gk4-kq-hkh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1100" y="1479"/>
+            <point key="canvasLocation" x="922" y="1479"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="z7G-mT-loN">
@@ -1317,7 +1317,7 @@ We do not collect any data or personal information in Expedition. We simply do n
             <objects>
                 <tableViewController id="If3-Iy-N99" customClass="ContactViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="8UY-ce-B6q">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -1511,7 +1511,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qd4-6h-5ai" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-533.33333333333337" y="1478.5714285714284"/>
+            <point key="canvasLocation" x="-926" y="1479"/>
         </scene>
         <!--Bookmarks-->
         <scene sceneID="LXf-U2-yf7">
@@ -1646,7 +1646,7 @@ We do not collect any data or personal information in Expedition. We simply do n
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="AfM-93-8mC"/>
-        <segue reference="tOY-Um-AMB"/>
+        <segue reference="fET-hm-iSD"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
     <resources>
@@ -1677,7 +1677,7 @@ We do not collect any data or personal information in Expedition. We simply do n
         <image name="square.on.square" catalog="system" width="128" height="113"/>
         <image name="swipeBlue" width="1024" height="1024"/>
         <image name="trash" catalog="system" width="121" height="128"/>
-        <image name="xmark.circle" catalog="system" width="128" height="121"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="Expedition Blue">
             <color red="0.064000003039836884" green="0.56400001049041748" blue="0.97000002861022949" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
