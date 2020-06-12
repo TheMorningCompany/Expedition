@@ -23,9 +23,9 @@
 		border: none;
 	}
 	#NotFound {
-		position: absolute;
-		width: 720px;
-		height: 1280px;
+		position: fixed;
+		width: 50%;
+		height: 50%;
 		background-color: rgba(247,247,247,0);
 		overflow: hidden;
 		--web-view-name: NotFound;
@@ -34,72 +34,36 @@
 		--web-scale-to-fit-type: height;
 		--web-enable-deep-linking: true;
 	}
-	#Group_282 {
-		position: absolute;
-		width: 251.36px;
-		height: 170.142px;
+	#Path_138_c {
+		fill: url(#Path_138_c);
+	}
+	.Path_138_c {
+		overflow: visible;
+		position: fixed;
+		width: 100%;
+		height: 100%;
 		left: 50%;
-		transform: translateX(-50%) translateY(-50%);
+		transform: matrix(1,0,0,1,0,0);
 		top: 50%;
-		overflow: visible;
-	}
-	#Group_292 {
-		position: absolute;
-		width: 109.47px;
-		height: 110.446px;
-		left: 71.229px;
-		top: 0px;
-		overflow: visible;
-	}
-	.Path_134_do {
-		overflow: visible;
-		position: absolute;
-		width: 103.729px;
-		height: 110.446px;
-		left: 5.741px;
-		top: 0px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	.Path_135_dq {
-		overflow: visible;
-		position: absolute;
-		width: 70.561px;
-		height: 67.854px;
-		left: 0px;
-		top: 23.733px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	.Path_139 {
-		overflow: visible;
-		position: absolute;
-		width: 251.36px;
-		height: 32.136px;
-		left: 0px;
-		top: 138.006px;
-		transform: matrix(1,0,0,1,0,0);
 	}
 </style>
 <script id="applicationScript">
-///////////////////////////////////////
-// INITIALIZATION
-///////////////////////////////////////
-
-/**
- * Functionality for scaling, showing by media query, and navigation between multiple pages on a single page. 
- * Code subject to change.
- **/
+//INITIALIZATION
 
 if (window.console==null) { window["console"] = { log : function() {} } }; // some browsers do not set console
 
 var Application = function() {
 	// event constants
+	this.prefix = "--web-";
 	this.NAVIGATION_CHANGE = "viewChange";
 	this.VIEW_NOT_FOUND = "viewNotFound";
 	this.VIEW_CHANGE = "viewChange";
+	this.VIEW_CHANGING = "viewChanging";
 	this.STATE_NOT_FOUND = "stateNotFound";
 	this.APPLICATION_COMPLETE = "applicationComplete";
 	this.APPLICATION_RESIZE = "applicationResize";
 	this.SIZE_STATE_NAME = "data-is-view-scaled";
+	this.STATE_NAME = this.prefix + "state";
 
 	this.lastView = null;
 	this.lastState = null;
@@ -113,13 +77,11 @@ var Application = function() {
 	this.LastModifiedDateLabelName = "LastModifiedDateLabel";
 	this.viewScaleSliderId = "ViewScaleSliderInput";
 	this.pageRefreshedName = "showPageRefreshedNotification";
-	this.prefix = "--web-";
 	this.applicationStylesheet = null;
 	this.mediaQueryDictionary = {};
 	this.viewsDictionary = {};
 	this.addedViews = [];
 	this.views = {};
-	this.viewIds = [];
 	this.viewIds = [];
 	this.viewQueries = {};
 	this.overlays = {};
@@ -165,12 +127,18 @@ var Application = function() {
 
 	self.initialize = function(event) {
 		var view = self.getVisibleView();
+		var views = self.getVisibleViews();
 		if (view==null) view = self.getInitialView();
 		self.collectViews();
 		self.collectOverlays();
 		self.collectMediaQueries();
-		self.setViewOptions(view);
-		self.setViewVariables(view);
+
+		for (let index = 0; index < views.length; index++) {
+			var view = views[index];
+			self.setViewOptions(view);
+			self.setViewVariables(view);
+			self.centerView(view);
+		}
 
 		// sometimes the body size is 0 so we call this now and again later
 		if (self.initialized) {
@@ -192,9 +160,9 @@ var Application = function() {
 		}
 
 		if (self.initialized==false) {
-			if (self.showNavigationControls || (self.singlePageApplication && self.showByMediaQuery==false)) {
+			if (self.enableDeepLinking) {
 				self.syncronizeViewToURL();
-			}
+			} 
 	
 			if (self.refreshPageForChanges) {
 				self.setupRefreshForChanges();
@@ -222,15 +190,10 @@ var Application = function() {
 		if (self.showUpdateNotification) {
 			self.showNotification();
 		}
-	
-		//"addEventListener" in window ? null : window.addEventListener = window.attachEvent;
-		//"addEventListener" in document ? null : document.addEventListener = document.attachEvent;
+
 	}
 
-
-	///////////////////////////////////////
-	// AUTO REFRESH 
-	///////////////////////////////////////
+	//AUTO REFRESH
 
 	self.setupRefreshForChanges = function() {
 		self.refreshRequest = new XMLHttpRequest();
@@ -243,10 +206,6 @@ var Application = function() {
 		self.requestRefreshUpdate();
 	}
 
-	/**
-	 * Attempt to check the last modified date by the headers 
-	 * or the last modified property from the byte array (experimental)
-	 **/
 	self.requestRefreshUpdate = function() {
 		var url = document.location.href;
 		var protocol = window.location.protocol;
@@ -279,25 +238,7 @@ var Application = function() {
 
 					self.refreshRequest.onload = self.refreshOnLoadOnceHandler;
 
-					// In some browsers (Chrome & Safari) this error occurs at send: 
-					// 
-					// Chrome - Access to XMLHttpRequest at 'file:///index.html' from origin 'null' 
-					// has been blocked by CORS policy: 
-					// Cross origin requests are only supported for protocol schemes: 
-					// http, data, chrome, chrome-extension, https.
-					// 
-					// Safari - XMLHttpRequest cannot load file:///Users/user/Public/index.html. Cross origin requests are only supported for HTTP.
-					// 
-					// Solution is to run a local server, set local permissions or test in another browser
 					self.refreshRequest.send(null);
-
-					// In MS browsers the following behavior occurs possibly due to an AJAX call to check last modified date: 
-					// 
-					// DOM7011: The code on this page disabled back and forward caching.
-
-					// In Brave (Chrome) error when on the server
-					// index.js:221 HEAD https://www.example.com/ net::ERR_INSUFFICIENT_RESOURCES
-					// self.refreshRequest.send(null);
 
 				}
 				else {
@@ -533,10 +474,7 @@ var Application = function() {
 		value = Math.round(value * Math.pow(10,places)) / Math.pow(10, places);
 		return value;
 	}
-
-	///////////////////////////////////////
 	// NAVIGATION CONTROLS
-	///////////////////////////////////////
 
 	self.updateViewLabel = function() {
 		var viewNavigationLabel = document.getElementById("ViewNavigationLabel");
@@ -581,6 +519,25 @@ var Application = function() {
 					else {
 						window.history.pushState({name:viewId}, null, viewFragment);
 					}
+				}
+			}
+		}
+	}
+
+	self.updateURLState = function(view, stateName) {
+		stateName = view && (stateName=="" || stateName==null) ? self.getStateNameByViewId(view.id) : stateName;
+
+		if (self.supportsPopState==false) {
+			self.setFragment(stateName);
+		}
+		else {
+			if (stateName!=window.location.hash) {
+
+				if (window.location.hash==null) {
+					window.history.replaceState({name:view.viewId}, null, stateName);
+				}
+				else {
+					window.history.pushState({name:view.viewId}, null, stateName);
 				}
 			}
 		}
@@ -1121,9 +1078,7 @@ var Application = function() {
 		return numberOfQueries;
 	}
 
-	/////////////////////////////////////////
 	// VIEW SCALE 
-	/////////////////////////////////////////
 
 	self.sliderChangeHandler = function(event) {
 		var value = self.getShortNumber(event.currentTarget.value/100);
@@ -1323,8 +1278,6 @@ var Application = function() {
 
 		// scale to fit height
 		if (scaleToHeight && scaleToWidth==false) {
-			//canCenterVertically = scaleNeededToFitHeight>=scaleNeededToFitWidth;
-			//canCenterHorizontally = scaleNeededToFitHeight<=scaleNeededToFitWidth && enableScaleUp==false;
 			canCenterVertically = scaleNeededToFitHeight>=scaleNeededToFitWidth;
 			canCenterHorizontally = scaleNeededToFitWidth>=1 && enableScaleUp==false;
 			
@@ -1341,7 +1294,6 @@ var Application = function() {
 
 			if (hasMaximumScale) {
 				desiredScale = Math.min(desiredScale, Number(maximumScale));
-				//canCenterVertically = desiredScale>=scaleNeededToFitHeight && enableScaleUp==false;
 			}
 
 			desiredScale = self.getShortNumber(desiredScale);
@@ -1431,9 +1383,6 @@ var Application = function() {
 
 			transformValue = "scale(" + desiredScale + ")";
 
-			//canCenterHorizontally = self.canCenterHorizontally(view, "fit", false, desiredScale);
-			//canCenterVertically = self.canCenterVertically(view, "fit", false, desiredScale);
-			
 			if (self.centerVertically) {
 				if (canCenterVertically) {
 					translateY = "-50%";
@@ -1768,10 +1717,7 @@ var Application = function() {
 			}
 		}
 	}
-
-	///////////////////////////////////
 	// GENERAL FUNCTIONS
-	///////////////////////////////////
 
 	self.getViewById = function(id) {
 		id = id ? id.replace("#", "") : "";
@@ -1828,6 +1774,106 @@ var Application = function() {
 		return null;
 	}
 
+	self.getVisibleViews = function() {
+		var viewIds = self.getViewIds();
+		var views = [];
+		
+		for (var i=0;i<viewIds.length;i++) {
+			var viewId = viewIds[i].replace(/[\#?\.?](.*)/, "$" + "1");
+			var view = self.getElement(viewId);
+			var postName = "_Class";
+
+			if (view==null && viewId && viewId.lastIndexOf(postName)!=-1) {
+				view = self.getElement(viewId.replace(postName, ""));
+			}
+			
+			if (view) {
+				var display = getComputedStyle(view).display;
+				
+				if (display=="none") {
+					continue;
+				}
+
+				if (display=="block" || display=="flex") {
+					views.push(view);
+				}
+			}
+		}
+
+		return views;
+	}
+
+	self.getStateNameByViewId = function(id) {
+		var state = self.viewsDictionary[id];
+		return state && state.stateName;
+	}
+
+	self.getMatchingViews = function(ids) {
+		var views = self.addedViews.slice(0);
+		var matchingViews = [];
+
+		if (self.showByMediaQuery) {
+			for (let index = 0; index < views.length; index++) {
+				var viewId = views[index];
+				var state = self.viewsDictionary[viewId];
+				var rule = state && state.rule; 
+				var matchResults = window.matchMedia(rule.conditionText);
+				var view = self.views[viewId];
+				
+				if (matchResults.matches) {
+					if (ids==true) {
+						matchingViews.push(viewId);
+					}
+					else {
+						matchingViews.push(view);
+					}
+				}
+			}
+		}
+
+		return matchingViews;
+	}
+
+	self.ruleMatchesQuery = function(rule) {
+		var result = window.matchMedia(rule.conditionText);
+		return result.matches;
+	}
+
+	self.getViewsByStateName = function(stateName, matchQuery) {
+		var views = self.addedViews.slice(0);
+		var matchingViews = [];
+
+		if (self.showByMediaQuery) {
+
+			// find state name
+			for (let index = 0; index < views.length; index++) {
+				var viewId = views[index];
+				var state = self.viewsDictionary[viewId];
+				var rule = state.rule;
+				var mediaRule = state.mediaRule;
+				var view = self.views[viewId];
+				var viewStateName = self.getStyleRuleValue(mediaRule, self.STATE_NAME, state);
+				var stateFoundAtt = view.getAttribute(self.STATE_NAME)==state;
+				var matchesResults = false;
+				
+				if (viewStateName==stateName) {
+					if (matchQuery) {
+						matchesResults = self.ruleMatchesQuery(rule);
+
+						if (matchesResults) {
+							matchingViews.push(view);
+						}
+					}
+					else {
+						matchingViews.push(view);
+					}
+				}
+			}
+		}
+
+		return matchingViews;
+	}
+
 	self.getInitialView = function() {
 		var viewId = self.getInitialViewId();
 		viewId = viewId.replace(/[\#?\.?](.*)/, "$" + "1");
@@ -1850,7 +1896,20 @@ var Application = function() {
 	}
 
 	self.syncronizeViewToURL = function() {
-		var fragment = window.location.hash;
+		var fragment = self.getHashFragment();
+
+		if (self.showByMediaQuery) {
+			var stateName = fragment;
+			
+			if (stateName==null || stateName=="") {
+				var initialView = self.getInitialView();
+				stateName = initialView ? self.getStateNameByViewId(initialView.id) : null;
+			}
+			
+			self.showMediaQueryViewsByState(stateName);
+			return;
+		}
+
 		var view = self.getViewById(fragment);
 		var index = view ? self.getViewIndex(view) : 0;
 		if (index==-1) index = 0;
@@ -1989,7 +2048,7 @@ var Application = function() {
 
 		for (let index = 0; index < viewIds.length; index++) {
 			const id = viewIds[index];
-			const view = self.getViewById(id);
+			const view = self.getElement(id);
 			//view && view.addEventListener("animationend", self.animationEndHandler);
 			self.views[id] = view;
 		}
@@ -2028,6 +2087,8 @@ var Application = function() {
 		var viewsFound = [];
 		var selectorText = null;
 		var property = self.prefix + "view-id";
+		var stateName = self.prefix + "state";
+		var stateValue;
 		
 		for (var j=0;j<numOfCSSRules;j++) {
 			cssRule = cssRules[j];
@@ -2045,8 +2106,13 @@ var Application = function() {
 					if (selectorText==".mediaViewInfo") {
 
 						mediaId = self.getStyleRuleValue(mediaRule, property);
+						stateValue = self.getStyleRuleValue(mediaRule, stateName);
 
-						self.addView(mediaId, cssRule);
+						// prevent duplicates from load and domcontentloaded events
+						if (self.addedViews.indexOf(mediaId)==-1) {
+							self.addView(mediaId, cssRule, mediaRule, stateValue);
+						}
+
 						viewsFound.push(mediaId);
 
 						if (viewsNotFound.indexOf(mediaId)!=-1) {
@@ -2061,7 +2127,8 @@ var Application = function() {
 				selectorText = cssRule.selectorText.replace(/[#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
-					self.addView(selectorText, cssRule);
+					//stateValue = self.getStyleRuleValue(cssRule, stateName);
+					self.addView(selectorText, cssRule, null, stateValue);
 
 					if (viewsNotFound.indexOf(selectorText)!=-1) {
 						viewsNotFound.splice(viewsNotFound.indexOf(selectorText));
@@ -2081,13 +2148,13 @@ var Application = function() {
 	/**
 	 * Adds a view. A view object contains the id of the view and the style rule
 	 * Use enableMediaQuery(rule) to enable
-	 * An array of view names are in self.views array
+	 * An array of view names are in self.addedViews array
 	 */
-	self.addView = function(name, cssRule, parentId) {
-		var state = {name:name, rule:cssRule, id:name, parentId:parentId};
-		self.addedViews.push(name);
-		self.viewsDictionary[name] = state;
-		self.mediaQueryDictionary[name] = cssRule;
+	self.addView = function(viewId, cssRule, mediaRule, stateName) {
+		var state = {name:viewId, rule:cssRule, id:viewId, mediaRule:mediaRule, stateName:stateName};
+		self.addedViews.push(viewId);
+		self.viewsDictionary[viewId] = state;
+		self.mediaQueryDictionary[viewId] = cssRule;
 	}
 
 	self.hasView = function(name) {
@@ -2100,12 +2167,12 @@ var Application = function() {
 
 	/**
 	 * Go to view by id. Views are added in addView()
-	 * @param {String} name id of view in current
-	 * @param {String} parent id of parent view
+	 * @param {String} id id of view in current
 	 * @param {Boolean} maintainPreviousState if true then do not hide other views
+	 * @param {String} parent id of parent view
 	 */
-	self.goToView = function(name, maintainPreviousState, parent) {
-		var state = self.viewsDictionary[name];
+	self.goToView = function(id, maintainPreviousState, parent) {
+		var state = self.viewsDictionary[id];
 
 		if (state) {
 			if (maintainPreviousState==false || maintainPreviousState==null) {
@@ -2117,7 +2184,7 @@ var Application = function() {
 		}
 		else {
 			var event = new Event(self.STATE_NOT_FOUND);
-			self.stateName = name;
+			self.stateName = id;
 			window.dispatchEvent(event);
 		}
 	}
@@ -2132,6 +2199,7 @@ var Application = function() {
 		var animation = buttonComputedStyles.getPropertyValue(self.prefix+"animation").trim();
 		var targetType = buttonComputedStyles.getPropertyValue(self.prefix+"action-type").trim();
 		var targetView = self.application ? null : self.getElement(actionTargetValue);
+		var targetState = self.getStateNameByViewId(targetView.id);
 		var actionTargetStyles = targetView ? targetView.style : null;
 		var state = self.viewsDictionary[actionTargetValue];
 		
@@ -2146,6 +2214,17 @@ var Application = function() {
 
 			if (self.currentOverlay) {
 				self.removeOverlay(false);
+			}
+
+			if (self.showByMediaQuery) {
+				var stateName = targetState;
+				
+				if (stateName==null || stateName=="") {
+					var initialView = self.getInitialView();
+					stateName = initialView ? self.getStateNameByViewId(initialView.id) : null;
+				}
+				self.showMediaQueryViewsByState(stateName, event);
+				return;
 			}
 
 			// add animation set in event target style declaration
@@ -2183,9 +2262,6 @@ var Application = function() {
 			var reverse = self.getReverseAnimation(animation);
 			var duration = self.getAnimationDuration(animation, true);
 
-			// if target view is above (higher index)
-			// then fade in target view 
-			// and after fade in then hide previous view instantly
 			if (fromIndex<toIndex) {
 				self.setElementAnimation(from, null);
 				self.setElementAnimation(to, null);
@@ -2201,9 +2277,6 @@ var Application = function() {
 					self.updateViewLabel();
 				}, duration)
 			}
-			// if target view is on bottom
-			// then show target view instantly 
-			// and fade out current view
 			else if (fromIndex>toIndex) {
 				self.setElementAnimation(to, null);
 				self.setElementAnimation(from, null);
@@ -2300,14 +2373,24 @@ var Application = function() {
 	}
 
 	self.resizeHandler = function(event) {
-		var view = self.getVisibleView();
+		
+		if (self.showByMediaQuery) {
+			if (self.enableDeepLinking) {
+				var stateName = self.getHashFragment();
 
-		if (self.showByMediaQuery && view) {
-			self.setViewOptions(view);
-			self.setViewVariables(view);
+				if (stateName==null || stateName=="") {
+					var initialView = self.getInitialView();
+					stateName = initialView ? self.getStateNameByViewId(initialView.id) : null;
+				}
+				self.showMediaQueryViewsByState(stateName, event);
+			}
 		}
 		else {
-			self.scaleViewIfNeeded();
+			var visibleViews = self.getVisibleViews();
+
+			for (let index = 0; index < visibleViews.length; index++) {	
+				self.scaleViewIfNeeded();
+			}
 		}
 
 		window.dispatchEvent(new Event(self.APPLICATION_RESIZE));
@@ -2348,19 +2431,120 @@ var Application = function() {
 		event.stopImmediatePropagation();
 	}
 
+	self.getHashFragment = function() {
+		var value = window.location.hash ? window.location.hash.replace("#", "") : "";
+		return value;
+	}
+
+	self.showBlockElement = function(view) {
+		view.style.display = "block";
+	}
+
+	self.hideElement = function(view) {
+		view.style.display = "none";
+	}
+
+	self.showStateFunction = null;
+
+	self.showMediaQueryViewsByState = function(state, event) {
+
+		var matchedViews = self.getMatchingViews();
+		var matchMediaQuery = true;
+		var foundViews = self.getViewsByStateName(state, matchMediaQuery);
+		var showViews = [];
+		var hideViews = [];
+
+		// loop views that match media query 
+		for (let index = 0; index < matchedViews.length; index++) {
+			var view = matchedViews[index];
+			
+			// let user determine visible view
+			if (self.showStateFunction!=null) {
+				if (self.showStateFunction(view, state)) {
+					showViews.push(view);
+				}
+				else {
+					hideViews.push(view);
+				}
+			}
+			// state was defined so check if view matches state
+			else if (foundViews.length) {
+
+				if (foundViews.indexOf(view)!=-1) {
+					showViews.push(view);
+				}
+				else {
+					hideViews.push(view);
+				}
+			}
+			// if no state names are defined show view (define unused state name to exclude)
+			else if (state==null || state=="") {
+				showViews.push(view);
+			}
+		}
+
+		if (showViews.length) {
+			var viewChangingEvent = new Event(self.VIEW_CHANGING);
+			viewChangingEvent.showViews = showViews;
+			viewChangingEvent.hideViews = hideViews;
+			window.dispatchEvent(viewChangingEvent);
+
+			if (viewChangingEvent.defaultPrevented==false) {
+				for (var index = 0; index < hideViews.length; index++) {
+					var view = hideViews[index];
+					self.hideElement(view);
+				}
+
+				for (var index = 0; index < showViews.length; index++) {
+					var view = showViews[index];
+
+					if (index==showViews.length-1) {
+						self.clearDisplay(view);
+						self.setViewOptions(view);
+						self.setViewVariables(view);
+						self.centerView(view);
+						self.updateURLState(view, state);
+					}
+				}
+			}
+
+			var viewChangeEvent = new Event(self.VIEW_CHANGE);
+			viewChangeEvent.showViews = showViews;
+			viewChangeEvent.hideViews = hideViews;
+			window.dispatchEvent(viewChangeEvent);
+		}
+		
+	}
+
+	self.clearDisplay = function(view) {
+		view.style.setProperty("display", null);
+	}
+
 	self.hashChangeHandler = function(event) {
-		var fragment = window.location.hash ? window.location.hash.replace("#", "") : "";
+		var fragment = self.getHashFragment();
 		var view = self.getViewById(fragment);
 
-		if (view) {
-			self.hideViews();
-			self.showView(view);
-			self.setViewVariables(view);
-			self.updateViewLabel();
-			window.dispatchEvent(new Event(self.VIEW_CHANGE));
+		if (self.showByMediaQuery) {
+			var stateName = fragment;
+
+			if (stateName==null || stateName=="") {
+				var initialView = self.getInitialView();
+				stateName = initialView ? self.getStateNameByViewId(initialView.id) : null;
+			}
+			self.showMediaQueryViewsByState(stateName);
 		}
 		else {
-			window.dispatchEvent(new Event(self.VIEW_NOT_FOUND));
+			if (view) {
+				self.hideViews();
+				self.showView(view);
+				self.setViewVariables(view);
+				self.updateViewLabel();
+				
+				window.dispatchEvent(new Event(self.VIEW_CHANGE));
+			}
+			else {
+				window.dispatchEvent(new Event(self.VIEW_NOT_FOUND));
+			}
 		}
 	}
 
@@ -2386,11 +2570,6 @@ var Application = function() {
 		var scaleNeededToFitWidth = view ? self.getViewFitToViewportWidthScale(view) : 1;
 		var scaleNeededToFitHeight = view ? self.getViewFitToViewportHeightScale(view) : 1;
 		var scaleToFitType = self.scaleToFitType;
-
-		// Three scenarios
-		// - scale to fit on double click
-		// - set scale to actual size on double click
-		// - switch between scale to fit and actual page size
 
 		if (scaleToFitType=="width") {
 			scaleNeededToFit = scaleNeededToFitWidth;
@@ -2420,10 +2599,6 @@ var Application = function() {
 				}
 			}
 			else {
-				// view is smaller than viewport 
-				// so scale to fit() is scale actual size
-				// actual size and scaled size are the same
-				// but call scale to fit to retain centering
 				self.scaleViewToFit(view);
 				isScaled = false;
 			}
@@ -2450,6 +2625,11 @@ var Application = function() {
 
 	self.onloadHandler = function(event) {
 		self.initialize();
+	}
+
+	self.setElementHTML = function(id, value) {
+		var element = self.getElement(id);
+		element.innerHTML = value;
 	}
 
 	self.getStackArray = function(error) {
@@ -2504,30 +2684,14 @@ window.application = new Application();
 </head>
 <body>
 <div id="NotFound">
-	<div id="Group_282">
-		<div id="Group_292">
-			<svg class="Path_134_do" viewBox="360.151 348.282 103.729 110.446">
-				<linearGradient id="Path_134_do" spreadMethod="pad" x1="0.377" x2="0.921" y1="0.199" y2="1.174">
-					<stop offset="0" stop-color="#0bf" stop-opacity="1"></stop>
-					<stop offset="1" stop-color="#1864ff" stop-opacity="1"></stop>
-				</linearGradient>
-				<path fill="url(#Path_134_do)" id="Path_134_do" d="M 460.3026733398438 438.1346130371094 L 439.4925537109375 417.4322814941406 C 443.6114501953125 410.6047058105469 445.8872375488281 402.5839538574219 445.8872375488281 394.0212707519531 C 445.8872375488281 368.8752136230469 425.4019775390625 348.2819519042969 400.1493835449219 348.2819519042969 C 383.0585632324219 348.2819519042969 367.9958801269531 357.9314270019531 360.1510009765625 372.0151977539062 L 373.9978332519531 385.8621215820312 C 377.5133666992188 374.8249816894531 387.9391784667969 366.7084350585938 400.1493835449219 366.7084350585938 C 415.2147216796875 366.7084350585938 427.5700378417969 379.0638427734375 427.5700378417969 394.0212707519531 C 427.5700378417969 406.4272155761719 408.3458557128906 420.2100524902344 408.3458557128906 420.2100524902344 L 443.0694274902344 454.9337158203125 C 445.7780456542969 457.5358276367188 448.8130187988281 458.7276306152344 452.2820434570312 458.7276306152344 C 458.8937683105469 458.7276306152344 463.8796997070312 453.6339416503906 463.8796997070312 446.6971740722656 C 463.8796997070312 443.662353515625 462.7943420410156 440.6273803710938 460.3026733398438 438.1346130371094 Z">
-				</path>
-			</svg>
-			<svg class="Path_135_dq" viewBox="355.84 366.104 70.56 67.854">
-				<linearGradient id="Path_135_dq" spreadMethod="pad" x1="0.076" x2="0.778" y1="0.345" y2="1.003">
-					<stop offset="0" stop-color="#0bf" stop-opacity="1"></stop>
-					<stop offset="1" stop-color="#1864ff" stop-opacity="1"></stop>
-				</linearGradient>
-				<path fill="url(#Path_135_dq)" id="Path_135_dq" d="M 401.5791625976562 415.531982421875 C 386.5125732421875 415.531982421875 374.1571655273438 403.3923645019531 374.1571655273438 388.1099243164062 C 374.1571655273438 385.2734680175781 374.6046447753906 382.5328979492188 375.4277038574219 379.9507751464844 L 361.5807800292969 366.10400390625 C 357.9320373535156 372.6544799804688 355.8399658203125 380.1625671386719 355.8399658203125 388.1099243164062 C 355.8399658203125 413.3639831542969 376.5409851074219 433.95849609375 401.5791625976562 433.95849609375 C 408.2815856933594 433.95849609375 414.6069946289062 432.5188903808594 420.3638916015625 429.8941650390625 C 422.4093322753906 428.9619445800781 424.8116455078125 429.3347778320312 426.4003601074219 430.9248657226562 L 409.7756958007812 414.2987670898438 C 407.1882629394531 415.0991516113281 404.4356689453125 415.531982421875 401.5791625976562 415.531982421875 Z">
-				</path>
-			</svg>
-		</div>
-		<svg class="Path_139" viewBox="-164.141 -41.075 251.36 32.136">
-			<path fill="rgba(10,152,255,1)" id="Path_139" d="M -150.6121368408203 -9.588923454284668 L -150.6121368408203 -12.39219951629639 L -150.6933898925781 -12.39219951629639 C -150.9371490478516 -11.93175888061523 -151.2553863525391 -11.4984016418457 -151.6481323242188 -11.09212970733643 C -152.0408477783203 -10.68585777282715 -152.5012969970703 -10.33375549316406 -153.0294494628906 -10.03582286834717 C -153.5576019287109 -9.737890243530273 -154.1399230957031 -9.494126319885254 -154.7764129638672 -9.304533004760742 C -155.4129180908203 -9.11493968963623 -156.0832672119141 -9.020142555236816 -156.7874603271484 -9.020142555236816 C -158.1417083740234 -9.020142555236816 -159.2860412597656 -9.26390552520752 -160.220458984375 -9.751432418823242 C -161.1548919677734 -10.23895835876465 -161.9132690429688 -10.86868000030518 -162.4955902099609 -11.64059638977051 C -163.0779113769531 -12.41251373291016 -163.4977264404297 -13.29276943206787 -163.7550354003906 -14.28136444091797 C -164.0123443603516 -15.26995944976807 -164.1409912109375 -16.27886772155762 -164.1409912109375 -17.30809020996094 L -164.1409912109375 -29.82126617431641 L -157.4375152587891 -29.82126617431641 L -157.4375152587891 -18.85192489624023 C -157.4375152587891 -18.28314208984375 -157.3968811035156 -17.74144744873047 -157.3156127929688 -17.22683525085449 C -157.2343597412109 -16.71222496032715 -157.0786285400391 -16.25178337097168 -156.8484039306641 -15.84551048278809 C -156.6181793212891 -15.43923950195312 -156.3134918212891 -15.12099266052246 -155.9342956542969 -14.89077186584473 C -155.5551147460938 -14.66055107116699 -155.0540313720703 -14.54544067382812 -154.4310913085938 -14.54544067382812 C -153.2664337158203 -14.54544067382812 -152.3794097900391 -14.97879791259766 -151.7700042724609 -15.84551048278809 C -151.1605987548828 -16.71222496032715 -150.8558959960938 -17.7279052734375 -150.8558959960938 -18.89255142211914 L -150.8558959960938 -29.82126617431641 L -144.1930236816406 -29.82126617431641 L -144.1930236816406 -9.588923454284668 L -150.6121368408203 -9.588923454284668 Z M -125.8701629638672 -24.37722206115723 C -126.1680908203125 -24.45847702026367 -126.4592590332031 -24.51264572143555 -126.74365234375 -24.53973007202148 C -127.0280456542969 -24.56681442260742 -127.3056640625 -24.58035659790039 -127.5765075683594 -24.58035659790039 C -128.4703063964844 -24.58035659790039 -129.2219085693359 -24.41784858703613 -129.8313140869141 -24.09283065795898 C -130.4407196044922 -23.76781463623047 -130.9282531738281 -23.37508392333984 -131.2938995361328 -22.91464424133301 C -131.6595458984375 -22.45420074462891 -131.9236145019531 -21.95313262939453 -132.0861206054688 -21.41143798828125 C -132.2486419677734 -20.86974143981934 -132.3298950195312 -20.3957576751709 -132.3298950195312 -19.98948669433594 L -132.3298950195312 -9.588923454284668 L -138.9927520751953 -9.588923454284668 L -138.9927520751953 -29.82126617431641 L -132.5736541748047 -29.82126617431641 L -132.5736541748047 -26.8961067199707 L -132.4924011230469 -26.8961067199707 C -131.977783203125 -27.92533111572266 -131.2465057373047 -28.76495742797852 -130.2985382080078 -29.41499328613281 C -129.3505706787109 -30.06502914428711 -128.2536315917969 -30.39004898071289 -127.0077362060547 -30.39004898071289 C -126.7368774414062 -30.39004898071289 -126.4728088378906 -30.37650680541992 -126.2154998779297 -30.34941864013672 C -125.9581909179688 -30.32233428955078 -125.7482757568359 -30.28170776367188 -125.5857696533203 -30.2275390625 L -125.8701629638672 -24.37722206115723 Z M -122.8231353759766 -9.588923454284668 L -122.8231353759766 -40.30308151245117 L -116.0790252685547 -40.30308151245117 L -116.0790252685547 -9.588923454284668 L -122.8231353759766 -9.588923454284668 Z M -87.3555908203125 -9.588923454284668 L -87.3555908203125 -20.6395206451416 C -87.3555908203125 -21.20830154418945 -87.40299987792969 -21.74999618530273 -87.49778747558594 -22.26461029052734 C -87.59259033203125 -22.77921867370605 -87.74832916259766 -23.23288917541504 -87.96499633789062 -23.62561988830566 C -88.18168640136719 -24.01834869384766 -88.48638916015625 -24.32982444763184 -88.87911987304688 -24.56004524230957 C -89.27184295654297 -24.79026412963867 -89.76613616943359 -24.90537643432617 -90.36200714111328 -24.90537643432617 C -90.95787048339844 -24.90537643432617 -91.47925567626953 -24.79026412963867 -91.92615509033203 -24.56004524230957 C -92.37305450439453 -24.32982444763184 -92.74546813964844 -24.01157760620117 -93.04339599609375 -23.60530471801758 C -93.34133148193359 -23.19903182983398 -93.56478881835938 -22.73182106018066 -93.71375274658203 -22.20366668701172 C -93.86271667480469 -21.67551422119141 -93.93719482421875 -21.12704658508301 -93.93719482421875 -20.55826568603516 L -93.93719482421875 -9.588923454284668 L -100.6406860351562 -9.588923454284668 L -100.6406860351562 -29.82126617431641 L -94.18096160888672 -29.82126617431641 L -94.18096160888672 -27.01799011230469 L -94.09971618652344 -27.01799011230469 C -93.85594940185547 -27.45134735107422 -93.53770446777344 -27.87793350219727 -93.14497375488281 -28.29774475097656 C -92.75223541259766 -28.71755981445312 -92.29179382324219 -29.07643508911133 -91.76364898681641 -29.37436676025391 C -91.23548889160156 -29.67229843139648 -90.65994262695312 -29.91606140136719 -90.0369873046875 -30.10565567016602 C -89.41403961181641 -30.29524993896484 -88.75045776367188 -30.39004898071289 -88.04625701904297 -30.39004898071289 C -86.6920166015625 -30.39004898071289 -85.54090881347656 -30.14628601074219 -84.59294128417969 -29.65875625610352 C -83.64497375488281 -29.17123031616211 -82.87983703613281 -28.54151153564453 -82.29750823974609 -27.76959228515625 C -81.71518707275391 -26.99767684936523 -81.29537200927734 -26.11064910888672 -81.03807067871094 -25.10851287841797 C -80.78076171875 -24.10637474060059 -80.65210723876953 -23.1042366027832 -80.65210723876953 -22.10209846496582 L -80.65210723876953 -9.588923454284668 L -87.3555908203125 -9.588923454284668 Z M -54.16317749023438 -19.78635025024414 C -54.16317749023438 -18.13417625427246 -54.46110534667969 -16.63774108886719 -55.05697631835938 -15.29704475402832 C -55.65283966064453 -13.95634651184082 -56.46538543701172 -12.81878566741943 -57.49460601806641 -11.88435935974121 C -58.52382659912109 -10.9499340057373 -59.71555709838867 -10.22541618347168 -61.06980133056641 -9.71080493927002 C -62.42403793334961 -9.196193695068359 -63.87307739257812 -8.938888549804688 -65.41690826416016 -8.938888549804688 C -66.93365478515625 -8.938888549804688 -68.37592315673828 -9.196193695068359 -69.74370574951172 -9.71080493927002 C -71.11148071289062 -10.22541618347168 -72.30321502685547 -10.9499340057373 -73.31889343261719 -11.88435935974121 C -74.33457946777344 -12.81878566741943 -75.14035034179688 -13.95634651184082 -75.73621368408203 -15.29704475402832 C -76.33207702636719 -16.63774108886719 -76.63001251220703 -18.13417625427246 -76.63001251220703 -19.78635025024414 C -76.63001251220703 -21.43852233886719 -76.33207702636719 -22.92818450927734 -75.73621368408203 -24.25534057617188 C -75.14035034179688 -25.58249473571777 -74.33457946777344 -26.70651245117188 -73.31889343261719 -27.62739562988281 C -72.30321502685547 -28.54828262329102 -71.11148071289062 -29.25248718261719 -69.74370574951172 -29.74001312255859 C -68.37592315673828 -30.2275390625 -66.93365478515625 -30.4713020324707 -65.41690826416016 -30.4713020324707 C -63.87307739257812 -30.4713020324707 -62.42403793334961 -30.2275390625 -61.06980133056641 -29.74001312255859 C -59.71555709838867 -29.25248718261719 -58.52382659912109 -28.54828262329102 -57.49460601806641 -27.62739562988281 C -56.46538543701172 -26.70651245117188 -55.65283966064453 -25.58249473571777 -55.05697631835938 -24.25534057617188 C -54.46110534667969 -22.92818450927734 -54.16317749023438 -21.43852233886719 -54.16317749023438 -19.78635025024414 Z M -60.582275390625 -19.78635025024414 C -60.582275390625 -20.4363842010498 -60.69061279296875 -21.0728759765625 -60.90728759765625 -21.69582748413086 C -61.12397003173828 -22.31877899169922 -61.43544006347656 -22.86724472045898 -61.84171295166016 -23.34122848510742 C -62.24798583984375 -23.81521224975586 -62.74905395507812 -24.201171875 -63.34491729736328 -24.49910354614258 C -63.9407844543457 -24.79703521728516 -64.63144683837891 -24.94600296020508 -65.41690826416016 -24.94600296020508 C -66.20236206054688 -24.94600296020508 -66.89302825927734 -24.79703521728516 -67.4888916015625 -24.49910354614258 C -68.08476257324219 -24.201171875 -68.57905578613281 -23.81521224975586 -68.97178649902344 -23.34122848510742 C -69.36451721191406 -22.86724472045898 -69.66244506835938 -22.31877899169922 -69.86558532714844 -21.69582748413086 C -70.0687255859375 -21.0728759765625 -70.1702880859375 -20.4363842010498 -70.1702880859375 -19.78635025024414 C -70.1702880859375 -19.13631439208984 -70.0687255859375 -18.49982070922852 -69.86558532714844 -17.87687110900879 C -69.66244506835938 -17.25392150878906 -69.35774230957031 -16.69190979003906 -68.95147705078125 -16.19084167480469 C -68.54520416259766 -15.68977355957031 -68.04413604736328 -15.29027271270752 -67.44827270507812 -14.99234008789062 C -66.85240173339844 -14.69440841674805 -66.1617431640625 -14.54544067382812 -65.37628173828125 -14.54544067382812 C -64.5908203125 -14.54544067382812 -63.9001579284668 -14.69440841674805 -63.30429077148438 -14.99234008789062 C -62.70842742919922 -15.29027271270752 -62.20735931396484 -15.68977355957031 -61.80108642578125 -16.19084167480469 C -61.39481353759766 -16.69190979003906 -61.09011077880859 -17.25392150878906 -60.88697814941406 -17.87687110900879 C -60.683837890625 -18.49982070922852 -60.582275390625 -19.13631439208984 -60.582275390625 -19.78635025024414 Z M -42.70630264282227 -24.82412147521973 L -42.70630264282227 -17.10495376586914 C -42.70630264282227 -16.15698623657227 -42.52348327636719 -15.44601058959961 -42.1578369140625 -14.97202682495117 C -41.79219436645508 -14.49804306030273 -41.1353874206543 -14.26105117797852 -40.18741989135742 -14.26105117797852 C -39.86240005493164 -14.26105117797852 -39.51707077026367 -14.28813552856445 -39.15142440795898 -14.34230518341064 C -38.78578186035156 -14.39647483825684 -38.48107528686523 -14.47772979736328 -38.23731231689453 -14.58606910705566 L -38.15605926513672 -9.71080493927002 C -38.61650085449219 -9.548295974731445 -39.19882202148438 -9.406101226806641 -39.90302658081055 -9.284219741821289 C -40.60723114013672 -9.162338256835938 -41.31143951416016 -9.101397514343262 -42.01564025878906 -9.101397514343262 C -43.36988067626953 -9.101397514343262 -44.50744247436523 -9.27067756652832 -45.42832565307617 -9.609236717224121 C -46.34920883178711 -9.947796821594238 -47.08727264404297 -10.43532371520996 -47.64250946044922 -11.07181644439697 C -48.19774627685547 -11.70830917358398 -48.59724807739258 -12.46668243408203 -48.84101104736328 -13.34693908691406 C -49.08477401733398 -14.22719573974609 -49.20665740966797 -15.20901870727539 -49.20665740966797 -16.29240989685059 L -49.20665740966797 -24.82412147521973 L -52.45682907104492 -24.82412147521973 L -52.45682907104492 -29.82126617431641 L -49.24728393554688 -29.82126617431641 L -49.24728393554688 -35.14342880249023 L -42.70630264282227 -35.14342880249023 L -42.70630264282227 -29.82126617431641 L -37.95292282104492 -29.82126617431641 L -37.95292282104492 -24.82412147521973 L -42.70630264282227 -24.82412147521973 Z M -12.11402702331543 -35.38719177246094 C -12.3577880859375 -35.46844482421875 -12.64217948913574 -35.53615570068359 -12.96719741821289 -35.59032821655273 C -13.29221343994141 -35.64449691772461 -13.61723136901855 -35.67158126831055 -13.94224739074707 -35.67158126831055 C -14.5651969909668 -35.67158126831055 -15.0662670135498 -35.5632438659668 -15.44545364379883 -35.34656524658203 C -15.82464218139648 -35.12988662719727 -16.12257385253906 -34.83872222900391 -16.33925247192383 -34.47307968139648 C -16.55593109130859 -34.1074333190918 -16.70489692687988 -33.69438934326172 -16.78615188598633 -33.23395156860352 C -16.86740684509277 -32.77350997924805 -16.90803337097168 -32.31306838989258 -16.90803337097168 -31.85262680053711 L -16.90803337097168 -29.82126617431641 L -12.39841270446777 -29.82126617431641 L -12.39841270446777 -24.82412147521973 L -16.90803337097168 -24.82412147521973 L -16.90803337097168 -9.588923454284668 L -23.57089233398438 -9.588923454284668 L -23.57089233398438 -24.82412147521973 L -27.26796722412109 -24.82412147521973 L -27.26796722412109 -29.82126617431641 L -23.57089233398438 -29.82126617431641 L -23.57089233398438 -31.77136993408203 C -23.57089233398438 -33.01727294921875 -23.43547058105469 -34.20223236083984 -23.16461944580078 -35.32625198364258 C -22.89377212524414 -36.45027160644531 -22.42656135559082 -37.43886566162109 -21.76298332214355 -38.29203796386719 C -21.09940528869629 -39.14520645141602 -20.20560646057129 -39.82232666015625 -19.08158874511719 -40.32339859008789 C -17.95756912231445 -40.824462890625 -16.55593109130859 -41.07499694824219 -14.87667274475098 -41.07499694824219 C -14.30789375305176 -41.07499694824219 -13.74588203430176 -41.04114151000977 -13.19064331054688 -40.97343063354492 C -12.63540649414062 -40.90571594238281 -12.1275691986084 -40.80414962768555 -11.66712760925293 -40.66872406005859 L -12.11402702331543 -35.38719177246094 Z M 11.57162475585938 -19.78635025024414 C 11.57162475585938 -18.13417625427246 11.2736930847168 -16.63774108886719 10.67782592773438 -15.29704475402832 C 10.08195877075195 -13.95634651184082 9.269416809082031 -12.81878566741943 8.240192413330078 -11.88435935974121 C 7.210971832275391 -10.9499340057373 6.019237518310547 -10.22541618347168 4.664997100830078 -9.71080493927002 C 3.310760498046875 -9.196193695068359 1.861724853515625 -8.938888549804688 0.3178901672363281 -8.938888549804688 C -1.198856353759766 -8.938888549804688 -2.641120910644531 -9.196193695068359 -4.008907318115234 -9.71080493927002 C -5.376686096191406 -10.22541618347168 -6.568416595458984 -10.9499340057373 -7.584096908569336 -11.88435935974121 C -8.599777221679688 -12.81878566741943 -9.405550003051758 -13.95634651184082 -10.00141525268555 -15.29704475402832 C -10.59728050231934 -16.63774108886719 -10.89521408081055 -18.13417625427246 -10.89521408081055 -19.78635025024414 C -10.89521408081055 -21.43852233886719 -10.59728050231934 -22.92818450927734 -10.00141525268555 -24.25534057617188 C -9.405550003051758 -25.58249473571777 -8.599777221679688 -26.70651245117188 -7.584096908569336 -27.62739562988281 C -6.568416595458984 -28.54828262329102 -5.376686096191406 -29.25248718261719 -4.008907318115234 -29.74001312255859 C -2.641120910644531 -30.2275390625 -1.198856353759766 -30.4713020324707 0.3178901672363281 -30.4713020324707 C 1.861724853515625 -30.4713020324707 3.310760498046875 -30.2275390625 4.664997100830078 -29.74001312255859 C 6.019237518310547 -29.25248718261719 7.210971832275391 -28.54828262329102 8.240192413330078 -27.62739562988281 C 9.269416809082031 -26.70651245117188 10.08195877075195 -25.58249473571777 10.67782592773438 -24.25534057617188 C 11.2736930847168 -22.92818450927734 11.57162475585938 -21.43852233886719 11.57162475585938 -19.78635025024414 Z M 5.15252685546875 -19.78635025024414 C 5.15252685546875 -20.4363842010498 5.044185638427734 -21.0728759765625 4.827510833740234 -21.69582748413086 C 4.610832214355469 -22.31877899169922 4.299354553222656 -22.86724472045898 3.893085479736328 -23.34122848510742 C 3.486812591552734 -23.81521224975586 2.985744476318359 -24.201171875 2.389881134033203 -24.49910354614258 C 1.794013977050781 -24.79703521728516 1.103351593017578 -24.94600296020508 0.3178901672363281 -24.94600296020508 C -0.4675674438476562 -24.94600296020508 -1.158229827880859 -24.79703521728516 -1.754096984863281 -24.49910354614258 C -2.349960327148438 -24.201171875 -2.844261169433594 -23.81521224975586 -3.236988067626953 -23.34122848510742 C -3.629718780517578 -22.86724472045898 -3.927650451660156 -22.31877899169922 -4.130783081054688 -21.69582748413086 C -4.33392333984375 -21.0728759765625 -4.435489654541016 -20.4363842010498 -4.435489654541016 -19.78635025024414 C -4.435489654541016 -19.13631439208984 -4.33392333984375 -18.49982070922852 -4.130783081054688 -17.87687110900879 C -3.927650451660156 -17.25392150878906 -3.622947692871094 -16.69190979003906 -3.2166748046875 -16.19084167480469 C -2.810405731201172 -15.68977355957031 -2.309333801269531 -15.29027271270752 -1.713470458984375 -14.99234008789062 C -1.117607116699219 -14.69440841674805 -0.42694091796875 -14.54544067382812 0.3585205078125 -14.54544067382812 C 1.143978118896484 -14.54544067382812 1.834640502929688 -14.69440841674805 2.430503845214844 -14.99234008789062 C 3.026371002197266 -15.29027271270752 3.527439117431641 -15.68977355957031 3.933712005615234 -16.19084167480469 C 4.339984893798828 -16.69190979003906 4.644687652587891 -17.25392150878906 4.847824096679688 -17.87687110900879 C 5.050960540771484 -18.49982070922852 5.15252685546875 -19.13631439208984 5.15252685546875 -19.78635025024414 Z M 29.12257766723633 -9.588923454284668 L 29.12257766723633 -12.39219951629639 L 29.04131698608398 -12.39219951629639 C 28.79755783081055 -11.93175888061523 28.47931289672852 -11.4984016418457 28.08658218383789 -11.09212970733643 C 27.69385147094727 -10.68585777282715 27.2334098815918 -10.33375549316406 26.70525741577148 -10.03582286834717 C 26.17709732055664 -9.737890243530273 25.59477615356445 -9.494126319885254 24.95828628540039 -9.304533004760742 C 24.32179641723633 -9.11493968963623 23.65144348144531 -9.020142555236816 22.94724273681641 -9.020142555236816 C 21.59299850463867 -9.020142555236816 20.44866943359375 -9.26390552520752 19.51424407958984 -9.751432418823242 C 18.57981491088867 -10.23895835876465 17.82144165039062 -10.86868000030518 17.23911666870117 -11.64059638977051 C 16.65679550170898 -12.41251373291016 16.23698425292969 -13.29276943206787 15.97967529296875 -14.28136444091797 C 15.72237014770508 -15.26995944976807 15.59371566772461 -16.27886772155762 15.59371566772461 -17.30809020996094 L 15.59371566772461 -29.82126617431641 L 22.29720687866211 -29.82126617431641 L 22.29720687866211 -18.85192489624023 C 22.29720687866211 -18.28314208984375 22.33783340454102 -17.74144744873047 22.41908645629883 -17.22683525085449 C 22.50034332275391 -16.71222496032715 22.65608215332031 -16.25178337097168 22.88630294799805 -15.84551048278809 C 23.11651992797852 -15.43923950195312 23.42122268676758 -15.12099266052246 23.80041122436523 -14.89077186584473 C 24.17959976196289 -14.66055107116699 24.6806640625 -14.54544067382812 25.30361557006836 -14.54544067382812 C 26.46826553344727 -14.54544067382812 27.35528945922852 -14.97879791259766 27.96470260620117 -15.84551048278809 C 28.5741081237793 -16.71222496032715 28.87881088256836 -17.7279052734375 28.87881088256836 -18.89255142211914 L 28.87881088256836 -29.82126617431641 L 35.54166793823242 -29.82126617431641 L 35.54166793823242 -9.588923454284668 L 29.12257766723633 -9.588923454284668 Z M 54.02705001831055 -9.588923454284668 L 54.02705001831055 -20.6395206451416 C 54.02705001831055 -21.20830154418945 53.97964859008789 -21.74999618530273 53.88485336303711 -22.26461029052734 C 53.79005813598633 -22.77921867370605 53.63431930541992 -23.23288917541504 53.41764450073242 -23.62561988830566 C 53.20096206665039 -24.01834869384766 52.89625930786133 -24.32982444763184 52.50353622436523 -24.56004524230957 C 52.11079788208008 -24.79026412963867 51.61650466918945 -24.90537643432617 51.0206413269043 -24.90537643432617 C 50.42477035522461 -24.90537643432617 49.90338516235352 -24.79026412963867 49.45648574829102 -24.56004524230957 C 49.00958633422852 -24.32982444763184 48.63717269897461 -24.01157760620117 48.3392448425293 -23.60530471801758 C 48.04130935668945 -23.19903182983398 47.8178596496582 -22.73182106018066 47.66888809204102 -22.20366668701172 C 47.51993179321289 -21.67551422119141 47.4454460144043 -21.12704658508301 47.4454460144043 -20.55826568603516 L 47.4454460144043 -9.588923454284668 L 40.7419548034668 -9.588923454284668 L 40.7419548034668 -29.82126617431641 L 47.20167922973633 -29.82126617431641 L 47.20167922973633 -27.01799011230469 L 47.28293991088867 -27.01799011230469 C 47.52669906616211 -27.45134735107422 47.84494400024414 -27.87793350219727 48.23767471313477 -28.29774475097656 C 48.63040542602539 -28.71755981445312 49.09084701538086 -29.07643508911133 49.61899948120117 -29.37436676025391 C 50.14715194702148 -29.67229843139648 50.72270584106445 -29.91606140136719 51.34565353393555 -30.10565567016602 C 51.96860122680664 -30.29524993896484 52.63218307495117 -30.39004898071289 53.33638381958008 -30.39004898071289 C 54.69063186645508 -30.39004898071289 55.84173202514648 -30.14628601074219 56.78969192504883 -29.65875625610352 C 57.73766708374023 -29.17123031616211 58.50281143188477 -28.54151153564453 59.08514022827148 -27.76959228515625 C 59.66746139526367 -26.99767684936523 60.0872688293457 -26.11064910888672 60.34458541870117 -25.10851287841797 C 60.60188674926758 -24.10637474060059 60.73054122924805 -23.1042366027832 60.73054122924805 -22.10209846496582 L 60.73054122924805 -9.588923454284668 L 54.02705001831055 -9.588923454284668 Z M 81.08474731445312 -9.588923454284668 L 81.08474731445312 -12.22969055175781 L 81.00349426269531 -12.22969055175781 C 80.35345458984375 -11.20046901702881 79.42579650878906 -10.40823841094971 78.22053527832031 -9.853000640869141 C 77.0152587890625 -9.297761917114258 75.73550415039062 -9.020142555236816 74.38125610351562 -9.020142555236816 C 72.86451721191406 -9.020142555236816 71.51026916503906 -9.318075180053711 70.31854248046875 -9.913941383361816 C 69.12680053710938 -10.50980663299561 68.11790466308594 -11.30203628540039 67.29180908203125 -12.2906322479248 C 66.46572875976562 -13.2792272567749 65.83599853515625 -14.42355918884277 65.40264892578125 -15.72362899780273 C 64.96929931640625 -17.02370071411133 64.75260925292969 -18.3779411315918 64.75260925292969 -19.78635025024414 C 64.75260925292969 -21.19475936889648 64.97607421875 -22.54222869873047 65.42295837402344 -23.82875442504883 C 65.86985778808594 -25.11528396606445 66.50634765625 -26.24607467651367 67.33244323730469 -27.22112655639648 C 68.15852355957031 -28.1961784362793 69.16067504882812 -28.96809387207031 70.33885192871094 -29.5368766784668 C 71.51704406738281 -30.10565948486328 72.83741760253906 -30.39004898071289 74.30000305175781 -30.39004898071289 C 75.7896728515625 -30.39004898071289 77.04911804199219 -30.10565948486328 78.07833862304688 -29.5368766784668 C 79.10755920410156 -28.96809387207031 79.90655517578125 -28.34514236450195 80.475341796875 -27.66802597045898 L 80.55659484863281 -27.66802597045898 L 80.55659484863281 -40.30308151245117 L 87.21945190429688 -40.30308151245117 L 87.21945190429688 -9.588923454284668 L 81.08474731445312 -9.588923454284668 Z M 80.84098815917969 -19.7457218170166 C 80.84098815917969 -20.39575576782227 80.72587585449219 -21.03224945068359 80.49565124511719 -21.65520095825195 C 80.26542663574219 -22.27814865112305 79.94041442871094 -22.83338928222656 79.52059936523438 -23.32091522216797 C 79.10078430175781 -23.80844116210938 78.59294128417969 -24.201171875 77.99708557128906 -24.49910354614258 C 77.40121459960938 -24.79703521728516 76.72409057617188 -24.94600296020508 75.96571350097656 -24.94600296020508 C 75.18026733398438 -24.94600296020508 74.48959350585938 -24.79703521728516 73.89373779296875 -24.49910354614258 C 73.29786682128906 -24.201171875 72.79679870605469 -23.81521224975586 72.39053344726562 -23.34122848510742 C 71.9842529296875 -22.86724472045898 71.67955017089844 -22.31877899169922 71.47640991210938 -21.69582748413086 C 71.27328491210938 -21.0728759765625 71.17170715332031 -20.4363842010498 71.17170715332031 -19.78635025024414 C 71.17170715332031 -19.13631439208984 71.27328491210938 -18.49304962158203 71.47640991210938 -17.85655784606934 C 71.67955017089844 -17.22006607055664 71.9842529296875 -16.65805435180664 72.39053344726562 -16.17052841186523 C 72.79679870605469 -15.68300247192383 73.29786682128906 -15.29027271270752 73.89373779296875 -14.99234008789062 C 74.48959350585938 -14.69440841674805 75.18026733398438 -14.54544067382812 75.96571350097656 -14.54544067382812 C 76.72409057617188 -14.54544067382812 77.40121459960938 -14.69440841674805 77.99708557128906 -14.99234008789062 C 78.59294128417969 -15.29027271270752 79.10078430175781 -15.68300247192383 79.52059936523438 -16.17052841186523 C 79.94041442871094 -16.65805435180664 80.26542663574219 -17.21329307556152 80.49565124511719 -17.83624267578125 C 80.72587585449219 -18.45919418334961 80.84098815917969 -19.09568786621094 80.84098815917969 -19.7457218170166 Z">
-			</path>
-		</svg>
-	</div>
+	<svg class="Path_138_c" viewBox="21.534 110.107 435.97 39.198">
+		<linearGradient id="Path_138_c" spreadMethod="pad" x1="0" x2="1" y1="0.5" y2="0.5">
+			<stop offset="0" stop-color="#0045ff" stop-opacity="1"></stop>
+			<stop offset="1" stop-color="#00baff" stop-opacity="1"></stop>
+		</linearGradient>
+		<path id="Path_138_c" d="M 56.11299896240234 148.5090026855469 L 47.93899917602539 148.5090026855469 L 43.08399963378906 133.1510009765625 L 42.98400115966797 133.1510009765625 L 38.22900009155273 148.5090026855469 L 30.05500030517578 148.5090026855469 L 21.53400039672852 123.8369979858398 L 30.30299949645996 123.8369979858398 L 34.56399917602539 139.4429931640625 L 34.7130012512207 139.4429931640625 L 39.12200164794922 123.8369979858398 L 47.29499816894531 123.8369979858398 L 51.85300064086914 139.4429931640625 L 51.95399856567383 139.4429931640625 L 56.26300048828125 123.8369979858398 L 64.68499755859375 123.8369979858398 L 56.11299896240234 148.5090026855469 Z M 84.84500122070312 133.3489990234375 C 84.87100219726562 132.1289978027344 84.43699645996094 130.9450073242188 83.63099670410156 130.0299987792969 C 82.68499755859375 129.0489959716797 81.34999847412109 128.5399932861328 79.98999786376953 128.6430053710938 C 79.24700164794922 128.6340026855469 78.50900268554688 128.7599945068359 77.80999755859375 129.0149993896484 C 77.17600250244141 129.2469940185547 76.58899688720703 129.5910034179688 76.07700347900391 130.031005859375 C 75.58699798583984 130.4530029296875 75.18299865722656 130.9660034179688 74.88800048828125 131.5420074462891 C 74.59300231933594 132.1020050048828 74.42299652099609 132.7180023193359 74.38800048828125 133.3500061035156 L 84.84500122070312 133.3489990234375 Z M 92.32700347900391 136.4700012207031 L 92.32700347900391 137.4609985351562 C 92.32700347900391 137.7749938964844 92.30999755859375 138.0890045166016 92.2760009765625 138.4019927978516 L 74.39199829101562 138.4019927978516 C 74.44999694824219 139.0690002441406 74.66200256347656 139.7140045166016 75.01100158691406 140.2850036621094 C 75.36299896240234 140.8509979248047 75.81600189208984 141.3459930419922 76.3489990234375 141.7460021972656 C 76.90499877929688 142.1640014648438 77.52400207519531 142.4900054931641 78.18199920654297 142.7120056152344 C 78.86000061035156 142.9429931640625 79.57199859619141 143.0599975585938 80.28800201416016 143.0590057373047 C 81.42099761962891 143.093994140625 82.54499816894531 142.8470001220703 83.55799865722656 142.3410034179688 C 84.41500091552734 141.8919982910156 85.16000366210938 141.2570037841797 85.73799896240234 140.4830017089844 L 91.38600158691406 144.0500030517578 C 90.23300170898438 145.7319946289062 88.6510009765625 147.0740051269531 86.80300140380859 147.9389953613281 C 84.72899627685547 148.8840026855469 82.46800231933594 149.3489990234375 80.18900299072266 149.3009948730469 C 78.40299987792969 149.3110046386719 76.62699890136719 149.0180053710938 74.93800354003906 148.4340057373047 C 73.33999633789062 147.8869934082031 71.86699676513672 147.0279998779297 70.60299682617188 145.9069976806641 C 69.34500122070312 144.7720031738281 68.34700012207031 143.3780059814453 67.68000030517578 141.8200073242188 C 66.94300079345703 140.0639953613281 66.58100128173828 138.1739959716797 66.61499786376953 136.27099609375 C 66.58899688720703 134.3939971923828 66.94200134277344 132.5319976806641 67.65499877929688 130.7969970703125 C 68.302001953125 129.2310028076172 69.26300048828125 127.8150024414062 70.47899627685547 126.6360015869141 C 71.69300079345703 125.4810028076172 73.12400054931641 124.5800018310547 74.69000244140625 123.9860000610352 C 76.36799621582031 123.3470001220703 78.15000152587891 123.0270004272461 79.94599914550781 123.0439987182617 C 81.65599822998047 123.0250015258789 83.35299682617188 123.3359985351562 84.94599914550781 123.9609985351562 C 86.42800140380859 124.5469970703125 87.76499938964844 125.4509963989258 88.86000061035156 126.6110000610352 C 89.98600006103516 127.8270034790039 90.85399627685547 129.2599945068359 91.41100311279297 130.8220062255859 C 92.04900360107422 132.6349945068359 92.35900115966797 134.5469970703125 92.3280029296875 136.4700012207031 L 92.32700347900391 136.4700012207031 Z M 124.875 136.0700073242188 C 124.8809967041016 137.7530059814453 124.6129989624023 139.4259948730469 124.0820007324219 141.0240020751953 C 123.5869979858398 142.552001953125 122.8059997558594 143.9720001220703 121.7819976806641 145.2100067138672 C 120.7669982910156 146.4219970703125 119.5100021362305 147.4100036621094 118.0920028686523 148.1100006103516 C 116.5490036010742 148.8560028076172 114.8509979248047 149.2299957275391 113.1380004882812 149.1999969482422 C 111.5210037231445 149.2089996337891 109.9219970703125 148.8639984130859 108.4540023803711 148.1889953613281 C 107.0609970092773 147.5780029296875 105.879997253418 146.5690002441406 105.0599975585938 145.2890014648438 L 104.9589996337891 145.2890014648438 L 104.9589996337891 148.5090026855469 L 97.47799682617188 148.5090026855469 L 97.47799682617188 111.0550003051758 L 105.6029968261719 111.0550003051758 L 105.6029968261719 126.4619979858398 L 105.7040023803711 126.4619979858398 C 106.5309982299805 125.5299987792969 107.5210037231445 124.7580032348633 108.6269989013672 124.1829986572266 C 110.0490036010742 123.4499969482422 111.6340026855469 123.0920028686523 113.2330017089844 123.1429977416992 C 114.9020004272461 123.1169967651367 116.5540008544922 123.4729995727539 118.0640029907227 124.1829986572266 C 119.4710006713867 124.8539962768555 120.7210006713867 125.8170013427734 121.7300033569336 127.0070037841797 C 122.7559967041016 128.22900390625 123.5449981689453 129.6320037841797 124.0579986572266 131.1439971923828 C 124.6060028076172 132.72900390625 124.8830032348633 134.39599609375 124.8769989013672 136.0740051269531 L 124.875 136.0700073242188 Z M 117.0469970703125 136.0700073242188 C 117.0479965209961 135.2790069580078 116.9219970703125 134.4929962158203 116.6760025024414 133.7420043945312 C 116.4410018920898 133.0059967041016 116.0619964599609 132.3240051269531 115.5599975585938 131.7359924316406 C 115.0510025024414 131.14599609375 114.427001953125 130.6660003662109 113.7279968261719 130.3240051269531 C 112.9390029907227 129.9470062255859 112.0739974975586 129.7599945068359 111.2009963989258 129.7790069580078 C 110.3440017700195 129.7630004882812 109.495002746582 129.9499969482422 108.7239990234375 130.3240051269531 C 108.0139999389648 130.6730041503906 107.3820037841797 131.1620025634766 106.8659973144531 131.7610015869141 C 106.3499984741211 132.3609924316406 105.947998046875 133.0489959716797 105.677001953125 133.7920074462891 C 105.3990020751953 134.5359954833984 105.2559967041016 135.3249969482422 105.2559967041016 136.1199951171875 C 105.2559967041016 136.9149932861328 105.3990020751953 137.7030029296875 105.677001953125 138.447998046875 C 105.947998046875 139.1909942626953 106.3499984741211 139.8789978027344 106.8659973144531 140.47900390625 C 107.3820037841797 141.0769958496094 108.0139999389648 141.5659942626953 108.7239990234375 141.9160003662109 C 109.495002746582 142.2890014648438 110.3440017700195 142.4759979248047 111.2009963989258 142.4609985351562 C 112.0739974975586 142.47900390625 112.9390029907227 142.2929992675781 113.7279968261719 141.9160003662109 C 114.431999206543 141.5700073242188 115.0559997558594 141.0800018310547 115.5599975585938 140.47900390625 C 116.0619964599609 139.8719940185547 116.4410018920898 139.1739959716797 116.6760025024414 138.4230041503906 C 116.9199981689453 137.6640014648438 117.0449981689453 136.8710021972656 117.0459976196289 136.0740051269531 L 117.0469970703125 136.0700073242188 Z M 144.5469970703125 131.1159973144531 C 143.8589935302734 130.468994140625 143.072998046875 129.9340057373047 142.218994140625 129.531005859375 C 141.3390045166016 129.10400390625 140.3739929199219 128.8840026855469 139.3950042724609 128.8869934082031 C 138.6690063476562 128.8789978027344 137.9499969482422 129.0319976806641 137.2890014648438 129.3329925537109 C 136.6730041503906 129.5859985351562 136.2850036621094 130.2030029296875 136.322998046875 130.8690032958984 C 136.3110046386719 131.5449981689453 136.7440032958984 132.1490020751953 137.3880004882812 132.3549957275391 C 138.5090026855469 132.7729949951172 139.6600036621094 133.10400390625 140.8309936523438 133.3459930419922 C 141.7850036621094 133.552001953125 142.7220001220703 133.8339996337891 143.6309967041016 134.1880035400391 C 144.5480041503906 134.5370025634766 145.4080047607422 135.0220031738281 146.1820068359375 135.625 C 146.9389953613281 136.2149963378906 147.5630035400391 136.9579925537109 148.0149993896484 137.8049926757812 C 148.4989929199219 138.7550048828125 148.7380065917969 139.8110046386719 148.7089996337891 140.8769989013672 C 148.7539978027344 142.25 148.4290008544922 143.6100006103516 147.7680053710938 144.8159942626953 C 147.1660003662109 145.8619995117188 146.3260040283203 146.7530059814453 145.3159942626953 147.4160003662109 C 144.2779998779297 148.0899963378906 143.1289978027344 148.5760040283203 141.9219970703125 148.8529968261719 C 140.6889953613281 149.1470031738281 139.4259948730469 149.2969970703125 138.1569976806641 149.2989959716797 C 136.1450042724609 149.2989959716797 134.14599609375 148.9730072021484 132.2369995117188 148.3329925537109 C 130.4309997558594 147.7630004882812 128.7790069580078 146.7890014648438 127.4069976806641 145.4839935302734 L 131.9649963378906 140.6779937744141 C 132.7279968261719 141.4969940185547 133.6349945068359 142.1690063476562 134.6399993896484 142.6600036621094 C 135.6849975585938 143.1849975585938 136.8399963378906 143.4570007324219 138.0090026855469 143.4530029296875 C 138.6889953613281 143.447998046875 139.3589935302734 143.2870025634766 139.9660034179688 142.9819946289062 C 140.6020050048828 142.6829986572266 140.9869995117188 142.0220031738281 140.9320068359375 141.3220062255859 C 140.9349975585938 140.5639953613281 140.4579925537109 139.8880004882812 139.7429962158203 139.6380004882812 C 138.5420074462891 139.14599609375 137.2980041503906 138.7640075683594 136.0269927978516 138.4989929199219 C 135.1510009765625 138.2949981689453 134.2910003662109 138.0299987792969 133.4510040283203 137.7059936523438 C 132.6170043945312 137.3880004882812 131.8399963378906 136.9360046386719 131.1510009765625 136.3679962158203 C 130.4640045166016 135.7929992675781 129.8990020751953 135.0850067138672 129.4909973144531 134.2870025634766 C 129.0399932861328 133.3619995117188 128.8190002441406 132.3430023193359 128.8470001220703 131.3150024414062 C 128.8059997558594 129.9889984130859 129.1320037841797 128.677001953125 129.7879943847656 127.5250015258789 C 130.3979949951172 126.5039978027344 131.2270050048828 125.6320037841797 132.2160034179688 124.9739990234375 C 133.2250061035156 124.3050003051758 134.3390045166016 123.8109970092773 135.5110015869141 123.5130004882812 C 136.6840057373047 123.2030029296875 137.8910064697266 123.0449981689453 139.1029968261719 123.0419998168945 C 140.9459991455078 123.0410003662109 142.7779998779297 123.3330001831055 144.5279998779297 123.9089965820312 C 146.197998046875 124.4300003051758 147.7310028076172 125.318000793457 149.0119934082031 126.5090026855469 L 144.5469970703125 131.1159973144531 Z M 162.2330017089844 115.9560012817383 C 162.2380065917969 116.5619964599609 162.1109924316406 117.1620025634766 161.8619995117188 117.7149963378906 C 161.6239929199219 118.2440032958984 161.2879943847656 118.7239990234375 160.8710021972656 119.1269989013672 C 160.4409942626953 119.5339965820312 159.9360046386719 119.8529968261719 159.3849945068359 120.068000793457 C 158.8099975585938 120.2979965209961 158.1959991455078 120.4160003662109 157.5769958496094 120.4150009155273 C 156.3379974365234 120.4469985961914 155.1390075683594 119.9729995727539 154.2579956054688 119.1019973754883 C 153.3910064697266 118.286003112793 152.906005859375 117.1449966430664 152.9199981689453 115.9560012817383 C 152.9179992675781 115.3679962158203 153.0359954833984 114.7870025634766 153.2669982910156 114.2470016479492 C 153.4920043945312 113.7099990844727 153.8300018310547 113.2289962768555 154.2579956054688 112.8349990844727 C 154.6959991455078 112.431999206543 155.197998046875 112.1060028076172 155.7440032958984 111.8690032958984 C 156.3220062255859 111.6169967651367 156.9459991455078 111.4909973144531 157.5769958496094 111.4970016479492 C 158.1959991455078 111.495002746582 158.8099975585938 111.6129989624023 159.3849945068359 111.8440017700195 C 159.9360046386719 112.0579986572266 160.4409942626953 112.3779983520508 160.8699951171875 112.7850036621094 C 161.2879943847656 113.1880035400391 161.6239929199219 113.6669998168945 161.8609924316406 114.1969985961914 C 162.1109924316406 114.7509994506836 162.2359924316406 115.3519973754883 162.2310028076172 115.9599990844727 L 162.2330017089844 115.9560012817383 Z M 153.5110015869141 148.5090026855469 L 153.5110015869141 123.8369979858398 L 161.6360015869141 123.8369979858398 L 161.6360015869141 148.5090026855469 L 153.5110015869141 148.5090026855469 Z M 176.89599609375 129.9309997558594 L 176.89599609375 139.343994140625 C 176.8300018310547 140.2599945068359 177.0639953613281 141.1730041503906 177.5650024414062 141.9440002441406 C 178.1849975585938 142.5919952392578 179.072998046875 142.9129943847656 179.9649963378906 142.8110046386719 C 180.3869934082031 142.8079986572266 180.8099975585938 142.7749938964844 181.2279968261719 142.7109985351562 C 181.6109924316406 142.6609954833984 181.9859924316406 142.5599975585938 182.3430023193359 142.4109954833984 L 182.4420013427734 148.3560028076172 C 181.7480010986328 148.5870056152344 181.0359954833984 148.7610015869141 180.3130035400391 148.8760070800781 C 179.4620056152344 149.0240020751953 178.6000061035156 149.0980072021484 177.7369995117188 149.0989990234375 C 176.3240051269531 149.1360015869141 174.9160003662109 148.9259948730469 173.5760040283203 148.4799957275391 C 172.5390014648438 148.1239929199219 171.6089935302734 147.5110015869141 170.8760070800781 146.6970062255859 C 170.1849975585938 145.8939971923828 169.6849975585938 144.9459991455078 169.4149932861328 143.9230041503906 C 169.1049957275391 142.7510070800781 168.9550018310547 141.5429992675781 168.968994140625 140.3309936523438 L 168.968994140625 129.9309997558594 L 165.0059967041016 129.9309997558594 L 165.0059967041016 123.8369979858398 L 168.9199981689453 123.8369979858398 L 168.9199981689453 117.3470001220703 L 176.89599609375 117.3470001220703 L 176.89599609375 123.8369979858398 L 182.6959991455078 123.8369979858398 L 182.6959991455078 129.9309997558594 L 176.89599609375 129.9309997558594 Z M 203.4960021972656 133.3489990234375 C 203.52099609375 132.1289978027344 203.0870056152344 130.9450073242188 202.2819976806641 130.0299987792969 C 201.3359985351562 129.0500030517578 200.0030059814453 128.5420074462891 198.64599609375 128.6430053710938 C 197.9019927978516 128.6340026855469 197.1640014648438 128.7599945068359 196.4660034179688 129.0149993896484 C 195.8309936523438 129.2469940185547 195.2440032958984 129.5910034179688 194.7319946289062 130.031005859375 C 194.2429962158203 130.4530029296875 193.8399963378906 130.9660034179688 193.5460052490234 131.5410003662109 C 193.2510070800781 132.1009979248047 193.0809936523438 132.7169952392578 193.0460052490234 133.3489990234375 L 203.4960021972656 133.3489990234375 Z M 210.9770050048828 136.4700012207031 L 210.9770050048828 137.4609985351562 C 210.9770050048828 137.7749938964844 210.9600067138672 138.0890045166016 210.927001953125 138.4019927978516 L 193.0460052490234 138.4019927978516 C 193.1029968261719 139.0690002441406 193.3150024414062 139.7140045166016 193.6649932861328 140.2850036621094 C 194.0160064697266 140.8509979248047 194.468994140625 141.3459930419922 195.0030059814453 141.7460021972656 C 195.5579986572266 142.1640014648438 196.177001953125 142.4900054931641 196.8359985351562 142.7120056152344 C 197.5149993896484 142.9440002441406 198.2279968261719 143.0610046386719 198.9459991455078 143.0590057373047 C 200.0780029296875 143.093994140625 201.2019958496094 142.8470001220703 202.2160034179688 142.3410034179688 C 203.0720062255859 141.8919982910156 203.8170013427734 141.2570037841797 204.39599609375 140.4830017089844 L 210.0440063476562 144.0500030517578 C 208.8890075683594 145.7319946289062 207.3049926757812 147.0749969482422 205.4559936523438 147.9389953613281 C 203.3820037841797 148.8829956054688 201.1230010986328 149.3489990234375 198.8459930419922 149.3009948730469 C 197.0590057373047 149.3110046386719 195.2830047607422 149.0180053710938 193.5950012207031 148.4340057373047 C 191.9960021972656 147.8869934082031 190.5229949951172 147.0279998779297 189.2599945068359 145.9069976806641 C 188.0010070800781 144.7720031738281 187.0030059814453 143.3780059814453 186.3370056152344 141.8200073242188 C 185.5989990234375 140.0639953613281 185.2369995117188 138.1739959716797 185.2720031738281 136.27099609375 C 185.2449951171875 134.3939971923828 185.5989990234375 132.5319976806641 186.3119964599609 130.7969970703125 C 186.9579925537109 129.2310028076172 187.9190063476562 127.8150024414062 189.1360015869141 126.6360015869141 C 190.3489990234375 125.4820022583008 191.7799987792969 124.5820007324219 193.3459930419922 123.9889984130859 C 195.0220031738281 123.3509979248047 196.8029937744141 123.0319976806641 198.5970001220703 123.0479965209961 C 200.3070068359375 123.0289993286133 202.0039978027344 123.3399963378906 203.5970001220703 123.9649963378906 C 205.0789947509766 124.5510025024414 206.4160003662109 125.4550018310547 207.5110015869141 126.6149978637695 C 208.6369934082031 127.8310012817383 209.5050048828125 129.2640075683594 210.0619964599609 130.8260040283203 C 210.6999969482422 132.6380004882812 211.0099945068359 134.5489959716797 210.9799957275391 136.4700012207031 L 210.9770050048828 136.4700012207031 Z M 244.6190032958984 148.5090026855469 L 244.6190032958984 135.0330047607422 C 244.6210021972656 134.3679962158203 244.5630035400391 133.7050018310547 244.4459991455078 133.0509948730469 C 244.3459930419922 132.4700012207031 244.1540069580078 131.9100036621094 243.8760070800781 131.3910064697266 C 243.6150054931641 130.9160003662109 243.22900390625 130.5220031738281 242.7610015869141 130.2519989013672 C 242.2059936523438 129.9530029296875 241.5820007324219 129.8070068359375 240.9530029296875 129.8309936523438 C 240.2920074462891 129.8159942626953 239.6380004882812 129.9600067138672 239.0460052490234 130.2519989013672 C 238.5059967041016 130.5269927978516 238.0399932861328 130.9259948730469 237.6840057373047 131.4160003662109 C 237.3110046386719 131.9309997558594 237.0339965820312 132.5099945068359 236.8670043945312 133.125 C 236.6840057373047 133.7779998779297 236.5919952392578 134.4530029296875 236.5950012207031 135.1309967041016 L 236.5950012207031 148.5090026855469 L 228.4210052490234 148.5090026855469 L 228.4210052490234 123.8369979858398 L 236.2980041503906 123.8369979858398 L 236.2980041503906 127.254997253418 L 236.3979949951172 127.254997253418 C 236.7220001220703 126.6900024414062 237.1119995117188 126.1660003662109 237.5619964599609 125.6940002441406 C 238.052001953125 125.1729965209961 238.6199951171875 124.7300033569336 239.2460021972656 124.3820037841797 C 239.9109954833984 124.0080032348633 240.6150054931641 123.7089996337891 241.3459930419922 123.4889984130859 C 242.1329956054688 123.2529983520508 242.9510040283203 123.1360015869141 243.7740020751953 123.1419982910156 C 245.2279968261719 123.0989990234375 246.6719970703125 123.4049987792969 247.9850006103516 124.0339965820312 C 249.0809936523438 124.5770034790039 250.0379943847656 125.3639984130859 250.7850036621094 126.3339996337891 C 251.5079956054688 127.302001953125 252.0299987792969 128.4049987792969 252.3209991455078 129.5789947509766 C 252.6309967041016 130.7760009765625 252.7890014648438 132.0079956054688 252.7920074462891 133.2449951171875 L 252.7920074462891 148.5090026855469 L 244.6190032958984 148.5090026855469 Z M 285.093994140625 136.0740051269531 C 285.1199951171875 137.9550018310547 284.7489929199219 139.8200073242188 284.0039978027344 141.5480041503906 C 283.3160095214844 143.1280059814453 282.3030090332031 144.5460052490234 281.0320129394531 145.7089996337891 C 279.7579956054688 146.8589935302734 278.2789916992188 147.7579956054688 276.6719970703125 148.3589935302734 C 274.9769897460938 148.9940032958984 273.1809997558594 149.3130035400391 271.3720092773438 149.3000030517578 C 269.5700073242188 149.3079986572266 267.7829895019531 148.9889984130859 266.0960083007812 148.3589935302734 C 264.4840087890625 147.7660064697266 263.0039978027344 146.8659973144531 261.7359924316406 145.7089996337891 C 260.4760131835938 144.5399932861328 259.4719848632812 143.1230010986328 258.7879943847656 141.5480041503906 C 258.0419921875 139.8200073242188 257.6709899902344 137.9550018310547 257.697998046875 136.0740051269531 C 257.6690063476562 134.1999969482422 258.0400085449219 132.3419952392578 258.7879943847656 130.6239929199219 C 259.4729919433594 129.0630035400391 260.4769897460938 127.6620025634766 261.7359924316406 126.5120010375977 C 263.0029907226562 125.3720016479492 264.4849853515625 124.4960021972656 266.0960083007812 123.9359970092773 C 267.7900085449219 123.3369979858398 269.5750122070312 123.0350036621094 271.3720092773438 123.0439987182617 C 273.177001953125 123.0309982299805 274.9700012207031 123.3330001831055 276.6719970703125 123.9359970092773 C 278.2780151367188 124.5029983520508 279.7590026855469 125.3779983520508 281.031005859375 126.5120010375977 C 282.302001953125 127.6559982299805 283.3150024414062 129.0579986572266 284.0039978027344 130.6239929199219 C 284.7510070800781 132.3419952392578 285.1220092773438 134.1999969482422 285.093994140625 136.0740051269531 Z M 277.2659912109375 136.0740051269531 C 277.2640075683594 135.281005859375 277.1289978027344 134.4940032958984 276.8659973144531 133.7460021972656 C 276.6159973144531 133.0110015869141 276.22900390625 132.3309936523438 275.7269897460938 131.7400054931641 C 275.2170104980469 131.1499938964844 274.5929870605469 130.6699981689453 273.8940124511719 130.3280029296875 C 273.1050109863281 129.9510040283203 272.239990234375 129.7640075683594 271.3670043945312 129.7830047607422 C 270.4930114746094 129.7640075683594 269.6279907226562 129.9510040283203 268.8399963378906 130.3280029296875 C 268.14599609375 130.6660003662109 267.531005859375 131.1470031738281 267.0360107421875 131.7389984130859 C 266.5480041503906 132.3320007324219 266.1780090332031 133.0130004882812 265.9460144042969 133.7449951171875 C 265.6990051269531 134.4960021972656 265.572998046875 135.2819976806641 265.5740051269531 136.072998046875 C 265.572998046875 136.8639984130859 265.6990051269531 137.6499938964844 265.9460144042969 138.4019927978516 C 266.18701171875 139.1499938964844 266.5650024414062 139.8470001220703 267.0610046386719 140.4579925537109 C 267.5589904785156 141.0709991455078 268.1839904785156 141.5690002441406 268.8940124511719 141.9190063476562 C 269.6820068359375 142.2960052490234 270.5469970703125 142.4819946289062 271.4209899902344 142.4640045166016 C 272.2929992675781 142.4819946289062 273.1579895019531 142.2960052490234 273.9460144042969 141.9199981689453 C 274.6549987792969 141.5700073242188 275.2799987792969 141.0720062255859 275.7789916992188 140.4589996337891 C 276.2739868164062 139.8480072021484 276.6520080566406 139.1510009765625 276.8940124511719 138.4029998779297 C 277.1400146484375 137.6510009765625 277.2659912109375 136.8650054931641 277.2659912109375 136.0740051269531 Z M 299.0660095214844 129.9309997558594 L 299.0660095214844 139.343994140625 C 299 140.2599945068359 299.2340087890625 141.1730041503906 299.7349853515625 141.9440002441406 C 300.3550109863281 142.5919952392578 301.2430114746094 142.9129943847656 302.135009765625 142.8110046386719 C 302.5570068359375 142.8079986572266 302.9800109863281 142.7749938964844 303.3980102539062 142.7109985351562 C 303.781005859375 142.6609954833984 304.156005859375 142.5599975585938 304.5130004882812 142.4109954833984 L 304.6130065917969 148.3560028076172 C 303.9179992675781 148.5870056152344 303.2059936523438 148.7610015869141 302.4830017089844 148.8760070800781 C 301.6319885253906 149.0240020751953 300.7699890136719 149.0980072021484 299.9070129394531 149.0989990234375 C 298.4939880371094 149.1369934082031 297.0859985351562 148.9290008544922 295.7460021972656 148.4839935302734 C 294.7090148925781 148.1280059814453 293.7789916992188 147.5149993896484 293.0459899902344 146.7010040283203 C 292.35400390625 145.8979949951172 291.85400390625 144.9490051269531 291.5840148925781 143.9259948730469 C 291.2739868164062 142.7539978027344 291.1239929199219 141.5460052490234 291.1380004882812 140.3339996337891 L 291.1380004882812 129.9340057373047 L 287.1749877929688 129.9340057373047 L 287.1749877929688 123.8399963378906 L 291.0880126953125 123.8399963378906 L 291.0880126953125 117.3499984741211 L 299.0650024414062 117.3499984741211 L 299.0650024414062 123.8399963378906 L 304.864990234375 123.8399963378906 L 304.864990234375 129.9340057373047 L 299.0660095214844 129.9309997558594 Z M 336.3659973144531 117.0500030517578 C 336.0260009765625 116.9400024414062 335.6780090332031 116.8570022583008 335.3259887695312 116.802001953125 C 334.9330139160156 116.7360000610352 334.5350036621094 116.7020034790039 334.1369934082031 116.7020034790039 C 333.5010070800781 116.6740036010742 332.8699951171875 116.8119964599609 332.3039855957031 117.1019973754883 C 331.8529968261719 117.3539962768555 331.4769897460938 117.7220001220703 331.2139892578125 118.1669998168945 C 330.9419860839844 118.6330032348633 330.7569885253906 119.1449966430664 330.6690063476562 119.6780014038086 C 330.5700073242188 120.234001159668 330.5199890136719 120.7969970703125 330.5199890136719 121.3619995117188 L 330.5199890136719 123.838996887207 L 336.0199890136719 123.838996887207 L 336.0199890136719 129.9329986572266 L 330.5199890136719 129.9329986572266 L 330.5199890136719 148.5090026855469 L 322.3989868164062 148.5090026855469 L 322.3989868164062 129.9309997558594 L 317.8900146484375 129.9309997558594 L 317.8900146484375 123.8369979858398 L 322.3980102539062 123.8369979858398 L 322.3980102539062 121.4589996337891 C 322.3919982910156 119.9990005493164 322.5599975585938 118.5439987182617 322.8980102539062 117.1240005493164 C 323.2009887695312 115.8089981079102 323.7839965820312 114.5759963989258 324.6069946289062 113.5070037841797 C 325.4739990234375 112.4219970703125 326.5979919433594 111.5709991455078 327.8770141601562 111.0299987792969 C 329.5029907226562 110.370002746582 331.25 110.0579986572266 333.0050048828125 110.1129989624023 C 333.6919860839844 110.1119995117188 334.3779907226562 110.1539993286133 335.0610046386719 110.2369995117188 C 335.6889953613281 110.3099975585938 336.3099975585938 110.4339981079102 336.9190063476562 110.609001159668 L 336.3659973144531 117.0500030517578 Z M 365.2520141601562 136.0740051269531 C 365.2780151367188 137.9550018310547 364.9070129394531 139.8200073242188 364.1619873046875 141.5480041503906 C 363.4739990234375 143.1280059814453 362.4609985351562 144.5460052490234 361.1900024414062 145.7089996337891 C 359.9159851074219 146.8589935302734 358.43701171875 147.7579956054688 356.8299865722656 148.3589935302734 C 355.135009765625 148.9940032958984 353.3389892578125 149.3130035400391 351.5299987792969 149.3000030517578 C 349.7279968261719 149.3079986572266 347.9410095214844 148.9889984130859 346.2539978027344 148.3589935302734 C 344.6419982910156 147.7660064697266 343.1619873046875 146.8659973144531 341.8940124511719 145.7089996337891 C 340.6340026855469 144.5399932861328 339.6300048828125 143.1230010986328 338.9460144042969 141.5480041503906 C 338.2000122070312 139.8200073242188 337.8290100097656 137.9550018310547 337.8559875488281 136.0740051269531 C 337.8269958496094 134.1999969482422 338.197998046875 132.3419952392578 338.9460144042969 130.6239929199219 C 339.6310119628906 129.0630035400391 340.635009765625 127.6620025634766 341.8940124511719 126.5120010375977 C 343.1610107421875 125.3720016479492 344.6430053710938 124.4960021972656 346.2539978027344 123.9359970092773 C 347.947998046875 123.3369979858398 349.7330017089844 123.0350036621094 351.5299987792969 123.0439987182617 C 353.3349914550781 123.0309982299805 355.1279907226562 123.3330001831055 356.8299865722656 123.9359970092773 C 358.4360046386719 124.5029983520508 359.9169921875 125.3779983520508 361.1900024414062 126.5120010375977 C 362.4599914550781 127.6559982299805 363.4729919433594 129.0579986572266 364.1619873046875 130.6239929199219 C 364.9089965820312 132.3419952392578 365.2799987792969 134.1999969482422 365.2520141601562 136.0740051269531 Z M 357.4240112304688 136.0740051269531 C 357.4219970703125 135.281005859375 357.2869873046875 134.4940032958984 357.0239868164062 133.7460021972656 C 356.7739868164062 133.0110015869141 356.3869934082031 132.3309936523438 355.885009765625 131.7400054931641 C 355.375 131.1499938964844 354.7510070800781 130.6699981689453 354.052001953125 130.3280029296875 C 353.2630004882812 129.9510040283203 352.3980102539062 129.7640075683594 351.5239868164062 129.7830047607422 C 350.6510009765625 129.7640075683594 349.7860107421875 129.9510040283203 348.9970092773438 130.3280029296875 C 348.302001953125 130.6660003662109 347.6860046386719 131.1470031738281 347.1900024414062 131.7400054931641 C 346.7019958496094 132.3329925537109 346.3320007324219 133.0140075683594 346.1000061035156 133.7460021972656 C 345.8529968261719 134.4969940185547 345.7269897460938 135.2830047607422 345.7269897460938 136.0740051269531 C 345.7269897460938 136.8639984130859 345.8529968261719 137.6499938964844 346.1000061035156 138.4019927978516 C 346.3410034179688 139.1499938964844 346.718994140625 139.8470001220703 347.2149963378906 140.4579925537109 C 347.7130126953125 141.0709991455078 348.3380126953125 141.5690002441406 349.0480041503906 141.9190063476562 C 349.8359985351562 142.2960052490234 350.7009887695312 142.4819946289062 351.5750122070312 142.4640045166016 C 352.447998046875 142.4819946289062 353.31298828125 142.2960052490234 354.1019897460938 141.9190063476562 C 354.8110046386719 141.5690002441406 355.4360046386719 141.0709991455078 355.9349975585938 140.4579925537109 C 356.4299926757812 139.8470001220703 356.8080139160156 139.1499938964844 357.0499877929688 138.4019927978516 C 357.2969970703125 137.6499938964844 357.4240112304688 136.8650054931641 357.4249877929688 136.0740051269531 L 357.4240112304688 136.0740051269531 Z M 386.6539916992188 148.5090026855469 L 386.6539916992188 145.0890045166016 L 386.5539855957031 145.0890045166016 C 386.2420043945312 145.6690063476562 385.8500061035156 146.2030029296875 385.3900146484375 146.6739959716797 C 384.8940124511719 147.1829986572266 384.3259887695312 147.6170043945312 383.7059936523438 147.9640045166016 C 383.031005859375 148.3399963378906 382.3169860839844 148.6390075683594 381.5759887695312 148.8560028076172 C 380.7789916992188 149.0899963378906 379.9530029296875 149.2070007324219 379.1239929199219 149.2030029296875 C 377.677001953125 149.2480010986328 376.239990234375 148.9420013427734 374.93798828125 148.3110046386719 C 373.8519897460938 147.7619934082031 372.9039916992188 146.9759979248047 372.1640014648438 146.0110015869141 C 371.4440002441406 145.0489959716797 370.9219970703125 143.9550018310547 370.6279907226562 142.7910003662109 C 370.3139953613281 141.5850067138672 370.1549987792969 140.3450012207031 370.1570129394531 139.1000061035156 L 370.1570129394531 123.8369979858398 L 378.3299865722656 123.8369979858398 L 378.3299865722656 137.2129974365234 C 378.3280029296875 137.8760070800781 378.3779907226562 138.5390014648438 378.4800109863281 139.1950073242188 C 378.5660095214844 139.7859954833984 378.7590026855469 140.3560028076172 379.0499877929688 140.8789978027344 C 379.3139953613281 141.3569946289062 379.697998046875 141.7579956054688 380.1640014648438 142.0429992675781 C 380.7260131835938 142.3480072021484 381.3599853515625 142.4929962158203 381.9970092773438 142.4640045166016 C 383.281005859375 142.5319976806641 384.510009765625 141.9329986572266 385.2460021972656 140.8789978027344 C 385.9989929199219 139.7879943847656 386.3890075683594 138.4880065917969 386.3609924316406 137.1629943847656 L 386.3609924316406 123.8369979858398 L 394.4859924316406 123.8369979858398 L 394.4859924316406 148.5090026855469 L 386.6539916992188 148.5090026855469 Z M 417.0230102539062 148.5090026855469 L 417.0230102539062 135.0330047607422 C 417.0249938964844 134.3679962158203 416.9670104980469 133.7050018310547 416.8500061035156 133.0509948730469 C 416.75 132.4700012207031 416.5580139160156 131.9100036621094 416.2799987792969 131.3910064697266 C 416.0190124511719 130.9160003662109 415.6329956054688 130.5220031738281 415.1650085449219 130.2519989013672 C 414.6099853515625 129.9530029296875 413.9859924316406 129.8070068359375 413.3569946289062 129.8309936523438 C 412.6960144042969 129.8159942626953 412.0419921875 129.9600067138672 411.4500122070312 130.2519989013672 C 410.9100036621094 130.5269927978516 410.4440002441406 130.9259948730469 410.0880126953125 131.4160003662109 C 409.7149963378906 131.9309997558594 409.43798828125 132.5099945068359 409.27099609375 133.125 C 409.0880126953125 133.7779998779297 408.9960021972656 134.4530029296875 408.9989929199219 135.1309967041016 L 408.9989929199219 148.5090026855469 L 400.8250122070312 148.5090026855469 L 400.8250122070312 123.8369979858398 L 408.7019958496094 123.8369979858398 L 408.7019958496094 127.254997253418 L 408.802001953125 127.254997253418 C 409.1260070800781 126.6900024414062 409.5159912109375 126.1660003662109 409.9660034179688 125.6940002441406 C 410.4559936523438 125.1719970703125 411.0239868164062 124.7289962768555 411.6489868164062 124.3809967041016 C 412.3169860839844 124.0070037841797 413.0230102539062 123.7080001831055 413.7560119628906 123.4889984130859 C 414.5429992675781 123.2529983520508 415.3609924316406 123.1360015869141 416.1839904785156 123.1419982910156 C 417.6380004882812 123.0989990234375 419.0820007324219 123.4049987792969 420.3949890136719 124.0339965820312 C 421.4909973144531 124.5770034790039 422.447998046875 125.3639984130859 423.1950073242188 126.3339996337891 C 423.9179992675781 127.302001953125 424.4400024414062 128.4049987792969 424.7309875488281 129.5789947509766 C 425.0409851074219 130.7760009765625 425.1990051269531 132.0079956054688 425.2019958496094 133.2449951171875 L 425.2019958496094 148.5090026855469 L 417.0230102539062 148.5090026855469 Z M 450.0169982910156 148.5090026855469 L 450.0169982910156 145.2890014648438 L 449.9169921875 145.2890014648438 C 449.0969848632812 146.5690002441406 447.9159851074219 147.5780029296875 446.5230102539062 148.1889953613281 C 445.0570068359375 148.8639984130859 443.4599914550781 149.2100067138672 441.8450012207031 149.2019958496094 C 440.1319885253906 149.2319946289062 438.4339904785156 148.8580017089844 436.8919982910156 148.1119995117188 C 435.4729919433594 147.4120025634766 434.2160034179688 146.4239959716797 433.2009887695312 145.2120056152344 C 432.177001953125 143.9739990234375 431.39599609375 142.5540008544922 430.9010009765625 141.0260009765625 C 430.3699951171875 139.4279937744141 430.1019897460938 137.7550048828125 430.1080017089844 136.0720062255859 C 430.1010131835938 134.3939971923828 430.3770141601562 132.7279968261719 430.9249877929688 131.1430053710938 C 431.43701171875 129.6309967041016 432.2260131835938 128.2279968261719 433.2529907226562 127.0059967041016 C 434.260986328125 125.8160018920898 435.510986328125 124.8529968261719 436.9190063476562 124.181999206543 C 438.4280090332031 123.4720001220703 440.0799865722656 123.1159973144531 441.7489929199219 123.1419982910156 C 443.3479919433594 123.0910034179688 444.9330139160156 123.4489974975586 446.3559875488281 124.181999206543 C 447.4609985351562 124.7570037841797 448.4509887695312 125.5289993286133 449.2789916992188 126.4609985351562 L 449.3789978027344 126.4609985351562 L 449.3789978027344 111.0550003051758 L 457.5039978027344 111.0550003051758 L 457.5039978027344 148.5090026855469 L 450.0169982910156 148.5090026855469 Z M 449.7170104980469 136.1239929199219 C 449.7170104980469 135.3289947509766 449.5740051269531 134.5399932861328 449.2959899902344 133.7960052490234 C 449.0249938964844 133.0529937744141 448.6229858398438 132.3650054931641 448.1069946289062 131.7649993896484 C 447.5910034179688 131.1660003662109 446.9590148925781 130.677001953125 446.2489929199219 130.3280029296875 C 445.4779968261719 129.9539947509766 444.6289978027344 129.7669982910156 443.7720031738281 129.7830047607422 C 442.8989868164062 129.7640075683594 442.0339965820312 129.9510040283203 441.2449951171875 130.3280029296875 C 440.5459899902344 130.6699981689453 439.9219970703125 131.1499938964844 439.4129943847656 131.7400054931641 C 438.9110107421875 132.3280029296875 438.5320129394531 133.0099945068359 438.2969970703125 133.7460021972656 C 438.0509948730469 134.4969940185547 437.9249877929688 135.2830047607422 437.9259948730469 136.0740051269531 C 437.927001953125 136.8730010986328 438.052001953125 137.6660003662109 438.2969970703125 138.427001953125 C 438.5320129394531 139.1779937744141 438.9110107421875 139.8760070800781 439.4129943847656 140.4830017089844 C 439.9169921875 141.0839996337891 440.5409851074219 141.5740051269531 441.2449951171875 141.9199981689453 C 442.0339965820312 142.2969970703125 442.8989868164062 142.4830017089844 443.7720031738281 142.4649963378906 C 444.6289978027344 142.4799957275391 445.4779968261719 142.2929992675781 446.2489929199219 141.9199981689453 C 446.9590148925781 141.5700073242188 447.5910034179688 141.0809936523438 448.1069946289062 140.4830017089844 C 448.6229858398438 139.8829956054688 449.0249938964844 139.1950073242188 449.2959899902344 138.4519958496094 C 449.5750122070312 137.7070007324219 449.718994140625 136.9179992675781 449.7200012207031 136.1230010986328 L 449.7170104980469 136.1239929199219 Z">
+		</path>
+	</svg>
 </div>
 </body>
 </html>
