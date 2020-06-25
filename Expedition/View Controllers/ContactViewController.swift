@@ -20,10 +20,21 @@ class ContactViewController: UITableViewController {
         dismiss(animated: true)
     }
     @IBAction func instagramOpen(_ sender: Any) {
-        dismiss(animated: true)
+        let Username =  "themorningcompanymedia" // Your Instagram Username here
+        let appURL = URL(string: "instagram://user?username=\(Username)")!
+        let application = UIApplication.shared
+
+        if application.canOpenURL(appURL) {
+            application.open(appURL)
+        } else {
+           return
+        }
+
+        
     }
     @IBAction func githubOpen(_ sender: Any) {
         dismiss(animated: true)
+        
     }
     @IBAction func emailOpen(_ sender: Any) {
         //Doesn't work in Simulator
