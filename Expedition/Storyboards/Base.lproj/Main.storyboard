@@ -1491,6 +1491,7 @@ We do not collect any data or personal information in Expedition. We simply do n
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="J6e-BP-JhY"/>
         <segue reference="AfM-93-8mC"/>
         <segue reference="fET-hm-iSD"/>
     </inferredMetricsTieBreakers>
