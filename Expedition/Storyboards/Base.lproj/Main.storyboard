@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E3a-YU-zsV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E3a-YU-zsV">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,6 +22,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="v5J-8J-4Di"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <constraints>
                             <constraint firstItem="Bwc-XX-UMS" firstAttribute="centerX" secondItem="3n1-9b-CYd" secondAttribute="centerX" id="5HQ-V9-FrK"/>
@@ -27,7 +30,6 @@
                             <constraint firstItem="Bwc-XX-UMS" firstAttribute="top" secondItem="v5J-8J-4Di" secondAttribute="top" id="g9X-ln-HOA"/>
                             <constraint firstItem="Bwc-XX-UMS" firstAttribute="leading" secondItem="v5J-8J-4Di" secondAttribute="leading" id="n8c-7H-YML"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="v5J-8J-4Di"/>
                     </view>
                     <navigationItem key="navigationItem" id="bxM-Oq-1vm"/>
                     <connections>
@@ -49,7 +51,7 @@
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="JeA-nV-CKj">
                                 <rect key="frame" x="379" y="62" width="20" height="20"/>
-                                <color key="color" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="color" systemColor="labelColor"/>
                             </activityIndicatorView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4tK-qr-jG7">
                                 <rect key="frame" x="15" y="63" width="20" height="20"/>
@@ -77,7 +79,7 @@
                             <wkWebView opaque="NO" contentMode="scaleToFill" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Sr-kh-OPV">
                                 <rect key="frame" x="0.0" y="90" width="414" height="806"/>
                                 <color key="backgroundColor" name="Expedition White"/>
-                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="tintColor" systemColor="labelColor"/>
                                 <gestureRecognizers/>
                                 <wkWebViewConfiguration key="configuration" allowsInlineMediaPlayback="YES" applicationNameForUserAgent="Expedition">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -125,8 +127,9 @@
                                 <color key="barTintColor" name="Expedition White"/>
                             </toolbar>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="Expedition White"/>
-                        <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="tintColor" systemColor="labelColor"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="JeA-nV-CKj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="39F-Su-Buy"/>
@@ -144,7 +147,6 @@
                             <constraint firstItem="JeA-nV-CKj" firstAttribute="leading" secondItem="poK-nr-9UJ" secondAttribute="trailing" constant="8" id="qJB-og-y2a"/>
                             <constraint firstItem="1Sr-kh-OPV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="s3L-9Z-GG1"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="ltd-91-b5P" appends="YES" id="VP4-1F-hq1"/>
                         </connections>
@@ -197,8 +199,8 @@
                     <view key="view" contentMode="scaleToFill" id="lAE-Ui-ynU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" name="Expedition White"/>
                         <viewLayoutGuide key="safeArea" id="LRz-3c-U6J"/>
+                        <color key="backgroundColor" name="Expedition White"/>
                     </view>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="showSearchScreen" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="fET-hm-iSD"/>
@@ -217,7 +219,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
-                        <color key="sectionIndexColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="sectionIndexColor" systemColor="labelColor"/>
                         <color key="sectionIndexBackgroundColor" name="Expedition White"/>
                         <color key="sectionIndexTrackingBackgroundColor" name="Expedition White"/>
                         <prototypes>
@@ -240,7 +242,7 @@
                                     <color key="backgroundColor" name="Expedition White"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" name="Expedition White"/>
-                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="tintColor" systemColor="labelColor"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -451,10 +453,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Jo-Vo-HEo">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Jo-Vo-HEo">
                                                     <rect key="frame" x="30" y="21" width="122" height="27"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
-                                                    <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="tintColor" systemColor="labelColor"/>
                                                     <state key="normal" title="view history"/>
                                                     <connections>
                                                         <segue destination="65v-MH-vlF" kind="show" id="nw9-GB-K5b"/>
@@ -477,10 +479,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6t-kO-MfL">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6t-kO-MfL">
                                                     <rect key="frame" x="30" y="21" width="140" height="27"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
-                                                    <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="tintColor" systemColor="labelColor"/>
                                                     <state key="normal" title="privacy policy"/>
                                                     <connections>
                                                         <segue destination="7xe-KY-LMm" kind="show" id="6jg-SH-Uaw"/>
@@ -503,10 +505,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTJ-TB-W1Q">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTJ-TB-W1Q">
                                                     <rect key="frame" x="30" y="21" width="87" height="27"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
-                                                    <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="tintColor" systemColor="labelColor"/>
                                                     <state key="normal" title="gestures"/>
                                                     <connections>
                                                         <action selector="didTapHowToUse:" destination="9OM-wm-4ti" eventType="touchUpInside" id="oET-FX-24d"/>
@@ -530,10 +532,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Or-IC-Yag">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Or-IC-Yag">
                                                     <rect key="frame" x="30" y="21" width="167" height="27"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
-                                                    <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="tintColor" systemColor="labelColor"/>
                                                     <state key="normal" title="choose app icon"/>
                                                     <connections>
                                                         <segue destination="9km-4P-Tvs" kind="show" id="fHD-5w-V7g"/>
@@ -556,10 +558,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STc-7v-PbO">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STc-7v-PbO">
                                                     <rect key="frame" x="18" y="21" width="103" height="27"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
-                                                    <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="tintColor" systemColor="labelColor"/>
                                                     <state key="normal" title="contact us"/>
                                                     <connections>
                                                         <segue destination="If3-Iy-N99" kind="show" id="I4m-Zf-dcf"/>
@@ -659,7 +661,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="vxz-cX-pUq">
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="Cpf-E8-btv">
-                            <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="tintColor" systemColor="labelColor"/>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
@@ -922,7 +924,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="Expedition White"/>
-                        <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="tintColor" systemColor="labelColor"/>
                         <color key="barTintColor" name="Expedition White"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -959,12 +961,12 @@
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DkZ-rX-ydI">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="574"/>
-                                        <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
                                         <string key="text">In this document, “we”, “us”, “TMC” and “our” are taken to be in reference to The Morning Company. “The app” will mean Expedition
 
 We do not collect any data or personal information in Expedition. We simply do not have a way to store this information as all of us at The Morning Company believe that personal information is just that—personal, and should not be shared with anyone else. Nothing is shared with third parties whatsoever and nothing is shared with The Morning Company either.
 </string>
-                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -981,6 +983,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                 <viewLayoutGuide key="frameLayoutGuide" id="c77-iX-9rA"/>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Sjy-QE-lNu"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <constraints>
                             <constraint firstItem="Sjy-QE-lNu" firstAttribute="trailing" secondItem="608-tl-8Ij" secondAttribute="trailing" constant="24" id="1oH-iT-a7s"/>
@@ -993,7 +996,6 @@ We do not collect any data or personal information in Expedition. We simply do n
                             <constraint firstItem="zY3-ox-cvg" firstAttribute="top" secondItem="Sjy-QE-lNu" secondAttribute="top" constant="25" id="dsG-ga-5xo"/>
                             <constraint firstItem="zY3-ox-cvg" firstAttribute="centerX" secondItem="Xfx-CW-8Ns" secondAttribute="centerX" id="whS-f0-tXW"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Sjy-QE-lNu"/>
                     </view>
                     <navigationItem key="navigationItem" id="cMF-83-LZt"/>
                 </viewController>
@@ -1502,7 +1504,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
-                        <color key="sectionIndexColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="sectionIndexColor" systemColor="labelColor"/>
                         <color key="sectionIndexBackgroundColor" name="Expedition White"/>
                         <color key="sectionIndexTrackingBackgroundColor" name="Expedition White"/>
                         <prototypes>
@@ -1525,7 +1527,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                     <color key="backgroundColor" name="Expedition White"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" name="Expedition White"/>
-                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="tintColor" systemColor="labelColor"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1568,7 +1570,7 @@ We do not collect any data or personal information in Expedition. We simply do n
         <segue reference="AfM-93-8mC"/>
         <segue reference="fET-hm-iSD"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+    <color key="tintColor" systemColor="darkTextColor"/>
     <resources>
         <image name="BlueLightUI" width="651.66668701171875" height="651.66668701171875"/>
         <image name="Bookmark" width="651.66668701171875" height="651.66668701171875"/>
@@ -1604,5 +1606,11 @@ We do not collect any data or personal information in Expedition. We simply do n
         <namedColor name="Expedition White">
             <color red="0.96899998188018799" green="0.96899998188018799" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

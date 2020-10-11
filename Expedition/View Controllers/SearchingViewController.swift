@@ -19,6 +19,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     @IBOutlet weak var toolbarBottom: NSLayoutConstraint!
     @IBOutlet weak var secureImg: UIImageView!
     let notification = UINotificationFeedbackGenerator()//Haptics
+
     
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     var lastOffsetY :CGFloat = 0
@@ -155,6 +156,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     func displayShareSheet(shareContent:UIImage) {
         notification.notificationOccurred(.success) //Haptic
         let activityViewController = UIActivityViewController(activityItems: [shareContent], applicationActivities: nil)
+        
         present(activityViewController, animated: true, completion: {})
     }
     
@@ -344,6 +346,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     func pageNotFound() {
             if let url = Bundle.main.url(forResource: "NotFound", withExtension: "html") {
                 webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
+                 
             }
     
 }
