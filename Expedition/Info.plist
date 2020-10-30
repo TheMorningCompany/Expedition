@@ -285,7 +285,7 @@
 		<true/>
 	</dict>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Allow access to save fullpage screenshots</string>
+	<string>expedition needs access to save a fullpage screenshot</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -315,30 +315,27 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-     <string>fb</string>
-     <string>fbapi</string>
-     <string>fbauth2</string>
-     <string>fbshareextension</string>
-     <string>fb-messenger-api</string>
-     <string>twitter</string>
-     <string>viber</string>
-     <string>whatsapp</string>
-     <string>wechat</string>
-     <string>line</string>
-     <string>instagram</string>
-     <string> instagram-stories</string>
-     <string>kakaotalk</string>
-     <string>mqq</string>
-     <string>vk</string>
-     <string>comgooglemaps</string>
-     <string>googlephotos</string>
-     <string>ha</string>
-     <string>yammer</string>
-    </array>
-    
-    
-    
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fb</string>
+		<string>fbapi</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+		<string>fb-messenger-api</string>
+		<string>twitter</string>
+		<string>viber</string>
+		<string>whatsapp</string>
+		<string>wechat</string>
+		<string>line</string>
+		<string>instagram</string>
+		<string> instagram-stories</string>
+		<string>kakaotalk</string>
+		<string>mqq</string>
+		<string>vk</string>
+		<string>comgooglemaps</string>
+		<string>googlephotos</string>
+		<string>ha</string>
+		<string>yammer</string>
+	</array>
 </dict>
 </plist>

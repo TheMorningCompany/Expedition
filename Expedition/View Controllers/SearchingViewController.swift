@@ -92,6 +92,21 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
         
+        //MARK: Open urls from contact page
+        NotificationCenter.default.addObserver(forName: OPEN_GITHUB, object: nil, queue: nil) { notification in
+            let ghURL = URL(string: "https://github.com/TheMorningCompany")
+            self.openUrl(urlString: ghURL!.absoluteString)
+        }
+        NotificationCenter.default.addObserver(forName: OPEN_YT, object: nil, queue: nil) { notification in
+            let ytURL = URL(string: "https://youtube.com/themorningcompanytv")
+            self.openUrl(urlString: ytURL!.absoluteString)
+        }
+        NotificationCenter.default.addObserver(forName: OPEN_IG, object: nil, queue: nil) { notification in
+            let igURL = URL(string: "https://www.instagram.com/themorningcompanymedia")
+            self.openUrl(urlString: igURL!.absoluteString)
+        }
+        
+        
     }
     
     
@@ -425,6 +440,8 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             
             self.present(alert, animated: true)
         }
+    
+    
 }
 
 

@@ -29,6 +29,7 @@
 		0077891823D14005002AEE78 /* LightShatter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0077891623D14005002AEE78 /* LightShatter@2x.png */; };
 		0077891923D14005002AEE78 /* DarkShatter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0077891723D14005002AEE78 /* DarkShatter@2x.png */; };
 		0078502F23CD688E00BDB94C /* Prism@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078502E23CD688E00BDB94C /* Prism@2x.png */; };
+		00805267254CB963008D7697 /* NotificationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00805266254CB963008D7697 /* NotificationConstants.swift */; };
 		0081CCE224280A720097C2C6 /* TabsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081CCE124280A720097C2C6 /* TabsTableViewController.swift */; };
 		00A91DBD23A84AFF00F045F7 /* DarkIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A91DBB23A84AFF00F045F7 /* DarkIcon@2x.png */; };
 		00AB6BA623CD37DE0088E269 /* Metal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AB6BA523CD37DD0088E269 /* Metal@2x.png */; };
@@ -117,6 +118,7 @@
 		0077891623D14005002AEE78 /* LightShatter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LightShatter@2x.png"; sourceTree = "<group>"; };
 		0077891723D14005002AEE78 /* DarkShatter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DarkShatter@2x.png"; sourceTree = "<group>"; };
 		0078502E23CD688E00BDB94C /* Prism@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Prism@2x.png"; sourceTree = "<group>"; };
+		00805266254CB963008D7697 /* NotificationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationConstants.swift; sourceTree = "<group>"; };
 		0081CCE124280A720097C2C6 /* TabsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsTableViewController.swift; sourceTree = "<group>"; };
 		00A91DBB23A84AFF00F045F7 /* DarkIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DarkIcon@2x.png"; sourceTree = "<group>"; };
 		00AB6BA523CD37DD0088E269 /* Metal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Metal@2x.png"; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 				5D793D0623D4E02D00539A44 /* IntroViewController.swift */,
 				5D5BA2E123C5910C00D98050 /* HistoryTableViewController.swift */,
 				0028F4F8245CC29500FB89B3 /* ContactViewController.swift */,
+				00805266254CB963008D7697 /* NotificationConstants.swift */,
 				5D41CBF223C5745C003A16F9 /* OptionsViewController.swift */,
 				0081CCE124280A720097C2C6 /* TabsTableViewController.swift */,
 				000D80262427F5CA005E0CA1 /* AppIconsViewController.swift */,
@@ -513,6 +516,7 @@
 				5D1D0D5A23C6B0B300B4377E /* PersistenceService.swift in Sources */,
 				5D793D0723D4E02D00539A44 /* IntroViewController.swift in Sources */,
 				0074A5A22442A672003C92D2 /* DonationBoxViewController.swift in Sources */,
+				00805267254CB963008D7697 /* NotificationConstants.swift in Sources */,
 				5D41CBF123C569B6003A16F9 /* SettingsBundleHelper.swift in Sources */,
 				0062526324208C08004B3136 /* Onb2ViewController.swift in Sources */,
 				5D865CC423E1013700374B07 /* BlankViewController.swift in Sources */,

@@ -48,7 +48,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         }
 //        UserDefaults.standard.set(ViewController().credits, forKey: "creditsTitle")
+        UINavigationBar.appearance().shadowImage = UIImage()
         return true
+        
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

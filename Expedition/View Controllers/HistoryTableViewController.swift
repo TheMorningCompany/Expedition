@@ -105,7 +105,7 @@ class HistoryTableViewController: UITableViewController {
             
         }
         action.image = #imageLiteral(resourceName: "trash")
-        action.backgroundColor = UIColor(named: "Expedition White")
+        action.backgroundColor = UIColor(named: "Elevated")
         return UISwipeActionsConfiguration(actions: [action])
         
     }
