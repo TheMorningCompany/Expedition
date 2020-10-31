@@ -219,15 +219,15 @@
                         <color key="sectionIndexBackgroundColor" name="Expedition White"/>
                         <color key="sectionIndexTrackingBackgroundColor" name="Expedition White"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextCell" textLabel="7dK-fL-zc3" rowHeight="86" style="IBUITableViewCellStyleDefault" id="jPf-bm-8lT">
-                                <rect key="frame" x="20" y="55.333332061767578" width="374" height="86"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextCell" textLabel="7dK-fL-zc3" rowHeight="72" style="IBUITableViewCellStyleDefault" id="jPf-bm-8lT">
+                                <rect key="frame" x="20" y="55.333332061767578" width="374" height="72"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jPf-bm-8lT" id="7Wr-Ex-Ulu" customClass="UITableView">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="86"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="72"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7dK-fL-zc3">
-                                            <rect key="frame" x="20" y="0.0" width="334" height="86"/>
+                                            <rect key="frame" x="20" y="0.0" width="334" height="72"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <gestureRecognizers/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
@@ -235,7 +235,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" name="Expedition White"/>
+                                    <color key="backgroundColor" name="Elevated"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" name="Expedition White"/>
                                 <color key="tintColor" systemColor="labelColor"/>
@@ -260,7 +260,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6H6-I3-eKk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2723" y="753"/>
+            <point key="canvasLocation" x="2721.739130434783" y="752.67857142857144"/>
         </scene>
         <!--Options View Controller-->
         <scene sceneID="Rta-78-hTe">
@@ -683,9 +683,11 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="cfw-dJ-aoi"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="new tab" image="plus" catalog="system">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="regular"/>
                                 </state>
                                 <connections>
                                     <action selector="newTabBtn:" destination="Rd0-kk-bAU" eventType="touchUpInside" id="99r-52-KGT"/>
@@ -704,7 +706,9 @@
                             <constraint firstItem="JFv-FZ-zmN" firstAttribute="trailing" secondItem="ZFR-xc-63y" secondAttribute="trailing" constant="18" id="cnR-Nd-tUA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="mZB-px-zmx"/>
+                    <navigationItem key="navigationItem" id="mZB-px-zmx">
+                        <barButtonItem key="rightBarButtonItem" image="xmark" catalog="system" id="g8h-64-gry"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="newTabBtn" destination="ZFR-xc-63y" id="21E-uy-3f0"/>
                     </connections>
@@ -1353,6 +1357,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="Expedition White"/>
+                        <color key="tintColor" systemColor="labelColor"/>
                         <color key="barTintColor" name="Expedition White"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

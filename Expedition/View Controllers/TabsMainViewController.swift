@@ -17,6 +17,7 @@ class TabsMainViewController: UIViewController {
 
         self.newTabBtn.layer.cornerRadius = 20.0
         self.newTabBtn.layer.cornerCurve = .continuous
+        
     }
     
 
