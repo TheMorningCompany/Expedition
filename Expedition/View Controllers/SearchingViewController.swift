@@ -235,11 +235,11 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             PersistenceService.saveContext()
             HistoryTableViewController().historyArray.append(historyElementToAdd)
             HistoryTableViewController().tableView.reloadData()
-            if webView.hasOnlySecureContent {
-                secureImg.image = UIImage(named: "lockBlue")
-            } else {
-                secureImg.image = UIImage(named: "lockRed")
-            }
+//            if webView.hasOnlySecureContent {
+//                secureImg.image = UIImage(named: "lockBlue")
+//            } else {
+//                secureImg.image = UIImage(named: "lockRed")
+//            }
             
         }
 
