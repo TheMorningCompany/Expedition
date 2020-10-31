@@ -53,15 +53,8 @@
                                 <rect key="frame" x="379" y="62" width="20" height="20"/>
                                 <color key="color" systemColor="labelColor"/>
                             </activityIndicatorView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4tK-qr-jG7">
-                                <rect key="frame" x="15" y="63" width="20" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="NoS-iK-XmR"/>
-                                    <constraint firstAttribute="height" constant="20" id="sO2-aV-VFQ"/>
-                                </constraints>
-                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="poK-nr-9UJ">
-                                <rect key="frame" x="50" y="55" width="321" height="36"/>
+                                <rect key="frame" x="39" y="55" width="332" height="36"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="2Fp-Z7-fL9"/>
@@ -106,7 +99,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="b9I-UI-kI0"/>
-                                    <barButtonItem image="square.on.square" catalog="system" id="keJ-Tu-SlC">
+                                    <barButtonItem image="rectangle.stack" catalog="system" id="keJ-Tu-SlC">
                                         <connections>
                                             <segue destination="Iia-Ig-rNz" kind="presentation" id="fQc-WF-jgl"/>
                                         </connections>
@@ -126,6 +119,10 @@
                                 </items>
                                 <color key="barTintColor" name="Expedition White"/>
                             </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6B-o4-NEu">
+                                <rect key="frame" x="10" y="62" width="19" height="22"/>
+                                <state key="normal" image="chevron.down" catalog="system"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="Expedition White"/>
@@ -135,15 +132,15 @@
                             <constraint firstItem="JeA-nV-CKj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="39F-Su-Buy"/>
                             <constraint firstItem="Fdo-tH-OsN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CrI-hR-rt3"/>
                             <constraint firstItem="1Sr-kh-OPV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="46" id="D18-Ng-MKO"/>
-                            <constraint firstItem="poK-nr-9UJ" firstAttribute="centerY" secondItem="4tK-qr-jG7" secondAttribute="centerY" id="DqU-nB-gcH"/>
-                            <constraint firstItem="poK-nr-9UJ" firstAttribute="leading" secondItem="4tK-qr-jG7" secondAttribute="trailing" constant="15" id="O4w-X5-6FV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JeA-nV-CKj" secondAttribute="trailing" constant="15" id="RHd-kV-I4C"/>
+                            <constraint firstItem="poK-nr-9UJ" firstAttribute="centerY" secondItem="p6B-o4-NEu" secondAttribute="centerY" id="SIS-oS-rA6"/>
                             <constraint firstAttribute="trailing" secondItem="Fdo-tH-OsN" secondAttribute="trailing" id="SzA-vb-RCt"/>
                             <constraint firstItem="poK-nr-9UJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="11" id="UrB-UL-i1P"/>
                             <constraint firstItem="1Sr-kh-OPV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Usw-fi-elu"/>
-                            <constraint firstItem="4tK-qr-jG7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="ZE3-SF-QbF"/>
+                            <constraint firstItem="p6B-o4-NEu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="a0U-un-g9M"/>
                             <constraint firstItem="Fdo-tH-OsN" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="amA-Sl-vM7"/>
                             <constraint firstAttribute="bottom" secondItem="1Sr-kh-OPV" secondAttribute="bottom" id="efN-sm-YhT"/>
+                            <constraint firstItem="poK-nr-9UJ" firstAttribute="leading" secondItem="p6B-o4-NEu" secondAttribute="trailing" constant="10" id="giB-BV-eno"/>
                             <constraint firstItem="JeA-nV-CKj" firstAttribute="leading" secondItem="poK-nr-9UJ" secondAttribute="trailing" constant="8" id="qJB-og-y2a"/>
                             <constraint firstItem="1Sr-kh-OPV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="s3L-9Z-GG1"/>
                         </constraints>
@@ -155,7 +152,6 @@
                         <outlet property="ActInd" destination="JeA-nV-CKj" id="Nec-3V-7Ni"/>
                         <outlet property="accessibilityToolbar" destination="Fdo-tH-OsN" id="Qcj-w5-Wbl"/>
                         <outlet property="searchBar" destination="poK-nr-9UJ" id="UQR-wf-BEh"/>
-                        <outlet property="secureImg" destination="4tK-qr-jG7" id="mHe-U1-w0Q"/>
                         <outlet property="toolbarBottom" destination="amA-Sl-vM7" id="CpZ-K6-w56"/>
                         <outlet property="webView" destination="1Sr-kh-OPV" id="AbH-gy-eSn"/>
                         <outlet property="webViewTop" destination="D18-Ng-MKO" id="8iz-dy-O9r"/>
@@ -215,7 +211,7 @@
             <objects>
                 <tableViewController title="History" id="65v-MH-vlF" customClass="HistoryTableViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="26q-fx-QMl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -271,7 +267,7 @@
             <objects>
                 <tableViewController id="9OM-wm-4ti" customClass="OptionsViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="tCM-8D-bll">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -610,7 +606,7 @@
             <objects>
                 <tableViewController id="DpS-9H-eTc" customClass="TabsTableViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="w6d-vX-c8d">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <prototypes>
@@ -661,22 +657,69 @@
                             <outlet property="delegate" destination="DpS-9H-eTc" id="D25-88-U7w"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="vxz-cX-pUq">
-                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="Cpf-E8-btv">
-                            <color key="tintColor" systemColor="labelColor"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="vxz-cX-pUq"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7HJ-ZH-Mih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="921.73913043478262" y="-772.09821428571422"/>
+        </scene>
+        <!--Tabs Main View Controller-->
+        <scene sceneID="ikC-00-g1S">
+            <objects>
+                <viewController id="gGB-r8-M28" customClass="TabsMainViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bdn-XH-thH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cma-gM-7na">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
+                                <connections>
+                                    <segue destination="DpS-9H-eTc" kind="embed" id="Dfr-TQ-nFs"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFR-xc-63y">
+                                <rect key="frame" x="18" y="693" width="378" height="55"/>
+                                <color key="backgroundColor" name="Expedition Blue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="cfw-dJ-aoi"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="new tab" image="plus" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="newTabBtn:" destination="Rd0-kk-bAU" eventType="touchUpInside" id="99r-52-KGT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JFv-FZ-zmN"/>
+                        <color key="backgroundColor" name="Expedition White"/>
+                        <constraints>
+                            <constraint firstItem="Cma-gM-7na" firstAttribute="leading" secondItem="JFv-FZ-zmN" secondAttribute="leading" id="BEh-YP-ijX"/>
+                            <constraint firstItem="JFv-FZ-zmN" firstAttribute="trailing" secondItem="Cma-gM-7na" secondAttribute="trailing" id="EXj-Dl-b7x"/>
+                            <constraint firstItem="JFv-FZ-zmN" firstAttribute="bottom" secondItem="Cma-gM-7na" secondAttribute="bottom" id="LcU-Hv-D2k"/>
+                            <constraint firstItem="ZFR-xc-63y" firstAttribute="leading" secondItem="JFv-FZ-zmN" secondAttribute="leading" constant="18" id="Mlw-b0-M7Q"/>
+                            <constraint firstItem="Cma-gM-7na" firstAttribute="top" secondItem="JFv-FZ-zmN" secondAttribute="top" id="bEx-Md-DJP"/>
+                            <constraint firstItem="JFv-FZ-zmN" firstAttribute="bottom" secondItem="ZFR-xc-63y" secondAttribute="bottom" constant="38" id="bMZ-yX-lGh"/>
+                            <constraint firstItem="JFv-FZ-zmN" firstAttribute="trailing" secondItem="ZFR-xc-63y" secondAttribute="trailing" constant="18" id="cnR-Nd-tUA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mZB-px-zmx"/>
+                    <connections>
+                        <outlet property="newTabBtn" destination="ZFR-xc-63y" id="21E-uy-3f0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iGo-3a-HMe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Rd0-kk-bAU" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1753.6231884057972" y="-772.09821428571422"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="c0B-zO-c8h">
             <objects>
                 <tableViewController id="WlA-qs-nnO" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Aps-Yt-xYK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -943,7 +986,7 @@
             <objects>
                 <viewController id="7xe-KY-LMm" customClass="PrivacyPolicyViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xfx-CW-8Ns">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shieldBlue" translatesAutoresizingMaskIntoConstraints="NO" id="zY3-ox-cvg">
@@ -1021,7 +1064,7 @@ We do not collect any data or personal information in Expedition. We simply do n
             <objects>
                 <tableViewController id="9km-4P-Tvs" customClass="AppIconsViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="JlY-hT-bu4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -1300,7 +1343,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="DpS-9H-eTc" kind="relationship" relationship="rootViewController" id="El9-ue-7mn"/>
+                        <segue destination="gGB-r8-M28" kind="relationship" relationship="rootViewController" id="8Wa-Ra-1Yv"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6c-Ho-qJQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1320,7 +1363,7 @@ We do not collect any data or personal information in Expedition. We simply do n
             <objects>
                 <tableViewController id="If3-Iy-N99" customClass="ContactViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="8UY-ce-B6q">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -1827,6 +1870,7 @@ We do not collect any data or personal information in Expedition. We simply do n
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="J6e-BP-JhY"/>
         <segue reference="AfM-93-8mC"/>
         <segue reference="fET-hm-iSD"/>
     </inferredMetricsTieBreakers>
@@ -1849,15 +1893,16 @@ We do not collect any data or personal information in Expedition. We simply do n
         <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="blueapp" width="1024" height="1024"/>
         <image name="bubble.right" catalog="system" width="128" height="110"/>
+        <image name="chevron.down" catalog="system" width="128" height="72"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="gearBlue" width="1024" height="1024"/>
         <image name="mail" width="512" height="512"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="rectangle.stack" catalog="system" width="128" height="122"/>
         <image name="reddit" width="512" height="512"/>
         <image name="shieldBlue" width="1024" height="1024"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
-        <image name="square.on.square" catalog="system" width="128" height="113"/>
         <image name="swipeBlue" width="1024" height="1024"/>
         <image name="trash" catalog="system" width="121" height="128"/>
         <image name="twitter" width="512" height="512"/>

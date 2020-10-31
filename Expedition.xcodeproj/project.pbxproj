@@ -25,6 +25,7 @@
 		0062526324208C08004B3136 /* Onb2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0062526224208C08004B3136 /* Onb2ViewController.swift */; };
 		0062526524208C26004B3136 /* Onb3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0062526424208C26004B3136 /* Onb3ViewController.swift */; };
 		006302BE23CC04760074BE1C /* IOS6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 006302BB23CC04760074BE1C /* IOS6@2x.png */; };
+		0068C29F254CE8A200183283 /* TabsMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0068C29E254CE8A200183283 /* TabsMainViewController.swift */; };
 		0074A5A22442A672003C92D2 /* DonationBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0074A5A12442A672003C92D2 /* DonationBoxViewController.swift */; };
 		0077891823D14005002AEE78 /* LightShatter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0077891623D14005002AEE78 /* LightShatter@2x.png */; };
 		0077891923D14005002AEE78 /* DarkShatter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0077891723D14005002AEE78 /* DarkShatter@2x.png */; };
@@ -117,6 +118,7 @@
 		0062526224208C08004B3136 /* Onb2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onb2ViewController.swift; sourceTree = "<group>"; };
 		0062526424208C26004B3136 /* Onb3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onb3ViewController.swift; sourceTree = "<group>"; };
 		006302BB23CC04760074BE1C /* IOS6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IOS6@2x.png"; sourceTree = "<group>"; };
+		0068C29E254CE8A200183283 /* TabsMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsMainViewController.swift; sourceTree = "<group>"; };
 		0074A5A12442A672003C92D2 /* DonationBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DonationBoxViewController.swift; path = "Expedition/View Controllers/DonationBoxViewController.swift"; sourceTree = SOURCE_ROOT; };
 		0077891623D14005002AEE78 /* LightShatter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LightShatter@2x.png"; sourceTree = "<group>"; };
 		0077891723D14005002AEE78 /* DarkShatter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DarkShatter@2x.png"; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 				0074A5A12442A672003C92D2 /* DonationBoxViewController.swift */,
 				5D793D0623D4E02D00539A44 /* IntroViewController.swift */,
 				5D5BA2E123C5910C00D98050 /* HistoryTableViewController.swift */,
+				0068C29E254CE8A200183283 /* TabsMainViewController.swift */,
 				0028F4F8245CC29500FB89B3 /* ContactViewController.swift */,
 				00805266254CB963008D7697 /* NotificationConstants.swift */,
 				5D41CBF223C5745C003A16F9 /* OptionsViewController.swift */,
@@ -524,6 +527,7 @@
 			files = (
 				5D1D0D5A23C6B0B300B4377E /* PersistenceService.swift in Sources */,
 				5D793D0723D4E02D00539A44 /* IntroViewController.swift in Sources */,
+				0068C29F254CE8A200183283 /* TabsMainViewController.swift in Sources */,
 				0080527D254CDB51008D7697 /* GradientTitleBar.swift in Sources */,
 				0074A5A22442A672003C92D2 /* DonationBoxViewController.swift in Sources */,
 				00805267254CB963008D7697 /* NotificationConstants.swift in Sources */,
