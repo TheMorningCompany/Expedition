@@ -938,10 +938,10 @@
             </objects>
             <point key="canvasLocation" x="11.594202898550726" y="752.67857142857144"/>
         </scene>
-        <!--View Controller-->
+        <!--Privacy Policy View Controller-->
         <scene sceneID="AxT-Ol-OCP">
             <objects>
-                <viewController id="7xe-KY-LMm" sceneMemberID="viewController">
+                <viewController id="7xe-KY-LMm" customClass="PrivacyPolicyViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xfx-CW-8Ns">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -959,10 +959,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="608-tl-8Ij">
-                                <rect key="frame" x="16" y="197" width="374" height="574"/>
+                                <rect key="frame" x="16" y="197" width="374" height="555"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aCe-in-jrk">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="555"/>
+                                        <color key="backgroundColor" name="Elevated"/>
+                                    </view>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DkZ-rX-ydI">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="574"/>
+                                        <rect key="frame" x="14" y="14" width="346" height="541"/>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <string key="text">In this document, “we”, “us”, “TMC” and “our” are taken to be in reference to The Morning Company. “The app” will mean Expedition
 
@@ -974,11 +978,15 @@ We do not collect any data or personal information in Expedition. We simply do n
                                     </textView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="DkZ-rX-ydI" secondAttribute="trailing" id="ePY-Gc-eW5"/>
-                                    <constraint firstItem="DkZ-rX-ydI" firstAttribute="top" secondItem="VPq-aG-fdM" secondAttribute="top" id="h3E-yB-qJD"/>
+                                    <constraint firstItem="aCe-in-jrk" firstAttribute="bottom" secondItem="c77-iX-9rA" secondAttribute="bottom" id="MeP-Nk-7ZG"/>
+                                    <constraint firstItem="aCe-in-jrk" firstAttribute="leading" secondItem="c77-iX-9rA" secondAttribute="leading" id="Tep-uf-JJi"/>
+                                    <constraint firstItem="aCe-in-jrk" firstAttribute="top" secondItem="c77-iX-9rA" secondAttribute="top" id="by5-MR-Gao"/>
+                                    <constraint firstAttribute="trailing" secondItem="DkZ-rX-ydI" secondAttribute="trailing" constant="14" id="ePY-Gc-eW5"/>
+                                    <constraint firstItem="DkZ-rX-ydI" firstAttribute="top" secondItem="VPq-aG-fdM" secondAttribute="top" constant="14" id="h3E-yB-qJD"/>
                                     <constraint firstAttribute="bottom" secondItem="DkZ-rX-ydI" secondAttribute="bottom" constant="-123" id="j0V-oq-ojI"/>
                                     <constraint firstItem="DkZ-rX-ydI" firstAttribute="bottom" secondItem="c77-iX-9rA" secondAttribute="bottom" id="l9b-cw-kVg"/>
-                                    <constraint firstItem="DkZ-rX-ydI" firstAttribute="leading" secondItem="608-tl-8Ij" secondAttribute="leading" id="pGS-zL-Rlq"/>
+                                    <constraint firstItem="DkZ-rX-ydI" firstAttribute="leading" secondItem="608-tl-8Ij" secondAttribute="leading" constant="14" id="pGS-zL-Rlq"/>
+                                    <constraint firstItem="aCe-in-jrk" firstAttribute="trailing" secondItem="c77-iX-9rA" secondAttribute="trailing" id="q7j-Kz-uIs"/>
                                     <constraint firstItem="DkZ-rX-ydI" firstAttribute="centerX" secondItem="608-tl-8Ij" secondAttribute="centerX" id="rR8-2B-TmF"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="VPq-aG-fdM"/>
@@ -990,20 +998,23 @@ We do not collect any data or personal information in Expedition. We simply do n
                         <constraints>
                             <constraint firstItem="Sjy-QE-lNu" firstAttribute="trailing" secondItem="608-tl-8Ij" secondAttribute="trailing" constant="24" id="1oH-iT-a7s"/>
                             <constraint firstItem="608-tl-8Ij" firstAttribute="top" secondItem="aIf-EG-g2D" secondAttribute="bottom" constant="15" id="6UN-cv-MAz"/>
-                            <constraint firstItem="Sjy-QE-lNu" firstAttribute="bottom" secondItem="608-tl-8Ij" secondAttribute="bottom" constant="15" id="Rjs-of-AwO"/>
                             <constraint firstItem="608-tl-8Ij" firstAttribute="leading" secondItem="Sjy-QE-lNu" secondAttribute="leading" constant="16" id="ZTp-qs-fYU"/>
                             <constraint firstItem="aIf-EG-g2D" firstAttribute="top" secondItem="zY3-ox-cvg" secondAttribute="bottom" constant="15" id="azk-5M-2vF"/>
                             <constraint firstItem="zY3-ox-cvg" firstAttribute="width" secondItem="zY3-ox-cvg" secondAttribute="height" multiplier="1:1" id="b3c-Qe-pbN"/>
                             <constraint firstItem="aIf-EG-g2D" firstAttribute="centerX" secondItem="Xfx-CW-8Ns" secondAttribute="centerX" id="dTW-Eh-H6t"/>
                             <constraint firstItem="zY3-ox-cvg" firstAttribute="top" secondItem="Sjy-QE-lNu" secondAttribute="top" constant="25" id="dsG-ga-5xo"/>
+                            <constraint firstItem="Sjy-QE-lNu" firstAttribute="bottom" secondItem="608-tl-8Ij" secondAttribute="bottom" constant="34" id="kMo-Fq-r9R"/>
                             <constraint firstItem="zY3-ox-cvg" firstAttribute="centerX" secondItem="Xfx-CW-8Ns" secondAttribute="centerX" id="whS-f0-tXW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cMF-83-LZt"/>
+                    <connections>
+                        <outlet property="textBG" destination="aCe-in-jrk" id="jc3-U4-9sJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b3l-Tg-Qvf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1884" y="753"/>
+            <point key="canvasLocation" x="1882.608695652174" y="752.67857142857144"/>
         </scene>
         <!--App Icons View Controller-->
         <scene sceneID="hcv-X3-56H">
@@ -1296,6 +1307,14 @@ We do not collect any data or personal information in Expedition. We simply do n
             </objects>
             <point key="canvasLocation" x="12" y="-772"/>
         </scene>
+        <!--Title Bar View Controller-->
+        <scene sceneID="Amx-mY-rxG">
+            <objects>
+                <hostingController id="eMb-mG-JIk" customClass="TitleBarViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W4m-nN-PWK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-751" y="1479"/>
+        </scene>
         <!--Contact View Controller-->
         <scene sceneID="ur2-dj-PR4">
             <objects>
@@ -1318,8 +1337,22 @@ We do not collect any data or personal information in Expedition. We simply do n
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="20I-gO-vkb">
                                                     <rect key="frame" x="18" y="0.0" width="378" height="225"/>
+                                                    <subviews>
+                                                        <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G3o-Xp-eHa">
+                                                            <rect key="frame" x="0.0" y="0.0" width="378" height="225"/>
+                                                            <connections>
+                                                                <segue destination="eMb-mG-JIk" kind="embed" id="9zN-fo-Gck"/>
+                                                            </connections>
+                                                        </containerView>
+                                                    </subviews>
                                                     <color key="backgroundColor" name="Expedition Blue"/>
                                                     <color key="tintColor" name="Expedition White"/>
+                                                    <constraints>
+                                                        <constraint firstItem="G3o-Xp-eHa" firstAttribute="leading" secondItem="20I-gO-vkb" secondAttribute="leading" id="IiF-O0-wrl"/>
+                                                        <constraint firstAttribute="trailing" secondItem="G3o-Xp-eHa" secondAttribute="trailing" id="M7R-z5-0uS"/>
+                                                        <constraint firstItem="G3o-Xp-eHa" firstAttribute="top" secondItem="20I-gO-vkb" secondAttribute="top" id="rCz-Qr-NjV"/>
+                                                        <constraint firstAttribute="bottom" secondItem="G3o-Xp-eHa" secondAttribute="bottom" id="uDP-Vb-Y8y"/>
+                                                    </constraints>
                                                 </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubble.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rTS-iG-TYY">
                                                     <rect key="frame" x="162" y="32.333333333333343" width="90" height="89"/>
@@ -1367,7 +1400,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xch-qo-BNJ">
                                                     <rect key="frame" x="38" y="20" width="60" height="60"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yt" translatesAutoresizingMaskIntoConstraints="NO" id="bPC-hr-3b5">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YT" translatesAutoresizingMaskIntoConstraints="NO" id="bPC-hr-3b5">
                                                             <rect key="frame" x="9" y="9" width="42" height="42"/>
                                                         </imageView>
                                                     </subviews>
@@ -1420,7 +1453,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wy9-Ld-DNe">
                                                     <rect key="frame" x="38" y="20" width="60" height="60"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ig" translatesAutoresizingMaskIntoConstraints="NO" id="WNb-O7-ybv">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IG" translatesAutoresizingMaskIntoConstraints="NO" id="WNb-O7-ybv">
                                                             <rect key="frame" x="9" y="9" width="42" height="42"/>
                                                         </imageView>
                                                     </subviews>
@@ -1473,7 +1506,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0pm-6U-hKg">
                                                     <rect key="frame" x="38" y="20" width="60" height="60"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gh" translatesAutoresizingMaskIntoConstraints="NO" id="i75-Hm-KMd">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GH" translatesAutoresizingMaskIntoConstraints="NO" id="i75-Hm-KMd">
                                                             <rect key="frame" x="9" y="9" width="42" height="42"/>
                                                         </imageView>
                                                     </subviews>
@@ -1689,6 +1722,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                         <outlet property="cellBGreddit" destination="t49-IG-5or" id="zsA-Da-3mS"/>
                         <outlet property="cellBGtwitter" destination="ynD-Wb-Cya" id="G4f-jP-LUx"/>
                         <outlet property="ghImage" destination="0pm-6U-hKg" id="DU0-zH-mp2"/>
+                        <outlet property="gradientTitle" destination="G3o-Xp-eHa" id="zNe-Ux-Dqz"/>
                         <outlet property="igImage" destination="wy9-Ld-DNe" id="9jY-3G-zSL"/>
                         <outlet property="mailImage" destination="V5j-HV-X2U" id="GPc-Cl-PtJ"/>
                         <outlet property="redditImage" destination="eWT-ph-6xn" id="LiL-Ke-7Yd"/>
@@ -1803,20 +1837,21 @@ We do not collect any data or personal information in Expedition. We simply do n
         <image name="DarkUI" width="651.66668701171875" height="651.66668701171875"/>
         <image name="Desktop" width="651.66668701171875" height="651.66668701171875"/>
         <image name="FadeUI" width="651.66668701171875" height="651.66668701171875"/>
+        <image name="GH" width="512" height="512"/>
         <image name="GlyphFadeUI" width="651.66668701171875" height="651.66668701171875"/>
+        <image name="IG" width="512" height="512"/>
         <image name="LightUI" width="651.66668701171875" height="651.66668701171875"/>
         <image name="Reload" width="651.66668701171875" height="651.66668701171875"/>
         <image name="ShadowUI" width="651.66668701171875" height="651.66668701171875"/>
         <image name="Share" width="651.66668701171875" height="651.66668701171875"/>
         <image name="Tabs" width="651.66668701171875" height="651.66668701171875"/>
+        <image name="YT" width="512" height="512"/>
         <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="blueapp" width="1024" height="1024"/>
         <image name="bubble.right" catalog="system" width="128" height="110"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="gearBlue" width="1024" height="1024"/>
-        <image name="gh" width="512" height="512"/>
-        <image name="ig" width="512" height="512"/>
         <image name="mail" width="512" height="512"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="reddit" width="512" height="512"/>
@@ -1827,7 +1862,6 @@ We do not collect any data or personal information in Expedition. We simply do n
         <image name="trash" catalog="system" width="121" height="128"/>
         <image name="twitter" width="512" height="512"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
-        <image name="yt" width="512" height="512"/>
         <namedColor name="Elevated">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

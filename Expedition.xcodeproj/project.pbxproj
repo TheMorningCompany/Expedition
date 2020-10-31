@@ -30,7 +30,9 @@
 		0077891923D14005002AEE78 /* DarkShatter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0077891723D14005002AEE78 /* DarkShatter@2x.png */; };
 		0078502F23CD688E00BDB94C /* Prism@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078502E23CD688E00BDB94C /* Prism@2x.png */; };
 		00805267254CB963008D7697 /* NotificationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00805266254CB963008D7697 /* NotificationConstants.swift */; };
-		00805275254CD9A3008D7697 /* GradientTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00805274254CD9A3008D7697 /* GradientTitle.swift */; };
+		0080527D254CDB51008D7697 /* GradientTitleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0080527C254CDB51008D7697 /* GradientTitleBar.swift */; };
+		00805285254CDC0A008D7697 /* TitleBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00805284254CDC0A008D7697 /* TitleBarViewController.swift */; };
+		0080528A254CDDA7008D7697 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00805289254CDDA6008D7697 /* PrivacyPolicyViewController.swift */; };
 		0081CCE224280A720097C2C6 /* TabsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081CCE124280A720097C2C6 /* TabsTableViewController.swift */; };
 		00A91DBD23A84AFF00F045F7 /* DarkIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A91DBB23A84AFF00F045F7 /* DarkIcon@2x.png */; };
 		00AB6BA623CD37DE0088E269 /* Metal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AB6BA523CD37DD0088E269 /* Metal@2x.png */; };
@@ -120,7 +122,9 @@
 		0077891723D14005002AEE78 /* DarkShatter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DarkShatter@2x.png"; sourceTree = "<group>"; };
 		0078502E23CD688E00BDB94C /* Prism@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Prism@2x.png"; sourceTree = "<group>"; };
 		00805266254CB963008D7697 /* NotificationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationConstants.swift; sourceTree = "<group>"; };
-		00805274254CD9A3008D7697 /* GradientTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientTitle.swift; sourceTree = "<group>"; };
+		0080527C254CDB51008D7697 /* GradientTitleBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientTitleBar.swift; sourceTree = "<group>"; };
+		00805284254CDC0A008D7697 /* TitleBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBarViewController.swift; sourceTree = "<group>"; };
+		00805289254CDDA6008D7697 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		0081CCE124280A720097C2C6 /* TabsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsTableViewController.swift; sourceTree = "<group>"; };
 		00A91DBB23A84AFF00F045F7 /* DarkIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DarkIcon@2x.png"; sourceTree = "<group>"; };
 		00AB6BA523CD37DD0088E269 /* Metal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Metal@2x.png"; sourceTree = "<group>"; };
@@ -269,8 +273,9 @@
 		0062525F24208BD2004B3136 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				00805274254CD9A3008D7697 /* GradientTitle.swift */,
+				0080527C254CDB51008D7697 /* GradientTitleBar.swift */,
 				001366BB2307B61F009A102E /* Main.storyboard */,
+				00805284254CDC0A008D7697 /* TitleBarViewController.swift */,
 				0062525C242080AE004B3136 /* Onboarding.storyboard */,
 				001366C02307B620009A102E /* LaunchScreen.storyboard */,
 			);
@@ -303,6 +308,7 @@
 				0028F4F8245CC29500FB89B3 /* ContactViewController.swift */,
 				00805266254CB963008D7697 /* NotificationConstants.swift */,
 				5D41CBF223C5745C003A16F9 /* OptionsViewController.swift */,
+				00805289254CDDA6008D7697 /* PrivacyPolicyViewController.swift */,
 				0081CCE124280A720097C2C6 /* TabsTableViewController.swift */,
 				000D80262427F5CA005E0CA1 /* AppIconsViewController.swift */,
 				5D865CC323E1013700374B07 /* BlankViewController.swift */,
@@ -516,9 +522,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00805275254CD9A3008D7697 /* GradientTitle.swift in Sources */,
 				5D1D0D5A23C6B0B300B4377E /* PersistenceService.swift in Sources */,
 				5D793D0723D4E02D00539A44 /* IntroViewController.swift in Sources */,
+				0080527D254CDB51008D7697 /* GradientTitleBar.swift in Sources */,
 				0074A5A22442A672003C92D2 /* DonationBoxViewController.swift in Sources */,
 				00805267254CB963008D7697 /* NotificationConstants.swift in Sources */,
 				5D41CBF123C569B6003A16F9 /* SettingsBundleHelper.swift in Sources */,
@@ -531,6 +537,8 @@
 				5D9AE08F24371ABE00239559 /* Util.swift in Sources */,
 				0062526124208C02004B3136 /* Onb1ViewController.swift in Sources */,
 				000D80272427F5CA005E0CA1 /* AppIconsViewController.swift in Sources */,
+				0080528A254CDDA7008D7697 /* PrivacyPolicyViewController.swift in Sources */,
+				00805285254CDC0A008D7697 /* TitleBarViewController.swift in Sources */,
 				5D56ABD9243C1F540073677F /* Sharing.swift in Sources */,
 				5D793D0523D4DF5C00539A44 /* Swift+Gif.swift in Sources */,
 				5D41CBF323C5745C003A16F9 /* OptionsViewController.swift in Sources */,

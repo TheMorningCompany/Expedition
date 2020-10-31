@@ -24,6 +24,7 @@ class ContactViewController: UITableViewController {
     @IBOutlet weak var cellBGreddit: UIView!
     @IBOutlet weak var redditImage: UIView!
     @IBOutlet weak var twitterImage: UIView!
+    @IBOutlet weak var gradientTitle: UIView!
     
     
     override func viewDidLoad() {
@@ -44,6 +45,11 @@ class ContactViewController: UITableViewController {
         self.cellBGreddit.layer.cornerCurve = .continuous
         self.cellBGtwitter.layer.cornerRadius = 20.0
         self.cellBGtwitter.layer.cornerCurve = .continuous
+        self.gradientTitle.layer.cornerRadius = 20.0
+        self.gradientTitle.layer.cornerCurve = .continuous
+        
+        
+        gradientTitle.layer.masksToBounds = true
         
         //Icon Radius
         self.ytImage.layer.cornerRadius = 14.0
