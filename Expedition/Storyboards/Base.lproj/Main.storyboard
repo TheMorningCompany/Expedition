@@ -211,7 +211,7 @@
             <objects>
                 <tableViewController title="History" id="65v-MH-vlF" customClass="HistoryTableViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="26q-fx-QMl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -267,7 +267,7 @@
             <objects>
                 <tableViewController id="9OM-wm-4ti" customClass="OptionsViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="tCM-8D-bll">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -668,7 +668,7 @@
             <objects>
                 <viewController id="gGB-r8-M28" customClass="TabsMainViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bdn-XH-thH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cma-gM-7na">
@@ -723,7 +723,7 @@
             <objects>
                 <tableViewController id="WlA-qs-nnO" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Aps-Yt-xYK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -990,7 +990,7 @@
             <objects>
                 <viewController id="7xe-KY-LMm" customClass="PrivacyPolicyViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xfx-CW-8Ns">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NH1-AE-hVy">
@@ -1003,14 +1003,14 @@
                                 </connections>
                             </containerView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shield.lefthalf.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zY3-ox-cvg">
-                                <rect key="frame" x="162" y="43.000000000000007" width="90" height="88.666666666666671"/>
+                                <rect key="frame" x="162" y="51.000000000000007" width="90" height="88.666666666666671"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="hMP-rf-DyJ"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="privacy policy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIf-EG-g2D">
-                                <rect key="frame" x="78.666666666666686" y="152" width="257" height="52"/>
+                                <rect key="frame" x="78.666666666666686" y="160" width="257" height="52"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1062,7 +1062,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                             <constraint firstItem="zY3-ox-cvg" firstAttribute="width" secondItem="zY3-ox-cvg" secondAttribute="height" multiplier="1:1" id="b3c-Qe-pbN"/>
                             <constraint firstItem="NH1-AE-hVy" firstAttribute="top" secondItem="Sjy-QE-lNu" secondAttribute="top" constant="18" id="dMO-ML-5Tu"/>
                             <constraint firstItem="aIf-EG-g2D" firstAttribute="centerX" secondItem="Xfx-CW-8Ns" secondAttribute="centerX" id="dTW-Eh-H6t"/>
-                            <constraint firstItem="zY3-ox-cvg" firstAttribute="top" secondItem="NH1-AE-hVy" secondAttribute="top" constant="24" id="dsG-ga-5xo"/>
+                            <constraint firstItem="zY3-ox-cvg" firstAttribute="top" secondItem="NH1-AE-hVy" secondAttribute="topMargin" constant="24" id="dsG-ga-5xo"/>
                             <constraint firstItem="Sjy-QE-lNu" firstAttribute="bottom" secondItem="608-tl-8Ij" secondAttribute="bottom" constant="34" id="kMo-Fq-r9R"/>
                             <constraint firstItem="zY3-ox-cvg" firstAttribute="centerX" secondItem="Xfx-CW-8Ns" secondAttribute="centerX" id="whS-f0-tXW"/>
                         </constraints>
@@ -1082,7 +1082,7 @@ We do not collect any data or personal information in Expedition. We simply do n
             <objects>
                 <tableViewController id="9km-4P-Tvs" customClass="AppIconsViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="JlY-hT-bu4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -1382,7 +1382,7 @@ We do not collect any data or personal information in Expedition. We simply do n
             <objects>
                 <tableViewController id="If3-Iy-N99" customClass="ContactViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="8UY-ce-B6q">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
