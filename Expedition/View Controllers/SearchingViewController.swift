@@ -111,10 +111,9 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     
     
     @objc func appMovedToBackground() {
-        if let fadeOnClose:Bool = UserDefaults.standard.bool(forKey: "fade_on_close") {
-            if (fadeOnClose) {
-                performSegue(withIdentifier: "showBlankScreen", sender: self)
-            }
+        let fadeOnClose = UserDefaults.standard.bool(forKey: "fade_on_close")
+        if (fadeOnClose) {
+            performSegue(withIdentifier: "showBlankScreen", sender: self)
         }
     }
     

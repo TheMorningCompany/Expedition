@@ -66,17 +66,29 @@ class OptionsViewController: UITableViewController {
         UserDefaults.standard.register(defaults: appDefaults)
     }
     
+//    @objc func appMovedToBackground() {
+//        let fadeOnClose = UserDefaults.standard.bool(forKey: "fade_on_close")
+//        if (fadeOnClose) {
+//            performSegue(withIdentifier: "showBlankScreen", sender: self)
+//        }
+//    }
+    
     @objc func defaultsChanged(){
-        if let saveHistory:Bool = UserDefaults.standard.bool(forKey: "save_history") {
+        let saveHistory = UserDefaults.standard.bool(forKey: "save_history")
+        if (saveHistory) {
             historySwitch.setOn(saveHistory, animated: false)
         }
-        if let keepCookies:Bool = UserDefaults.standard.bool(forKey: "keep_cookies") {
+        
+        let keepCookies = UserDefaults.standard.bool(forKey: "keep_cookies")
+        if (keepCookies) {
             keepCookiesSwitch.setOn(keepCookies, animated: false)
         }
-        if let reopenTabs:Bool = UserDefaults.standard.bool(forKey: "reopen_tabs") {
+        let reopenTabs = UserDefaults.standard.bool(forKey: "reopen_tabs")
+        if (reopenTabs) {
             reopenTabsSwitch.setOn(reopenTabs, animated: false)
         }
-        if let fadeOnClose:Bool = UserDefaults.standard.bool(forKey: "fade_on_close") {
+        let fadeOnClose = UserDefaults.standard.bool(forKey: "fade_on_close")
+        if (fadeOnClose) {
             fadeOnCloseSwitch.setOn(fadeOnClose, animated: false)
         }
     }

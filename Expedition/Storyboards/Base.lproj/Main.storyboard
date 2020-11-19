@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E3a-YU-zsV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E3a-YU-zsV">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -1023,7 +1023,7 @@
                                         <color key="backgroundColor" name="Elevated"/>
                                     </view>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DkZ-rX-ydI">
-                                        <rect key="frame" x="14" y="0.0" width="350" height="481"/>
+                                        <rect key="frame" x="18" y="18" width="342" height="463"/>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <string key="text">In this document, “we”, “us”, “TMC” and “our” are taken to be in reference to The Morning Company. “The app” will mean Expedition
 
@@ -1038,11 +1038,11 @@ We do not collect any data or personal information in Expedition. We simply do n
                                     <constraint firstItem="aCe-in-jrk" firstAttribute="bottom" secondItem="c77-iX-9rA" secondAttribute="bottom" id="MeP-Nk-7ZG"/>
                                     <constraint firstItem="aCe-in-jrk" firstAttribute="leading" secondItem="c77-iX-9rA" secondAttribute="leading" id="Tep-uf-JJi"/>
                                     <constraint firstItem="aCe-in-jrk" firstAttribute="top" secondItem="c77-iX-9rA" secondAttribute="top" id="by5-MR-Gao"/>
-                                    <constraint firstAttribute="trailing" secondItem="DkZ-rX-ydI" secondAttribute="trailing" constant="14" id="ePY-Gc-eW5"/>
-                                    <constraint firstItem="DkZ-rX-ydI" firstAttribute="top" secondItem="VPq-aG-fdM" secondAttribute="top" id="h3E-yB-qJD"/>
+                                    <constraint firstAttribute="trailing" secondItem="DkZ-rX-ydI" secondAttribute="trailing" constant="18" id="ePY-Gc-eW5"/>
+                                    <constraint firstItem="DkZ-rX-ydI" firstAttribute="top" secondItem="VPq-aG-fdM" secondAttribute="top" constant="18" id="h3E-yB-qJD"/>
                                     <constraint firstAttribute="bottom" secondItem="DkZ-rX-ydI" secondAttribute="bottom" constant="-123" id="j0V-oq-ojI"/>
                                     <constraint firstItem="DkZ-rX-ydI" firstAttribute="bottom" secondItem="c77-iX-9rA" secondAttribute="bottom" id="l9b-cw-kVg"/>
-                                    <constraint firstItem="DkZ-rX-ydI" firstAttribute="leading" secondItem="608-tl-8Ij" secondAttribute="leading" constant="14" id="pGS-zL-Rlq"/>
+                                    <constraint firstItem="DkZ-rX-ydI" firstAttribute="leading" secondItem="608-tl-8Ij" secondAttribute="leading" constant="18" id="pGS-zL-Rlq"/>
                                     <constraint firstItem="aCe-in-jrk" firstAttribute="trailing" secondItem="c77-iX-9rA" secondAttribute="trailing" id="q7j-Kz-uIs"/>
                                     <constraint firstItem="DkZ-rX-ydI" firstAttribute="centerX" secondItem="608-tl-8Ij" secondAttribute="centerX" id="rR8-2B-TmF"/>
                                 </constraints>
