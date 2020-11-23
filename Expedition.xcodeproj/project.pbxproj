@@ -26,6 +26,7 @@
 		0062526524208C26004B3136 /* Onb3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0062526424208C26004B3136 /* Onb3ViewController.swift */; };
 		006302BE23CC04760074BE1C /* IOS6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 006302BB23CC04760074BE1C /* IOS6@2x.png */; };
 		0068C29F254CE8A200183283 /* TabsMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0068C29E254CE8A200183283 /* TabsMainViewController.swift */; };
+		0070A2AD2568A2F700545813 /* CellBGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0070A2AC2568A2F700545813 /* CellBGView.swift */; };
 		0074A5A22442A672003C92D2 /* DonationBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0074A5A12442A672003C92D2 /* DonationBoxViewController.swift */; };
 		0077891823D14005002AEE78 /* LightShatter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0077891623D14005002AEE78 /* LightShatter@2x.png */; };
 		0077891923D14005002AEE78 /* DarkShatter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0077891723D14005002AEE78 /* DarkShatter@2x.png */; };
@@ -119,6 +120,7 @@
 		0062526424208C26004B3136 /* Onb3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onb3ViewController.swift; sourceTree = "<group>"; };
 		006302BB23CC04760074BE1C /* IOS6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IOS6@2x.png"; sourceTree = "<group>"; };
 		0068C29E254CE8A200183283 /* TabsMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsMainViewController.swift; sourceTree = "<group>"; };
+		0070A2AC2568A2F700545813 /* CellBGView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellBGView.swift; sourceTree = "<group>"; };
 		0074A5A12442A672003C92D2 /* DonationBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DonationBoxViewController.swift; path = "Expedition/View Controllers/DonationBoxViewController.swift"; sourceTree = SOURCE_ROOT; };
 		0077891623D14005002AEE78 /* LightShatter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LightShatter@2x.png"; sourceTree = "<group>"; };
 		0077891723D14005002AEE78 /* DarkShatter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DarkShatter@2x.png"; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 			children = (
 				0080527C254CDB51008D7697 /* GradientTitleBar.swift */,
 				001366BB2307B61F009A102E /* Main.storyboard */,
+				0070A2AC2568A2F700545813 /* CellBGView.swift */,
 				00805284254CDC0A008D7697 /* TitleBarViewController.swift */,
 				0062525C242080AE004B3136 /* Onboarding.storyboard */,
 				001366C02307B620009A102E /* LaunchScreen.storyboard */,
@@ -554,6 +557,7 @@
 				001366BA2307B61F009A102E /* SearchingViewController.swift in Sources */,
 				001366B82307B61F009A102E /* AppDelegate.swift in Sources */,
 				D6030CDC23A89669003C6911 /* Gestures.swift in Sources */,
+				0070A2AD2568A2F700545813 /* CellBGView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

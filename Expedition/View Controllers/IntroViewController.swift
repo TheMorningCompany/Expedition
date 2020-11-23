@@ -16,7 +16,7 @@ class IntroViewController: UIViewController {
 
         print("LOADED INTRO VIEW CONTROLLER")
         
-        OptionsViewController().registerSettingsBundle()
+//        OptionsViewController().registerSettingsBundle()
         
         
         // Do any additional setup after loading the view.
