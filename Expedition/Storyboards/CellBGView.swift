@@ -13,6 +13,7 @@ class CellBGView: UIView {
     override func awakeFromNib() {
         layer.cornerRadius = 20.0
         layer.cornerCurve = .continuous
+        layer.masksToBounds = true
     }
 
 }
