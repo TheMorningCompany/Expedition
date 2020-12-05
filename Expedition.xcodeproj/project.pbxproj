@@ -36,6 +36,8 @@
 		00805285254CDC0A008D7697 /* TitleBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00805284254CDC0A008D7697 /* TitleBarViewController.swift */; };
 		0080528A254CDDA7008D7697 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00805289254CDDA6008D7697 /* PrivacyPolicyViewController.swift */; };
 		0081CCE224280A720097C2C6 /* TabsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081CCE124280A720097C2C6 /* TabsTableViewController.swift */; };
+		009EBEC9257C362E00C9382C /* CustomizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009EBEC8257C362E00C9382C /* CustomizeViewController.swift */; };
+		009EBED5257C387800C9382C /* ReopenOnLastPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009EBED4257C387800C9382C /* ReopenOnLastPageViewController.swift */; };
 		00A91DBD23A84AFF00F045F7 /* DarkIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A91DBB23A84AFF00F045F7 /* DarkIcon@2x.png */; };
 		00AB6BA623CD37DE0088E269 /* Metal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AB6BA523CD37DD0088E269 /* Metal@2x.png */; };
 		00C4A4C623C509E800C18F65 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00C4A4C523C509E800C18F65 /* Settings.bundle */; };
@@ -130,6 +132,8 @@
 		00805284254CDC0A008D7697 /* TitleBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBarViewController.swift; sourceTree = "<group>"; };
 		00805289254CDDA6008D7697 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		0081CCE124280A720097C2C6 /* TabsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsTableViewController.swift; sourceTree = "<group>"; };
+		009EBEC8257C362E00C9382C /* CustomizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeViewController.swift; sourceTree = "<group>"; };
+		009EBED4257C387800C9382C /* ReopenOnLastPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReopenOnLastPageViewController.swift; sourceTree = "<group>"; };
 		00A91DBB23A84AFF00F045F7 /* DarkIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DarkIcon@2x.png"; sourceTree = "<group>"; };
 		00AB6BA523CD37DD0088E269 /* Metal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Metal@2x.png"; sourceTree = "<group>"; };
 		00AD59E923CB986E007C6495 /* ColorShadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ColorShadow@2x.png"; sourceTree = "<group>"; };
@@ -278,13 +282,22 @@
 			isa = PBXGroup;
 			children = (
 				0080527C254CDB51008D7697 /* GradientTitleBar.swift */,
-				001366BB2307B61F009A102E /* Main.storyboard */,
 				0070A2AC2568A2F700545813 /* CellBGView.swift */,
+				001366BB2307B61F009A102E /* Main.storyboard */,
 				00805284254CDC0A008D7697 /* TitleBarViewController.swift */,
 				0062525C242080AE004B3136 /* Onboarding.storyboard */,
 				001366C02307B620009A102E /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		009EBECD257C363A00C9382C /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				009EBED4257C387800C9382C /* ReopenOnLastPageViewController.swift */,
+				009EBEC8257C362E00C9382C /* CustomizeViewController.swift */,
+			);
+			path = Options;
 			sourceTree = "<group>";
 		};
 		5D56ABCD243C1CF50073677F /* Classes */ = {
@@ -318,6 +331,7 @@
 				0081CCE124280A720097C2C6 /* TabsTableViewController.swift */,
 				000D80262427F5CA005E0CA1 /* AppIconsViewController.swift */,
 				5D865CC323E1013700374B07 /* BlankViewController.swift */,
+				009EBECD257C363A00C9382C /* Options */,
 				5D56ABD3243C1D970073677F /* Onboarding */,
 			);
 			path = "View Controllers";
@@ -533,6 +547,7 @@
 				0068C29F254CE8A200183283 /* TabsMainViewController.swift in Sources */,
 				0080527D254CDB51008D7697 /* GradientTitleBar.swift in Sources */,
 				0074A5A22442A672003C92D2 /* DonationBoxViewController.swift in Sources */,
+				009EBED5257C387800C9382C /* ReopenOnLastPageViewController.swift in Sources */,
 				00805267254CB963008D7697 /* NotificationConstants.swift in Sources */,
 				5D41CBF123C569B6003A16F9 /* SettingsBundleHelper.swift in Sources */,
 				0062526324208C08004B3136 /* Onb2ViewController.swift in Sources */,
@@ -554,6 +569,7 @@
 				5D56ABD6243C1EBE0073677F /* HistoryElement+CoreDataClass.swift in Sources */,
 				0062526524208C26004B3136 /* Onb3ViewController.swift in Sources */,
 				5D5BA2E223C5910C00D98050 /* HistoryTableViewController.swift in Sources */,
+				009EBEC9257C362E00C9382C /* CustomizeViewController.swift in Sources */,
 				001366BA2307B61F009A102E /* SearchingViewController.swift in Sources */,
 				001366B82307B61F009A102E /* AppDelegate.swift in Sources */,
 				D6030CDC23A89669003C6911 /* Gestures.swift in Sources */,
