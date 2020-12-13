@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E3a-YU-zsV">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController storyboardIdentifier="IntroViewController" title="GifView" id="E3a-YU-zsV" customClass="IntroViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3n1-9b-CYd">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bwc-XX-UMS">
-                                <rect key="frame" x="0.0" y="44" width="390" height="766"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="v5J-8J-4Di"/>
@@ -46,7 +46,7 @@
             <objects>
                 <viewController storyboardIdentifier="mainVC" title="Web" id="BYZ-38-t0r" customClass="ViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6B-o4-NEu">
@@ -54,11 +54,11 @@
                                 <state key="normal" image="chevron.down" catalog="system"/>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="JeA-nV-CKj">
-                                <rect key="frame" x="355" y="62" width="20" height="20"/>
+                                <rect key="frame" x="340" y="62" width="20" height="20"/>
                                 <color key="color" systemColor="labelColor"/>
                             </activityIndicatorView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="poK-nr-9UJ">
-                                <rect key="frame" x="39" y="55" width="308" height="36"/>
+                                <rect key="frame" x="39" y="55" width="293" height="36"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="2Fp-Z7-fL9"/>
@@ -74,7 +74,7 @@
                                 </connections>
                             </textField>
                             <wkWebView opaque="NO" contentMode="scaleToFill" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Sr-kh-OPV">
-                                <rect key="frame" x="0.0" y="90" width="390" height="671"/>
+                                <rect key="frame" x="0.0" y="90" width="375" height="639"/>
                                 <color key="backgroundColor" name="Expedition White"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <gestureRecognizers/>
@@ -88,7 +88,7 @@
                                 </connections>
                             </wkWebView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdo-tH-OsN">
-                                <rect key="frame" x="0.0" y="761" width="390" height="49"/>
+                                <rect key="frame" x="0.0" y="729" width="375" height="49"/>
                                 <color key="backgroundColor" name="Expedition White"/>
                                 <items>
                                     <barButtonItem image="chevron.left" catalog="system" id="GpC-A9-Dyx">
@@ -193,7 +193,7 @@
             <objects>
                 <viewController storyboardIdentifier="Blank Screen" id="KbL-uP-Hd2" customClass="BlankViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lAE-Ui-ynU">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="LRz-3c-U6J"/>
                         <color key="backgroundColor" name="Expedition White"/>
@@ -211,7 +211,7 @@
             <objects>
                 <tableViewController title="History" id="65v-MH-vlF" customClass="HistoryTableViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="26q-fx-QMl">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -220,14 +220,14 @@
                         <color key="sectionIndexTrackingBackgroundColor" name="Expedition White"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextCell" textLabel="7dK-fL-zc3" rowHeight="93" style="IBUITableViewCellStyleDefault" id="jPf-bm-8lT">
-                                <rect key="frame" x="20" y="55.333332061767578" width="350" height="93"/>
+                                <rect key="frame" x="16" y="55.333332061767578" width="343" height="93"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jPf-bm-8lT" id="7Wr-Ex-Ulu" customClass="UITableView">
-                                    <rect key="frame" x="0.0" y="0.0" width="350" height="93"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="93"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7dK-fL-zc3">
-                                            <rect key="frame" x="20" y="0.0" width="310" height="93"/>
+                                            <rect key="frame" x="16" y="0.0" width="311" height="93"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <gestureRecognizers/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
@@ -267,7 +267,7 @@
             <objects>
                 <tableViewController id="9OM-wm-4ti" customClass="OptionsViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="tCM-8D-bll">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="734"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -277,14 +277,14 @@
                             <tableViewSection id="uvQ-jX-yWd">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="228" id="BJf-m0-cAD">
-                                        <rect key="frame" x="0.0" y="18" width="390" height="228"/>
+                                        <rect key="frame" x="0.0" y="18" width="375" height="228"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BJf-m0-cAD" id="161-v2-uzh">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="228"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="228"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="din-gV-HVn">
-                                                    <rect key="frame" x="18" y="0.0" width="354" height="225"/>
+                                                    <rect key="frame" x="18" y="0.0" width="339" height="225"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="225" id="8XL-vB-IAO"/>
                                                     </constraints>
@@ -293,7 +293,7 @@
                                                     </connections>
                                                 </containerView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gearshape" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vOt-Cb-wAH">
-                                                    <rect key="frame" x="150" y="35.333333333333314" width="90" height="89.666666666666657"/>
+                                                    <rect key="frame" x="142.66666666666666" y="35.333333333333314" width="90" height="89.666666666666657"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="90" id="RjR-aG-3u5"/>
@@ -301,7 +301,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="options" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tI5-Jc-FcH">
-                                                    <rect key="frame" x="125" y="140" width="140" height="52"/>
+                                                    <rect key="frame" x="117.66666666666669" y="140" width="140" height="52"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -325,14 +325,14 @@
                             <tableViewSection id="1uj-i3-ex1">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="JfL-OY-4Ez">
-                                        <rect key="frame" x="0.0" y="282" width="390" height="106"/>
+                                        <rect key="frame" x="0.0" y="282" width="375" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JfL-OY-4Ez" id="ScI-A3-rjN">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XG0-uH-TR6" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="339" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                     <gestureRecognizers/>
                                                 </view>
@@ -380,15 +380,19 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="w5v-PF-NWI">
-                                        <rect key="frame" x="0.0" y="388" width="390" height="106"/>
+                                        <rect key="frame" x="0.0" y="388" width="375" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="w5v-PF-NWI" id="JuU-06-mgD">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJM-x2-ZJg" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="339" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
+                                                    <gestureRecognizers/>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="z5d-Ed-2t8" appends="YES" id="zNx-uj-7m7"/>
+                                                    </connections>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fOd-h9-oJr">
                                                     <rect key="frame" x="38" y="33" width="40" height="40"/>
@@ -431,14 +435,14 @@
                                         <gestureRecognizers/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="m1D-LX-yHq">
-                                        <rect key="frame" x="0.0" y="494" width="390" height="106"/>
+                                        <rect key="frame" x="0.0" y="494" width="375" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m1D-LX-yHq" id="4Zq-hb-e9B">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ERA-8J-0Sf" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="339" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EWm-H2-ZTf">
@@ -482,14 +486,14 @@
                                         <gestureRecognizers/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="rSB-iU-vr5">
-                                        <rect key="frame" x="0.0" y="600" width="390" height="106"/>
+                                        <rect key="frame" x="0.0" y="600" width="375" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rSB-iU-vr5" id="ULO-2K-8rn">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="41C-oV-ATR" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="339" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                     <gestureRecognizers/>
                                                     <connections>
@@ -568,6 +572,11 @@
                         <segue destination="WlA-qs-nnO" kind="show" id="aju-kz-bce"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="z5d-Ed-2t8" userLabel="goToLearnMore">
+                    <connections>
+                        <segue destination="Kbs-EM-jiJ" kind="show" id="xVe-70-ah4"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-725" y="2219"/>
         </scene>
@@ -576,35 +585,35 @@
             <objects>
                 <tableViewController id="DpS-9H-eTc" customClass="TabsTableViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="w6d-vX-c8d">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="734"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tabCell" rowHeight="292" id="1mP-up-XJs">
-                                <rect key="frame" x="20" y="55.333332061767578" width="350" height="292"/>
+                                <rect key="frame" x="16" y="55.333332061767578" width="343" height="292"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1mP-up-XJs" id="pzG-KQ-U1C">
-                                    <rect key="frame" x="0.0" y="0.0" width="350" height="292"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="292"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LOU-Ib-35C" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="277"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="277"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         </view>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LEQ-gE-gC4">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="177"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="173.33333333333334"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="LEQ-gE-gC4" secondAttribute="height" multiplier="900:455" id="WuP-Fg-GEu"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="website title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lk4-gx-BpT">
-                                            <rect key="frame" x="25" y="187" width="151.66666666666666" height="34"/>
+                                            <rect key="frame" x="21" y="183.33333333333334" width="151.66666666666666" height="34"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="website url" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGb-6P-Elf">
-                                            <rect key="frame" x="25" y="223" width="92" height="25"/>
+                                            <rect key="frame" x="21" y="219.33333333333334" width="92" height="25"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -646,17 +655,17 @@
             <objects>
                 <viewController id="gGB-r8-M28" customClass="TabsMainViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bdn-XH-thH">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="734"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cma-gM-7na">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="734"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
                                 <connections>
                                     <segue destination="DpS-9H-eTc" kind="embed" id="Dfr-TQ-nFs"/>
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFR-xc-63y">
-                                <rect key="frame" x="18" y="641" width="354" height="55"/>
+                                <rect key="frame" x="18" y="609" width="339" height="55"/>
                                 <color key="backgroundColor" name="Expedition Blue"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="cfw-dJ-aoi"/>
@@ -701,7 +710,7 @@
             <objects>
                 <tableViewController id="WlA-qs-nnO" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Aps-Yt-xYK">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="734"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -710,20 +719,20 @@
                             <tableViewSection id="7se-bp-Mli">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="225" id="9le-bG-TjO">
-                                        <rect key="frame" x="0.0" y="18" width="390" height="225"/>
+                                        <rect key="frame" x="0.0" y="18" width="375" height="225"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9le-bG-TjO" id="Myb-8M-fcW">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="225"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="225"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ovc-jF-br1" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="0.0" width="354" height="225"/>
+                                                    <rect key="frame" x="18" y="0.0" width="339" height="225"/>
                                                     <connections>
                                                         <segue destination="eMb-mG-JIk" kind="embed" id="2e9-22-2b8"/>
                                                     </connections>
                                                 </containerView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scribble.variable" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wW4-A2-pac">
-                                                    <rect key="frame" x="145" y="29.666666666666671" width="100" height="99.333333333333343"/>
+                                                    <rect key="frame" x="137.66666666666666" y="29.666666666666671" width="100" height="99.333333333333343"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="wW4-A2-pac" secondAttribute="height" multiplier="1:1" id="1m7-YY-plj"/>
@@ -731,7 +740,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gestures" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYd-ZS-avc">
-                                                    <rect key="frame" x="115.66666666666669" y="140" width="159" height="52"/>
+                                                    <rect key="frame" x="108" y="140" width="159" height="52"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -754,75 +763,25 @@
                             </tableViewSection>
                             <tableViewSection id="FYq-9w-1HZ">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="214" id="npy-cg-zQ2">
-                                        <rect key="frame" x="0.0" y="279" width="390" height="214"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="npy-cg-zQ2" id="5cE-QI-F7w">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="214"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1G3-Kt-k2f" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="284" height="204"/>
-                                                    <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="up" translatesAutoresizingMaskIntoConstraints="NO" id="Qe6-zE-xkG">
-                                                            <rect key="frame" x="75" y="20" width="134" height="110"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" secondItem="Qe6-zE-xkG" secondAttribute="height" multiplier="365:300" id="LDd-Xb-UvF"/>
-                                                                <constraint firstAttribute="width" constant="134" id="aNt-h1-MaE"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe up on the search bar for desktop website" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKd-fe-tJX">
-                                                            <rect key="frame" x="21.333333333333329" y="142" width="241.66666666666669" height="46.666666666666657"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="46.5" id="QKa-ZB-Kkt"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" name="Elevated"/>
-                                                    <gestureRecognizers/>
-                                                    <constraints>
-                                                        <constraint firstItem="Qe6-zE-xkG" firstAttribute="leading" secondItem="1G3-Kt-k2f" secondAttribute="leading" constant="75" id="06c-cl-Jnt"/>
-                                                        <constraint firstItem="DKd-fe-tJX" firstAttribute="top" secondItem="Qe6-zE-xkG" secondAttribute="bottom" constant="12" id="4gA-3c-fXy"/>
-                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DKd-fe-tJX" secondAttribute="trailing" id="EBl-FP-mC1"/>
-                                                        <constraint firstItem="Qe6-zE-xkG" firstAttribute="top" secondItem="1G3-Kt-k2f" secondAttribute="top" constant="20" id="GI6-km-Xrl"/>
-                                                        <constraint firstItem="Qe6-zE-xkG" firstAttribute="centerX" secondItem="1G3-Kt-k2f" secondAttribute="centerX" id="IQe-fZ-GAt"/>
-                                                        <constraint firstItem="DKd-fe-tJX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1G3-Kt-k2f" secondAttribute="leading" id="aVt-EN-2ah"/>
-                                                        <constraint firstItem="DKd-fe-tJX" firstAttribute="centerX" secondItem="1G3-Kt-k2f" secondAttribute="centerX" id="b1l-Hf-ipC"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Qe6-zE-xkG" secondAttribute="trailing" constant="75" id="lXf-eD-8ng"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="1G3-Kt-k2f" secondAttribute="trailing" constant="18" id="B6d-5Y-gIQ"/>
-                                                <constraint firstAttribute="bottom" secondItem="1G3-Kt-k2f" secondAttribute="bottom" constant="5" id="GyF-eI-KAm"/>
-                                                <constraint firstItem="1G3-Kt-k2f" firstAttribute="leading" secondItem="5cE-QI-F7w" secondAttribute="leading" constant="18" id="c9S-5Z-M2I"/>
-                                                <constraint firstItem="1G3-Kt-k2f" firstAttribute="top" secondItem="5cE-QI-F7w" secondAttribute="top" constant="5" id="vYY-FJ-aff"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" name="Expedition White"/>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="214" id="9q6-6p-KLd">
-                                        <rect key="frame" x="0.0" y="493" width="390" height="214"/>
+                                        <rect key="frame" x="0.0" y="279" width="375" height="214"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9q6-6p-KLd" id="OcI-Gs-k3b">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="214"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="214"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQP-H7-FVX" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="284" height="204"/>
+                                                    <rect key="frame" x="18" y="5" width="339" height="204"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down" translatesAutoresizingMaskIntoConstraints="NO" id="Ftc-WM-W0s">
-                                                            <rect key="frame" x="75" y="20" width="134" height="110"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="up" translatesAutoresizingMaskIntoConstraints="NO" id="Ftc-WM-W0s">
+                                                            <rect key="frame" x="102.66666666666669" y="23.333333333333336" width="134" height="110.33333333333331"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="Ftc-WM-W0s" secondAttribute="height" multiplier="365:300" id="YUm-BI-gNc"/>
                                                                 <constraint firstAttribute="width" constant="134" id="zx1-EH-dB0"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe down on the search bar to reload" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2KX-3A-6Oj">
-                                                            <rect key="frame" x="22.333333333333329" y="142" width="239.33333333333337" height="46.666666666666657"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe up on the search bar for desktop website" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2KX-3A-6Oj">
+                                                            <rect key="frame" x="18" y="145.66666666666666" width="303" height="46.333333333333343"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="46.5" id="SC1-f7-ncV"/>
                                                             </constraints>
@@ -834,47 +793,45 @@
                                                     <color key="backgroundColor" name="Elevated"/>
                                                     <gestureRecognizers/>
                                                     <constraints>
-                                                        <constraint firstItem="2KX-3A-6Oj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pQP-H7-FVX" secondAttribute="leading" id="7VS-wy-BND"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Ftc-WM-W0s" secondAttribute="trailing" constant="75" id="D9I-98-Nob"/>
-                                                        <constraint firstItem="Ftc-WM-W0s" firstAttribute="centerX" secondItem="pQP-H7-FVX" secondAttribute="centerX" id="Gbn-W3-InY"/>
-                                                        <constraint firstItem="Ftc-WM-W0s" firstAttribute="top" secondItem="pQP-H7-FVX" secondAttribute="top" constant="20" id="XoX-Gq-dMO"/>
-                                                        <constraint firstItem="Ftc-WM-W0s" firstAttribute="leading" secondItem="pQP-H7-FVX" secondAttribute="leading" constant="75" id="lkW-o9-Jb7"/>
-                                                        <constraint firstItem="2KX-3A-6Oj" firstAttribute="centerX" secondItem="pQP-H7-FVX" secondAttribute="centerX" id="pIn-wz-k2U"/>
-                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2KX-3A-6Oj" secondAttribute="trailing" id="qgi-vx-w5n"/>
+                                                        <constraint firstAttribute="bottom" secondItem="2KX-3A-6Oj" secondAttribute="bottom" constant="12" id="Jd6-pt-k1h"/>
+                                                        <constraint firstItem="Ftc-WM-W0s" firstAttribute="centerX" secondItem="pQP-H7-FVX" secondAttribute="centerX" id="pa2-lX-Rrw"/>
+                                                        <constraint firstAttribute="trailing" secondItem="2KX-3A-6Oj" secondAttribute="trailing" constant="18" id="tef-jT-N19"/>
+                                                        <constraint firstItem="2KX-3A-6Oj" firstAttribute="centerX" secondItem="pQP-H7-FVX" secondAttribute="centerX" id="wUR-ZR-VVy"/>
                                                         <constraint firstItem="2KX-3A-6Oj" firstAttribute="top" secondItem="Ftc-WM-W0s" secondAttribute="bottom" constant="12" id="wqf-fC-lZI"/>
+                                                        <constraint firstItem="2KX-3A-6Oj" firstAttribute="leading" secondItem="pQP-H7-FVX" secondAttribute="leading" constant="18" id="zEq-ei-Ofy"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="pQP-H7-FVX" firstAttribute="leading" secondItem="OcI-Gs-k3b" secondAttribute="leading" constant="18" id="X1D-Wv-Rb8"/>
-                                                <constraint firstAttribute="trailing" secondItem="pQP-H7-FVX" secondAttribute="trailing" constant="18" id="a0t-ga-QN9"/>
+                                                <constraint firstAttribute="trailing" secondItem="pQP-H7-FVX" secondAttribute="trailing" constant="18" id="ewd-p5-6xG"/>
                                                 <constraint firstAttribute="bottom" secondItem="pQP-H7-FVX" secondAttribute="bottom" constant="5" id="gF8-RR-icX"/>
                                                 <constraint firstItem="pQP-H7-FVX" firstAttribute="top" secondItem="OcI-Gs-k3b" secondAttribute="top" constant="5" id="swB-vw-7cW"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="Expedition White"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="214" id="hV5-st-Tdi">
-                                        <rect key="frame" x="0.0" y="707" width="390" height="214"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="214" id="gbH-ec-jpW">
+                                        <rect key="frame" x="0.0" y="493" width="375" height="214"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hV5-st-Tdi" id="Nvl-dl-E5g">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="214"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gbH-ec-jpW" id="r8P-Lo-gSr">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="214"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfA-QE-FHA" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="284" height="204"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2mB-A9-sjs" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
+                                                    <rect key="frame" x="18" y="5" width="339" height="204"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right" translatesAutoresizingMaskIntoConstraints="NO" id="H5D-iM-nBm">
-                                                            <rect key="frame" x="75" y="20" width="134" height="110"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down" translatesAutoresizingMaskIntoConstraints="NO" id="r3r-E2-UD8">
+                                                            <rect key="frame" x="102.66666666666669" y="23.333333333333336" width="134" height="110.33333333333331"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" secondItem="H5D-iM-nBm" secondAttribute="height" multiplier="365:300" id="MWa-eh-tHc"/>
-                                                                <constraint firstAttribute="width" constant="134" id="zN5-G2-rZT"/>
+                                                                <constraint firstAttribute="width" constant="134" id="dsl-pt-KMd"/>
+                                                                <constraint firstAttribute="width" secondItem="r3r-E2-UD8" secondAttribute="height" multiplier="365:300" id="vfJ-Lo-aGR"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe left to right for tabs" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBM-iW-C4F">
-                                                            <rect key="frame" x="41" y="142" width="202" height="46.666666666666657"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe down on the search bar to reload" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N4r-BM-tP1">
+                                                            <rect key="frame" x="18" y="145.66666666666666" width="303" height="46.333333333333343"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="46.5" id="hzo-UZ-iJb"/>
+                                                                <constraint firstAttribute="height" constant="46.5" id="Htk-TU-WBv"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -884,47 +841,45 @@
                                                     <color key="backgroundColor" name="Elevated"/>
                                                     <gestureRecognizers/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="H5D-iM-nBm" secondAttribute="trailing" constant="75" id="7to-Zp-iCO"/>
-                                                        <constraint firstItem="H5D-iM-nBm" firstAttribute="top" secondItem="gfA-QE-FHA" secondAttribute="top" constant="20" id="9mJ-Kl-il7"/>
-                                                        <constraint firstItem="oBM-iW-C4F" firstAttribute="top" secondItem="H5D-iM-nBm" secondAttribute="bottom" constant="12" id="En4-hf-TUe"/>
-                                                        <constraint firstItem="H5D-iM-nBm" firstAttribute="leading" secondItem="gfA-QE-FHA" secondAttribute="leading" constant="75" id="HiS-K0-5o7"/>
-                                                        <constraint firstItem="H5D-iM-nBm" firstAttribute="centerX" secondItem="gfA-QE-FHA" secondAttribute="centerX" id="JFE-FD-K1H"/>
-                                                        <constraint firstItem="oBM-iW-C4F" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gfA-QE-FHA" secondAttribute="leading" id="exS-gh-uWi"/>
-                                                        <constraint firstItem="oBM-iW-C4F" firstAttribute="centerX" secondItem="gfA-QE-FHA" secondAttribute="centerX" id="zHg-Tm-ULU"/>
-                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oBM-iW-C4F" secondAttribute="trailing" id="zrq-uK-5Ib"/>
+                                                        <constraint firstAttribute="trailing" secondItem="N4r-BM-tP1" secondAttribute="trailing" constant="18" id="PLY-7y-8YM"/>
+                                                        <constraint firstItem="N4r-BM-tP1" firstAttribute="top" secondItem="r3r-E2-UD8" secondAttribute="bottom" constant="12" id="UVu-2Z-yzV"/>
+                                                        <constraint firstItem="N4r-BM-tP1" firstAttribute="centerX" secondItem="2mB-A9-sjs" secondAttribute="centerX" id="iNL-7d-Qae"/>
+                                                        <constraint firstItem="r3r-E2-UD8" firstAttribute="centerX" secondItem="2mB-A9-sjs" secondAttribute="centerX" id="l1k-2h-OOX"/>
+                                                        <constraint firstItem="N4r-BM-tP1" firstAttribute="leading" secondItem="2mB-A9-sjs" secondAttribute="leading" constant="18" id="leJ-Ac-2IM"/>
+                                                        <constraint firstAttribute="bottom" secondItem="N4r-BM-tP1" secondAttribute="bottom" constant="12" id="p9c-D6-z7D"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="gfA-QE-FHA" firstAttribute="leading" secondItem="Nvl-dl-E5g" secondAttribute="leading" constant="18" id="FmI-nC-9GW"/>
-                                                <constraint firstAttribute="bottom" secondItem="gfA-QE-FHA" secondAttribute="bottom" constant="5" id="PAv-jH-dUq"/>
-                                                <constraint firstAttribute="trailing" secondItem="gfA-QE-FHA" secondAttribute="trailing" constant="18" id="Qu8-AO-Cxd"/>
-                                                <constraint firstItem="gfA-QE-FHA" firstAttribute="top" secondItem="Nvl-dl-E5g" secondAttribute="top" constant="5" id="wkH-QX-7QX"/>
+                                                <constraint firstItem="2mB-A9-sjs" firstAttribute="leading" secondItem="r8P-Lo-gSr" secondAttribute="leading" constant="18" id="JFg-6f-2nW"/>
+                                                <constraint firstAttribute="bottom" secondItem="2mB-A9-sjs" secondAttribute="bottom" constant="5" id="Kr5-xc-ejk"/>
+                                                <constraint firstAttribute="trailing" secondItem="2mB-A9-sjs" secondAttribute="trailing" constant="18" id="rwd-Al-TmK"/>
+                                                <constraint firstItem="2mB-A9-sjs" firstAttribute="top" secondItem="r8P-Lo-gSr" secondAttribute="top" constant="5" id="wtJ-zh-5IT"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="Expedition White"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="214" id="1Sv-PZ-DdY">
-                                        <rect key="frame" x="0.0" y="921" width="390" height="214"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="214" id="Js1-LR-iGN">
+                                        <rect key="frame" x="0.0" y="707" width="375" height="214"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1Sv-PZ-DdY" id="jRv-9w-JtZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="214"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Js1-LR-iGN" id="cmg-sL-88z">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="214"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJU-XU-vBd" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="284" height="204"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sXb-bz-fDz" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
+                                                    <rect key="frame" x="18" y="5" width="339" height="204"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left" translatesAutoresizingMaskIntoConstraints="NO" id="QVL-Yk-JHr">
-                                                            <rect key="frame" x="75" y="20" width="134" height="110"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right" translatesAutoresizingMaskIntoConstraints="NO" id="YCE-Vk-3FP">
+                                                            <rect key="frame" x="102.66666666666669" y="23.333333333333336" width="134" height="110.33333333333331"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="134" id="5Z1-2i-wgg"/>
-                                                                <constraint firstAttribute="width" secondItem="QVL-Yk-JHr" secondAttribute="height" multiplier="365:300" id="TEA-Ud-TLL"/>
+                                                                <constraint firstAttribute="width" constant="134" id="ABJ-De-q8N"/>
+                                                                <constraint firstAttribute="width" secondItem="YCE-Vk-3FP" secondAttribute="height" multiplier="365:300" id="Bb7-R5-Twn"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe right to left for bookmarks" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7S-R4-s58">
-                                                            <rect key="frame" x="13.666666666666657" y="142" width="256.66666666666674" height="46.666666666666657"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe right on the search bar for tabs" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aru-j4-iFG">
+                                                            <rect key="frame" x="18" y="145.66666666666666" width="303" height="46.333333333333343"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="46.5" id="4ec-XQ-tD1"/>
+                                                                <constraint firstAttribute="height" constant="46.5" id="bNe-Jy-oCB"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -934,47 +889,45 @@
                                                     <color key="backgroundColor" name="Elevated"/>
                                                     <gestureRecognizers/>
                                                     <constraints>
-                                                        <constraint firstItem="QVL-Yk-JHr" firstAttribute="top" secondItem="iJU-XU-vBd" secondAttribute="top" constant="20" id="1dh-2S-Z3v"/>
-                                                        <constraint firstItem="q7S-R4-s58" firstAttribute="top" secondItem="QVL-Yk-JHr" secondAttribute="bottom" constant="12" id="EAA-gJ-avo"/>
-                                                        <constraint firstItem="QVL-Yk-JHr" firstAttribute="leading" secondItem="iJU-XU-vBd" secondAttribute="leading" constant="75" id="QyV-MV-gL2"/>
-                                                        <constraint firstItem="q7S-R4-s58" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iJU-XU-vBd" secondAttribute="leading" id="Xm7-0r-7N5"/>
-                                                        <constraint firstAttribute="trailing" secondItem="QVL-Yk-JHr" secondAttribute="trailing" constant="75" id="hem-Sd-lej"/>
-                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="q7S-R4-s58" secondAttribute="trailing" id="n6Q-mU-30g"/>
-                                                        <constraint firstItem="q7S-R4-s58" firstAttribute="centerX" secondItem="iJU-XU-vBd" secondAttribute="centerX" id="pbU-DJ-h8d"/>
-                                                        <constraint firstItem="QVL-Yk-JHr" firstAttribute="centerX" secondItem="iJU-XU-vBd" secondAttribute="centerX" id="xBq-iK-6MY"/>
+                                                        <constraint firstItem="aru-j4-iFG" firstAttribute="centerX" secondItem="sXb-bz-fDz" secondAttribute="centerX" id="1ej-Pn-iU6"/>
+                                                        <constraint firstItem="aru-j4-iFG" firstAttribute="top" secondItem="YCE-Vk-3FP" secondAttribute="bottom" constant="12" id="2Oh-c8-Atf"/>
+                                                        <constraint firstItem="aru-j4-iFG" firstAttribute="leading" secondItem="sXb-bz-fDz" secondAttribute="leading" constant="18" id="YSy-76-6S3"/>
+                                                        <constraint firstAttribute="bottom" secondItem="aru-j4-iFG" secondAttribute="bottom" constant="12" id="ieU-k3-LdM"/>
+                                                        <constraint firstAttribute="trailing" secondItem="aru-j4-iFG" secondAttribute="trailing" constant="18" id="rjI-yT-Rma"/>
+                                                        <constraint firstItem="YCE-Vk-3FP" firstAttribute="centerX" secondItem="sXb-bz-fDz" secondAttribute="centerX" id="siM-iP-chh"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="iJU-XU-vBd" secondAttribute="bottom" constant="5" id="4EO-N7-Lao"/>
-                                                <constraint firstItem="iJU-XU-vBd" firstAttribute="top" secondItem="jRv-9w-JtZ" secondAttribute="top" constant="5" id="Rl7-do-Ucn"/>
-                                                <constraint firstAttribute="trailing" secondItem="iJU-XU-vBd" secondAttribute="trailing" constant="18" id="Vdj-Gs-oCO"/>
-                                                <constraint firstItem="iJU-XU-vBd" firstAttribute="leading" secondItem="jRv-9w-JtZ" secondAttribute="leading" constant="18" id="aos-NZ-rjp"/>
+                                                <constraint firstItem="sXb-bz-fDz" firstAttribute="leading" secondItem="cmg-sL-88z" secondAttribute="leading" constant="18" id="G3u-Vd-Tx0"/>
+                                                <constraint firstAttribute="bottom" secondItem="sXb-bz-fDz" secondAttribute="bottom" constant="5" id="Zzy-ID-Quo"/>
+                                                <constraint firstItem="sXb-bz-fDz" firstAttribute="top" secondItem="cmg-sL-88z" secondAttribute="top" constant="5" id="k3D-Bh-Upl"/>
+                                                <constraint firstAttribute="trailing" secondItem="sXb-bz-fDz" secondAttribute="trailing" constant="18" id="yf9-vy-bby"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="Expedition White"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="214" id="Xj3-xi-UyJ">
-                                        <rect key="frame" x="0.0" y="1135" width="390" height="214"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="214" id="fxu-KR-CV8">
+                                        <rect key="frame" x="0.0" y="921" width="375" height="214"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xj3-xi-UyJ" id="Zyc-l2-Y9Z">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="214"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fxu-KR-CV8" id="Cou-rO-9w4">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="214"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cP4-vc-9kQ" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="284" height="204"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3lT-Za-JkJ" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
+                                                    <rect key="frame" x="18" y="5" width="339" height="204"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tap3" translatesAutoresizingMaskIntoConstraints="NO" id="V6F-fN-d7Y">
-                                                            <rect key="frame" x="75" y="20" width="134" height="110"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left" translatesAutoresizingMaskIntoConstraints="NO" id="CKZ-cO-iMB">
+                                                            <rect key="frame" x="102.66666666666669" y="23.333333333333336" width="134" height="110.33333333333331"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" secondItem="V6F-fN-d7Y" secondAttribute="height" multiplier="365:300" id="PCe-6U-Vqy"/>
-                                                                <constraint firstAttribute="width" constant="134" id="wEh-AL-G0r"/>
+                                                                <constraint firstAttribute="width" secondItem="CKZ-cO-iMB" secondAttribute="height" multiplier="365:300" id="St8-aA-ujn"/>
+                                                                <constraint firstAttribute="width" constant="134" id="V26-jv-Itq"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tap with 3 fingers to share" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="083-b4-e2d">
-                                                            <rect key="frame" x="40.000000000000014" y="142" width="204.33333333333337" height="46.666666666666657"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe left on the search bar for bookmarks" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8a-pP-zvN">
+                                                            <rect key="frame" x="18" y="145.66666666666666" width="303" height="46.333333333333343"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="46.5" id="Ue6-RL-Yon"/>
+                                                                <constraint firstAttribute="height" constant="46.5" id="q1Y-z1-PGu"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -984,22 +937,68 @@
                                                     <color key="backgroundColor" name="Elevated"/>
                                                     <gestureRecognizers/>
                                                     <constraints>
-                                                        <constraint firstItem="V6F-fN-d7Y" firstAttribute="top" secondItem="cP4-vc-9kQ" secondAttribute="top" constant="20" id="3Ti-nF-kUA"/>
-                                                        <constraint firstItem="083-b4-e2d" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cP4-vc-9kQ" secondAttribute="leading" id="Ge8-hG-HMW"/>
-                                                        <constraint firstItem="083-b4-e2d" firstAttribute="centerX" secondItem="cP4-vc-9kQ" secondAttribute="centerX" id="QNW-2i-ga1"/>
-                                                        <constraint firstItem="V6F-fN-d7Y" firstAttribute="leading" secondItem="cP4-vc-9kQ" secondAttribute="leading" constant="75" id="W4b-Ov-Cda"/>
-                                                        <constraint firstItem="V6F-fN-d7Y" firstAttribute="centerX" secondItem="cP4-vc-9kQ" secondAttribute="centerX" id="WUw-GB-cUF"/>
-                                                        <constraint firstItem="083-b4-e2d" firstAttribute="top" secondItem="V6F-fN-d7Y" secondAttribute="bottom" constant="12" id="YEY-32-NPx"/>
-                                                        <constraint firstAttribute="trailing" secondItem="V6F-fN-d7Y" secondAttribute="trailing" constant="75" id="YNk-BU-m5O"/>
-                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="083-b4-e2d" secondAttribute="trailing" id="zCz-RP-0jn"/>
+                                                        <constraint firstItem="j8a-pP-zvN" firstAttribute="top" secondItem="CKZ-cO-iMB" secondAttribute="bottom" constant="12" id="80J-yC-wdS"/>
+                                                        <constraint firstItem="j8a-pP-zvN" firstAttribute="leading" secondItem="3lT-Za-JkJ" secondAttribute="leading" constant="18" id="JkC-Ks-1Jt"/>
+                                                        <constraint firstItem="j8a-pP-zvN" firstAttribute="centerX" secondItem="3lT-Za-JkJ" secondAttribute="centerX" id="L5H-wq-uNb"/>
+                                                        <constraint firstAttribute="trailing" secondItem="j8a-pP-zvN" secondAttribute="trailing" constant="18" id="OMb-YV-X1r"/>
+                                                        <constraint firstItem="CKZ-cO-iMB" firstAttribute="centerX" secondItem="3lT-Za-JkJ" secondAttribute="centerX" id="a7w-O0-nVq"/>
+                                                        <constraint firstAttribute="bottom" secondItem="j8a-pP-zvN" secondAttribute="bottom" constant="12" id="klM-bb-XwC"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="cP4-vc-9kQ" firstAttribute="top" secondItem="Zyc-l2-Y9Z" secondAttribute="top" constant="5" id="2UU-Wl-uLT"/>
-                                                <constraint firstAttribute="trailing" secondItem="cP4-vc-9kQ" secondAttribute="trailing" constant="18" id="Aww-4y-RNy"/>
-                                                <constraint firstItem="cP4-vc-9kQ" firstAttribute="leading" secondItem="Zyc-l2-Y9Z" secondAttribute="leading" constant="18" id="RXm-y4-MNY"/>
-                                                <constraint firstAttribute="bottom" secondItem="cP4-vc-9kQ" secondAttribute="bottom" constant="5" id="aT2-ry-ltc"/>
+                                                <constraint firstAttribute="bottom" secondItem="3lT-Za-JkJ" secondAttribute="bottom" constant="5" id="TND-SA-9BE"/>
+                                                <constraint firstItem="3lT-Za-JkJ" firstAttribute="leading" secondItem="Cou-rO-9w4" secondAttribute="leading" constant="18" id="VI3-o7-I5P"/>
+                                                <constraint firstAttribute="trailing" secondItem="3lT-Za-JkJ" secondAttribute="trailing" constant="18" id="nvs-D3-a62"/>
+                                                <constraint firstItem="3lT-Za-JkJ" firstAttribute="top" secondItem="Cou-rO-9w4" secondAttribute="top" constant="5" id="uLQ-L5-1M3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="214" id="vP5-RP-qMg">
+                                        <rect key="frame" x="0.0" y="1135" width="375" height="214"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vP5-RP-qMg" id="Tsg-GE-K8e">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="214"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M8x-56-p9d" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
+                                                    <rect key="frame" x="18" y="5" width="339" height="204"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tap3" translatesAutoresizingMaskIntoConstraints="NO" id="Jay-20-PSJ">
+                                                            <rect key="frame" x="102.66666666666669" y="23.333333333333336" width="134" height="110.33333333333331"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="134" id="Bxj-cj-2IR"/>
+                                                                <constraint firstAttribute="width" secondItem="Jay-20-PSJ" secondAttribute="height" multiplier="365:300" id="Nn4-5i-Qd2"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tap with three fingers to share" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbt-Zr-LwP">
+                                                            <rect key="frame" x="18" y="145.66666666666666" width="303" height="46.333333333333343"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="46.5" id="rW1-fp-ar6"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" name="Elevated"/>
+                                                    <gestureRecognizers/>
+                                                    <constraints>
+                                                        <constraint firstItem="kbt-Zr-LwP" firstAttribute="top" secondItem="Jay-20-PSJ" secondAttribute="bottom" constant="12" id="1G3-vF-Akr"/>
+                                                        <constraint firstAttribute="trailing" secondItem="kbt-Zr-LwP" secondAttribute="trailing" constant="18" id="4Tj-Hm-9fn"/>
+                                                        <constraint firstAttribute="bottom" secondItem="kbt-Zr-LwP" secondAttribute="bottom" constant="12" id="QeV-3D-hcc"/>
+                                                        <constraint firstItem="Jay-20-PSJ" firstAttribute="centerX" secondItem="M8x-56-p9d" secondAttribute="centerX" id="Wyr-w1-96W"/>
+                                                        <constraint firstItem="kbt-Zr-LwP" firstAttribute="leading" secondItem="M8x-56-p9d" secondAttribute="leading" constant="18" id="XbR-hJ-8wa"/>
+                                                        <constraint firstItem="kbt-Zr-LwP" firstAttribute="centerX" secondItem="M8x-56-p9d" secondAttribute="centerX" id="bKC-U4-XpW"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="M8x-56-p9d" firstAttribute="leading" secondItem="Tsg-GE-K8e" secondAttribute="leading" constant="18" id="Qic-zj-kWs"/>
+                                                <constraint firstAttribute="trailing" secondItem="M8x-56-p9d" secondAttribute="trailing" constant="18" id="oKT-ig-5la"/>
+                                                <constraint firstAttribute="bottom" secondItem="M8x-56-p9d" secondAttribute="bottom" constant="5" id="qVS-X1-QXV"/>
+                                                <constraint firstItem="M8x-56-p9d" firstAttribute="top" secondItem="Tsg-GE-K8e" secondAttribute="top" constant="5" id="w2s-Gd-3t7"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="Expedition White"/>
@@ -1016,7 +1015,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rvu-sb-Syq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1880.625" y="1477.8169014084508"/>
+            <point key="canvasLocation" x="1879.2" y="1476.6116941529237"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BWS-gy-lqO">
@@ -1024,7 +1023,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bPB-G8-doO" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="YqI-Jx-NS9">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="tintColor" systemColor="labelColor"/>
@@ -1044,11 +1043,11 @@
             <objects>
                 <viewController id="7xe-KY-LMm" customClass="PrivacyPolicyViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xfx-CW-8Ns">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NH1-AE-hVy">
-                                <rect key="frame" x="18" y="62" width="354" height="225"/>
+                                <rect key="frame" x="18" y="18" width="339" height="225"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="225" id="kH8-97-Vto"/>
                                 </constraints>
@@ -1057,27 +1056,27 @@
                                 </connections>
                             </containerView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shield.lefthalf.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zY3-ox-cvg">
-                                <rect key="frame" x="150" y="95" width="90" height="88.666666666666671"/>
+                                <rect key="frame" x="142.66666666666666" y="51.000000000000007" width="90" height="88.666666666666671"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="hMP-rf-DyJ"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="privacy policy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIf-EG-g2D">
-                                <rect key="frame" x="66.666666666666686" y="204" width="257" height="52"/>
+                                <rect key="frame" x="59" y="160" width="257" height="52"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="608-tl-8Ij">
-                                <rect key="frame" x="18" y="315" width="354" height="461"/>
+                                <rect key="frame" x="18" y="271" width="339" height="397"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aCe-in-jrk">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="461"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="339" height="397"/>
                                         <color key="backgroundColor" name="Elevated"/>
                                     </view>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DkZ-rX-ydI">
-                                        <rect key="frame" x="18" y="18" width="318" height="443"/>
+                                        <rect key="frame" x="18" y="18" width="303" height="379"/>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <string key="text">In this document, “we”, “us”, “TMC” and “our” are taken to be in reference to The Morning Company. “The app” will mean Expedition
 
@@ -1136,7 +1135,7 @@ We do not collect any data or personal information in Expedition. We simply do n
             <objects>
                 <tableViewController id="9km-4P-Tvs" customClass="AppIconsViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="JlY-hT-bu4">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="734"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -1145,20 +1144,20 @@ We do not collect any data or personal information in Expedition. We simply do n
                             <tableViewSection id="Ff1-sR-96c">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="225" id="IfU-J3-N9F">
-                                        <rect key="frame" x="0.0" y="18" width="390" height="225"/>
+                                        <rect key="frame" x="0.0" y="18" width="375" height="225"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IfU-J3-N9F" id="kRO-6Z-NWP">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="225"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="225"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8jt-Ri-PxF" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="0.0" width="354" height="225"/>
+                                                    <rect key="frame" x="18" y="0.0" width="339" height="225"/>
                                                     <connections>
                                                         <segue destination="eMb-mG-JIk" kind="embed" id="3W1-dn-UCG"/>
                                                     </connections>
                                                 </containerView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.stack.3d.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="YEW-bG-yQ4">
-                                                    <rect key="frame" x="145" y="30" width="100" height="100.33333333333334"/>
+                                                    <rect key="frame" x="137.66666666666666" y="30" width="100" height="100.33333333333334"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="4rS-fp-dtj"/>
@@ -1166,7 +1165,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="app icon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YpB-wD-ydL">
-                                                    <rect key="frame" x="115.66666666666669" y="140" width="159" height="52"/>
+                                                    <rect key="frame" x="108" y="140" width="159" height="52"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -1190,14 +1189,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                             <tableViewSection id="gKy-Bv-SSO">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="j7b-pS-ANu">
-                                        <rect key="frame" x="0.0" y="279" width="390" height="106"/>
+                                        <rect key="frame" x="0.0" y="279" width="375" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="j7b-pS-ANu" id="mwY-el-UEC">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KN4-gs-5yh" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="339" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                     <gestureRecognizers/>
                                                     <connections>
@@ -1205,13 +1204,13 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                     </connections>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="white" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDe-0B-hNb">
-                                                    <rect key="frame" x="122" y="41" width="44" height="24"/>
+                                                    <rect key="frame" x="118" y="41" width="44" height="24"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LightBlue" translatesAutoresizingMaskIntoConstraints="NO" id="weB-bv-5b1" customClass="AppIconPickerImageView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="38" y="20" width="66" height="66"/>
+                                                    <rect key="frame" x="34" y="20" width="66" height="66"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="weB-bv-5b1" secondAttribute="height" multiplier="1:1" id="557-rd-YyU"/>
                                                     </constraints>
@@ -1234,14 +1233,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         <gestureRecognizers/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="hOi-rm-gw3">
-                                        <rect key="frame" x="0.0" y="385" width="390" height="106"/>
+                                        <rect key="frame" x="0.0" y="385" width="375" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hOi-rm-gw3" id="3FF-CZ-g87">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tp5-xi-815" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="339" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                     <gestureRecognizers/>
                                                     <connections>
@@ -1249,13 +1248,13 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                     </connections>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzC-NU-rGf">
-                                                    <rect key="frame" x="122" y="41" width="36" height="24"/>
+                                                    <rect key="frame" x="118" y="41" width="36" height="24"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DarkIcon" translatesAutoresizingMaskIntoConstraints="NO" id="zq5-jn-iq7" customClass="AppIconPickerImageView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="38" y="20" width="66" height="66"/>
+                                                    <rect key="frame" x="34" y="20" width="66" height="66"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="zq5-jn-iq7" secondAttribute="height" multiplier="1:1" id="N3I-5a-ghl"/>
                                                     </constraints>
@@ -1278,14 +1277,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         <gestureRecognizers/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="kdv-g0-Heb">
-                                        <rect key="frame" x="0.0" y="491" width="390" height="106"/>
+                                        <rect key="frame" x="0.0" y="491" width="375" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kdv-g0-Heb" id="Irf-Cp-pR7">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Dd-1x-jQH" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="339" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                     <gestureRecognizers/>
                                                     <connections>
@@ -1293,13 +1292,13 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                     </connections>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="blue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPA-Py-f08">
-                                                    <rect key="frame" x="122" y="41" width="36" height="24"/>
+                                                    <rect key="frame" x="118" y="41" width="36" height="24"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlueIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Ngh-0Y-YPq" customClass="AppIconPickerImageView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="38" y="20" width="66" height="66"/>
+                                                    <rect key="frame" x="34" y="20" width="66" height="66"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Ngh-0Y-YPq" secondAttribute="height" multiplier="1:1" id="G6d-Ft-JyW"/>
                                                     </constraints>
@@ -1322,14 +1321,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         <gestureRecognizers/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="ils-PV-31F">
-                                        <rect key="frame" x="0.0" y="597" width="390" height="106"/>
+                                        <rect key="frame" x="0.0" y="597" width="375" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ils-PV-31F" id="4Rn-iE-mBJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebG-kU-Jvu" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="339" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                     <gestureRecognizers/>
                                                     <connections>
@@ -1337,13 +1336,13 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                     </connections>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="shadow" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iL0-mO-3uh">
-                                                    <rect key="frame" x="122" y="41" width="62" height="24"/>
+                                                    <rect key="frame" x="118" y="41" width="62" height="24"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ColorShadow" translatesAutoresizingMaskIntoConstraints="NO" id="puB-cq-buT" customClass="AppIconPickerImageView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="38" y="20" width="66" height="66"/>
+                                                    <rect key="frame" x="34" y="20" width="66" height="66"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="puB-cq-buT" secondAttribute="height" multiplier="1:1" id="mVa-me-biT"/>
                                                     </constraints>
@@ -1366,14 +1365,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         <gestureRecognizers/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="BVj-Gw-ZAw">
-                                        <rect key="frame" x="0.0" y="703" width="390" height="106"/>
+                                        <rect key="frame" x="0.0" y="703" width="375" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BVj-Gw-ZAw" id="KpR-Gc-769">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rkq-eK-whQ" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="339" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                     <gestureRecognizers/>
                                                     <connections>
@@ -1381,13 +1380,13 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                     </connections>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="neon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DyV-13-y0D">
-                                                    <rect key="frame" x="122" y="41" width="40" height="24"/>
+                                                    <rect key="frame" x="110" y="41" width="40" height="24"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GlyphFade" translatesAutoresizingMaskIntoConstraints="NO" id="nmD-1w-jYg" customClass="AppIconPickerImageView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="38" y="20" width="66" height="66"/>
+                                                    <rect key="frame" x="26" y="20" width="66" height="66"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="nmD-1w-jYg" secondAttribute="height" multiplier="1:1" id="8wb-C1-aId"/>
                                                     </constraints>
@@ -1410,14 +1409,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         <gestureRecognizers/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="IwL-cY-1dl">
-                                        <rect key="frame" x="0.0" y="809" width="390" height="106"/>
+                                        <rect key="frame" x="0.0" y="809" width="375" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IwL-cY-1dl" id="xde-Kv-xm0">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="om5-jo-eNA" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="339" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                     <gestureRecognizers/>
                                                     <connections>
@@ -1503,7 +1502,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Iia-Ig-rNz" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Lqf-Li-iXw">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="tintColor" systemColor="labelColor"/>
@@ -1531,7 +1530,7 @@ We do not collect any data or personal information in Expedition. We simply do n
             <objects>
                 <tableViewController id="If3-Iy-N99" customClass="ContactViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="8UY-ce-B6q">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -1540,17 +1539,17 @@ We do not collect any data or personal information in Expedition. We simply do n
                             <tableViewSection id="FEG-58-uWC">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="225" id="hpP-Mn-8LX">
-                                        <rect key="frame" x="0.0" y="18" width="390" height="225"/>
+                                        <rect key="frame" x="0.0" y="18" width="375" height="225"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hpP-Mn-8LX" id="wyg-cE-GHE">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="225"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="225"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="20I-gO-vkb">
-                                                    <rect key="frame" x="18" y="0.0" width="354" height="225"/>
+                                                    <rect key="frame" x="18" y="0.0" width="339" height="225"/>
                                                     <subviews>
                                                         <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G3o-Xp-eHa">
-                                                            <rect key="frame" x="0.0" y="0.0" width="354" height="225"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="339" height="225"/>
                                                             <connections>
                                                                 <segue destination="eMb-mG-JIk" kind="embed" id="9zN-fo-Gck"/>
                                                             </connections>
@@ -1566,7 +1565,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                     </constraints>
                                                 </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubble.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rTS-iG-TYY">
-                                                    <rect key="frame" x="150" y="32.333333333333343" width="90" height="89"/>
+                                                    <rect key="frame" x="142.66666666666663" y="32.333333333333343" width="90" height="89"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="90" id="e1f-VK-OeT"/>
@@ -1574,7 +1573,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="contact us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mL-QY-Byq">
-                                                    <rect key="frame" x="101.66666666666669" y="141" width="187" height="52"/>
+                                                    <rect key="frame" x="94" y="141" width="187" height="52"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -1598,14 +1597,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                             <tableViewSection id="RGd-MN-H57">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="ZjS-Zb-PC0">
-                                        <rect key="frame" x="0.0" y="279" width="390" height="106"/>
+                                        <rect key="frame" x="0.0" y="279" width="375" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZjS-Zb-PC0" id="odQ-rM-ePS">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="maw-ez-QDB">
-                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="339" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xch-qo-BNJ">
@@ -1651,14 +1650,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="07v-Kg-5rY">
-                                        <rect key="frame" x="0.0" y="385" width="390" height="106"/>
+                                        <rect key="frame" x="0.0" y="385" width="375" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="07v-Kg-5rY" id="NIa-2m-yWl">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RaJ-7v-2pF">
-                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="339" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wy9-Ld-DNe">
@@ -1704,14 +1703,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="06j-Mu-Te2">
-                                        <rect key="frame" x="0.0" y="491" width="390" height="106"/>
+                                        <rect key="frame" x="0.0" y="491" width="375" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="06j-Mu-Te2" id="ifD-2Y-wZK">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cge-gk-u13">
-                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="339" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0pm-6U-hKg">
@@ -1758,14 +1757,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="bEP-ag-RXn">
-                                        <rect key="frame" x="0.0" y="597" width="390" height="106"/>
+                                        <rect key="frame" x="0.0" y="597" width="375" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bEP-ag-RXn" id="UKf-SI-kR0">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cAu-Zn-ndC">
-                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="339" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V5j-HV-X2U">
@@ -1813,14 +1812,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="cWs-Yk-gl8">
-                                        <rect key="frame" x="0.0" y="703" width="390" height="106"/>
+                                        <rect key="frame" x="0.0" y="703" width="375" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cWs-Yk-gl8" id="ypL-Fy-HXq">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ynD-Wb-Cya">
-                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="339" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YLk-BJ-cFP">
@@ -1865,14 +1864,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         <gestureRecognizers/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="7LJ-hZ-oh2">
-                                        <rect key="frame" x="0.0" y="809" width="390" height="106"/>
+                                        <rect key="frame" x="0.0" y="809" width="375" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7LJ-hZ-oh2" id="0Fg-7L-3QF">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t49-IG-5or">
-                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="339" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eWT-ph-6xn">
@@ -1971,7 +1970,7 @@ We do not collect any data or personal information in Expedition. We simply do n
             <objects>
                 <tableViewController title="Bookmarks" id="ed1-S0-drB" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="static" style="insetGrouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="bfC-kH-yak" userLabel="BookmarkTableView">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -1982,14 +1981,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                             <tableViewSection id="FKm-Ph-2UG">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bookmarkCell" textLabel="WDy-hk-Thu" rowHeight="68" style="IBUITableViewCellStyleDefault" id="td5-08-gva">
-                                        <rect key="frame" x="20" y="18" width="350" height="68"/>
+                                        <rect key="frame" x="16" y="18" width="343" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="td5-08-gva" id="6b2-YB-lxf" customClass="UITableView">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="68"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="68"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WDy-hk-Thu">
-                                                    <rect key="frame" x="20" y="0.0" width="310" height="68"/>
+                                                    <rect key="frame" x="16" y="0.0" width="311" height="68"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <gestureRecognizers/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
@@ -2028,7 +2027,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LW0-hH-Loe" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qAR-Ri-hzB">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -2045,7 +2044,7 @@ We do not collect any data or personal information in Expedition. We simply do n
             <objects>
                 <tableViewController id="UUa-q7-H9y" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="gHw-9V-qE1">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="734"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -2055,14 +2054,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                             <tableViewSection id="ThF-hm-zVe">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="228" id="a8h-QH-zI6">
-                                        <rect key="frame" x="0.0" y="18" width="390" height="228"/>
+                                        <rect key="frame" x="0.0" y="18" width="375" height="228"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a8h-QH-zI6" id="Tu0-EV-81l">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="228"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="228"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZLO-tE-nYQ" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="0.0" width="354" height="225"/>
+                                                    <rect key="frame" x="18" y="0.0" width="339" height="225"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="225" id="xPI-w6-Uv4"/>
                                                     </constraints>
@@ -2071,7 +2070,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                     </connections>
                                                 </containerView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paintbrush.pointed" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="135-n4-2v9">
-                                                    <rect key="frame" x="150" y="35" width="90" height="90.333333333333343"/>
+                                                    <rect key="frame" x="142.66666666666666" y="35" width="90" height="90.333333333333343"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="135-n4-2v9" secondAttribute="height" multiplier="1:1" id="4as-23-AGJ"/>
@@ -2079,7 +2078,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="customise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p51-zL-KCQ">
-                                                    <rect key="frame" x="102" y="140" width="186" height="52"/>
+                                                    <rect key="frame" x="94.666666666666686" y="140" width="186" height="52"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -2103,14 +2102,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                             <tableViewSection id="ODG-ex-n80">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="n0Q-CI-39K">
-                                        <rect key="frame" x="0.0" y="282" width="390" height="106"/>
+                                        <rect key="frame" x="0.0" y="282" width="375" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n0Q-CI-39K" id="IXR-D0-Ft2">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Dn-6B-8hW" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="339" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0de-HD-Lws">
@@ -2157,14 +2156,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="Zop-WV-diX">
-                                        <rect key="frame" x="0.0" y="388" width="390" height="106"/>
+                                        <rect key="frame" x="0.0" y="388" width="375" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zop-WV-diX" id="j00-hU-mj3">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h0o-Gb-bRx" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="339" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iYY-HQ-guI">
@@ -2208,14 +2207,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         <gestureRecognizers/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="UGO-ac-YfM">
-                                        <rect key="frame" x="0.0" y="494" width="390" height="106"/>
+                                        <rect key="frame" x="0.0" y="494" width="375" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UGO-ac-YfM" id="FIS-LC-2K9">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="px9-TJ-5vw" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="339" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                     <gestureRecognizers/>
                                                     <connections>
@@ -2263,14 +2262,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         <gestureRecognizers/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="wTM-Tr-wpf">
-                                        <rect key="frame" x="0.0" y="600" width="390" height="106"/>
+                                        <rect key="frame" x="0.0" y="600" width="375" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wTM-Tr-wpf" id="j3a-Gt-j4y">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i7s-D2-be2" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="339" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0aC-Jk-ppv">
@@ -2344,7 +2343,7 @@ We do not collect any data or personal information in Expedition. We simply do n
             <objects>
                 <tableViewController id="zKx-Ny-wzh" customClass="ReopenOnLastPageViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="uoN-fc-dKz">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="734"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -2354,20 +2353,23 @@ We do not collect any data or personal information in Expedition. We simply do n
                             <tableViewSection id="RY6-Tx-t3p">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="228" id="EE9-qO-6Ot">
-                                        <rect key="frame" x="0.0" y="18" width="390" height="228"/>
+                                        <rect key="frame" x="0.0" y="18" width="375" height="228"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EE9-qO-6Ot" id="5VJ-9I-HhP">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="228"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="228"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c38-kQ-Q4K" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="0.0" width="354" height="225"/>
+                                                    <rect key="frame" x="18" y="0.0" width="339" height="225"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="225" id="EED-qF-t71"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <segue destination="eMb-mG-JIk" kind="embed" id="fwQ-f2-jSx"/>
+                                                    </connections>
                                                 </containerView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.up.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7UM-xQ-rR2">
-                                                    <rect key="frame" x="150" y="36.000000000000007" width="90" height="88.666666666666686"/>
+                                                    <rect key="frame" x="142.66666666666666" y="36.000000000000007" width="90" height="88.666666666666686"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="7UM-xQ-rR2" secondAttribute="height" multiplier="1:1" id="CIb-X3-gqe"/>
@@ -2375,7 +2377,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reopen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBl-OD-jOG">
-                                                    <rect key="frame" x="128.66666666666666" y="140" width="132.99999999999997" height="52"/>
+                                                    <rect key="frame" x="121" y="140" width="133" height="52"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -2399,18 +2401,18 @@ We do not collect any data or personal information in Expedition. We simply do n
                             <tableViewSection id="SBH-fR-aga">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="170" id="bJG-yc-n9U">
-                                        <rect key="frame" x="0.0" y="282" width="390" height="170"/>
+                                        <rect key="frame" x="0.0" y="282" width="375" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bJG-yc-n9U" id="C2q-e6-5gu">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="170"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r1i-4G-4ra" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="354" height="157.66666666666666"/>
+                                                    <rect key="frame" x="18" y="5" width="339" height="157.66666666666666"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                 </view>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4r-iK-A3X">
-                                                    <rect key="frame" x="32" y="12" width="326" height="134"/>
+                                                    <rect key="frame" x="32" y="12" width="311" height="134"/>
                                                     <color key="tintColor" systemColor="labelColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="134" id="yNL-rz-BGP"/>
@@ -2435,17 +2437,17 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         <gestureRecognizers/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="s7I-BG-b4M">
-                                        <rect key="frame" x="0.0" y="452" width="390" height="106"/>
+                                        <rect key="frame" x="0.0" y="452" width="375" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="s7I-BG-b4M" id="rh2-xz-9C9">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YKu-0t-WxM" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="339" height="96"/>
                                                     <subviews>
                                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Ir-UE-0Vn">
-                                                            <rect key="frame" x="291" y="32.666666666666664" width="51" height="31"/>
+                                                            <rect key="frame" x="276" y="32.666666666666664" width="51" height="31"/>
                                                             <color key="onTintColor" name="Expedition Blue"/>
                                                             <connections>
                                                                 <action selector="reopenTabsSwitchValueChanged:" destination="zKx-Ny-wzh" eventType="valueChanged" id="qFA-ZX-AyV"/>
@@ -2459,7 +2461,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reopen on last page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6It-fb-14v">
-                                                    <rect key="frame" x="42" y="41.666666666666664" width="157.66666666666666" height="22.999999999999993"/>
+                                                    <rect key="frame" x="38" y="41.666666666666664" width="157.66666666666666" height="22.999999999999993"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -2506,7 +2508,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ASe-ZF-pX3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="wsW-0x-1zC">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" systemColor="labelColor"/>
                         <color key="barTintColor" name="Expedition White"/>
@@ -2520,9 +2522,206 @@ We do not collect any data or personal information in Expedition. We simply do n
             </objects>
             <point key="canvasLocation" x="10.144927536231885" y="2896.875"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="AJf-26-o0v">
+            <objects>
+                <tableViewController id="Kbs-EM-jiJ" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Qni-pr-ljp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="Expedition White"/>
+                        <color key="separatorColor" name="Expedition White"/>
+                        <color key="sectionIndexBackgroundColor" name="Expedition White"/>
+                        <color key="sectionIndexTrackingBackgroundColor" name="Expedition White"/>
+                        <sections>
+                            <tableViewSection id="Z3J-VT-dRc">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="228" id="gFI-0k-qhj">
+                                        <rect key="frame" x="0.0" y="18" width="375" height="228"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gFI-0k-qhj" id="peT-4y-muY">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="228"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6F0-ww-ahm" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
+                                                    <rect key="frame" x="18" y="0.0" width="339" height="225"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="225" id="bdQ-mR-YVk"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <segue destination="eMb-mG-JIk" kind="embed" id="LiN-Zd-BEe"/>
+                                                    </connections>
+                                                </containerView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sparkles" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1p2-qW-qbp">
+                                                    <rect key="frame" x="142.66666666666666" y="34.333333333333314" width="90" height="90.666666666666657"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="1p2-qW-qbp" secondAttribute="height" multiplier="1:1" id="WhQ-Vh-reJ"/>
+                                                        <constraint firstAttribute="width" constant="90" id="jzM-kc-TJe"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="learn more" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajJ-So-aD7">
+                                                    <rect key="frame" x="87.666666666666686" y="140" width="200" height="52"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6F0-ww-ahm" firstAttribute="leading" secondItem="peT-4y-muY" secondAttribute="leading" constant="18" id="4cs-3y-8Z8"/>
+                                                <constraint firstItem="ajJ-So-aD7" firstAttribute="centerX" secondItem="peT-4y-muY" secondAttribute="centerX" id="5zU-Wp-5aD"/>
+                                                <constraint firstItem="6F0-ww-ahm" firstAttribute="top" secondItem="peT-4y-muY" secondAttribute="top" id="GfY-nm-rbr"/>
+                                                <constraint firstItem="ajJ-So-aD7" firstAttribute="top" secondItem="1p2-qW-qbp" secondAttribute="bottom" constant="15" id="gDA-3X-PfR"/>
+                                                <constraint firstItem="1p2-qW-qbp" firstAttribute="top" secondItem="peT-4y-muY" secondAttribute="topMargin" constant="24" id="hqv-vN-EBo"/>
+                                                <constraint firstAttribute="trailing" secondItem="6F0-ww-ahm" secondAttribute="trailing" constant="18" id="q3D-8A-C6S"/>
+                                                <constraint firstAttribute="bottom" secondItem="6F0-ww-ahm" secondAttribute="bottom" id="qyD-nz-QBN"/>
+                                                <constraint firstItem="1p2-qW-qbp" firstAttribute="centerX" secondItem="peT-4y-muY" secondAttribute="centerX" id="wHv-sK-GTU"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="Ofq-BN-RwY">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="UgR-sR-QXx">
+                                        <rect key="frame" x="0.0" y="282" width="375" height="106"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UgR-sR-QXx" id="Q2l-8I-7Tf">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lpB-Oh-QY0" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
+                                                    <rect key="frame" x="18" y="5" width="339" height="96"/>
+                                                    <color key="backgroundColor" name="Elevated"/>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbj-3S-Bkc">
+                                                    <rect key="frame" x="38" y="33" width="40" height="40"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubble.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="C2z-VX-Vvs">
+                                                            <rect key="frame" x="9" y="10.333333333333336" width="22" height="21"/>
+                                                            <color key="tintColor" systemColor="labelColor"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="C2z-VX-Vvs" firstAttribute="top" secondItem="hbj-3S-Bkc" secondAttribute="top" constant="9" id="8tw-DB-6Pc"/>
+                                                        <constraint firstAttribute="trailing" secondItem="C2z-VX-Vvs" secondAttribute="trailing" constant="9" id="BAd-No-JNw"/>
+                                                        <constraint firstAttribute="width" secondItem="hbj-3S-Bkc" secondAttribute="height" multiplier="1:1" id="KhZ-dy-nDg"/>
+                                                        <constraint firstItem="C2z-VX-Vvs" firstAttribute="leading" secondItem="hbj-3S-Bkc" secondAttribute="leading" constant="9" id="PiD-6M-cod"/>
+                                                        <constraint firstAttribute="bottom" secondItem="C2z-VX-Vvs" secondAttribute="bottom" constant="9" id="pIb-0l-oq2"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="contact us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcb-Dx-7uq">
+                                                    <rect key="frame" x="96" y="41" width="79.666666666666686" height="24"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bcb-Dx-7uq" firstAttribute="leading" secondItem="hbj-3S-Bkc" secondAttribute="trailing" constant="18" id="3rD-AK-QHL"/>
+                                                <constraint firstItem="lpB-Oh-QY0" firstAttribute="top" secondItem="Q2l-8I-7Tf" secondAttribute="top" constant="5" id="K3e-Zm-nmB"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bcb-Dx-7uq" secondAttribute="trailing" constant="20" symbolic="YES" id="UgG-QN-Y8b"/>
+                                                <constraint firstItem="hbj-3S-Bkc" firstAttribute="top" secondItem="Q2l-8I-7Tf" secondAttribute="top" constant="33" id="UhU-Rr-Nh9"/>
+                                                <constraint firstItem="hbj-3S-Bkc" firstAttribute="leading" secondItem="lpB-Oh-QY0" secondAttribute="leading" constant="20" id="XAG-PW-KK8"/>
+                                                <constraint firstItem="lpB-Oh-QY0" firstAttribute="leading" secondItem="Q2l-8I-7Tf" secondAttribute="leading" constant="18" id="e4w-3I-4KL"/>
+                                                <constraint firstItem="bcb-Dx-7uq" firstAttribute="centerY" secondItem="Q2l-8I-7Tf" secondAttribute="centerY" id="gCJ-OK-B6X"/>
+                                                <constraint firstAttribute="trailing" secondItem="lpB-Oh-QY0" secondAttribute="trailing" constant="18" id="qBk-bh-xaI"/>
+                                                <constraint firstAttribute="bottom" secondItem="lpB-Oh-QY0" secondAttribute="bottom" constant="5" id="sps-HG-Rrn"/>
+                                                <constraint firstAttribute="bottom" secondItem="hbj-3S-Bkc" secondAttribute="bottom" constant="33" id="tJd-8L-QUU"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Jrh-aD-7pM" appends="YES" id="tbS-46-UQ0"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="Rnq-Jh-aeF">
+                                        <rect key="frame" x="0.0" y="388" width="375" height="106"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rnq-Jh-aeF" id="tRv-P1-HSb">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PKx-JD-FTk" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
+                                                    <rect key="frame" x="18" y="5" width="339" height="96"/>
+                                                    <color key="backgroundColor" name="Elevated"/>
+                                                    <gestureRecognizers/>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="4MY-1Z-Ea9" appends="YES" id="uCS-mr-A8h"/>
+                                                    </connections>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PLB-Oq-kcg">
+                                                    <rect key="frame" x="38" y="33" width="40" height="40"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shield.lefthalf.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="RB6-b4-abH">
+                                                            <rect key="frame" x="9" y="9.9999999999999982" width="22" height="20.666666666666664"/>
+                                                            <color key="tintColor" systemColor="labelColor"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="RB6-b4-abH" secondAttribute="bottom" constant="9" id="2mt-hX-TmZ"/>
+                                                        <constraint firstAttribute="width" secondItem="PLB-Oq-kcg" secondAttribute="height" multiplier="1:1" id="HeN-nW-tSO"/>
+                                                        <constraint firstItem="RB6-b4-abH" firstAttribute="leading" secondItem="PLB-Oq-kcg" secondAttribute="leading" constant="9" id="Z9z-S2-Cqp"/>
+                                                        <constraint firstItem="RB6-b4-abH" firstAttribute="top" secondItem="PLB-Oq-kcg" secondAttribute="top" constant="9" id="odi-WU-cUc"/>
+                                                        <constraint firstAttribute="trailing" secondItem="RB6-b4-abH" secondAttribute="trailing" constant="9" id="upu-El-99M"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="privacy policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6i-1U-OrY">
+                                                    <rect key="frame" x="96" y="41" width="109" height="24"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="PKx-JD-FTk" secondAttribute="bottom" constant="5" id="2g0-8i-VVc"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="p6i-1U-OrY" secondAttribute="trailing" constant="20" symbolic="YES" id="GDq-Cb-DTa"/>
+                                                <constraint firstAttribute="trailing" secondItem="PKx-JD-FTk" secondAttribute="trailing" constant="18" id="LOP-MV-3Vg"/>
+                                                <constraint firstItem="PKx-JD-FTk" firstAttribute="top" secondItem="tRv-P1-HSb" secondAttribute="top" constant="5" id="PTh-FB-NbO"/>
+                                                <constraint firstItem="PLB-Oq-kcg" firstAttribute="leading" secondItem="PKx-JD-FTk" secondAttribute="leading" constant="20" id="WcI-uh-jjt"/>
+                                                <constraint firstItem="p6i-1U-OrY" firstAttribute="centerY" secondItem="tRv-P1-HSb" secondAttribute="centerY" id="cQo-KY-YgZ"/>
+                                                <constraint firstItem="p6i-1U-OrY" firstAttribute="leading" secondItem="PLB-Oq-kcg" secondAttribute="trailing" constant="18" id="caP-7W-eBU"/>
+                                                <constraint firstItem="PLB-Oq-kcg" firstAttribute="top" secondItem="tRv-P1-HSb" secondAttribute="top" constant="33" id="czs-QM-vA4"/>
+                                                <constraint firstItem="PKx-JD-FTk" firstAttribute="leading" secondItem="tRv-P1-HSb" secondAttribute="leading" constant="18" id="jpr-Sc-QgA"/>
+                                                <constraint firstAttribute="bottom" secondItem="PLB-Oq-kcg" secondAttribute="bottom" constant="33" id="tbw-Gm-Gls"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                        <gestureRecognizers/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Kbs-EM-jiJ" id="KTu-wo-cNs"/>
+                            <outlet property="delegate" destination="Kbs-EM-jiJ" id="gQu-D8-InZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="rSv-YH-Peu">
+                        <barButtonItem key="backBarButtonItem" title=" " id="agu-2W-rrO"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KMc-A6-9Ag" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Jrh-aD-7pM" userLabel="contactUs">
+                    <connections>
+                        <segue destination="If3-Iy-N99" kind="show" id="NSp-DC-KNh"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="4MY-1Z-Ea9" userLabel="privacyPolicy">
+                    <connections>
+                        <segue destination="7xe-KY-LMm" kind="show" id="vWP-Z5-Df6"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="919" y="2219"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2e9-22-2b8"/>
+        <segue reference="fwQ-f2-jSx"/>
         <segue reference="AfM-93-8mC"/>
         <segue reference="tOY-Um-AMB"/>
     </inferredMetricsTieBreakers>
