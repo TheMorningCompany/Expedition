@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E3a-YU-zsV">
-    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController storyboardIdentifier="IntroViewController" title="GifView" id="E3a-YU-zsV" customClass="IntroViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3n1-9b-CYd">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bwc-XX-UMS">
-                                <rect key="frame" x="0.0" y="44" width="428" height="848"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="766"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="v5J-8J-4Di"/>
@@ -46,7 +46,7 @@
             <objects>
                 <viewController storyboardIdentifier="mainVC" title="Web" id="BYZ-38-t0r" customClass="ViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6B-o4-NEu">
@@ -54,11 +54,11 @@
                                 <state key="normal" image="chevron.down" catalog="system"/>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="JeA-nV-CKj">
-                                <rect key="frame" x="393" y="62" width="20" height="20"/>
+                                <rect key="frame" x="355" y="62" width="20" height="20"/>
                                 <color key="color" systemColor="labelColor"/>
                             </activityIndicatorView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="poK-nr-9UJ">
-                                <rect key="frame" x="39" y="55" width="346" height="36"/>
+                                <rect key="frame" x="39" y="55" width="308" height="36"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="2Fp-Z7-fL9"/>
@@ -74,7 +74,7 @@
                                 </connections>
                             </textField>
                             <wkWebView opaque="NO" contentMode="scaleToFill" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Sr-kh-OPV">
-                                <rect key="frame" x="0.0" y="90" width="428" height="753"/>
+                                <rect key="frame" x="0.0" y="90" width="390" height="671"/>
                                 <color key="backgroundColor" name="Expedition White"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <gestureRecognizers/>
@@ -88,7 +88,7 @@
                                 </connections>
                             </wkWebView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdo-tH-OsN">
-                                <rect key="frame" x="0.0" y="843" width="428" height="49"/>
+                                <rect key="frame" x="0.0" y="761" width="390" height="49"/>
                                 <color key="backgroundColor" name="Expedition White"/>
                                 <items>
                                     <barButtonItem image="chevron.left" catalog="system" id="GpC-A9-Dyx">
@@ -193,7 +193,7 @@
             <objects>
                 <viewController storyboardIdentifier="Blank Screen" id="KbL-uP-Hd2" customClass="BlankViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lAE-Ui-ynU">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="LRz-3c-U6J"/>
                         <color key="backgroundColor" name="Expedition White"/>
@@ -211,7 +211,7 @@
             <objects>
                 <tableViewController title="History" id="65v-MH-vlF" customClass="HistoryTableViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="26q-fx-QMl">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -220,14 +220,14 @@
                         <color key="sectionIndexTrackingBackgroundColor" name="Expedition White"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextCell" textLabel="7dK-fL-zc3" rowHeight="93" style="IBUITableViewCellStyleDefault" id="jPf-bm-8lT">
-                                <rect key="frame" x="20" y="55.333332061767578" width="388" height="93"/>
+                                <rect key="frame" x="20" y="55.333332061767578" width="350" height="93"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jPf-bm-8lT" id="7Wr-Ex-Ulu" customClass="UITableView">
-                                    <rect key="frame" x="0.0" y="0.0" width="388" height="93"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="350" height="93"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7dK-fL-zc3">
-                                            <rect key="frame" x="20" y="0.0" width="348" height="93"/>
+                                            <rect key="frame" x="20" y="0.0" width="310" height="93"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <gestureRecognizers/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
@@ -267,7 +267,7 @@
             <objects>
                 <tableViewController id="9OM-wm-4ti" customClass="OptionsViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="tCM-8D-bll">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="734"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -277,14 +277,14 @@
                             <tableViewSection id="uvQ-jX-yWd">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="228" id="BJf-m0-cAD">
-                                        <rect key="frame" x="0.0" y="18" width="428" height="228"/>
+                                        <rect key="frame" x="0.0" y="18" width="390" height="228"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BJf-m0-cAD" id="161-v2-uzh">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="228"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="228"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="din-gV-HVn">
-                                                    <rect key="frame" x="18" y="0.0" width="392" height="225"/>
+                                                    <rect key="frame" x="18" y="0.0" width="354" height="225"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="225" id="8XL-vB-IAO"/>
                                                     </constraints>
@@ -293,7 +293,7 @@
                                                     </connections>
                                                 </containerView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gearshape" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vOt-Cb-wAH">
-                                                    <rect key="frame" x="169" y="35.333333333333314" width="90" height="89.666666666666657"/>
+                                                    <rect key="frame" x="150" y="35.333333333333314" width="90" height="89.666666666666657"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="90" id="RjR-aG-3u5"/>
@@ -301,7 +301,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="options" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tI5-Jc-FcH">
-                                                    <rect key="frame" x="144" y="140" width="140" height="52"/>
+                                                    <rect key="frame" x="125" y="140" width="140" height="52"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -325,14 +325,14 @@
                             <tableViewSection id="1uj-i3-ex1">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="JfL-OY-4Ez">
-                                        <rect key="frame" x="0.0" y="282" width="428" height="106"/>
+                                        <rect key="frame" x="0.0" y="282" width="390" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JfL-OY-4Ez" id="ScI-A3-rjN">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XG0-uH-TR6" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="392" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                     <gestureRecognizers/>
                                                 </view>
@@ -380,14 +380,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="w5v-PF-NWI">
-                                        <rect key="frame" x="0.0" y="388" width="428" height="106"/>
+                                        <rect key="frame" x="0.0" y="388" width="390" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="w5v-PF-NWI" id="JuU-06-mgD">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJM-x2-ZJg" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="392" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fOd-h9-oJr">
@@ -431,14 +431,14 @@
                                         <gestureRecognizers/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="m1D-LX-yHq">
-                                        <rect key="frame" x="0.0" y="494" width="428" height="106"/>
+                                        <rect key="frame" x="0.0" y="494" width="390" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m1D-LX-yHq" id="4Zq-hb-e9B">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ERA-8J-0Sf" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="392" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EWm-H2-ZTf">
@@ -482,14 +482,14 @@
                                         <gestureRecognizers/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="rSB-iU-vr5">
-                                        <rect key="frame" x="0.0" y="600" width="428" height="106"/>
+                                        <rect key="frame" x="0.0" y="600" width="390" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rSB-iU-vr5" id="ULO-2K-8rn">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="41C-oV-ATR" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="392" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                     <gestureRecognizers/>
                                                     <connections>
@@ -576,35 +576,35 @@
             <objects>
                 <tableViewController id="DpS-9H-eTc" customClass="TabsTableViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="w6d-vX-c8d">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="816"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="734"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tabCell" rowHeight="292" id="1mP-up-XJs">
-                                <rect key="frame" x="20" y="55.333332061767578" width="388" height="292"/>
+                                <rect key="frame" x="20" y="55.333332061767578" width="350" height="292"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1mP-up-XJs" id="pzG-KQ-U1C">
-                                    <rect key="frame" x="0.0" y="0.0" width="388" height="292"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="350" height="292"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LOU-Ib-35C" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="388" height="277"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="277"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         </view>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LEQ-gE-gC4">
-                                            <rect key="frame" x="0.0" y="0.0" width="388" height="196"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="177"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="LEQ-gE-gC4" secondAttribute="height" multiplier="900:455" id="WuP-Fg-GEu"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="website title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lk4-gx-BpT">
-                                            <rect key="frame" x="25" y="206" width="151.66666666666666" height="34"/>
+                                            <rect key="frame" x="25" y="187" width="151.66666666666666" height="34"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="website url" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGb-6P-Elf">
-                                            <rect key="frame" x="25" y="242" width="92" height="25"/>
+                                            <rect key="frame" x="25" y="223" width="92" height="25"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -646,17 +646,17 @@
             <objects>
                 <viewController id="gGB-r8-M28" customClass="TabsMainViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bdn-XH-thH">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="734"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cma-gM-7na">
-                                <rect key="frame" x="0.0" y="0.0" width="428" height="816"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="734"/>
                                 <connections>
                                     <segue destination="DpS-9H-eTc" kind="embed" id="Dfr-TQ-nFs"/>
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFR-xc-63y">
-                                <rect key="frame" x="18" y="723" width="392" height="55"/>
+                                <rect key="frame" x="18" y="641" width="354" height="55"/>
                                 <color key="backgroundColor" name="Expedition Blue"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="cfw-dJ-aoi"/>
@@ -701,7 +701,7 @@
             <objects>
                 <tableViewController id="WlA-qs-nnO" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Aps-Yt-xYK">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="734"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -710,20 +710,20 @@
                             <tableViewSection id="7se-bp-Mli">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="225" id="9le-bG-TjO">
-                                        <rect key="frame" x="0.0" y="18" width="428" height="225"/>
+                                        <rect key="frame" x="0.0" y="18" width="390" height="225"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9le-bG-TjO" id="Myb-8M-fcW">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="225"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="225"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ovc-jF-br1" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="0.0" width="392" height="225"/>
+                                                    <rect key="frame" x="18" y="0.0" width="354" height="225"/>
                                                     <connections>
                                                         <segue destination="eMb-mG-JIk" kind="embed" id="2e9-22-2b8"/>
                                                     </connections>
                                                 </containerView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scribble.variable" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wW4-A2-pac">
-                                                    <rect key="frame" x="164" y="29.666666666666671" width="100" height="99.333333333333343"/>
+                                                    <rect key="frame" x="145" y="29.666666666666671" width="100" height="99.333333333333343"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="wW4-A2-pac" secondAttribute="height" multiplier="1:1" id="1m7-YY-plj"/>
@@ -731,7 +731,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gestures" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYd-ZS-avc">
-                                                    <rect key="frame" x="134.66666666666666" y="140" width="158.99999999999997" height="52"/>
+                                                    <rect key="frame" x="115.66666666666669" y="140" width="159" height="52"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -755,10 +755,10 @@
                             <tableViewSection id="FYq-9w-1HZ">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="214" id="npy-cg-zQ2">
-                                        <rect key="frame" x="0.0" y="279" width="428" height="214"/>
+                                        <rect key="frame" x="0.0" y="279" width="390" height="214"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="npy-cg-zQ2" id="5cE-QI-F7w">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="214"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="214"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1G3-Kt-k2f" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
@@ -805,10 +805,10 @@
                                         <color key="backgroundColor" name="Expedition White"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="214" id="9q6-6p-KLd">
-                                        <rect key="frame" x="0.0" y="493" width="428" height="214"/>
+                                        <rect key="frame" x="0.0" y="493" width="390" height="214"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9q6-6p-KLd" id="OcI-Gs-k3b">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="214"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="214"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQP-H7-FVX" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
@@ -855,10 +855,10 @@
                                         <color key="backgroundColor" name="Expedition White"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="214" id="hV5-st-Tdi">
-                                        <rect key="frame" x="0.0" y="707" width="428" height="214"/>
+                                        <rect key="frame" x="0.0" y="707" width="390" height="214"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hV5-st-Tdi" id="Nvl-dl-E5g">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="214"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="214"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfA-QE-FHA" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
@@ -905,10 +905,10 @@
                                         <color key="backgroundColor" name="Expedition White"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="214" id="1Sv-PZ-DdY">
-                                        <rect key="frame" x="0.0" y="921" width="428" height="214"/>
+                                        <rect key="frame" x="0.0" y="921" width="390" height="214"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1Sv-PZ-DdY" id="jRv-9w-JtZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="214"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="214"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJU-XU-vBd" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
@@ -955,10 +955,10 @@
                                         <color key="backgroundColor" name="Expedition White"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="214" id="Xj3-xi-UyJ">
-                                        <rect key="frame" x="0.0" y="1135" width="428" height="214"/>
+                                        <rect key="frame" x="0.0" y="1135" width="390" height="214"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xj3-xi-UyJ" id="Zyc-l2-Y9Z">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="214"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="214"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cP4-vc-9kQ" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
@@ -1024,7 +1024,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bPB-G8-doO" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="YqI-Jx-NS9">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="tintColor" systemColor="labelColor"/>
@@ -1044,11 +1044,11 @@
             <objects>
                 <viewController id="7xe-KY-LMm" customClass="PrivacyPolicyViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xfx-CW-8Ns">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NH1-AE-hVy">
-                                <rect key="frame" x="18" y="62" width="392" height="225"/>
+                                <rect key="frame" x="18" y="62" width="354" height="225"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="225" id="kH8-97-Vto"/>
                                 </constraints>
@@ -1057,27 +1057,27 @@
                                 </connections>
                             </containerView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shield.lefthalf.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zY3-ox-cvg">
-                                <rect key="frame" x="169" y="95" width="90" height="88.666666666666671"/>
+                                <rect key="frame" x="150" y="95" width="90" height="88.666666666666671"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="hMP-rf-DyJ"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="privacy policy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIf-EG-g2D">
-                                <rect key="frame" x="85.666666666666686" y="204" width="257" height="52"/>
+                                <rect key="frame" x="66.666666666666686" y="204" width="257" height="52"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="608-tl-8Ij">
-                                <rect key="frame" x="18" y="315" width="392" height="543"/>
+                                <rect key="frame" x="18" y="315" width="354" height="461"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aCe-in-jrk">
-                                        <rect key="frame" x="0.0" y="0.0" width="392" height="543"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="461"/>
                                         <color key="backgroundColor" name="Elevated"/>
                                     </view>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DkZ-rX-ydI">
-                                        <rect key="frame" x="18" y="18" width="356" height="525"/>
+                                        <rect key="frame" x="18" y="18" width="318" height="443"/>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <string key="text">In this document, “we”, “us”, “TMC” and “our” are taken to be in reference to The Morning Company. “The app” will mean Expedition
 
@@ -1136,7 +1136,7 @@ We do not collect any data or personal information in Expedition. We simply do n
             <objects>
                 <tableViewController id="9km-4P-Tvs" customClass="AppIconsViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="JlY-hT-bu4">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="734"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -1145,20 +1145,20 @@ We do not collect any data or personal information in Expedition. We simply do n
                             <tableViewSection id="Ff1-sR-96c">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="225" id="IfU-J3-N9F">
-                                        <rect key="frame" x="0.0" y="18" width="428" height="225"/>
+                                        <rect key="frame" x="0.0" y="18" width="390" height="225"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IfU-J3-N9F" id="kRO-6Z-NWP">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="225"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="225"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8jt-Ri-PxF" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="0.0" width="392" height="225"/>
+                                                    <rect key="frame" x="18" y="0.0" width="354" height="225"/>
                                                     <connections>
                                                         <segue destination="eMb-mG-JIk" kind="embed" id="3W1-dn-UCG"/>
                                                     </connections>
                                                 </containerView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.stack.3d.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="YEW-bG-yQ4">
-                                                    <rect key="frame" x="164" y="30" width="100" height="100.33333333333334"/>
+                                                    <rect key="frame" x="145" y="30" width="100" height="100.33333333333334"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="4rS-fp-dtj"/>
@@ -1166,7 +1166,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="app icon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YpB-wD-ydL">
-                                                    <rect key="frame" x="134.66666666666666" y="140" width="158.99999999999997" height="52"/>
+                                                    <rect key="frame" x="115.66666666666669" y="140" width="159" height="52"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -1190,14 +1190,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                             <tableViewSection id="gKy-Bv-SSO">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="j7b-pS-ANu">
-                                        <rect key="frame" x="0.0" y="279" width="428" height="106"/>
+                                        <rect key="frame" x="0.0" y="279" width="390" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="j7b-pS-ANu" id="mwY-el-UEC">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KN4-gs-5yh" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="392" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                     <gestureRecognizers/>
                                                     <connections>
@@ -1234,14 +1234,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         <gestureRecognizers/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="hOi-rm-gw3">
-                                        <rect key="frame" x="0.0" y="385" width="428" height="106"/>
+                                        <rect key="frame" x="0.0" y="385" width="390" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hOi-rm-gw3" id="3FF-CZ-g87">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tp5-xi-815" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="392" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                     <gestureRecognizers/>
                                                     <connections>
@@ -1278,14 +1278,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         <gestureRecognizers/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="kdv-g0-Heb">
-                                        <rect key="frame" x="0.0" y="491" width="428" height="106"/>
+                                        <rect key="frame" x="0.0" y="491" width="390" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kdv-g0-Heb" id="Irf-Cp-pR7">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Dd-1x-jQH" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="392" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                     <gestureRecognizers/>
                                                     <connections>
@@ -1322,14 +1322,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         <gestureRecognizers/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="ils-PV-31F">
-                                        <rect key="frame" x="0.0" y="597" width="428" height="106"/>
+                                        <rect key="frame" x="0.0" y="597" width="390" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ils-PV-31F" id="4Rn-iE-mBJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebG-kU-Jvu" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="392" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                     <gestureRecognizers/>
                                                     <connections>
@@ -1366,14 +1366,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         <gestureRecognizers/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="BVj-Gw-ZAw">
-                                        <rect key="frame" x="0.0" y="703" width="428" height="106"/>
+                                        <rect key="frame" x="0.0" y="703" width="390" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BVj-Gw-ZAw" id="KpR-Gc-769">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rkq-eK-whQ" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="392" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                     <gestureRecognizers/>
                                                     <connections>
@@ -1410,14 +1410,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         <gestureRecognizers/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="IwL-cY-1dl">
-                                        <rect key="frame" x="0.0" y="809" width="428" height="106"/>
+                                        <rect key="frame" x="0.0" y="809" width="390" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IwL-cY-1dl" id="xde-Kv-xm0">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="om5-jo-eNA" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="392" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                     <gestureRecognizers/>
                                                     <connections>
@@ -1425,13 +1425,13 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                     </connections>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cq7-h8-gLA">
-                                                    <rect key="frame" x="122" y="41" width="36" height="24"/>
+                                                    <rect key="frame" x="110" y="41" width="36" height="24"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fading" translatesAutoresizingMaskIntoConstraints="NO" id="Spt-h7-8wx" customClass="AppIconPickerImageView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="38" y="20" width="66" height="66"/>
+                                                    <rect key="frame" x="26" y="20" width="66" height="66"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Spt-h7-8wx" secondAttribute="height" multiplier="1:1" id="hvF-36-HFR"/>
                                                     </constraints>
@@ -1503,7 +1503,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Iia-Ig-rNz" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Lqf-Li-iXw">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="tintColor" systemColor="labelColor"/>
@@ -1531,7 +1531,7 @@ We do not collect any data or personal information in Expedition. We simply do n
             <objects>
                 <tableViewController id="If3-Iy-N99" customClass="ContactViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="8UY-ce-B6q">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -1540,17 +1540,17 @@ We do not collect any data or personal information in Expedition. We simply do n
                             <tableViewSection id="FEG-58-uWC">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="225" id="hpP-Mn-8LX">
-                                        <rect key="frame" x="0.0" y="18" width="428" height="225"/>
+                                        <rect key="frame" x="0.0" y="18" width="390" height="225"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hpP-Mn-8LX" id="wyg-cE-GHE">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="225"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="225"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="20I-gO-vkb">
-                                                    <rect key="frame" x="18" y="0.0" width="392" height="225"/>
+                                                    <rect key="frame" x="18" y="0.0" width="354" height="225"/>
                                                     <subviews>
                                                         <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G3o-Xp-eHa">
-                                                            <rect key="frame" x="0.0" y="0.0" width="392" height="225"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="354" height="225"/>
                                                             <connections>
                                                                 <segue destination="eMb-mG-JIk" kind="embed" id="9zN-fo-Gck"/>
                                                             </connections>
@@ -1566,7 +1566,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                     </constraints>
                                                 </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubble.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rTS-iG-TYY">
-                                                    <rect key="frame" x="169" y="32.333333333333343" width="90" height="89"/>
+                                                    <rect key="frame" x="150" y="32.333333333333343" width="90" height="89"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="90" id="e1f-VK-OeT"/>
@@ -1574,7 +1574,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="contact us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mL-QY-Byq">
-                                                    <rect key="frame" x="120.66666666666669" y="141" width="187" height="52"/>
+                                                    <rect key="frame" x="101.66666666666669" y="141" width="187" height="52"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -1598,14 +1598,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                             <tableViewSection id="RGd-MN-H57">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="ZjS-Zb-PC0">
-                                        <rect key="frame" x="0.0" y="279" width="428" height="106"/>
+                                        <rect key="frame" x="0.0" y="279" width="390" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZjS-Zb-PC0" id="odQ-rM-ePS">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="maw-ez-QDB">
-                                                    <rect key="frame" x="18" y="5" width="392" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xch-qo-BNJ">
@@ -1651,14 +1651,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="07v-Kg-5rY">
-                                        <rect key="frame" x="0.0" y="385" width="428" height="106"/>
+                                        <rect key="frame" x="0.0" y="385" width="390" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="07v-Kg-5rY" id="NIa-2m-yWl">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RaJ-7v-2pF">
-                                                    <rect key="frame" x="18" y="5" width="392" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wy9-Ld-DNe">
@@ -1704,14 +1704,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="06j-Mu-Te2">
-                                        <rect key="frame" x="0.0" y="491" width="428" height="106"/>
+                                        <rect key="frame" x="0.0" y="491" width="390" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="06j-Mu-Te2" id="ifD-2Y-wZK">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cge-gk-u13">
-                                                    <rect key="frame" x="18" y="5" width="392" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0pm-6U-hKg">
@@ -1758,14 +1758,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="bEP-ag-RXn">
-                                        <rect key="frame" x="0.0" y="597" width="428" height="106"/>
+                                        <rect key="frame" x="0.0" y="597" width="390" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bEP-ag-RXn" id="UKf-SI-kR0">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cAu-Zn-ndC">
-                                                    <rect key="frame" x="18" y="5" width="392" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V5j-HV-X2U">
@@ -1813,14 +1813,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="cWs-Yk-gl8">
-                                        <rect key="frame" x="0.0" y="703" width="428" height="106"/>
+                                        <rect key="frame" x="0.0" y="703" width="390" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cWs-Yk-gl8" id="ypL-Fy-HXq">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ynD-Wb-Cya">
-                                                    <rect key="frame" x="18" y="5" width="392" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YLk-BJ-cFP">
@@ -1865,14 +1865,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         <gestureRecognizers/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="7LJ-hZ-oh2">
-                                        <rect key="frame" x="0.0" y="809" width="428" height="106"/>
+                                        <rect key="frame" x="0.0" y="809" width="390" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7LJ-hZ-oh2" id="0Fg-7L-3QF">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t49-IG-5or">
-                                                    <rect key="frame" x="18" y="5" width="392" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eWT-ph-6xn">
@@ -1971,7 +1971,7 @@ We do not collect any data or personal information in Expedition. We simply do n
             <objects>
                 <tableViewController title="Bookmarks" id="ed1-S0-drB" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="static" style="insetGrouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="bfC-kH-yak" userLabel="BookmarkTableView">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -1982,14 +1982,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                             <tableViewSection id="FKm-Ph-2UG">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bookmarkCell" textLabel="WDy-hk-Thu" rowHeight="68" style="IBUITableViewCellStyleDefault" id="td5-08-gva">
-                                        <rect key="frame" x="20" y="18" width="388" height="68"/>
+                                        <rect key="frame" x="20" y="18" width="350" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="td5-08-gva" id="6b2-YB-lxf" customClass="UITableView">
-                                            <rect key="frame" x="0.0" y="0.0" width="388" height="68"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="68"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WDy-hk-Thu">
-                                                    <rect key="frame" x="20" y="0.0" width="348" height="68"/>
+                                                    <rect key="frame" x="20" y="0.0" width="310" height="68"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <gestureRecognizers/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
@@ -2028,7 +2028,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LW0-hH-Loe" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qAR-Ri-hzB">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -2045,7 +2045,7 @@ We do not collect any data or personal information in Expedition. We simply do n
             <objects>
                 <tableViewController id="UUa-q7-H9y" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="gHw-9V-qE1">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="734"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -2055,14 +2055,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                             <tableViewSection id="ThF-hm-zVe">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="228" id="a8h-QH-zI6">
-                                        <rect key="frame" x="0.0" y="18" width="428" height="228"/>
+                                        <rect key="frame" x="0.0" y="18" width="390" height="228"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a8h-QH-zI6" id="Tu0-EV-81l">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="228"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="228"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZLO-tE-nYQ" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="0.0" width="392" height="225"/>
+                                                    <rect key="frame" x="18" y="0.0" width="354" height="225"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="225" id="xPI-w6-Uv4"/>
                                                     </constraints>
@@ -2071,7 +2071,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                     </connections>
                                                 </containerView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paintbrush.pointed" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="135-n4-2v9">
-                                                    <rect key="frame" x="169" y="35" width="90" height="90.333333333333343"/>
+                                                    <rect key="frame" x="150" y="35" width="90" height="90.333333333333343"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="135-n4-2v9" secondAttribute="height" multiplier="1:1" id="4as-23-AGJ"/>
@@ -2079,7 +2079,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="customise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p51-zL-KCQ">
-                                                    <rect key="frame" x="121" y="140" width="186" height="52"/>
+                                                    <rect key="frame" x="102" y="140" width="186" height="52"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -2103,14 +2103,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                             <tableViewSection id="ODG-ex-n80">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="n0Q-CI-39K">
-                                        <rect key="frame" x="0.0" y="282" width="428" height="106"/>
+                                        <rect key="frame" x="0.0" y="282" width="390" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n0Q-CI-39K" id="IXR-D0-Ft2">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Dn-6B-8hW" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="392" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0de-HD-Lws">
@@ -2157,14 +2157,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="Zop-WV-diX">
-                                        <rect key="frame" x="0.0" y="388" width="428" height="106"/>
+                                        <rect key="frame" x="0.0" y="388" width="390" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zop-WV-diX" id="j00-hU-mj3">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h0o-Gb-bRx" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="392" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iYY-HQ-guI">
@@ -2208,14 +2208,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         <gestureRecognizers/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="UGO-ac-YfM">
-                                        <rect key="frame" x="0.0" y="494" width="428" height="106"/>
+                                        <rect key="frame" x="0.0" y="494" width="390" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UGO-ac-YfM" id="FIS-LC-2K9">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="px9-TJ-5vw" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="392" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                     <gestureRecognizers/>
                                                     <connections>
@@ -2263,14 +2263,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         <gestureRecognizers/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="wTM-Tr-wpf">
-                                        <rect key="frame" x="0.0" y="600" width="428" height="106"/>
+                                        <rect key="frame" x="0.0" y="600" width="390" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wTM-Tr-wpf" id="j3a-Gt-j4y">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i7s-D2-be2" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="392" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0aC-Jk-ppv">
@@ -2344,7 +2344,7 @@ We do not collect any data or personal information in Expedition. We simply do n
             <objects>
                 <tableViewController id="zKx-Ny-wzh" customClass="ReopenOnLastPageViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="uoN-fc-dKz">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="734"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -2354,20 +2354,20 @@ We do not collect any data or personal information in Expedition. We simply do n
                             <tableViewSection id="RY6-Tx-t3p">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="228" id="EE9-qO-6Ot">
-                                        <rect key="frame" x="0.0" y="18" width="428" height="228"/>
+                                        <rect key="frame" x="0.0" y="18" width="390" height="228"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EE9-qO-6Ot" id="5VJ-9I-HhP">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="228"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="228"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c38-kQ-Q4K" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="0.0" width="392" height="225"/>
+                                                    <rect key="frame" x="18" y="0.0" width="354" height="225"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="225" id="EED-qF-t71"/>
                                                     </constraints>
                                                 </containerView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.up.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7UM-xQ-rR2">
-                                                    <rect key="frame" x="169" y="36.000000000000007" width="90" height="88.666666666666686"/>
+                                                    <rect key="frame" x="150" y="36.000000000000007" width="90" height="88.666666666666686"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="7UM-xQ-rR2" secondAttribute="height" multiplier="1:1" id="CIb-X3-gqe"/>
@@ -2375,7 +2375,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reopen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBl-OD-jOG">
-                                                    <rect key="frame" x="147.66666666666666" y="140" width="132.99999999999997" height="52"/>
+                                                    <rect key="frame" x="128.66666666666666" y="140" width="132.99999999999997" height="52"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -2399,18 +2399,18 @@ We do not collect any data or personal information in Expedition. We simply do n
                             <tableViewSection id="SBH-fR-aga">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="170" id="bJG-yc-n9U">
-                                        <rect key="frame" x="0.0" y="282" width="428" height="170"/>
+                                        <rect key="frame" x="0.0" y="282" width="390" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bJG-yc-n9U" id="C2q-e6-5gu">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="170"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="170"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r1i-4G-4ra" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="392" height="157.66666666666666"/>
+                                                    <rect key="frame" x="18" y="5" width="354" height="157.66666666666666"/>
                                                     <color key="backgroundColor" name="Elevated"/>
                                                 </view>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4r-iK-A3X">
-                                                    <rect key="frame" x="32" y="12" width="364" height="134"/>
+                                                    <rect key="frame" x="32" y="12" width="326" height="134"/>
                                                     <color key="tintColor" systemColor="labelColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="134" id="yNL-rz-BGP"/>
@@ -2435,17 +2435,17 @@ We do not collect any data or personal information in Expedition. We simply do n
                                         <gestureRecognizers/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="s7I-BG-b4M">
-                                        <rect key="frame" x="0.0" y="452" width="428" height="106"/>
+                                        <rect key="frame" x="0.0" y="452" width="390" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="s7I-BG-b4M" id="rh2-xz-9C9">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YKu-0t-WxM" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="5" width="392" height="96"/>
+                                                    <rect key="frame" x="18" y="5" width="354" height="96"/>
                                                     <subviews>
                                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Ir-UE-0Vn">
-                                                            <rect key="frame" x="329" y="32.666666666666664" width="51" height="31"/>
+                                                            <rect key="frame" x="291" y="32.666666666666664" width="51" height="31"/>
                                                             <color key="onTintColor" name="Expedition Blue"/>
                                                             <connections>
                                                                 <action selector="reopenTabsSwitchValueChanged:" destination="zKx-Ny-wzh" eventType="valueChanged" id="qFA-ZX-AyV"/>
@@ -2506,7 +2506,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ASe-ZF-pX3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="wsW-0x-1zC">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" systemColor="labelColor"/>
                         <color key="barTintColor" name="Expedition White"/>
