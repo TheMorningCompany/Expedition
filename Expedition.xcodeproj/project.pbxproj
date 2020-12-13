@@ -40,6 +40,7 @@
 		009EBED5257C387800C9382C /* ReopenOnLastPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009EBED4257C387800C9382C /* ReopenOnLastPageViewController.swift */; };
 		00A91DBD23A84AFF00F045F7 /* DarkIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A91DBB23A84AFF00F045F7 /* DarkIcon@2x.png */; };
 		00AB6BA623CD37DE0088E269 /* Metal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AB6BA523CD37DD0088E269 /* Metal@2x.png */; };
+		00B612892585EB91001CEEE1 /* AppIconPickerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B612882585EB91001CEEE1 /* AppIconPickerImageView.swift */; };
 		00C4A4C623C509E800C18F65 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00C4A4C523C509E800C18F65 /* Settings.bundle */; };
 		00F7071123D16FB400C0B8E2 /* Diamond@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F7071023D16FB400C0B8E2 /* Diamond@2x.png */; };
 		5D1D0D5823C6AE7600B4377E /* History.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D0D5623C6AE7600B4377E /* History.xcdatamodeld */; };
@@ -138,6 +139,7 @@
 		00AB6BA523CD37DD0088E269 /* Metal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Metal@2x.png"; sourceTree = "<group>"; };
 		00AD59E923CB986E007C6495 /* ColorShadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ColorShadow@2x.png"; sourceTree = "<group>"; };
 		00AD59F623CB98AC007C6495 /* Fading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fading@2x.png"; sourceTree = "<group>"; };
+		00B612882585EB91001CEEE1 /* AppIconPickerImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconPickerImageView.swift; sourceTree = "<group>"; };
 		00C4A4C523C509E800C18F65 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		00F7071023D16FB400C0B8E2 /* Diamond@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Diamond@2x.png"; sourceTree = "<group>"; };
 		5D1D0D5723C6AE7600B4377E /* History.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = History.xcdatamodel; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 				5D41CBF223C5745C003A16F9 /* OptionsViewController.swift */,
 				00805289254CDDA6008D7697 /* PrivacyPolicyViewController.swift */,
 				0081CCE124280A720097C2C6 /* TabsTableViewController.swift */,
+				00B612882585EB91001CEEE1 /* AppIconPickerImageView.swift */,
 				000D80262427F5CA005E0CA1 /* AppIconsViewController.swift */,
 				5D865CC323E1013700374B07 /* BlankViewController.swift */,
 				009EBECD257C363A00C9382C /* Options */,
@@ -570,6 +573,7 @@
 				0062526524208C26004B3136 /* Onb3ViewController.swift in Sources */,
 				5D5BA2E223C5910C00D98050 /* HistoryTableViewController.swift in Sources */,
 				009EBEC9257C362E00C9382C /* CustomizeViewController.swift in Sources */,
+				00B612892585EB91001CEEE1 /* AppIconPickerImageView.swift in Sources */,
 				001366BA2307B61F009A102E /* SearchingViewController.swift in Sources */,
 				001366B82307B61F009A102E /* AppDelegate.swift in Sources */,
 				D6030CDC23A89669003C6911 /* Gestures.swift in Sources */,
