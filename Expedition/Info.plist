@@ -73,15 +73,6 @@
 				<key>UIPrerenderedIcon</key>
 				<false/>
 			</dict>
-			<key>neonIcon</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>GlyphFade</string>
-				</array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
 			<key>halftone</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
@@ -130,6 +121,15 @@
 				<key>CFBundleIconFiles</key>
 				<array>
 					<string>MorningIcon</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>neonIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>GlyphFade</string>
 				</array>
 				<key>UIPrerenderedIcon</key>
 				<false/>
@@ -277,6 +277,28 @@
 	<string>1</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.utilities</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fb</string>
+		<string>fbapi</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+		<string>fb-messenger-api</string>
+		<string>twitter</string>
+		<string>viber</string>
+		<string>whatsapp</string>
+		<string>wechat</string>
+		<string>line</string>
+		<string>instagram</string>
+		<string> instagram-stories</string>
+		<string>kakaotalk</string>
+		<string>mqq</string>
+		<string>vk</string>
+		<string>comgooglemaps</string>
+		<string>googlephotos</string>
+		<string>ha</string>
+		<string>yammer</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -314,28 +336,6 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>fb</string>
-		<string>fbapi</string>
-		<string>fbauth2</string>
-		<string>fbshareextension</string>
-		<string>fb-messenger-api</string>
-		<string>twitter</string>
-		<string>viber</string>
-		<string>whatsapp</string>
-		<string>wechat</string>
-		<string>line</string>
-		<string>instagram</string>
-		<string> instagram-stories</string>
-		<string>kakaotalk</string>
-		<string>mqq</string>
-		<string>vk</string>
-		<string>comgooglemaps</string>
-		<string>googlephotos</string>
-		<string>ha</string>
-		<string>yammer</string>
 	</array>
 </dict>
 </plist>

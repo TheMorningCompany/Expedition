@@ -45,7 +45,11 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         accessibilityToolbar.barTintColor = UIColor(named: "Expedition White")
         accessibilityToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
         
-        let url = URL(string: "https://duckduckgo.com/")
+        let url = URL(string: "https://start.duckduckgo.com/")
+        
+        webView.layer.cornerCurve = .continuous
+        webView.layer.cornerRadius = 15
+        webView.clipsToBounds = true
         
         let request = URLRequest(url: url!)
         

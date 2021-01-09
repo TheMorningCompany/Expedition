@@ -769,7 +769,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 7.4;
-				PRODUCT_BUNDLE_IDENTIFIER = a.expedition;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tmc.expedition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
@@ -797,7 +797,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 7.4;
-				PRODUCT_BUNDLE_IDENTIFIER = a.expedition;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tmc.expedition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
