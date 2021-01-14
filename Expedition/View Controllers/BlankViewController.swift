@@ -9,10 +9,15 @@
 import UIKit
 
 class BlankViewController: UIViewController {
-
+    
+    @IBOutlet weak var icon: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        icon.layer.cornerCurve = .continuous
+        icon.layer.cornerRadius = 35
+        
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToForeground), name: UIApplication.didBecomeActiveNotification, object: nil)
         

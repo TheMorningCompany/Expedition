@@ -26,8 +26,8 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     let impact = UIImpactFeedbackGenerator() // Haptics
     var userAgentVar: String = "mobile" //User agent
     let credits: String = "zeqe golomb:ui designer;finbarr oconnell:programmer;jackson yan:programmer;julian wright:programmer" //Credits
-    var searchEngine: String = "https://duckduckgo.com/" //Search engine initialization
-    var components = URLComponents(string: "https://duckduckgo.com/") //Search engine
+    var searchEngine: String = "https://start.duckduckgo.com/" //Search engine initialization
+    var components = URLComponents(string: "https://start.duckduckgo.com/") //Search engine
     
     //constants
     let timeoutDelay = 5.0
@@ -54,7 +54,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         let request = URLRequest(url: url!)
         
         components?.scheme = "https"
-        components?.host = "duckduckgo.com"
+        components?.host = "start.duckduckgo.com"
         
         webView?.load(request)
        
@@ -213,7 +213,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         impact.impactOccurred() // Haptics
         if UIDevice.current.userInterfaceIdiom == .phone {
-            self.webView.customUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/7.4 Mobile/15E148 Expedition/604.1"
+            self.webView.customUserAgent = "Mozilla/5.0 (iPhone; like Mac OS X) AppleWebKit (KHTML, like Gecko) Version/7.4 Mobile/15E148 Expedition/604.1"
         } else {
             self.webView.customUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/7.4 Expedition/605.1.15"
             
@@ -444,6 +444,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             self.present(alert, animated: true)
         }
     
+
     
 }
 
