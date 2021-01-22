@@ -109,7 +109,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             let igURL = URL(string: "https://www.instagram.com/themorningcompanymedia")
             self.openUrl(urlString: igURL!.absoluteString)
         }
-        
+
         
     }
     
@@ -335,6 +335,8 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
 
     @IBAction func reloadSwipe(_ sender: Any) {
         webView.reload()
+
+        
     }
 
     @IBAction func desktopSiteSwipe(_ sender: Any) {
@@ -443,8 +445,17 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             
             self.present(alert, animated: true)
         }
+//  Screenshot stuff
     
-
+//    let config = WKSnapshotConfiguration()
+//    config.rect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: webView.scrollView.contentSize.height)
+//
+//    webView.takeSnapshot(with: config) { image, error in
+//        if let screenshot = image {
+//            print(screenshot.size)
+//            UIImageWriteToSavedPhotosAlbum(screenshot, nil, nil, nil)
+//        }
+//    }
     
 }
 
