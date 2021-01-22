@@ -409,19 +409,19 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     }
     
     @IBAction func shareButton(_ sender: Any) {
-            let alert = UIAlertController(title: "Clear Browsing Data", message: "What do you want to  do?", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "what do you want to do", message: nil, preferredStyle: .actionSheet)
             
-            alert.addAction(UIAlertAction(title: "Nothing", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "nothing", style: .cancel, handler: nil))
             
-            alert.addAction(UIAlertAction(title: "URL", style: .default, handler: { action in
+            alert.addAction(UIAlertAction(title: "share url", style: .default, handler: { action in
                 self.displayShareSheet(shareContent: self.searchBar.text!)
                 self.impact.impactOccurred() //Haptics
             }))
             
-            alert.addAction(UIAlertAction(title: "Page Snapshot", style: .default, handler: { action in
+            alert.addAction(UIAlertAction(title: "fullpage screenshot", style: .default, handler: { action in
                 let config = WKSnapshotConfiguration()
-                var pageHeight:CGFloat = self.webView.scrollView.contentSize.height
-                var pageWidth:CGFloat = self.webView.scrollView.contentSize.width
+                let pageHeight:CGFloat = self.webView.scrollView.contentSize.height
+                let pageWidth:CGFloat = self.webView.scrollView.contentSize.width
                 
     //            self.webView.evaluateJavaScript("document.body.offsetHeight", completionHandler: { (height, error) in
     //                pageHeight = height
@@ -445,18 +445,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             
             self.present(alert, animated: true)
         }
-//  Screenshot stuff
-    
-//    let config = WKSnapshotConfiguration()
-//    config.rect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: webView.scrollView.contentSize.height)
-//
-//    webView.takeSnapshot(with: config) { image, error in
-//        if let screenshot = image {
-//            print(screenshot.size)
-//            UIImageWriteToSavedPhotosAlbum(screenshot, nil, nil, nil)
-//        }
-//    }
-    
+
 }
 
 
