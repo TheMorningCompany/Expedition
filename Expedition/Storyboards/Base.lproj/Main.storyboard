@@ -353,8 +353,8 @@
                                                         <constraint firstItem="oMC-kf-fQo" firstAttribute="top" secondItem="cmK-Rt-d5O" secondAttribute="top" constant="9" id="pDm-OE-QxH"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="customise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghs-cH-ds2">
-                                                    <rect key="frame" x="102" y="41.666666666666664" width="79" height="22.999999999999993"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="customize" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghs-cH-ds2">
+                                                    <rect key="frame" x="102" y="41" width="80" height="24"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1335,8 +1335,8 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                         <outletCollection property="gestureRecognizers" destination="KkX-ZV-2an" appends="YES" id="fAs-l8-7Yn"/>
                                                     </connections>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="shadow" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iL0-mO-3uh">
-                                                    <rect key="frame" x="118" y="41" width="62" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3d" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iL0-mO-3uh">
+                                                    <rect key="frame" x="118" y="41" width="22" height="24"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1423,8 +1423,8 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                         <outletCollection property="gestureRecognizers" destination="MIr-Bc-ozB" appends="YES" id="HEP-gm-NX6"/>
                                                     </connections>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cq7-h8-gLA">
-                                                    <rect key="frame" x="110" y="41" width="36" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="matte black" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cq7-h8-gLA">
+                                                    <rect key="frame" x="110" y="41" width="92" height="24"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -2077,8 +2077,8 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                         <constraint firstAttribute="width" constant="90" id="YGE-Sn-Ptv"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="customise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p51-zL-KCQ">
-                                                    <rect key="frame" x="94.666666666666686" y="140" width="186" height="52"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="customize" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p51-zL-KCQ">
+                                                    <rect key="frame" x="94" y="140" width="187" height="52"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -2721,20 +2721,20 @@ We do not collect any data or personal information in Expedition. We simply do n
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3W1-dn-UCG"/>
+        <segue reference="6p6-08-b6r"/>
         <segue reference="AfM-93-8mC"/>
         <segue reference="tOY-Um-AMB"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="darkTextColor"/>
     <resources>
-        <image name="BlueIcon" width="512" height="512"/>
-        <image name="ColorShadow" width="512.5" height="512.5"/>
-        <image name="DarkIcon" width="512.5" height="512.5"/>
-        <image name="Fading" width="512.5" height="512.5"/>
+        <image name="BlueIcon" width="1024" height="1024"/>
+        <image name="ColorShadow" width="1024" height="1024"/>
+        <image name="DarkIcon" width="1025" height="1025"/>
+        <image name="Fading" width="1025" height="1025"/>
         <image name="GH" width="512" height="512"/>
-        <image name="GlyphFade" width="512.5" height="512.5"/>
+        <image name="GlyphFade" width="1025" height="1025"/>
         <image name="IG" width="512" height="512"/>
-        <image name="LightBlue" width="512.5" height="512.5"/>
+        <image name="LightBlue" width="1025" height="1025"/>
         <image name="YT" width="512" height="512"/>
         <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="arrow.up.circle" catalog="system" width="128" height="121"/>
