@@ -57,7 +57,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         components?.host = "start.duckduckgo.com"
         
         webView?.load(request)
-       
+        
         if UIDevice.current.userInterfaceIdiom == .pad {
         webView.customUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/7.4 Expedition/605.1.15"
         } else {

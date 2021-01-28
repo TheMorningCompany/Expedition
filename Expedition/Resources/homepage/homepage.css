@@ -1,0 +1,86 @@
+
+body {
+    background-color: #f4f4f4;
+}
+.sbar {
+    padding: 25px;
+    box-sizing: border-box;
+    border: 0;
+    background-color: #ffffff;
+    position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: "Avenir Next";
+      font-weight: 500;
+      box-shadow: 0;
+      transition: box-shadow 0.5s, background-color 0.25s;
+      outline: none;
+      
+}
+.logo {
+    position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      
+}
+.footer {
+    position: fixed;
+      bottom: 5%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+}
+.btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(to top, color(display-p3 0.19 0.43 0.89), color(display-p3 0 0.65 0.89));
+    object-fit: fill;  
+    padding: 15px;
+    box-sizing: border-box;
+    position: fixed;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    box-shadow: 0;
+      transition: box-shadow 0.5s, background-color 0.25s;
+}
+
+.sbar:hover {
+    box-shadow: 0px 3px 10px 4px rgba(0, 0, 0, 0.05);
+}
+.sbar:focus {
+    box-shadow: 0px 10px 30px 4px rgba(0, 0, 0, 0.05);
+    background-color: #f4f4f4;
+}
+.btn:hover {
+    box-shadow: 0px 10px 30px 4px rgba(25, 137, 229, 0.2);
+}
+
+@media(prefers-color-scheme: dark) {
+ body {
+     background-color: #0d0d0d;
+ }   
+ .sbar {
+     background-color: #1d1d1d;
+     color: white;
+ }
+ .sbar:hover {
+     box-shadow: 0px 3px 10px 4px rgba(0, 0, 0, 0.7);
+ }
+ .sbar:focus {
+     box-shadow: 0px 10px 30px 4px rgba(0, 0, 0, 0.5);
+         box-shadow: 0px 10px 30px 4px rgba(0, 0, 0, 0.8);
+         background-color: #151515;
+     
+ }
+ .footer {
+     filter: invert(100%);
+ }
+ .btn {
+ }
+
+}
