@@ -13,13 +13,13 @@ import CoreData
 class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegate, UIScrollViewDelegate, WKUIDelegate {
 
     @IBOutlet weak var webView: WKWebView!
-    @IBOutlet weak var ActInd: UIActivityIndicatorView!
     @IBOutlet weak var accessibilityToolbar: UIToolbar!
     @IBOutlet weak var webViewTop: NSLayoutConstraint!
     @IBOutlet weak var toolbarBottom: NSLayoutConstraint!
     @IBOutlet weak var secureImg: UIImageView!
+    @IBOutlet weak var progressView: UIProgressView!
     let notification = UINotificationFeedbackGenerator()//Haptics
-
+    
     
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     var lastOffsetY :CGFloat = 0
@@ -39,6 +39,9 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).font = UIFont(name: "AvenirNext-Medium", size: UIFont.labelFontSize)
         var components = URLComponents(string: searchEngine)
        
+        searchBar.layer.cornerRadius = 15
+        searchBar.layer.cornerCurve = .continuous
+        
         //MARK: SCROLLING STUFF
         webView.scrollView.delegate = self
         
@@ -64,11 +67,8 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         webView.customUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/5.2 Mobile/15E148 Expedition/604.1"
         }
         
-        webView?.addSubview(ActInd)
-        ActInd?.startAnimating()
         
         webView?.navigationDelegate = self
-        ActInd?.hidesWhenStopped = true
         
         
         if UserDefaults.standard.bool(forKey: "reopen_tabs") {
@@ -91,7 +91,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             
         }
         
-
+        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
@@ -109,8 +109,16 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             let igURL = URL(string: "https://www.instagram.com/themorningcompanymedia")
             self.openUrl(urlString: igURL!.absoluteString)
         }
-
         
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 17, height: self.searchBar.frame.height))
+        searchBar.leftView = paddingView
+        searchBar.leftViewMode = UITextField.ViewMode.always
+        
+    }
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "estimatedProgress" {
+            progressView.progress = Float(webView.estimatedProgress)
+        }
     }
     
     
@@ -128,6 +136,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             displayShareSheet(shareContent: textToShare!)
         }
     }
+    
     
     func schemeHandling(url: URL) {
         if url != nil {
@@ -193,7 +202,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
 
         if(scrollView.panGestureRecognizer.translation(in: scrollView.superview).y > 0) {
             print("scroll up")
-            self.webViewTop.constant = 46
+            self.webViewTop.constant = 52
             self.toolbarBottom.constant = 0
             UIView.animate(withDuration: 0.15) {
                 self.view.layoutIfNeeded()
@@ -218,7 +227,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             self.webView.customUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/7.4 Expedition/605.1.15"
             
         }
-        ActInd?.startAnimating()
+        progressView.isHidden = false
         
          
      }
@@ -226,7 +235,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
      func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         impact.impactOccurred()//haptics
 
-        ActInd?.stopAnimating()
+        progressView.isHidden = true
         if (!(webView.url?.absoluteString.starts(with: "file://"))!) {
             searchBar.text = webView.url?.absoluteString
         }
@@ -249,8 +258,8 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
      }
      
      func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+         progressView.isHidden = true
          notification.notificationOccurred(.error)//Haptic
-         ActInd?.stopAnimating()
          standoutMessage(message: "FAILED NAVIGATION")
      }
     
