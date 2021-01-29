@@ -11,7 +11,6 @@ import UIKit
 class Onb2ViewController: UITableViewController {
     @IBOutlet weak var historySwitch: UISwitch!
     @IBOutlet weak var keepCookiesSwitch: UISwitch!
-    @IBOutlet weak var reopenTabsSwitch: UISwitch!
     
     
     override func viewDidLoad() {
@@ -30,7 +29,7 @@ class Onb2ViewController: UITableViewController {
     func optionsChanged() {
         UserDefaults.standard.set(historySwitch.isOn, forKey: "save_history")
         UserDefaults.standard.set(keepCookiesSwitch.isOn, forKey: "keep_cookies")
-        UserDefaults.standard.set(reopenTabsSwitch.isOn, forKey: "reopen_tabs")
+
         UserDefaults.standard.synchronize()
     }
 }

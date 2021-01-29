@@ -16,6 +16,7 @@
 		001366C22307B620009A102E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001366C02307B620009A102E /* LaunchScreen.storyboard */; };
 		001366D82307B620009A102E /* ExpeditionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001366D72307B620009A102E /* ExpeditionUITests.swift */; };
 		001366E72307BEA9009A102E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001366E62307BEA9009A102E /* WebKit.framework */; };
+		0024E06925C3D00600BDB04D /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0024E06825C3D00600BDB04D /* Button.swift */; };
 		0028F4F9245CC29500FB89B3 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0028F4F8245CC29500FB89B3 /* ContactViewController.swift */; };
 		0037F18C24170A8300275CD0 /* LightBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0037F18B24170A8300275CD0 /* LightBlue@2x.png */; };
 		0053E05F23F640330012DB78 /* GlyphFade@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0053E05E23F640330012DB78 /* GlyphFade@2x.png */; };
@@ -113,6 +114,7 @@
 		001366D72307B620009A102E /* ExpeditionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpeditionUITests.swift; sourceTree = "<group>"; };
 		001366D92307B620009A102E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		001366E62307BEA9009A102E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		0024E06825C3D00600BDB04D /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		0028F4F8245CC29500FB89B3 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		0037F18B24170A8300275CD0 /* LightBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LightBlue@2x.png"; sourceTree = "<group>"; };
 		0053E05E23F640330012DB78 /* GlyphFade@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GlyphFade@2x.png"; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 				001366BB2307B61F009A102E /* Main.storyboard */,
 				00805284254CDC0A008D7697 /* TitleBarViewController.swift */,
 				0062525C242080AE004B3136 /* Onboarding.storyboard */,
+				0024E06825C3D00600BDB04D /* Button.swift */,
 				001366C02307B620009A102E /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -582,6 +585,7 @@
 				001366B82307B61F009A102E /* AppDelegate.swift in Sources */,
 				D6030CDC23A89669003C6911 /* Gestures.swift in Sources */,
 				0070A2AD2568A2F700545813 /* CellBGView.swift in Sources */,
+				0024E06925C3D00600BDB04D /* Button.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
