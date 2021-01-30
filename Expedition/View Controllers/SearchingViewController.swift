@@ -19,6 +19,12 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     @IBOutlet weak var secureImg: UIImageView!
     @IBOutlet weak var progressView: UIProgressView!
     let notification = UINotificationFeedbackGenerator()//Haptics
+    @IBOutlet weak var menuLeft: NSLayoutConstraint!
+    @IBOutlet weak var optionsRight: NSLayoutConstraint!
+    @IBOutlet weak var sbarHeight: NSLayoutConstraint!
+    @IBOutlet weak var sbarTop: NSLayoutConstraint!
+    @IBOutlet weak var webviewRight: NSLayoutConstraint!
+    @IBOutlet weak var webviewLeft: NSLayoutConstraint!
     
     
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -202,7 +208,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
 
         if(scrollView.panGestureRecognizer.translation(in: scrollView.superview).y > 0) {
             print("scroll up")
-            self.webViewTop.constant = 52
+            self.webViewTop.constant = 8
             self.toolbarBottom.constant = 0
             UIView.animate(withDuration: 0.15) {
                 self.view.layoutIfNeeded()
@@ -210,7 +216,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         }
         else {
             print("scroll down")
-            self.webViewTop.constant = 0
+            self.webViewTop.constant = -50
             self.toolbarBottom.constant = 100
             UIView.animate(withDuration: 0.15) {
                 self.view.layoutIfNeeded()
@@ -417,6 +423,20 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         webView.reload()
     }
     
+    @IBAction func sbarTouched(_ sender: Any) {
+        menuLeft.constant = -20
+        optionsRight.constant = -20
+        UIView.animate(withDuration: 0.25) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    @IBAction func sbardone(_ sender: Any) {
+        menuLeft.constant = 10
+        optionsRight.constant = 10
+        UIView.animate(withDuration: 0.25) {
+            self.view.layoutIfNeeded()
+        }
+    }
     @IBAction func shareButton(_ sender: Any) {
         let alert = UIAlertController(title: "what do you want to do", message: nil, preferredStyle: .actionSheet)
             
