@@ -210,17 +210,19 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             print("scroll up")
             self.webViewTop.constant = 8
             self.toolbarBottom.constant = 0
-            UIView.animate(withDuration: 0.15) {
+            self.sbarTop.constant = 0
+            UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 10, options: .curveEaseInOut, animations: {
                 self.view.layoutIfNeeded()
-            }
+            })
         }
         else {
             print("scroll down")
-            self.webViewTop.constant = -50
+            self.webViewTop.constant = 50
             self.toolbarBottom.constant = 100
-            UIView.animate(withDuration: 0.15) {
+            self.sbarTop.constant = -100
+            UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 10, options: .curveEaseInOut, animations: {
                 self.view.layoutIfNeeded()
-            }
+            })
         }
     }
     
@@ -350,8 +352,6 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
 
     @IBAction func reloadSwipe(_ sender: Any) {
         webView.reload()
-
-        
     }
 
     @IBAction func desktopSiteSwipe(_ sender: Any) {
@@ -426,16 +426,16 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     @IBAction func sbarTouched(_ sender: Any) {
         menuLeft.constant = -20
         optionsRight.constant = -20
-        UIView.animate(withDuration: 0.25) {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 10, options: .curveEaseInOut, animations: {
             self.view.layoutIfNeeded()
-        }
+        })
     }
     @IBAction func sbardone(_ sender: Any) {
         menuLeft.constant = 10
         optionsRight.constant = 10
-        UIView.animate(withDuration: 0.25) {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 10, options: .curveEaseInOut, animations: {
             self.view.layoutIfNeeded()
-        }
+        })
     }
     @IBAction func shareButton(_ sender: Any) {
         let alert = UIAlertController(title: "what do you want to do", message: nil, preferredStyle: .actionSheet)
