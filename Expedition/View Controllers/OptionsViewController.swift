@@ -71,12 +71,12 @@ class OptionsViewController: UITableViewController {
 //        UserDefaults.standard.register(defaults: appDefaults)
 //    }
 //
-////    @objc func appMovedToBackground() {
-////        let fadeOnClose = UserDefaults.standard.bool(forKey: "fade_on_close")
-////        if (fadeOnClose) {
-////            performSegue(withIdentifier: "showBlankScreen", sender: self)
-////        }
-////    }
+//    @objc func appMovedToBackground() {
+//        let fadeOnClose = UserDefaults.standard.bool(forKey: "fade_on_close")
+//        if (fadeOnClose) {
+//            performSegue(withIdentifier: "showBlankScreen", sender: self)
+//        }
+//    }
 //
 //    @objc func defaultsChanged(){
 //        let saveHistory = UserDefaults.standard.bool(forKey: "save_history")

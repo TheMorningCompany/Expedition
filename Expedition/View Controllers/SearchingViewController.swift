@@ -40,11 +40,40 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     
     @IBOutlet weak var searchBar: UITextField!
     
+    
+    var homepageToLoad = UserDefaults.standard.string(forKey: "homepage")
+    var homepageUrl = URL(string: "")
+    
     override func viewDidLoad() { //Called when the app loads
         super.viewDidLoad()
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).font = UIFont(name: "AvenirNext-Medium", size: UIFont.labelFontSize)
         var components = URLComponents(string: searchEngine)
        
+        print("homepage is \(homepageToLoad!)")
+        
+        
+        if homepageToLoad!.contains("expedition") {
+            homepageUrl = URL(string: "https://themorningcompany.net") //change this when homepage.html stuff is implemented
+            let request = URLRequest(url: homepageUrl!)
+            webView?.load(request)
+        }
+        if homepageToLoad!.contains("ddg") {
+            homepageUrl = URL(string: "https://start.duckduckgo.com")
+            let request = URLRequest(url: homepageUrl!)
+            webView?.load(request)
+        }
+        if homepageToLoad!.contains("empty") {
+            homepageUrl = URL(string: "https://apple.com") //figure out about:blank
+            let request = URLRequest(url: homepageUrl!)
+            webView?.load(request)
+        }
+        if !homepageToLoad!.contains("empty") && !homepageToLoad!.contains("ddg") && !homepageToLoad!.contains("expedition") {
+            homepageUrl = URL(string: homepageToLoad!)
+            let request = URLRequest(url: homepageUrl!)
+            webView?.load(request)
+        }
+
+        
         searchBar.layer.cornerRadius = 15
         searchBar.layer.cornerCurve = .continuous
         
@@ -53,19 +82,17 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         
         accessibilityToolbar.barTintColor = UIColor(named: "Expedition White")
         accessibilityToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
-        
-        let url = URL(string: "https://start.duckduckgo.com/")
-        
+                
         webView.layer.cornerCurve = .continuous
         webView.layer.cornerRadius = 15
         webView.clipsToBounds = true
         
-        let request = URLRequest(url: url!)
+//        let request = URLRequest(url: url!)
         
         components?.scheme = "https"
         components?.host = "start.duckduckgo.com"
         
-        webView?.load(request)
+//        webView?.load(request)
         
         if UIDevice.current.userInterfaceIdiom == .pad {
         webView.customUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/7.4 Expedition/605.1.15"
@@ -86,14 +113,14 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
                     openUrl(urlString: historyArray[0].url!)
                     print("OPEN: ", historyArray[0].url!)
                 } else {
-                    openUrl(urlString: url!.absoluteString)
-                    print("OPEN: ", url!.absoluteString)
+                    openUrl(urlString: homepageUrl!.absoluteString)
+                    print("OPEN: ", homepageUrl!.absoluteString)
                 }
             } catch {
                 print("ERROR OCCURRED")
             }
         } else {
-            openUrl(urlString: url!.absoluteString)
+            openUrl(urlString: homepageUrl!.absoluteString)
             
         }
         
@@ -207,7 +234,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
 
         if(scrollView.panGestureRecognizer.translation(in: scrollView.superview).y > 0) {
-            print("scroll up")
+            
             self.webViewTop.constant = 8
             self.toolbarBottom.constant = 0
             self.sbarTop.constant = 0
@@ -216,7 +243,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             })
         }
         else {
-            print("scroll down")
+            
             self.webViewTop.constant = 50
             self.toolbarBottom.constant = 100
             self.sbarTop.constant = -100

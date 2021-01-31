@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0003C0E323CC08A200111AA1 /* Soft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0003C0E223CC08A200111AA1 /* Soft@2x.png */; };
+		0007CBA025C697980058EC24 /* HomepageChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0007CB9F25C697980058EC24 /* HomepageChooserViewController.swift */; };
 		000D80272427F5CA005E0CA1 /* AppIconsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000D80262427F5CA005E0CA1 /* AppIconsViewController.swift */; };
 		001366B82307B61F009A102E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001366B72307B61F009A102E /* AppDelegate.swift */; };
 		001366BA2307B61F009A102E /* SearchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001366B92307B61F009A102E /* SearchingViewController.swift */; };
@@ -97,6 +98,7 @@
 
 /* Begin PBXFileReference section */
 		0003C0E223CC08A200111AA1 /* Soft@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Soft@2x.png"; sourceTree = "<group>"; };
+		0007CB9F25C697980058EC24 /* HomepageChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageChooserViewController.swift; sourceTree = "<group>"; };
 		0007DADE2437B808007BF62C /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		0007DAE02437B808007BF62C /* ActionRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRequestHandler.swift; sourceTree = "<group>"; };
 		0007DAE22437B808007BF62C /* Action.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				00B612882585EB91001CEEE1 /* AppIconPickerImageView.swift */,
 				000D80262427F5CA005E0CA1 /* AppIconsViewController.swift */,
 				5D865CC323E1013700374B07 /* BlankViewController.swift */,
+				0007CB9F25C697980058EC24 /* HomepageChooserViewController.swift */,
 				009EBECD257C363A00C9382C /* Options */,
 				5D56ABD3243C1D970073677F /* Onboarding */,
 			);
@@ -574,6 +577,7 @@
 				5D56ABD9243C1F540073677F /* Sharing.swift in Sources */,
 				5D793D0523D4DF5C00539A44 /* Swift+Gif.swift in Sources */,
 				5D41CBF323C5745C003A16F9 /* OptionsViewController.swift in Sources */,
+				0007CBA025C697980058EC24 /* HomepageChooserViewController.swift in Sources */,
 				5D1D0D5823C6AE7600B4377E /* History.xcdatamodeld in Sources */,
 				0028F4F9245CC29500FB89B3 /* ContactViewController.swift in Sources */,
 				5D56ABD6243C1EBE0073677F /* HistoryElement+CoreDataClass.swift in Sources */,
