@@ -19,9 +19,11 @@ html {
       font-weight: 500;
       font-size: 14pt;
       box-shadow: 0;
-      transition: box-shadow 0.5s, background-color 0.25s;
+      width: 90%; 
+      height: 9%; 
+      border-radius: 20px;
       outline: none;
-      
+    transition: box-shadow 0.5s, background-color 0.25s, height 0.3s, top 0.3s;
 }
 .logo {
     position: fixed;
@@ -35,6 +37,7 @@ html {
       bottom: 5%;
       left: 50%;
       transform: translate(-50%, -50%);
+      transition: bottom 0.3s;
 }
 .btn {
     width: 15%;
@@ -45,14 +48,14 @@ html {
     border: none;
     background-image: linear-gradient(to top, color(display-p3 0.19 0.43 0.89), color(display-p3 0 0.65 0.89));
     object-fit: fill;  
-    padding: 5%;
     box-sizing: border-box;
     position: fixed;
         top: 65%;
         left: 50%;
         transform: translate(-50%, -50%);
     box-shadow: 0;
-      transition: box-shadow 0.5s, background-color 0.25s;
+    max-width: 75px;
+      transition: box-shadow 0.5s, background-color 0.25s, top 0.3s;
 }
 
 .sbar:hover {
