@@ -39,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 vc = mainStoryboard.instantiateInitialViewController()!
                 
             } else {
+                UserDefaults.standard.set("expedition", forKey: "homepage")
                 vc = launchStorybard.instantiateViewController(identifier: "customizeStoryboard")
             }
             self.window?.rootViewController = vc
