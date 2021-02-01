@@ -290,7 +290,7 @@
             <objects>
                 <tableViewController id="9OM-wm-4ti" customClass="OptionsViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="tCM-8D-bll">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -678,7 +678,7 @@
             <objects>
                 <viewController id="gGB-r8-M28" customClass="TabsMainViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bdn-XH-thH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cma-gM-7na">
@@ -733,7 +733,7 @@
             <objects>
                 <tableViewController id="WlA-qs-nnO" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Aps-Yt-xYK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -1066,7 +1066,7 @@
             <objects>
                 <viewController id="7xe-KY-LMm" customClass="PrivacyPolicyViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xfx-CW-8Ns">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NH1-AE-hVy">
@@ -1158,7 +1158,7 @@ We do not collect any data or personal information in Expedition. We simply do n
             <objects>
                 <tableViewController id="9km-4P-Tvs" customClass="AppIconsViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="JlY-hT-bu4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -1553,7 +1553,7 @@ We do not collect any data or personal information in Expedition. We simply do n
             <objects>
                 <tableViewController id="If3-Iy-N99" customClass="ContactViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="8UY-ce-B6q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -2067,7 +2067,7 @@ We do not collect any data or personal information in Expedition. We simply do n
             <objects>
                 <tableViewController id="UUa-q7-H9y" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="gHw-9V-qE1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -2372,7 +2372,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="x9g-UX-DkF" userLabel="gotToHomepage">
                     <connections>
-                        <segue destination="aEn-Q5-obP" kind="presentation" id="rSm-vX-4UR"/>
+                        <segue destination="qYR-xj-vuS" kind="show" id="f89-rB-aP1"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -2383,7 +2383,7 @@ We do not collect any data or personal information in Expedition. We simply do n
             <objects>
                 <tableViewController id="zKx-Ny-wzh" customClass="ReopenOnLastPageViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="uoN-fc-dKz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -2542,6 +2542,7 @@ We do not collect any data or personal information in Expedition. We simply do n
         <!--Navigation Controller-->
         <scene sceneID="CGK-eu-Clt">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tYl-mQ-T5g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ASe-ZF-pX3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="wsW-0x-1zC">
@@ -2555,7 +2556,6 @@ We do not collect any data or personal information in Expedition. We simply do n
                         <segue destination="zKx-Ny-wzh" kind="relationship" relationship="rootViewController" id="QbC-kA-bee"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tYl-mQ-T5g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="729" y="2219"/>
         </scene>
@@ -2564,7 +2564,7 @@ We do not collect any data or personal information in Expedition. We simply do n
             <objects>
                 <tableViewController id="Kbs-EM-jiJ" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Qni-pr-ljp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -2761,7 +2761,7 @@ We do not collect any data or personal information in Expedition. We simply do n
             <objects>
                 <tableViewController id="yb2-Z9-Z7H" customClass="ReopenOnLastPageViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="MVf-PH-L0s">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -2916,6 +2916,7 @@ We do not collect any data or personal information in Expedition. We simply do n
         <!--Navigation Controller-->
         <scene sceneID="pQK-ca-KYF">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vh3-ah-ssd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uH1-se-gdS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="AeK-qc-8EY">
@@ -2928,35 +2929,15 @@ We do not collect any data or personal information in Expedition. We simply do n
                         <segue destination="yb2-Z9-Z7H" kind="relationship" relationship="rootViewController" id="tdi-mD-xOJ"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vh3-ah-ssd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="728.79999999999995" y="3558.6206896551726"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Ug8-qX-cqU">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aEn-Q5-obP" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="WQg-fx-OhW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" name="Expedition White"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="qYR-xj-vuS" kind="relationship" relationship="rootViewController" id="0se-jW-e5L"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Mjp-7m-YaS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="729" y="4243"/>
         </scene>
         <!--Homepage Chooser View Controller-->
         <scene sceneID="rTO-WY-7Wz">
             <objects>
                 <tableViewController id="qYR-xj-vuS" customClass="HomepageChooserViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="wtg-js-lQL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -3156,30 +3137,31 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                         <outletCollection property="gestureRecognizers" destination="ZyZ-Ez-VJK" appends="YES" id="eXR-v9-PlY"/>
                                                     </connections>
                                                 </view>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="customhomepage" translatesAutoresizingMaskIntoConstraints="NO" id="QFr-NU-5uF" customClass="AppIconPickerImageView" customModule="Expedition" customModuleProvider="target">
+                                                    <rect key="frame" x="36" y="20" width="66" height="66"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="QFr-NU-5uF" secondAttribute="height" multiplier="1:1" id="Agq-cM-8w1"/>
+                                                    </constraints>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="custom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8Y-eu-vVC">
-                                                    <rect key="frame" x="118" y="41" width="58" height="24"/>
+                                                    <rect key="frame" x="120" y="41" width="58" height="24"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="custom" translatesAutoresizingMaskIntoConstraints="NO" id="CXu-t9-x00" customClass="AppIconPickerImageView" customModule="Expedition" customModuleProvider="target">
-                                                    <rect key="frame" x="34" y="20" width="66" height="66"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="CXu-t9-x00" secondAttribute="height" multiplier="1:1" id="8OO-mq-lCy"/>
-                                                    </constraints>
-                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="O8Y-eu-vVC" firstAttribute="leading" secondItem="CXu-t9-x00" secondAttribute="trailing" constant="18" id="0Ku-0e-Iv0"/>
+                                                <constraint firstItem="O8Y-eu-vVC" firstAttribute="leading" secondItem="QFr-NU-5uF" secondAttribute="trailing" constant="18" id="6s8-Vo-RJs"/>
                                                 <constraint firstAttribute="bottom" secondItem="AHj-4Z-nw8" secondAttribute="bottom" constant="5" id="8eG-1e-1Hq"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="QFr-NU-5uF" secondAttribute="bottom" constant="9" id="AWS-Y9-sRS"/>
                                                 <constraint firstItem="AHj-4Z-nw8" firstAttribute="top" secondItem="zPz-Ch-IWN" secondAttribute="top" constant="5" id="CFM-Mf-PiZ"/>
                                                 <constraint firstItem="AHj-4Z-nw8" firstAttribute="leading" secondItem="zPz-Ch-IWN" secondAttribute="leading" constant="18" id="Fmz-Bx-HaT"/>
+                                                <constraint firstItem="QFr-NU-5uF" firstAttribute="width" secondItem="QFr-NU-5uF" secondAttribute="height" multiplier="1:1" id="Hym-VR-cCG"/>
                                                 <constraint firstItem="O8Y-eu-vVC" firstAttribute="centerY" secondItem="zPz-Ch-IWN" secondAttribute="centerY" id="Jbb-ip-QJG"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="CXu-t9-x00" secondAttribute="bottom" constant="9" id="W03-nx-4zs"/>
-                                                <constraint firstItem="CXu-t9-x00" firstAttribute="top" secondItem="zPz-Ch-IWN" secondAttribute="topMargin" constant="9" id="X60-yg-FMt"/>
-                                                <constraint firstItem="CXu-t9-x00" firstAttribute="leading" secondItem="zPz-Ch-IWN" secondAttribute="leadingMargin" constant="18" id="XRp-UY-euF"/>
+                                                <constraint firstItem="QFr-NU-5uF" firstAttribute="leading" secondItem="AHj-4Z-nw8" secondAttribute="leading" constant="18" id="Tiy-f6-bg6"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="O8Y-eu-vVC" secondAttribute="trailing" constant="20" symbolic="YES" id="f01-uy-Gz6"/>
                                                 <constraint firstAttribute="trailing" secondItem="AHj-4Z-nw8" secondAttribute="trailing" constant="18" id="qhD-Hd-ktQ"/>
+                                                <constraint firstItem="QFr-NU-5uF" firstAttribute="top" secondItem="zPz-Ch-IWN" secondAttribute="topMargin" constant="9" id="u26-Sr-eYn"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="Expedition White"/>
@@ -3201,6 +3183,11 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                     <color key="tintColor" name="Expedition Blue"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="URL" textContentType="url"/>
+                                                    <connections>
+                                                        <action selector="doneEditingCustomUrl:" destination="qYR-xj-vuS" eventType="editingDidEnd" id="FfN-ba-Gk4"/>
+                                                        <action selector="tappedReturn:" destination="qYR-xj-vuS" eventType="primaryActionTriggered" id="LPU-bQ-Gyi"/>
+                                                        <action selector="urlFieldTouched:" destination="qYR-xj-vuS" eventType="editingDidBegin" id="wYy-NF-sf8"/>
+                                                    </connections>
                                                 </textField>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hj2-MD-t99">
                                                     <rect key="frame" x="28" y="30" width="46" height="46"/>
@@ -3247,7 +3234,11 @@ We do not collect any data or personal information in Expedition. We simply do n
                     </tableView>
                     <navigationItem key="navigationItem" id="vE8-y2-VGk"/>
                     <connections>
+                        <outlet property="customImg" destination="QFr-NU-5uF" id="R9J-CA-HaV"/>
                         <outlet property="customUrlChooser" destination="91s-Bz-Nu7" id="pFh-Pq-NYT"/>
+                        <outlet property="ddgImg" destination="2zP-Dk-HfW" id="RCe-6I-vE2"/>
+                        <outlet property="emptyImg" destination="9nY-jq-K5e" id="mcv-gd-BEB"/>
+                        <outlet property="expeditionImg" destination="IaW-ur-m6m" id="ThX-Ry-DrM"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="24h-8y-plb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -3272,11 +3263,11 @@ We do not collect any data or personal information in Expedition. We simply do n
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1671" y="4243"/>
+            <point key="canvasLocation" x="729" y="4228"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="5KF-y7-lKE"/>
+        <segue reference="6p6-08-b6r"/>
         <segue reference="fQc-WF-jgl"/>
         <segue reference="tOY-Um-AMB"/>
     </inferredMetricsTieBreakers>
@@ -3297,11 +3288,11 @@ We do not collect any data or personal information in Expedition. We simply do n
         <image name="chevron.down" catalog="system" width="128" height="72"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="circle.dashed" catalog="system" width="128" height="121"/>
-        <image name="custom" width="1024" height="1024"/>
+        <image name="customhomepage" width="1024" height="1024"/>
         <image name="ddg" width="1025" height="1024"/>
         <image name="down" width="375" height="301"/>
         <image name="empty" width="1026" height="1024"/>
-        <image name="expedition" width="1024" height="1024"/>
+        <image name="expedition" width="1025" height="1024"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="globe" catalog="system" width="128" height="121"/>
         <image name="house" catalog="system" width="128" height="106"/>

@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "expedition.png",
+      "filename" : "Group 1341.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "Group 1342.png",
       "idiom" : "universal"
     }
   ],

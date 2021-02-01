@@ -68,7 +68,11 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             webView?.load(request)
         }
         if !homepageToLoad!.contains("empty") && !homepageToLoad!.contains("ddg") && !homepageToLoad!.contains("expedition") {
-            homepageUrl = URL(string: homepageToLoad!)
+            if homepageToLoad == nil {
+                homepageUrl = URL(string: "https://start.duckduckgo.com")
+            } else {
+                homepageUrl = URL(string: homepageToLoad!)
+            }
             let request = URLRequest(url: homepageUrl!)
             webView?.load(request)
         }

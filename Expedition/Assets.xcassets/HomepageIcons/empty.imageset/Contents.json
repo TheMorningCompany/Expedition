@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "empty.png",
+      "filename" : "Group 1339.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "Group 1345.png",
       "idiom" : "universal"
     }
   ],
