@@ -2,6 +2,10 @@
 body {
     background-color: #f4f4f4;
 }
+
+html {
+    background-color: #f4f4f4;
+}
 .sbar {
     padding: 25px;
     box-sizing: border-box;
@@ -13,6 +17,7 @@ body {
       transform: translate(-50%, -50%);
       font-family: "Avenir Next";
       font-weight: 500;
+      font-size: 14pt;
       box-shadow: 0;
       transition: box-shadow 0.5s, background-color 0.25s;
       outline: none;
@@ -32,14 +37,15 @@ body {
       transform: translate(-50%, -50%);
 }
 .btn {
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
+    width: 15%;
+    -webkit-aspect-ratio: 1/1;
+    height: auto;
+    border-radius: 50%;
     outline: none;
     border: none;
     background-image: linear-gradient(to top, color(display-p3 0.19 0.43 0.89), color(display-p3 0 0.65 0.89));
     object-fit: fill;  
-    padding: 15px;
+    padding: 5%;
     box-sizing: border-box;
     position: fixed;
         top: 65%;
@@ -63,7 +69,10 @@ body {
 @media(prefers-color-scheme: dark) {
  body {
      background-color: #0d0d0d;
- }   
+ }
+ html {
+     background-color: #0d0d0d;
+ }
  .sbar {
      background-color: #1d1d1d;
      color: white;

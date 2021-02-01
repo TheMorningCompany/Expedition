@@ -56,10 +56,8 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
 //            homepageUrl = URL(string: "https://themorningcompany.net") //change this when homepage.html stuff is implemented
 //            let request = URLRequest(url: homepageUrl!)
 //            webView?.load(request)
-            if let url = Bundle.main.url(forResource: "homepage", withExtension: "html") {
-                webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
-                 
-            }
+            scrollUp()
+            
         }
         if homepageToLoad!.contains("ddg") {
             homepageUrl = URL(string: "https://start.duckduckgo.com")
@@ -128,8 +126,14 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
                 print("ERROR OCCURRED")
             }
         } else {
-            if !homepageToLoad!.contains("expedition") {
-            openUrl(urlString: homepageUrl!.absoluteString)
+            if homepageToLoad!.contains("expedition") {
+                
+                if let url = Bundle.main.url(forResource: "homepage", withExtension: "html") {
+                    webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
+                    scrollUp()
+                }
+            } else {
+                openUrl(urlString: homepageUrl!.absoluteString)
             }
         }
         
@@ -243,25 +247,29 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
 
         if(scrollView.panGestureRecognizer.translation(in: scrollView.superview).y > 0) {
-            
-            self.webViewTop.constant = 8
-            self.toolbarBottom.constant = 0
-            self.sbarTop.constant = 0
-            UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 10, options: .curveEaseInOut, animations: {
-                self.view.layoutIfNeeded()
-            })
+            scrollUp()
         }
         else {
-            
-            self.webViewTop.constant = 50
-            self.toolbarBottom.constant = 100
-            self.sbarTop.constant = -100
-            UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 10, options: .curveEaseInOut, animations: {
-                self.view.layoutIfNeeded()
-            })
+            scrollDown()
         }
     }
+    func scrollDown() {
+        self.webViewTop.constant = 50
+        self.toolbarBottom.constant = 100
+        self.sbarTop.constant = -100
+        UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 10, options: .curveEaseInOut, animations: {
+            self.view.layoutIfNeeded()
+        })
+    }
     
+    func scrollUp() {
+        self.webViewTop.constant = 8
+        self.toolbarBottom.constant = 0
+        self.sbarTop.constant = 0
+        UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 10, options: .curveEaseInOut, animations: {
+            self.view.layoutIfNeeded()
+        })
+    }
     
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         impact.impactOccurred() // Haptics
