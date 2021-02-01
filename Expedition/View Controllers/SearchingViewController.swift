@@ -78,6 +78,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             let request = URLRequest(url: homepageUrl!)
             webView?.load(request)
         }
+        scrollUp()
 
         
         searchBar.layer.cornerRadius = 15
