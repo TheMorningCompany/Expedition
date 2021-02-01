@@ -53,9 +53,13 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         
         
         if homepageToLoad!.contains("expedition") {
-            homepageUrl = URL(string: "https://themorningcompany.net") //change this when homepage.html stuff is implemented
-            let request = URLRequest(url: homepageUrl!)
-            webView?.load(request)
+//            homepageUrl = URL(string: "https://themorningcompany.net") //change this when homepage.html stuff is implemented
+//            let request = URLRequest(url: homepageUrl!)
+//            webView?.load(request)
+            if let url = Bundle.main.url(forResource: "homepage", withExtension: "html") {
+                webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
+                 
+            }
         }
         if homepageToLoad!.contains("ddg") {
             homepageUrl = URL(string: "https://start.duckduckgo.com")
@@ -124,8 +128,9 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
                 print("ERROR OCCURRED")
             }
         } else {
+            if !homepageToLoad!.contains("expedition") {
             openUrl(urlString: homepageUrl!.absoluteString)
-            
+            }
         }
         
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
