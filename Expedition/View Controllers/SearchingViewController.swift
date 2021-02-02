@@ -65,9 +65,10 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             webView?.load(request)
         }
         if homepageToLoad!.contains("empty") {
-            homepageUrl = URL(string: "https://apple.com") //figure out about:blank
-            let request = URLRequest(url: homepageUrl!)
-            webView?.load(request)
+//            homepageUrl = URL(string: "https://apple.com") //figure out about:blank
+//            let request = URLRequest(url: homepageUrl!)
+//            webView?.load(request)
+            scrollUp()
         }
         if !homepageToLoad!.contains("empty") && !homepageToLoad!.contains("ddg") && !homepageToLoad!.contains("expedition") {
             if homepageToLoad == nil {
@@ -128,12 +129,18 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             }
         } else {
             if homepageToLoad!.contains("expedition") {
-                
                 if let url = Bundle.main.url(forResource: "homepage", withExtension: "html") {
                     webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
                     scrollUp()
                 }
-            } else {
+            }
+            if homepageToLoad!.contains("empty") {
+                if let url = Bundle.main.url(forResource: "empy", withExtension: "html") {
+                    webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
+                    scrollUp()
+                }
+            }
+            if !homepageToLoad!.contains("empty") && !homepageToLoad!.contains("expedition") {
                 openUrl(urlString: homepageUrl!.absoluteString)
             }
         }

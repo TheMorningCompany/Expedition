@@ -20,6 +20,8 @@
 		0024E06925C3D00600BDB04D /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0024E06825C3D00600BDB04D /* Button.swift */; };
 		0028F4F9245CC29500FB89B3 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0028F4F8245CC29500FB89B3 /* ContactViewController.swift */; };
 		0037F18C24170A8300275CD0 /* LightBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0037F18B24170A8300275CD0 /* LightBlue@2x.png */; };
+		0046F56025C916F700FEEE93 /* empty.css in Resources */ = {isa = PBXBuildFile; fileRef = 0046F55E25C916F700FEEE93 /* empty.css */; };
+		0046F56125C916F700FEEE93 /* empty.html in Resources */ = {isa = PBXBuildFile; fileRef = 0046F55F25C916F700FEEE93 /* empty.html */; };
 		0053E05F23F640330012DB78 /* GlyphFade@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0053E05E23F640330012DB78 /* GlyphFade@2x.png */; };
 		0062525D242080AE004B3136 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0062525C242080AE004B3136 /* Onboarding.storyboard */; };
 		0062526124208C02004B3136 /* Onb1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0062526024208C02004B3136 /* Onb1ViewController.swift */; };
@@ -125,6 +127,8 @@
 		0024E06825C3D00600BDB04D /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		0028F4F8245CC29500FB89B3 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		0037F18B24170A8300275CD0 /* LightBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LightBlue@2x.png"; sourceTree = "<group>"; };
+		0046F55E25C916F700FEEE93 /* empty.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = empty.css; sourceTree = "<group>"; };
+		0046F55F25C916F700FEEE93 /* empty.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = empty.html; sourceTree = "<group>"; };
 		0053E05E23F640330012DB78 /* GlyphFade@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GlyphFade@2x.png"; sourceTree = "<group>"; };
 		005932CF234D747100DC2323 /* Expedition.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Expedition.entitlements; sourceTree = "<group>"; };
 		0062525C242080AE004B3136 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
@@ -275,6 +279,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		0046F56525C916FE00FEEE93 /* Empty */ = {
+			isa = PBXGroup;
+			children = (
+				0046F55E25C916F700FEEE93 /* empty.css */,
+				0046F55F25C916F700FEEE93 /* empty.html */,
+			);
+			path = Empty;
+			sourceTree = "<group>";
+		};
 		00476DA624313AC300BDE254 /* History */ = {
 			isa = PBXGroup;
 			children = (
@@ -386,6 +399,7 @@
 		5D56ABD4243C1DC10073677F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0046F56525C916FE00FEEE93 /* Empty */,
 				00D686F425BB49C900A83187 /* NotFound.html */,
 				00D686EF25BB484900A83187 /* style.css */,
 				00F0D7FE25C7D05400CE83BD /* homepage */,
@@ -542,6 +556,7 @@
 				00F0D7F725C7D04D00CE83BD /* sicon.svg in Resources */,
 				0077891923D14005002AEE78 /* DarkShatter@2x.png in Resources */,
 				5D2FA8A023D5490B00A68AF5 /* LightIntro.gif in Resources */,
+				0046F56025C916F700FEEE93 /* empty.css in Resources */,
 				00F0D7F625C7D04D00CE83BD /* logo.svg in Resources */,
 				00F7071123D16FB400C0B8E2 /* Diamond@2x.png in Resources */,
 				0077891823D14005002AEE78 /* LightShatter@2x.png in Resources */,
@@ -560,6 +575,7 @@
 				00F0D7F925C7D04E00CE83BD /* homepage.html in Resources */,
 				00D686F025BB484900A83187 /* style.css in Resources */,
 				0078502F23CD688E00BDB94C /* Prism@2x.png in Resources */,
+				0046F56125C916F700FEEE93 /* empty.html in Resources */,
 				00AB6BA623CD37DE0088E269 /* Metal@2x.png in Resources */,
 				00F0D7F525C7D04D00CE83BD /* favicon.ico in Resources */,
 				00F0D7FA25C7D04E00CE83BD /* expedition.svg in Resources */,
