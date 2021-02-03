@@ -17,7 +17,6 @@
 		001366C22307B620009A102E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001366C02307B620009A102E /* LaunchScreen.storyboard */; };
 		001366D82307B620009A102E /* ExpeditionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001366D72307B620009A102E /* ExpeditionUITests.swift */; };
 		001366E72307BEA9009A102E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001366E62307BEA9009A102E /* WebKit.framework */; };
-		0024E06925C3D00600BDB04D /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0024E06825C3D00600BDB04D /* Button.swift */; };
 		0028F4F9245CC29500FB89B3 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0028F4F8245CC29500FB89B3 /* ContactViewController.swift */; };
 		0037F18C24170A8300275CD0 /* LightBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0037F18B24170A8300275CD0 /* LightBlue@2x.png */; };
 		0046F56025C916F700FEEE93 /* empty.css in Resources */ = {isa = PBXBuildFile; fileRef = 0046F55E25C916F700FEEE93 /* empty.css */; };
@@ -47,6 +46,9 @@
 		00C4A4C623C509E800C18F65 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00C4A4C523C509E800C18F65 /* Settings.bundle */; };
 		00D686F025BB484900A83187 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 00D686EF25BB484900A83187 /* style.css */; };
 		00D686F525BB49C900A83187 /* NotFound.html in Resources */ = {isa = PBXBuildFile; fileRef = 00D686F425BB49C900A83187 /* NotFound.html */; };
+		00DE50F525CA766D008A8AC1 /* FadeOnCloseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DE50F425CA766D008A8AC1 /* FadeOnCloseViewController.swift */; };
+		00DE50F725CA7D04008A8AC1 /* jsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DE50F625CA7D04008A8AC1 /* jsPageViewController.swift */; };
+		00DE50F925CA812D008A8AC1 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DE50F825CA812D008A8AC1 /* Button.swift */; };
 		00F0D7F525C7D04D00CE83BD /* favicon.ico in Resources */ = {isa = PBXBuildFile; fileRef = 00F0D7EF25C7D04D00CE83BD /* favicon.ico */; };
 		00F0D7F625C7D04D00CE83BD /* logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 00F0D7F025C7D04D00CE83BD /* logo.svg */; };
 		00F0D7F725C7D04D00CE83BD /* sicon.svg in Resources */ = {isa = PBXBuildFile; fileRef = 00F0D7F125C7D04D00CE83BD /* sicon.svg */; };
@@ -124,7 +126,6 @@
 		001366D72307B620009A102E /* ExpeditionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpeditionUITests.swift; sourceTree = "<group>"; };
 		001366D92307B620009A102E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		001366E62307BEA9009A102E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		0024E06825C3D00600BDB04D /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		0028F4F8245CC29500FB89B3 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		0037F18B24170A8300275CD0 /* LightBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LightBlue@2x.png"; sourceTree = "<group>"; };
 		0046F55E25C916F700FEEE93 /* empty.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = empty.css; sourceTree = "<group>"; };
@@ -157,6 +158,9 @@
 		00C4A4C523C509E800C18F65 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		00D686EF25BB484900A83187 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
 		00D686F425BB49C900A83187 /* NotFound.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = NotFound.html; sourceTree = "<group>"; };
+		00DE50F425CA766D008A8AC1 /* FadeOnCloseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeOnCloseViewController.swift; sourceTree = "<group>"; };
+		00DE50F625CA7D04008A8AC1 /* jsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jsPageViewController.swift; sourceTree = "<group>"; };
+		00DE50F825CA812D008A8AC1 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		00F0D7EF25C7D04D00CE83BD /* favicon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = favicon.ico; sourceTree = "<group>"; };
 		00F0D7F025C7D04D00CE83BD /* logo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = logo.svg; sourceTree = "<group>"; };
 		00F0D7F125C7D04D00CE83BD /* sicon.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = sicon.svg; sourceTree = "<group>"; };
@@ -317,9 +321,9 @@
 				0080527C254CDB51008D7697 /* GradientTitleBar.swift */,
 				0070A2AC2568A2F700545813 /* CellBGView.swift */,
 				001366BB2307B61F009A102E /* Main.storyboard */,
+				00DE50F825CA812D008A8AC1 /* Button.swift */,
 				00805284254CDC0A008D7697 /* TitleBarViewController.swift */,
 				0062525C242080AE004B3136 /* Onboarding.storyboard */,
-				0024E06825C3D00600BDB04D /* Button.swift */,
 				001366C02307B620009A102E /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -329,7 +333,9 @@
 			isa = PBXGroup;
 			children = (
 				009EBED4257C387800C9382C /* ReopenOnLastPageViewController.swift */,
+				00DE50F425CA766D008A8AC1 /* FadeOnCloseViewController.swift */,
 				009EBEC8257C362E00C9382C /* CustomizeViewController.swift */,
+				00DE50F625CA7D04008A8AC1 /* jsPageViewController.swift */,
 			);
 			path = Options;
 			sourceTree = "<group>";
@@ -609,9 +615,11 @@
 				0080527D254CDB51008D7697 /* GradientTitleBar.swift in Sources */,
 				0074A5A22442A672003C92D2 /* DonationBoxViewController.swift in Sources */,
 				009EBED5257C387800C9382C /* ReopenOnLastPageViewController.swift in Sources */,
+				00DE50F925CA812D008A8AC1 /* Button.swift in Sources */,
 				00805267254CB963008D7697 /* NotificationConstants.swift in Sources */,
 				5D41CBF123C569B6003A16F9 /* SettingsBundleHelper.swift in Sources */,
 				0062526324208C08004B3136 /* Onb2ViewController.swift in Sources */,
+				00DE50F725CA7D04008A8AC1 /* jsPageViewController.swift in Sources */,
 				5D865CC423E1013700374B07 /* BlankViewController.swift in Sources */,
 				5D56ABD0243C1D140073677F /* Website.swift in Sources */,
 				5D1D0D5E23C6F1CB00B4377E /* HistoryElement+CoreDataProperties.swift in Sources */,
@@ -627,6 +635,7 @@
 				5D41CBF323C5745C003A16F9 /* OptionsViewController.swift in Sources */,
 				0007CBA025C697980058EC24 /* HomepageChooserViewController.swift in Sources */,
 				5D1D0D5823C6AE7600B4377E /* History.xcdatamodeld in Sources */,
+				00DE50F525CA766D008A8AC1 /* FadeOnCloseViewController.swift in Sources */,
 				0028F4F9245CC29500FB89B3 /* ContactViewController.swift in Sources */,
 				5D56ABD6243C1EBE0073677F /* HistoryElement+CoreDataClass.swift in Sources */,
 				0062526524208C26004B3136 /* Onb3ViewController.swift in Sources */,
@@ -637,7 +646,6 @@
 				001366B82307B61F009A102E /* AppDelegate.swift in Sources */,
 				D6030CDC23A89669003C6911 /* Gestures.swift in Sources */,
 				0070A2AD2568A2F700545813 /* CellBGView.swift in Sources */,
-				0024E06925C3D00600BDB04D /* Button.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

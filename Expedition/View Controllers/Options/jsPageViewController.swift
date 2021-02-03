@@ -1,5 +1,5 @@
 //
-//  ReopenOnLastPageViewController.swift
+//  jsPageViewController.swift
 //  Expedition
 //
 //  Created by Zeqiel Golomb on 12/5/20.
@@ -8,22 +8,22 @@
 
 import UIKit
 
-class ReopenOnLastPageViewController: UITableViewController {
+class jsPageViewController: UITableViewController {
 
-    @IBOutlet weak var reopenSwitch: UISwitch!
+    @IBOutlet weak var jsSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     @IBAction func reopenTabsSwitchValueChanged(_ sender: UISwitch) {
-        UserDefaults.standard.set(reopenSwitch.isOn, forKey: "reopen_tabs")
+        UserDefaults.standard.set(jsSwitch.isOn, forKey: "js")
         UserDefaults.standard.synchronize()
     }
     @objc func defaultsChanged(){
-        let reopenTabs = UserDefaults.standard.bool(forKey: "reopen_tabs")
-        if (reopenTabs) {
-            reopenSwitch.setOn(reopenTabs, animated: false)
+        let javascript = UserDefaults.standard.bool(forKey: "js")
+        if (javascript) {
+            jsSwitch.setOn(javascript, animated: false)
         }
     }
     

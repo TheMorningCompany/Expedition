@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E3a-YU-zsV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18121" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E3a-YU-zsV">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18091"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -234,7 +234,7 @@
             <objects>
                 <tableViewController title="History" id="65v-MH-vlF" customClass="HistoryTableViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="26q-fx-QMl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Expedition White"/>
                         <color key="separatorColor" name="Expedition White"/>
@@ -242,15 +242,15 @@
                         <color key="sectionIndexBackgroundColor" name="Expedition White"/>
                         <color key="sectionIndexTrackingBackgroundColor" name="Expedition White"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextCell" textLabel="7dK-fL-zc3" rowHeight="93" style="IBUITableViewCellStyleDefault" id="jPf-bm-8lT">
-                                <rect key="frame" x="16" y="55.333332061767578" width="343" height="93"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextCell" textLabel="7dK-fL-zc3" rowHeight="71" style="IBUITableViewCellStyleDefault" id="jPf-bm-8lT">
+                                <rect key="frame" x="16" y="49" width="343" height="71"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jPf-bm-8lT" id="7Wr-Ex-Ulu" customClass="UITableView">
-                                    <rect key="frame" x="0.0" y="0.0" width="343" height="93"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="71"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7dK-fL-zc3">
-                                            <rect key="frame" x="16" y="0.0" width="311" height="93"/>
+                                            <rect key="frame" x="16" y="0.0" width="311" height="71"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <gestureRecognizers/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
@@ -283,7 +283,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6H6-I3-eKk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2720.8000000000002" y="752.21674876847294"/>
+            <point key="canvasLocation" x="159" y="4949"/>
         </scene>
         <!--Options View Controller-->
         <scene sceneID="Rta-78-hTe">
@@ -467,6 +467,10 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ERA-8J-0Sf" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
                                                     <rect key="frame" x="18" y="5" width="339" height="96"/>
                                                     <color key="backgroundColor" name="Elevated"/>
+                                                    <gestureRecognizers/>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="WUw-vL-VYX" appends="YES" id="mmR-C6-FYt"/>
+                                                    </connections>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EWm-H2-ZTf">
                                                     <rect key="frame" x="38" y="33" width="40" height="40"/>
@@ -600,6 +604,11 @@
                         <segue destination="Kbs-EM-jiJ" kind="show" id="xVe-70-ah4"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="WUw-vL-VYX" userLabel="goToPrivacy">
+                    <connections>
+                        <segue destination="nFO-j7-afF" kind="show" id="hpF-ci-pNu"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-725" y="2219"/>
         </scene>
@@ -613,7 +622,7 @@
                         <color key="backgroundColor" name="Expedition White"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tabCell" rowHeight="292" id="1mP-up-XJs">
-                                <rect key="frame" x="16" y="55.333332061767578" width="343" height="292"/>
+                                <rect key="frame" x="16" y="49" width="343" height="292"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1mP-up-XJs" id="pzG-KQ-U1C">
                                     <rect key="frame" x="0.0" y="0.0" width="343" height="292"/>
@@ -1078,8 +1087,8 @@
                                     <segue destination="eMb-mG-JIk" kind="embed" id="gFj-8U-m0z"/>
                                 </connections>
                             </containerView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shield.lefthalf.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zY3-ox-cvg">
-                                <rect key="frame" x="142.66666666666666" y="51.000000000000007" width="90" height="88.666666666666671"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hand.raised.slash" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zY3-ox-cvg">
+                                <rect key="frame" x="142.66666666666666" y="49.666666666666671" width="90" height="90.333333333333343"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="hMP-rf-DyJ"/>
@@ -1546,7 +1555,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                 <hostingController id="eMb-mG-JIk" customClass="TitleBarViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W4m-nN-PWK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4010" y="2191"/>
+            <point key="canvasLocation" x="2892" y="2818"/>
         </scene>
         <!--Contact View Controller-->
         <scene sceneID="ur2-dj-PR4">
@@ -2357,7 +2366,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZuO-j2-7dh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="OWb-T9-gbq" userLabel="goToReopen">
                     <connections>
-                        <segue destination="ASe-ZF-pX3" kind="presentation" id="njf-aR-gNs"/>
+                        <segue destination="zKx-Ny-wzh" kind="show" id="9dn-98-g8P"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="fN5-H4-Dtc" userLabel="goToAppIconPicker">
@@ -2367,7 +2376,7 @@ We do not collect any data or personal information in Expedition. We simply do n
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="OON-4h-njp" userLabel="goToFade">
                     <connections>
-                        <segue destination="uH1-se-gdS" kind="presentation" id="iYJ-Ub-hf0"/>
+                        <segue destination="yb2-Z9-Z7H" kind="show" id="OUd-ce-mzA"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="x9g-UX-DkF" userLabel="gotToHomepage">
@@ -2527,9 +2536,6 @@ We do not collect any data or personal information in Expedition. We simply do n
                     </tableView>
                     <navigationItem key="navigationItem" id="NaV-m1-DLa">
                         <barButtonItem key="backBarButtonItem" title=" " id="ye7-5p-NSu"/>
-                        <barButtonItem key="rightBarButtonItem" image="xmark" catalog="system" id="7DZ-jr-NdR">
-                            <color key="tintColor" systemColor="labelColor"/>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="reopenSwitch" destination="5Ir-UE-0Vn" id="a8e-GC-KHp"/>
@@ -2538,26 +2544,6 @@ We do not collect any data or personal information in Expedition. We simply do n
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aNW-xq-uqp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="728.79999999999995" y="2900.9852216748768"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="CGK-eu-Clt">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ASe-ZF-pX3" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="wsW-0x-1zC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" systemColor="labelColor"/>
-                        <color key="barTintColor" name="Expedition White"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="zKx-Ny-wzh" kind="relationship" relationship="rootViewController" id="QbC-kA-bee"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tYl-mQ-T5g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="729" y="2219"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="AJf-26-o0v">
@@ -2693,8 +2679,8 @@ We do not collect any data or personal information in Expedition. We simply do n
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PLB-Oq-kcg">
                                                     <rect key="frame" x="38" y="33" width="40" height="40"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shield.lefthalf.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="RB6-b4-abH">
-                                                            <rect key="frame" x="9" y="9.9999999999999982" width="22" height="20.666666666666664"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hand.raised.slash" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="RB6-b4-abH">
+                                                            <rect key="frame" x="9" y="8.6666666666666643" width="22" height="22.333333333333336"/>
                                                             <color key="tintColor" systemColor="labelColor"/>
                                                         </imageView>
                                                     </subviews>
@@ -2756,10 +2742,10 @@ We do not collect any data or personal information in Expedition. We simply do n
             </objects>
             <point key="canvasLocation" x="12" y="2902"/>
         </scene>
-        <!--Reopen On Last Page View Controller-->
+        <!--Fade On Close View Controller-->
         <scene sceneID="SWf-fB-k6w">
             <objects>
-                <tableViewController id="yb2-Z9-Z7H" customClass="ReopenOnLastPageViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="yb2-Z9-Z7H" customClass="FadeOnCloseViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="MVf-PH-L0s">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2901,36 +2887,14 @@ We do not collect any data or personal information in Expedition. We simply do n
                     </tableView>
                     <navigationItem key="navigationItem" id="frP-Eg-mKx">
                         <barButtonItem key="backBarButtonItem" title=" " id="NjA-O1-h5a"/>
-                        <barButtonItem key="rightBarButtonItem" image="xmark" catalog="system" id="Y5c-5a-uFK">
-                            <color key="tintColor" systemColor="labelColor"/>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="reopenSwitch" destination="oCt-iT-9Oy" id="zd9-4z-4Tt"/>
+                        <outlet property="fadeSwitch" destination="oCt-iT-9Oy" id="OM0-HC-5Gz"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="chN-cE-Jcd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1671.2" y="3558.6206896551726"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="pQK-ca-KYF">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uH1-se-gdS" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="AeK-qc-8EY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" name="Expedition White"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="yb2-Z9-Z7H" kind="relationship" relationship="rootViewController" id="tdi-mD-xOJ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vh3-ah-ssd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="728.79999999999995" y="3558.6206896551726"/>
+            <point key="canvasLocation" x="1526" y="3559"/>
         </scene>
         <!--Homepage Chooser View Controller-->
         <scene sceneID="rTO-WY-7Wz">
@@ -3265,11 +3229,865 @@ We do not collect any data or personal information in Expedition. We simply do n
             </objects>
             <point key="canvasLocation" x="729" y="4228"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="2al-uO-zB6">
+            <objects>
+                <tableViewController id="nFO-j7-afF" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="lPB-PH-2a1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="Expedition White"/>
+                        <color key="separatorColor" name="Expedition White"/>
+                        <color key="sectionIndexBackgroundColor" name="Expedition White"/>
+                        <color key="sectionIndexTrackingBackgroundColor" name="Expedition White"/>
+                        <sections>
+                            <tableViewSection id="frr-Ui-ZrB">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="228" id="zXg-Yx-iaX">
+                                        <rect key="frame" x="0.0" y="18" width="375" height="228"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zXg-Yx-iaX" id="7v5-jv-0ts">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="228"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vPB-hS-xNc" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
+                                                    <rect key="frame" x="18" y="0.0" width="339" height="225"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="225" id="cpy-Eb-yNy"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <segue destination="eMb-mG-JIk" kind="embed" id="KDx-4H-XdZ"/>
+                                                    </connections>
+                                                </containerView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shield.lefthalf.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="jLo-4o-A6m">
+                                                    <rect key="frame" x="142.66666666666666" y="36.000000000000007" width="90" height="88.666666666666686"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="90" id="Rc2-Cj-sU2"/>
+                                                        <constraint firstAttribute="width" secondItem="jLo-4o-A6m" secondAttribute="height" multiplier="1:1" id="aYr-4P-fDP"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="privacy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lug-9D-Ewh">
+                                                    <rect key="frame" x="120" y="140" width="135" height="52"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="lug-9D-Ewh" firstAttribute="top" secondItem="jLo-4o-A6m" secondAttribute="bottom" constant="15" id="9yD-Ia-YCe"/>
+                                                <constraint firstAttribute="bottom" secondItem="vPB-hS-xNc" secondAttribute="bottom" id="MsQ-Wq-nNj"/>
+                                                <constraint firstItem="lug-9D-Ewh" firstAttribute="centerX" secondItem="7v5-jv-0ts" secondAttribute="centerX" id="Yl1-Np-chB"/>
+                                                <constraint firstItem="vPB-hS-xNc" firstAttribute="leading" secondItem="7v5-jv-0ts" secondAttribute="leading" constant="18" id="Yoq-kE-HJS"/>
+                                                <constraint firstAttribute="trailing" secondItem="vPB-hS-xNc" secondAttribute="trailing" constant="18" id="b7c-5d-cV3"/>
+                                                <constraint firstItem="jLo-4o-A6m" firstAttribute="top" secondItem="7v5-jv-0ts" secondAttribute="topMargin" constant="24" id="gAh-xV-OCa"/>
+                                                <constraint firstItem="vPB-hS-xNc" firstAttribute="top" secondItem="7v5-jv-0ts" secondAttribute="top" id="nB7-QQ-gIO"/>
+                                                <constraint firstItem="jLo-4o-A6m" firstAttribute="centerX" secondItem="7v5-jv-0ts" secondAttribute="centerX" id="sVN-OL-SxM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="3QI-m6-Rit">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="8G4-7k-h4P">
+                                        <rect key="frame" x="0.0" y="282" width="375" height="106"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8G4-7k-h4P" id="MOM-Jd-jOc">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CcQ-eY-hU7" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
+                                                    <rect key="frame" x="18" y="5" width="339" height="96"/>
+                                                    <color key="backgroundColor" name="Elevated"/>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7QA-Sb-CZ4">
+                                                    <rect key="frame" x="38" y="33" width="40" height="40"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4FW-P4-2Cf">
+                                                            <rect key="frame" x="9" y="9.9999999999999982" width="22" height="20.666666666666664"/>
+                                                            <color key="tintColor" systemColor="labelColor"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="4FW-P4-2Cf" firstAttribute="top" secondItem="7QA-Sb-CZ4" secondAttribute="top" constant="9" id="6Kb-5T-dcF"/>
+                                                        <constraint firstItem="4FW-P4-2Cf" firstAttribute="leading" secondItem="7QA-Sb-CZ4" secondAttribute="leading" constant="9" id="AG2-u1-mLW"/>
+                                                        <constraint firstAttribute="trailing" secondItem="4FW-P4-2Cf" secondAttribute="trailing" constant="9" id="DJh-tD-W1Y"/>
+                                                        <constraint firstAttribute="bottom" secondItem="4FW-P4-2Cf" secondAttribute="bottom" constant="9" id="r5m-gq-H9b"/>
+                                                        <constraint firstAttribute="width" secondItem="7QA-Sb-CZ4" secondAttribute="height" multiplier="1:1" id="rXL-6c-Vgt"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="keep history" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDX-Xs-Fna">
+                                                    <rect key="frame" x="96" y="41" width="96.666666666666686" height="24"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="FDX-Xs-Fna" firstAttribute="leading" secondItem="7QA-Sb-CZ4" secondAttribute="trailing" constant="18" id="1gF-Y1-Wi8"/>
+                                                <constraint firstAttribute="bottom" secondItem="CcQ-eY-hU7" secondAttribute="bottom" constant="5" id="5Jq-m4-yv6"/>
+                                                <constraint firstAttribute="bottom" secondItem="7QA-Sb-CZ4" secondAttribute="bottom" constant="33" id="5T2-JB-tPn"/>
+                                                <constraint firstItem="CcQ-eY-hU7" firstAttribute="top" secondItem="MOM-Jd-jOc" secondAttribute="top" constant="5" id="H6T-jh-pdf"/>
+                                                <constraint firstAttribute="trailing" secondItem="CcQ-eY-hU7" secondAttribute="trailing" constant="18" id="UXM-Py-g63"/>
+                                                <constraint firstItem="7QA-Sb-CZ4" firstAttribute="leading" secondItem="CcQ-eY-hU7" secondAttribute="leading" constant="20" id="Va6-dH-IE0"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FDX-Xs-Fna" secondAttribute="trailing" constant="20" symbolic="YES" id="Yu8-vb-pA2"/>
+                                                <constraint firstItem="CcQ-eY-hU7" firstAttribute="leading" secondItem="MOM-Jd-jOc" secondAttribute="leading" constant="18" id="by9-i3-Sg0"/>
+                                                <constraint firstItem="7QA-Sb-CZ4" firstAttribute="top" secondItem="MOM-Jd-jOc" secondAttribute="top" constant="33" id="y4J-JI-NaH"/>
+                                                <constraint firstItem="FDX-Xs-Fna" firstAttribute="centerY" secondItem="MOM-Jd-jOc" secondAttribute="centerY" id="zbA-pa-rm4"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="sAi-bi-sFK" appends="YES" id="wV7-Nh-Hvl"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="6Yl-2H-zNu">
+                                        <rect key="frame" x="0.0" y="388" width="375" height="106"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Yl-2H-zNu" id="yhI-eD-PWD">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gcZ-Ga-zFS" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
+                                                    <rect key="frame" x="18" y="5" width="339" height="96"/>
+                                                    <color key="backgroundColor" name="Elevated"/>
+                                                    <gestureRecognizers/>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="I1F-CD-Kyc" appends="YES" id="dB2-dp-bdN"/>
+                                                    </connections>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HR7-1M-Pme">
+                                                    <rect key="frame" x="38" y="33" width="40" height="40"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cookie" translatesAutoresizingMaskIntoConstraints="NO" id="xKU-io-6DX">
+                                                            <rect key="frame" x="9" y="9" width="22" height="22"/>
+                                                            <color key="tintColor" systemColor="labelColor"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="xKU-io-6DX" firstAttribute="leading" secondItem="HR7-1M-Pme" secondAttribute="leading" constant="9" id="4Uu-Ve-hhf"/>
+                                                        <constraint firstAttribute="width" secondItem="HR7-1M-Pme" secondAttribute="height" multiplier="1:1" id="4b6-rW-J3l"/>
+                                                        <constraint firstAttribute="bottom" secondItem="xKU-io-6DX" secondAttribute="bottom" constant="9" id="6SC-ZC-c4X"/>
+                                                        <constraint firstAttribute="trailing" secondItem="xKU-io-6DX" secondAttribute="trailing" constant="9" id="Qbd-OA-9Tb"/>
+                                                        <constraint firstItem="xKU-io-6DX" firstAttribute="top" secondItem="HR7-1M-Pme" secondAttribute="top" constant="9" id="lPs-8K-eBT"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="keep cookies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Uh-tt-GVq">
+                                                    <rect key="frame" x="96" y="41" width="103.66666666666669" height="24"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="gcZ-Ga-zFS" secondAttribute="bottom" constant="5" id="5at-y2-YsH"/>
+                                                <constraint firstItem="gcZ-Ga-zFS" firstAttribute="leading" secondItem="yhI-eD-PWD" secondAttribute="leading" constant="18" id="A5a-l2-6T2"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2Uh-tt-GVq" secondAttribute="trailing" constant="20" symbolic="YES" id="E7r-h2-OfP"/>
+                                                <constraint firstItem="HR7-1M-Pme" firstAttribute="top" secondItem="yhI-eD-PWD" secondAttribute="top" constant="33" id="F5g-Hb-GO9"/>
+                                                <constraint firstItem="2Uh-tt-GVq" firstAttribute="centerY" secondItem="yhI-eD-PWD" secondAttribute="centerY" id="Ii7-ke-ubc"/>
+                                                <constraint firstItem="2Uh-tt-GVq" firstAttribute="leading" secondItem="HR7-1M-Pme" secondAttribute="trailing" constant="18" id="SnA-r8-9Zp"/>
+                                                <constraint firstItem="HR7-1M-Pme" firstAttribute="leading" secondItem="gcZ-Ga-zFS" secondAttribute="leading" constant="20" id="WXg-dR-Wkk"/>
+                                                <constraint firstAttribute="bottom" secondItem="HR7-1M-Pme" secondAttribute="bottom" constant="33" id="ZTZ-eT-kFa"/>
+                                                <constraint firstAttribute="trailing" secondItem="gcZ-Ga-zFS" secondAttribute="trailing" constant="18" id="p04-w0-lfE"/>
+                                                <constraint firstItem="gcZ-Ga-zFS" firstAttribute="top" secondItem="yhI-eD-PWD" secondAttribute="top" constant="5" id="q0d-PZ-Nbe"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                        <gestureRecognizers/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="GMT-9A-VDw">
+                                        <rect key="frame" x="0.0" y="494" width="375" height="106"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GMT-9A-VDw" id="Qzq-jS-GFt">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vVS-So-8QS" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
+                                                    <rect key="frame" x="18" y="5" width="339" height="96"/>
+                                                    <color key="backgroundColor" name="Elevated"/>
+                                                    <gestureRecognizers/>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="Dfu-1x-a35" appends="YES" id="f3K-mC-0uY"/>
+                                                    </connections>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRG-Bz-qe1">
+                                                    <rect key="frame" x="38" y="33" width="40" height="40"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="js" translatesAutoresizingMaskIntoConstraints="NO" id="HpJ-Uj-ILf">
+                                                            <rect key="frame" x="9" y="9" width="22" height="22"/>
+                                                            <color key="tintColor" systemColor="labelColor"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="fRG-Bz-qe1" secondAttribute="height" multiplier="1:1" id="SaB-0x-isX"/>
+                                                        <constraint firstItem="HpJ-Uj-ILf" firstAttribute="leading" secondItem="fRG-Bz-qe1" secondAttribute="leading" constant="9" id="g0i-uk-pl5"/>
+                                                        <constraint firstItem="HpJ-Uj-ILf" firstAttribute="top" secondItem="fRG-Bz-qe1" secondAttribute="top" constant="9" id="kIM-s9-cn8"/>
+                                                        <constraint firstAttribute="bottom" secondItem="HpJ-Uj-ILf" secondAttribute="bottom" constant="9" id="vvi-1y-3qz"/>
+                                                        <constraint firstAttribute="trailing" secondItem="HpJ-Uj-ILf" secondAttribute="trailing" constant="9" id="wSN-dG-nTb"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="javascript" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7M-G2-Vc2">
+                                                    <rect key="frame" x="96" y="41" width="76" height="24"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="fRG-Bz-qe1" firstAttribute="top" secondItem="Qzq-jS-GFt" secondAttribute="top" constant="33" id="0mj-yv-hHP"/>
+                                                <constraint firstAttribute="bottom" secondItem="vVS-So-8QS" secondAttribute="bottom" constant="5" id="C5h-eS-8XA"/>
+                                                <constraint firstAttribute="trailing" secondItem="vVS-So-8QS" secondAttribute="trailing" constant="18" id="EhK-Yx-c1B"/>
+                                                <constraint firstItem="fRG-Bz-qe1" firstAttribute="leading" secondItem="vVS-So-8QS" secondAttribute="leading" constant="20" id="FU4-6N-bOd"/>
+                                                <constraint firstAttribute="bottom" secondItem="fRG-Bz-qe1" secondAttribute="bottom" constant="33" id="Hvt-a8-IBg"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="L7M-G2-Vc2" secondAttribute="trailing" constant="20" symbolic="YES" id="Y63-VY-hch"/>
+                                                <constraint firstItem="vVS-So-8QS" firstAttribute="top" secondItem="Qzq-jS-GFt" secondAttribute="top" constant="5" id="gCR-PJ-fOX"/>
+                                                <constraint firstItem="L7M-G2-Vc2" firstAttribute="leading" secondItem="fRG-Bz-qe1" secondAttribute="trailing" constant="18" id="rJI-yk-2M9"/>
+                                                <constraint firstItem="L7M-G2-Vc2" firstAttribute="centerY" secondItem="Qzq-jS-GFt" secondAttribute="centerY" id="rgh-lm-ZRK"/>
+                                                <constraint firstItem="vVS-So-8QS" firstAttribute="leading" secondItem="Qzq-jS-GFt" secondAttribute="leading" constant="18" id="tRG-yH-4FW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                        <gestureRecognizers/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="nFO-j7-afF" id="NME-kH-euk"/>
+                            <outlet property="delegate" destination="nFO-j7-afF" id="e3L-QD-xPD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="VGO-2S-iEw">
+                        <barButtonItem key="backBarButtonItem" title=" " id="egN-Pm-RoJ"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yTg-ER-Fg3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="I1F-CD-Kyc" userLabel="goToCookies">
+                    <connections>
+                        <segue destination="h0E-2F-V6B" kind="show" id="A3f-WS-Sm3"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Dfu-1x-a35" userLabel="goToJs">
+                    <connections>
+                        <segue destination="VhN-XS-zQX" kind="show" id="l1y-U6-rXc"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="sAi-bi-sFK" userLabel="goToHistory">
+                    <connections>
+                        <segue destination="4ve-8S-6Wz" kind="show" id="Ysr-6g-Yh1"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-726" y="2902"/>
+        </scene>
+        <!--Js Page View Controller-->
+        <scene sceneID="deH-3d-ZLc">
+            <objects>
+                <tableViewController id="VhN-XS-zQX" customClass="jsPageViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="pEv-Jq-Cig">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="Expedition White"/>
+                        <color key="separatorColor" name="Expedition White"/>
+                        <color key="sectionIndexBackgroundColor" name="Expedition White"/>
+                        <color key="sectionIndexTrackingBackgroundColor" name="Expedition White"/>
+                        <sections>
+                            <tableViewSection id="xzs-vG-eh3">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="228" id="fxM-Kn-E8v">
+                                        <rect key="frame" x="0.0" y="18" width="375" height="228"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fxM-Kn-E8v" id="qHe-ks-YHT">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="228"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v0I-ya-xLV" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
+                                                    <rect key="frame" x="18" y="0.0" width="339" height="225"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="225" id="0yz-dg-JbS"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <segue destination="eMb-mG-JIk" kind="embed" id="1fa-TR-ekZ"/>
+                                                    </connections>
+                                                </containerView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="js" translatesAutoresizingMaskIntoConstraints="NO" id="xxq-e5-Req">
+                                                    <rect key="frame" x="142.66666666666666" y="35" width="90" height="90"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="xxq-e5-Req" secondAttribute="height" multiplier="1:1" id="HpZ-KW-uXp"/>
+                                                        <constraint firstAttribute="width" constant="90" id="I0o-qP-5d7"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="javascript" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5t-yZ-kRe">
+                                                    <rect key="frame" x="98" y="140" width="179" height="52"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="xxq-e5-Req" firstAttribute="centerX" secondItem="qHe-ks-YHT" secondAttribute="centerX" id="2IM-dx-ueD"/>
+                                                <constraint firstItem="E5t-yZ-kRe" firstAttribute="top" secondItem="xxq-e5-Req" secondAttribute="bottom" constant="15" id="8HB-E0-6XD"/>
+                                                <constraint firstAttribute="bottom" secondItem="v0I-ya-xLV" secondAttribute="bottom" id="L9k-OB-Y11"/>
+                                                <constraint firstItem="v0I-ya-xLV" firstAttribute="top" secondItem="qHe-ks-YHT" secondAttribute="top" id="QXA-KI-hyp"/>
+                                                <constraint firstItem="xxq-e5-Req" firstAttribute="top" secondItem="qHe-ks-YHT" secondAttribute="topMargin" constant="24" id="Rrh-b7-vA7"/>
+                                                <constraint firstAttribute="trailing" secondItem="v0I-ya-xLV" secondAttribute="trailing" constant="18" id="TEK-Py-KnD"/>
+                                                <constraint firstItem="v0I-ya-xLV" firstAttribute="leading" secondItem="qHe-ks-YHT" secondAttribute="leading" constant="18" id="cce-FL-B9u"/>
+                                                <constraint firstItem="E5t-yZ-kRe" firstAttribute="centerX" secondItem="qHe-ks-YHT" secondAttribute="centerX" id="pOd-0z-C1A"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="XYO-8L-96h">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="135" id="kcy-vz-355">
+                                        <rect key="frame" x="0.0" y="282" width="375" height="135"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kcy-vz-355" id="NpZ-1N-XW7">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="135"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A6p-hW-UKA" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
+                                                    <rect key="frame" x="18" y="5.0000000000000071" width="339" height="122.66666666666669"/>
+                                                    <color key="backgroundColor" name="Elevated"/>
+                                                </view>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Py-Ga-Wqd">
+                                                    <rect key="frame" x="32" y="12" width="311" height="109"/>
+                                                    <color key="tintColor" systemColor="labelColor"/>
+                                                    <string key="text">many websites depend on javascript to add functionality, but it can be used to invade your privacy. turning it off can cause sites to break.</string>
+                                                    <color key="textColor" systemColor="labelColor"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="9Py-Ga-Wqd" firstAttribute="leading" secondItem="NpZ-1N-XW7" secondAttribute="leading" constant="32" id="4oe-sS-9jn"/>
+                                                <constraint firstItem="A6p-hW-UKA" firstAttribute="leading" secondItem="NpZ-1N-XW7" secondAttribute="leading" constant="18" id="gOj-x9-0mX"/>
+                                                <constraint firstItem="A6p-hW-UKA" firstAttribute="top" secondItem="NpZ-1N-XW7" secondAttribute="top" constant="5" id="gPS-JK-Xf6"/>
+                                                <constraint firstAttribute="bottom" secondItem="A6p-hW-UKA" secondAttribute="bottom" constant="7.5" id="kIe-bN-wNt"/>
+                                                <constraint firstAttribute="trailing" secondItem="A6p-hW-UKA" secondAttribute="trailing" constant="18" id="uPj-r4-vFN"/>
+                                                <constraint firstAttribute="trailing" secondItem="9Py-Ga-Wqd" secondAttribute="trailing" constant="32" id="xiN-hG-eFw"/>
+                                                <constraint firstItem="9Py-Ga-Wqd" firstAttribute="top" secondItem="NpZ-1N-XW7" secondAttribute="top" constant="12" id="yas-gC-ECh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                        <gestureRecognizers/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="OFd-cq-aUk">
+                                        <rect key="frame" x="0.0" y="417" width="375" height="106"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OFd-cq-aUk" id="n2S-Td-Lla">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfn-AY-PKF" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
+                                                    <rect key="frame" x="18" y="5" width="339" height="96"/>
+                                                    <subviews>
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wTt-W5-BSq">
+                                                            <rect key="frame" x="276" y="32.666666666666664" width="51" height="31"/>
+                                                            <color key="onTintColor" name="Expedition Blue"/>
+                                                            <connections>
+                                                                <action selector="reopenTabsSwitchValueChanged:" destination="VhN-XS-zQX" eventType="valueChanged" id="7tG-SO-kH7"/>
+                                                            </connections>
+                                                        </switch>
+                                                    </subviews>
+                                                    <color key="backgroundColor" name="Elevated"/>
+                                                    <constraints>
+                                                        <constraint firstItem="wTt-W5-BSq" firstAttribute="centerY" secondItem="gfn-AY-PKF" secondAttribute="centerY" id="PoI-lv-HFX"/>
+                                                        <constraint firstAttribute="trailing" secondItem="wTt-W5-BSq" secondAttribute="trailing" constant="14" id="VJL-cy-RZS"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="javascript" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvX-mE-aW7">
+                                                    <rect key="frame" x="37.999999999999993" y="41" width="75.333333333333314" height="24"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="gfn-AY-PKF" firstAttribute="top" secondItem="n2S-Td-Lla" secondAttribute="top" constant="5" id="19W-3W-x1i"/>
+                                                <constraint firstItem="gfn-AY-PKF" firstAttribute="leading" secondItem="n2S-Td-Lla" secondAttribute="leading" constant="18" id="BF4-bT-xh5"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bvX-mE-aW7" secondAttribute="trailing" constant="20" symbolic="YES" id="LA0-AS-7BG"/>
+                                                <constraint firstItem="bvX-mE-aW7" firstAttribute="leading" secondItem="n2S-Td-Lla" secondAttribute="leadingMargin" constant="22" id="ejZ-P9-cLB"/>
+                                                <constraint firstItem="bvX-mE-aW7" firstAttribute="centerY" secondItem="n2S-Td-Lla" secondAttribute="centerY" id="gDM-jS-Naq"/>
+                                                <constraint firstAttribute="bottom" secondItem="gfn-AY-PKF" secondAttribute="bottom" constant="5" id="jk0-xo-vD2"/>
+                                                <constraint firstAttribute="trailing" secondItem="gfn-AY-PKF" secondAttribute="trailing" constant="18" id="y9I-y5-rzs"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                        <gestureRecognizers/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="VhN-XS-zQX" id="B9Q-t7-aca"/>
+                            <outlet property="delegate" destination="VhN-XS-zQX" id="KP1-bt-biQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="GQD-un-6GW">
+                        <barButtonItem key="backBarButtonItem" title=" " id="BID-X6-LaX"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="jsSwitch" destination="wTt-W5-BSq" id="Rts-0a-h3B"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7lZ-q7-Gql" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-726" y="3579"/>
+        </scene>
+        <!--Reopen On Last Page View Controller-->
+        <scene sceneID="Rvj-3x-aky">
+            <objects>
+                <tableViewController id="h0E-2F-V6B" customClass="ReopenOnLastPageViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="WWS-AP-lAP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="Expedition White"/>
+                        <color key="separatorColor" name="Expedition White"/>
+                        <color key="sectionIndexBackgroundColor" name="Expedition White"/>
+                        <color key="sectionIndexTrackingBackgroundColor" name="Expedition White"/>
+                        <sections>
+                            <tableViewSection id="qKK-D3-pb1">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="228" id="yoY-bA-G3A">
+                                        <rect key="frame" x="0.0" y="18" width="375" height="228"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yoY-bA-G3A" id="bMA-ES-vdj">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="228"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bjF-Ok-E6h" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
+                                                    <rect key="frame" x="18" y="0.0" width="339" height="225"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="225" id="Sg7-cG-38Z"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <segue destination="eMb-mG-JIk" kind="embed" id="8ed-Gn-dwH"/>
+                                                    </connections>
+                                                </containerView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cookie" translatesAutoresizingMaskIntoConstraints="NO" id="pa8-6W-xpl">
+                                                    <rect key="frame" x="142.66666666666666" y="35" width="90" height="90"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="90" id="Jrc-Pg-eg0"/>
+                                                        <constraint firstAttribute="width" secondItem="pa8-6W-xpl" secondAttribute="height" multiplier="1:1" id="mPn-nl-fYY"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cookies" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MA7-Uu-CEc">
+                                                    <rect key="frame" x="116.66666666666669" y="140" width="142" height="52"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="bjF-Ok-E6h" secondAttribute="trailing" constant="18" id="Is1-WP-sP5"/>
+                                                <constraint firstAttribute="bottom" secondItem="bjF-Ok-E6h" secondAttribute="bottom" id="Qto-tR-Yr1"/>
+                                                <constraint firstItem="pa8-6W-xpl" firstAttribute="centerX" secondItem="bMA-ES-vdj" secondAttribute="centerX" id="YJi-Qd-F6d"/>
+                                                <constraint firstItem="MA7-Uu-CEc" firstAttribute="centerX" secondItem="bMA-ES-vdj" secondAttribute="centerX" id="ZX9-Xl-deN"/>
+                                                <constraint firstItem="MA7-Uu-CEc" firstAttribute="top" secondItem="pa8-6W-xpl" secondAttribute="bottom" constant="15" id="fAB-RN-qfD"/>
+                                                <constraint firstItem="bjF-Ok-E6h" firstAttribute="leading" secondItem="bMA-ES-vdj" secondAttribute="leading" constant="18" id="jXL-F9-ybO"/>
+                                                <constraint firstItem="bjF-Ok-E6h" firstAttribute="top" secondItem="bMA-ES-vdj" secondAttribute="top" id="lqR-Z8-VST"/>
+                                                <constraint firstItem="pa8-6W-xpl" firstAttribute="top" secondItem="bMA-ES-vdj" secondAttribute="topMargin" constant="24" id="yck-UP-JC8"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="924-QK-vCU">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="131" id="Ytb-LU-dvP">
+                                        <rect key="frame" x="0.0" y="282" width="375" height="131"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ytb-LU-dvP" id="RvE-BX-tLa">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="131"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iqR-rV-u5u" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
+                                                    <rect key="frame" x="18" y="5.0000000000000071" width="339" height="118.66666666666669"/>
+                                                    <color key="backgroundColor" name="Elevated"/>
+                                                </view>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="when this is off, cookies will be deleted when you close the app, otherwise they will stay until you clear them." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goG-eh-xDK">
+                                                    <rect key="frame" x="32" y="12" width="311" height="109"/>
+                                                    <color key="tintColor" systemColor="labelColor"/>
+                                                    <color key="textColor" systemColor="labelColor"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="iqR-rV-u5u" firstAttribute="leading" secondItem="RvE-BX-tLa" secondAttribute="leading" constant="18" id="10a-Hx-met"/>
+                                                <constraint firstAttribute="bottom" secondItem="iqR-rV-u5u" secondAttribute="bottom" constant="7.5" id="7wr-0X-4Uc"/>
+                                                <constraint firstAttribute="trailing" secondItem="iqR-rV-u5u" secondAttribute="trailing" constant="18" id="9uS-ld-i9k"/>
+                                                <constraint firstItem="iqR-rV-u5u" firstAttribute="top" secondItem="RvE-BX-tLa" secondAttribute="top" constant="5" id="GPq-Ii-0Ne"/>
+                                                <constraint firstItem="goG-eh-xDK" firstAttribute="leading" secondItem="RvE-BX-tLa" secondAttribute="leading" constant="32" id="V2O-EA-q4c"/>
+                                                <constraint firstItem="goG-eh-xDK" firstAttribute="top" secondItem="RvE-BX-tLa" secondAttribute="top" constant="12" id="XFq-wm-1WO"/>
+                                                <constraint firstAttribute="trailing" secondItem="goG-eh-xDK" secondAttribute="trailing" constant="32" id="elR-QX-dSH"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                        <gestureRecognizers/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="81P-oF-bfK">
+                                        <rect key="frame" x="0.0" y="413" width="375" height="106"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="81P-oF-bfK" id="ZF5-dI-zvT">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qiu-bi-bb6" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
+                                                    <rect key="frame" x="18" y="5" width="339" height="96"/>
+                                                    <subviews>
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yg8-9R-o2G">
+                                                            <rect key="frame" x="276" y="32.666666666666664" width="51" height="31"/>
+                                                            <color key="onTintColor" name="Expedition Blue"/>
+                                                            <connections>
+                                                                <action selector="reopenTabsSwitchValueChanged:" destination="h0E-2F-V6B" eventType="valueChanged" id="ymc-WY-iGK"/>
+                                                            </connections>
+                                                        </switch>
+                                                    </subviews>
+                                                    <color key="backgroundColor" name="Elevated"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="Yg8-9R-o2G" secondAttribute="trailing" constant="14" id="mW3-ft-GHr"/>
+                                                        <constraint firstItem="Yg8-9R-o2G" firstAttribute="centerY" secondItem="qiu-bi-bb6" secondAttribute="centerY" id="wbe-63-AaZ"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="keep cookies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9T-Pp-HIL">
+                                                    <rect key="frame" x="38" y="41" width="104" height="24"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="X9T-Pp-HIL" firstAttribute="centerY" secondItem="ZF5-dI-zvT" secondAttribute="centerY" id="AcX-1E-bqj"/>
+                                                <constraint firstItem="qiu-bi-bb6" firstAttribute="leading" secondItem="ZF5-dI-zvT" secondAttribute="leading" constant="18" id="Qef-mp-6aq"/>
+                                                <constraint firstAttribute="bottom" secondItem="qiu-bi-bb6" secondAttribute="bottom" constant="5" id="V1m-An-Cvh"/>
+                                                <constraint firstItem="qiu-bi-bb6" firstAttribute="top" secondItem="ZF5-dI-zvT" secondAttribute="top" constant="5" id="aKM-fY-9v6"/>
+                                                <constraint firstItem="X9T-Pp-HIL" firstAttribute="leading" secondItem="ZF5-dI-zvT" secondAttribute="leadingMargin" constant="22" id="fWx-Fv-fn0"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="X9T-Pp-HIL" secondAttribute="trailing" constant="20" symbolic="YES" id="kDD-XL-cNB"/>
+                                                <constraint firstAttribute="trailing" secondItem="qiu-bi-bb6" secondAttribute="trailing" constant="18" id="xAu-L1-vJm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                        <gestureRecognizers/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="73" id="hKk-rc-QM7">
+                                        <rect key="frame" x="0.0" y="519" width="375" height="73"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hKk-rc-QM7" id="lKz-2r-64U">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rj6-sv-dmC" customClass="Button" customModule="Expedition" customModuleProvider="target">
+                                                    <rect key="frame" x="18" y="9" width="339" height="55"/>
+                                                    <color key="backgroundColor" name="Expedition Blue"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="55" id="biD-3v-yOQ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" title="clear cookies" image="xmark" catalog="system">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="regular"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="newTabBtn:" destination="Rd0-kk-bAU" eventType="touchUpInside" id="MCz-6t-Pah"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Rj6-sv-dmC" secondAttribute="bottom" constant="9" id="6bk-KB-lCK"/>
+                                                <constraint firstAttribute="trailing" secondItem="Rj6-sv-dmC" secondAttribute="trailing" constant="18" id="ALN-LT-j5W"/>
+                                                <constraint firstItem="Rj6-sv-dmC" firstAttribute="leading" secondItem="lKz-2r-64U" secondAttribute="leading" constant="18" id="VEq-G1-JsY"/>
+                                                <constraint firstItem="Rj6-sv-dmC" firstAttribute="top" secondItem="lKz-2r-64U" secondAttribute="top" constant="9" id="fv2-dg-4d1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                        <gestureRecognizers/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="h0E-2F-V6B" id="YSL-VE-maM"/>
+                            <outlet property="delegate" destination="h0E-2F-V6B" id="kPF-8z-xcy"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="huM-SX-2Uf">
+                        <barButtonItem key="backBarButtonItem" title=" " id="VC3-9r-c1K"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="reopenSwitch" destination="Yg8-9R-o2G" id="167-jK-P8c"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VTR-Vv-Naw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-725.60000000000002" y="4265.0246305418723"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="mkf-WA-PCx">
+            <objects>
+                <tableViewController id="4ve-8S-6Wz" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Ivq-Oc-KAH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="Expedition White"/>
+                        <color key="separatorColor" name="Expedition White"/>
+                        <color key="sectionIndexBackgroundColor" name="Expedition White"/>
+                        <color key="sectionIndexTrackingBackgroundColor" name="Expedition White"/>
+                        <sections>
+                            <tableViewSection id="Mzx-hE-MmU">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="228" id="OpV-ju-gaa">
+                                        <rect key="frame" x="0.0" y="18" width="375" height="228"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OpV-ju-gaa" id="1CN-0Y-N8Y">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="228"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="co2-TF-PiY" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
+                                                    <rect key="frame" x="18" y="0.0" width="339" height="225"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="225" id="giU-u4-4cc"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <segue destination="eMb-mG-JIk" kind="embed" id="ZSA-bk-FWN"/>
+                                                    </connections>
+                                                </containerView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="KIY-pe-0v9">
+                                                    <rect key="frame" x="142.66666666666666" y="36.000000000000007" width="90" height="88.666666666666686"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="KIY-pe-0v9" secondAttribute="height" multiplier="1:1" id="3WT-zy-HXW"/>
+                                                        <constraint firstAttribute="width" constant="90" id="jdp-l7-Wa8"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="history" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxz-61-Fxr">
+                                                    <rect key="frame" x="123.66666666666669" y="140" width="128" height="52"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qxz-61-Fxr" firstAttribute="centerX" secondItem="1CN-0Y-N8Y" secondAttribute="centerX" id="EmL-Q6-RYa"/>
+                                                <constraint firstItem="co2-TF-PiY" firstAttribute="top" secondItem="1CN-0Y-N8Y" secondAttribute="top" id="Fs0-lI-aUP"/>
+                                                <constraint firstItem="qxz-61-Fxr" firstAttribute="top" secondItem="KIY-pe-0v9" secondAttribute="bottom" constant="15" id="KYl-Pa-YHf"/>
+                                                <constraint firstAttribute="trailing" secondItem="co2-TF-PiY" secondAttribute="trailing" constant="18" id="S4l-ht-90j"/>
+                                                <constraint firstItem="co2-TF-PiY" firstAttribute="leading" secondItem="1CN-0Y-N8Y" secondAttribute="leading" constant="18" id="Te0-Qt-sEr"/>
+                                                <constraint firstItem="KIY-pe-0v9" firstAttribute="centerX" secondItem="1CN-0Y-N8Y" secondAttribute="centerX" id="U6I-Zr-2kw"/>
+                                                <constraint firstAttribute="bottom" secondItem="co2-TF-PiY" secondAttribute="bottom" id="ZZ3-hs-oX8"/>
+                                                <constraint firstItem="KIY-pe-0v9" firstAttribute="top" secondItem="1CN-0Y-N8Y" secondAttribute="topMargin" constant="24" id="goK-Bt-pyo"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="RKO-Z4-SVM">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="87" id="nZG-Ja-v68">
+                                        <rect key="frame" x="0.0" y="282" width="375" height="87"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nZG-Ja-v68" id="UXB-qf-hdJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="87"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Cw-Zh-zr0" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
+                                                    <rect key="frame" x="18" y="5" width="339" height="74.666666666666671"/>
+                                                    <color key="backgroundColor" name="Elevated"/>
+                                                </view>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="when this is on, your search history will be saved." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YoI-p5-0YX">
+                                                    <rect key="frame" x="32" y="11.999999999999996" width="311" height="62.666666666666657"/>
+                                                    <color key="tintColor" systemColor="labelColor"/>
+                                                    <color key="textColor" systemColor="labelColor"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0Cw-Zh-zr0" firstAttribute="top" secondItem="UXB-qf-hdJ" secondAttribute="top" constant="5" id="GU2-0k-YH3"/>
+                                                <constraint firstAttribute="bottom" secondItem="0Cw-Zh-zr0" secondAttribute="bottom" constant="7.5" id="Jjt-Or-KTO"/>
+                                                <constraint firstItem="YoI-p5-0YX" firstAttribute="top" secondItem="UXB-qf-hdJ" secondAttribute="top" constant="12" id="MLd-M4-lkn"/>
+                                                <constraint firstItem="YoI-p5-0YX" firstAttribute="leading" secondItem="UXB-qf-hdJ" secondAttribute="leading" constant="32" id="Mxc-2Q-fo6"/>
+                                                <constraint firstAttribute="trailing" secondItem="YoI-p5-0YX" secondAttribute="trailing" constant="32" id="Q2b-yA-dBP"/>
+                                                <constraint firstItem="0Cw-Zh-zr0" firstAttribute="leading" secondItem="UXB-qf-hdJ" secondAttribute="leading" constant="18" id="W8l-7U-EYe"/>
+                                                <constraint firstAttribute="trailing" secondItem="0Cw-Zh-zr0" secondAttribute="trailing" constant="18" id="aJ0-Ah-afe"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                        <gestureRecognizers/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="7bl-NC-8QH">
+                                        <rect key="frame" x="0.0" y="369" width="375" height="106"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7bl-NC-8QH" id="tbb-9C-dF3">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ly5-wB-YHk" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
+                                                    <rect key="frame" x="18" y="5" width="339" height="96"/>
+                                                    <subviews>
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jYs-v4-Z8d">
+                                                            <rect key="frame" x="276" y="32.666666666666664" width="51" height="31"/>
+                                                            <color key="onTintColor" name="Expedition Blue"/>
+                                                            <connections>
+                                                                <action selector="reopenTabsSwitchValueChanged:" destination="h0E-2F-V6B" eventType="valueChanged" id="vX6-0S-Sio"/>
+                                                            </connections>
+                                                        </switch>
+                                                    </subviews>
+                                                    <color key="backgroundColor" name="Elevated"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="jYs-v4-Z8d" secondAttribute="trailing" constant="14" id="FNc-S2-FV4"/>
+                                                        <constraint firstItem="jYs-v4-Z8d" firstAttribute="centerY" secondItem="Ly5-wB-YHk" secondAttribute="centerY" id="zcC-ps-rts"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="keep history" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tO5-4F-mky">
+                                                    <rect key="frame" x="38" y="41" width="97" height="24"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ly5-wB-YHk" firstAttribute="top" secondItem="tbb-9C-dF3" secondAttribute="top" constant="5" id="GRF-eY-ieb"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tO5-4F-mky" secondAttribute="trailing" constant="20" symbolic="YES" id="H5F-zQ-cL9"/>
+                                                <constraint firstAttribute="bottom" secondItem="Ly5-wB-YHk" secondAttribute="bottom" constant="5" id="X1v-wh-A6b"/>
+                                                <constraint firstItem="Ly5-wB-YHk" firstAttribute="leading" secondItem="tbb-9C-dF3" secondAttribute="leading" constant="18" id="sug-U9-X76"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ly5-wB-YHk" secondAttribute="trailing" constant="18" id="vnL-3b-VEr"/>
+                                                <constraint firstItem="tO5-4F-mky" firstAttribute="centerY" secondItem="tbb-9C-dF3" secondAttribute="centerY" id="w3Y-Tn-uqq"/>
+                                                <constraint firstItem="tO5-4F-mky" firstAttribute="leading" secondItem="tbb-9C-dF3" secondAttribute="leadingMargin" constant="22" id="zFo-RF-sHV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                        <gestureRecognizers/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="ofr-H9-jWL">
+                                        <rect key="frame" x="0.0" y="475" width="375" height="106"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ofr-H9-jWL" id="BWv-Xu-UIs">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dSF-Pm-bZc" customClass="CellBGView" customModule="Expedition" customModuleProvider="target">
+                                                    <rect key="frame" x="18" y="5" width="339" height="96"/>
+                                                    <color key="backgroundColor" name="Elevated"/>
+                                                    <gestureRecognizers/>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="90a-DU-Wdd" appends="YES" id="xNf-xj-Sga"/>
+                                                    </connections>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u6S-MY-bdk">
+                                                    <rect key="frame" x="38" y="33" width="40" height="40"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3OX-UQ-yKW">
+                                                            <rect key="frame" x="9" y="9.9999999999999982" width="22" height="20.666666666666664"/>
+                                                            <color key="tintColor" systemColor="labelColor"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="3OX-UQ-yKW" firstAttribute="top" secondItem="u6S-MY-bdk" secondAttribute="top" constant="9" id="N9m-uY-1te"/>
+                                                        <constraint firstAttribute="width" secondItem="u6S-MY-bdk" secondAttribute="height" multiplier="1:1" id="kAA-uw-N8M"/>
+                                                        <constraint firstAttribute="trailing" secondItem="3OX-UQ-yKW" secondAttribute="trailing" constant="9" id="kUN-mZ-4xR"/>
+                                                        <constraint firstItem="3OX-UQ-yKW" firstAttribute="leading" secondItem="u6S-MY-bdk" secondAttribute="leading" constant="9" id="o77-yV-Prw"/>
+                                                        <constraint firstAttribute="bottom" secondItem="3OX-UQ-yKW" secondAttribute="bottom" constant="9" id="re9-ET-n3F"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="view history" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1Q-eI-q7t">
+                                                    <rect key="frame" x="96" y="41" width="94.333333333333314" height="24"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="E1Q-eI-q7t" secondAttribute="trailing" constant="20" symbolic="YES" id="1rb-Af-FAC"/>
+                                                <constraint firstItem="u6S-MY-bdk" firstAttribute="top" secondItem="BWv-Xu-UIs" secondAttribute="top" constant="33" id="8ds-nt-gT5"/>
+                                                <constraint firstItem="E1Q-eI-q7t" firstAttribute="centerY" secondItem="BWv-Xu-UIs" secondAttribute="centerY" id="8tD-SV-dx7"/>
+                                                <constraint firstItem="dSF-Pm-bZc" firstAttribute="top" secondItem="BWv-Xu-UIs" secondAttribute="top" constant="5" id="N3C-fE-Phe"/>
+                                                <constraint firstItem="u6S-MY-bdk" firstAttribute="leading" secondItem="dSF-Pm-bZc" secondAttribute="leading" constant="20" id="Pyo-IA-xTX"/>
+                                                <constraint firstAttribute="bottom" secondItem="dSF-Pm-bZc" secondAttribute="bottom" constant="5" id="QCM-Cx-jPc"/>
+                                                <constraint firstItem="E1Q-eI-q7t" firstAttribute="leading" secondItem="u6S-MY-bdk" secondAttribute="trailing" constant="18" id="arc-YV-Jc8"/>
+                                                <constraint firstAttribute="bottom" secondItem="u6S-MY-bdk" secondAttribute="bottom" constant="33" id="qh5-nc-Jhr"/>
+                                                <constraint firstAttribute="trailing" secondItem="dSF-Pm-bZc" secondAttribute="trailing" constant="18" id="rNd-zV-fo6"/>
+                                                <constraint firstItem="dSF-Pm-bZc" firstAttribute="leading" secondItem="BWv-Xu-UIs" secondAttribute="leading" constant="18" id="rgU-7d-6Ir"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                        <gestureRecognizers/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="73" id="bEX-Er-Hdg">
+                                        <rect key="frame" x="0.0" y="581" width="375" height="73"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bEX-Er-Hdg" id="b4g-CI-aS1">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHv-65-mav" customClass="Button" customModule="Expedition" customModuleProvider="target">
+                                                    <rect key="frame" x="18" y="9" width="339" height="55"/>
+                                                    <color key="backgroundColor" name="Expedition Blue"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="55" id="fDV-v1-sP7"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" title="clear history" image="xmark" catalog="system">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="regular"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="newTabBtn:" destination="Rd0-kk-bAU" eventType="touchUpInside" id="5fg-Ca-2nP"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="VHv-65-mav" firstAttribute="leading" secondItem="b4g-CI-aS1" secondAttribute="leading" constant="18" id="9sk-9r-5wa"/>
+                                                <constraint firstItem="VHv-65-mav" firstAttribute="top" secondItem="b4g-CI-aS1" secondAttribute="top" constant="9" id="XT8-7T-XdK"/>
+                                                <constraint firstAttribute="trailing" secondItem="VHv-65-mav" secondAttribute="trailing" constant="18" id="XiW-3e-rwS"/>
+                                                <constraint firstAttribute="bottom" secondItem="VHv-65-mav" secondAttribute="bottom" constant="9" id="sIE-oO-fPp"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Expedition White"/>
+                                        <gestureRecognizers/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="4ve-8S-6Wz" id="6p5-CX-Ilm"/>
+                            <outlet property="delegate" destination="4ve-8S-6Wz" id="tZ9-74-V5L"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="5jW-3a-2ff">
+                        <barButtonItem key="backBarButtonItem" title=" " id="GFn-ZN-Knc"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n9S-gs-7XO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="90a-DU-Wdd" userLabel="goToViewHistory">
+                    <connections>
+                        <segue destination="65v-MH-vlF" kind="show" id="vPn-60-dAJ"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-727.20000000000005" y="4948.5221674876848"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6p6-08-b6r"/>
+        <segue reference="ZSA-bk-FWN"/>
         <segue reference="fQc-WF-jgl"/>
-        <segue reference="tOY-Um-AMB"/>
+        <segue reference="fET-hm-iSD"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="darkTextColor"/>
     <resources>
@@ -3288,6 +4106,8 @@ We do not collect any data or personal information in Expedition. We simply do n
         <image name="chevron.down" catalog="system" width="128" height="72"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="circle.dashed" catalog="system" width="128" height="121"/>
+        <image name="clock" catalog="system" width="128" height="121"/>
+        <image name="cookie" width="13" height="13"/>
         <image name="customhomepage" width="1024" height="1024"/>
         <image name="ddg" width="1025" height="1024"/>
         <image name="down" width="375" height="301"/>
@@ -3295,7 +4115,9 @@ We do not collect any data or personal information in Expedition. We simply do n
         <image name="expedition" width="1025" height="1024"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="globe" catalog="system" width="128" height="121"/>
+        <image name="hand.raised.slash" catalog="system" width="128" height="128"/>
         <image name="house" catalog="system" width="128" height="106"/>
+        <image name="js" width="12" height="12"/>
         <image name="left" width="375" height="301"/>
         <image name="mail" width="512" height="512"/>
         <image name="paintbrush.pointed" catalog="system" width="128" height="116"/>

@@ -45,6 +45,8 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     var homepageUrl = URL(string: "")
     
     override func viewDidLoad() { //Called when the app loads
+        
+
         super.viewDidLoad()
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).font = UIFont(name: "AvenirNext-Medium", size: UIFont.labelFontSize)
         var components = URLComponents(string: searchEngine)
@@ -116,13 +118,27 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             let fetchRequest: NSFetchRequest<HistoryElement> = HistoryElement.fetchRequest()
             
             do {
-                let historyArray = try PersistenceService.context.fetch(fetchRequest)
+                let historyArray = try
+                    PersistenceService.context.fetch(fetchRequest)
                 if historyArray.count > 0 {
                     openUrl(urlString: historyArray[0].url!)
                     print("OPEN: ", historyArray[0].url!)
                 } else {
-                    openUrl(urlString: homepageUrl!.absoluteString)
-                    print("OPEN: ", homepageUrl!.absoluteString)
+                    if !homepageToLoad!.contains("empty") && !homepageToLoad!.contains("expedition") {
+                        openUrl(urlString: homepageUrl!.absoluteString)
+                    }
+                    if homepageToLoad!.contains("expedition") {
+                        if let url = Bundle.main.url(forResource: "homepage", withExtension: "html") {
+                            webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
+                            scrollUp()
+                        }
+                    }
+                    if homepageToLoad!.contains("empty") {
+                        if let url = Bundle.main.url(forResource: "empy", withExtension: "html") {
+                            webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
+                            scrollUp()
+                        }
+                    }
                 }
             } catch {
                 print("ERROR OCCURRED")
@@ -291,6 +307,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         
          
      }
+    
      
      func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         impact.impactOccurred()//haptics
