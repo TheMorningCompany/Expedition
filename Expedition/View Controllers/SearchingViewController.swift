@@ -310,6 +310,12 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     }
     
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        let js = UserDefaults.standard.bool(forKey: "js")
+        if (js) {
+            self.webView.configuration.preferences.javaScriptEnabled = true
+        } else {
+            self.webView.configuration.preferences.javaScriptEnabled = false
+        }
         impact.impactOccurred() // Haptics
         if UIDevice.current.userInterfaceIdiom == .phone {
             self.webView.customUserAgent = "Mozilla/5.0 (iPhone; like Mac OS X) AppleWebKit (KHTML, like Gecko) Version/7.4 Mobile/15E148 Expedition/604.1"
@@ -318,8 +324,6 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             
         }
         progressView.isHidden = false
-        
-         
      }
     
      

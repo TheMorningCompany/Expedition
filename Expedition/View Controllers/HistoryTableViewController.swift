@@ -139,6 +139,7 @@ class HistoryTableViewController: UITableViewController {
         alert.addAction(UIAlertAction(title: "Clear", style: .destructive, handler: { action in
             self.doTheClearHistory()
             self.removeCookies()
+            self.tableView.reloadData()
             self.notification.notificationOccurred(.success)//Haptics
         }))
 
@@ -161,6 +162,7 @@ class HistoryTableViewController: UITableViewController {
            HistoryTableViewController().tableView.reloadData()
         }
         print("history cleared", HistoryTableViewController().historyArray)
+        self.tableView.reloadData()
     }
     
 

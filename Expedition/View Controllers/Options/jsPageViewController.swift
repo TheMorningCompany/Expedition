@@ -15,6 +15,12 @@ class jsPageViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let javascript = UserDefaults.standard.bool(forKey: "js")
+        if (javascript) {
+            jsSwitch.setOn(true, animated: false)
+        } else {
+            jsSwitch.setOn(false, animated: false)
+        }
     }
     @IBAction func reopenTabsSwitchValueChanged(_ sender: UISwitch) {
         UserDefaults.standard.set(jsSwitch.isOn, forKey: "js")

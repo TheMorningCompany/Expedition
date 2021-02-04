@@ -109,10 +109,6 @@
 /* Begin PBXFileReference section */
 		0003C0E223CC08A200111AA1 /* Soft@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Soft@2x.png"; sourceTree = "<group>"; };
 		0007CB9F25C697980058EC24 /* HomepageChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageChooserViewController.swift; sourceTree = "<group>"; };
-		0007DADE2437B808007BF62C /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
-		0007DAE02437B808007BF62C /* ActionRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRequestHandler.swift; sourceTree = "<group>"; };
-		0007DAE22437B808007BF62C /* Action.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
-		0007DAE42437B808007BF62C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		000D80262427F5CA005E0CA1 /* AppIconsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconsViewController.swift; sourceTree = "<group>"; };
 		001366B42307B61F009A102E /* Expedition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expedition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		001366B72307B61F009A102E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -214,24 +210,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0007DADD2437B808007BF62C /* FullpageScreenshot */ = {
-			isa = PBXGroup;
-			children = (
-				0007DADE2437B808007BF62C /* Media.xcassets */,
-				0007DAE02437B808007BF62C /* ActionRequestHandler.swift */,
-				0007DAE22437B808007BF62C /* Action.js */,
-				0007DAE42437B808007BF62C /* Info.plist */,
-			);
-			path = FullpageScreenshot;
-			sourceTree = "<group>";
-		};
 		001366AB2307B61F009A102E = {
 			isa = PBXGroup;
 			children = (
 				001366B62307B61F009A102E /* Expedition */,
 				5DFC236D23D58C3E004A3DF9 /* ExpeditionTests */,
 				001366D62307B620009A102E /* ExpeditionUITests */,
-				0007DADD2437B808007BF62C /* FullpageScreenshot */,
 				001366B52307B61F009A102E /* Products */,
 				001366E52307BEA9009A102E /* Frameworks */,
 			);
