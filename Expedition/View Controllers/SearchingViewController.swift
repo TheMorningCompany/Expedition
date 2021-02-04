@@ -165,6 +165,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(appMovedToForeground), name: UIApplication.didBecomeActiveNotification, object: nil)
         
         //MARK: Open urls from contact page
         NotificationCenter.default.addObserver(forName: OPEN_GITHUB, object: nil, queue: nil) { notification in
@@ -193,9 +194,22 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     
     
     @objc func appMovedToBackground() {
+        print("bg")
         let fadeOnClose = UserDefaults.standard.bool(forKey: "fade_on_close")
         if (fadeOnClose) {
-            performSegue(withIdentifier: "showBlankScreen", sender: self)
+//            performSegue(withIdentifier: "showBlankScreen", sender: self)
+            UIView.animate(withDuration: 0.3) {
+                self.webView.alpha = 0
+                self.searchBar.alpha = 0
+            }
+        }
+    }
+    
+    @objc func appMovedToForeground() {
+        print("foreground")
+        UIView.animate(withDuration: 0.3) {
+            self.webView.alpha = 1
+            self.searchBar.alpha = 1
         }
     }
     

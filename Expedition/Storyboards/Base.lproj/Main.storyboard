@@ -258,7 +258,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" name="Elevated"/>
+                                    <color key="backgroundColor" name="Expedition White"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" name="Expedition White"/>
                                 <color key="tintColor" systemColor="labelColor"/>
