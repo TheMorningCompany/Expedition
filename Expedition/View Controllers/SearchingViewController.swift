@@ -561,6 +561,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
             
             self.present(alert, animated: true)
         }
+    
 
 }
 
