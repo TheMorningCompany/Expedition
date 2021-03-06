@@ -9,40 +9,24 @@
         
 		<style>
             input {
-                all: unset;
-                position: absolute;
-                display: flex;
-                 align-items: center;
-                 justify-content: center;
-                 text-align: center;
-                 transform: translate(-50%, -50%);
-                 bottom: 20px;
-                 left: 50%;
-                 cursor: pointer;
-                 width: 90%;
-                 height: 55px;
-                 color: white;
-                 background-color: color(display-p3 0.16 0.54 0.8);
-                 border-radius: 20px;
-                 font-family: "Avenir Next", sans-serif;
-                 font-weight: 500;
-                 font-size: 17px;
+                
             }
 		</style>
 	</head>
 	<body>
         
         <div id="title" class="title">
-        <p>not found<br>
+        <img id="icon"src="notfoundicon.svg" img>
+        <p id="titletext">not found<br>
         </div>
         
         <div id="desc" class="desc">
             <p>the website you are searching for could not be found.<br>
         </div>
             
-        <div id="btn" >
+        <div  >
             <form>
-             <input type="button" value="go back" onclick="history.back()">
+             <input id="btn" type="button" value="back" onclick="history.back()">
             </form>
 	</body>
 </html>
