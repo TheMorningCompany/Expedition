@@ -9,6 +9,7 @@ import UIKit
 import WebKit
 import Foundation
 import CoreData
+import LocalAuthentication
 
 class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegate, UIScrollViewDelegate, WKUIDelegate {
 
@@ -105,9 +106,9 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
 //        webView?.load(request)
         
         if UIDevice.current.userInterfaceIdiom == .pad {
-        webView.customUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/7.4 Expedition/605.1.15"
+        webView.customUserAgent = "Mozilla/5.0 (Macintosh; like Mac OS X; en-us) AppleWebKit (KHTMLm like Gecko)"
         } else {
-        webView.customUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/5.2 Mobile/15E148 Expedition/604.1"
+        webView.customUserAgent = "Mozilla/5.0 (iPhone; like Mac OS X; en-us) AppleWebKit (KHTML, like Gecko) Mobile Expedition/604.1"
         }
         
         
@@ -185,6 +186,9 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         searchBar.leftView = paddingView
         searchBar.leftViewMode = UITextField.ViewMode.always
         
+        
+        
+        
     }
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "estimatedProgress" {
@@ -215,10 +219,9 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     
     @IBAction func searchBarShare(_ sender: UILongPressGestureRecognizer) {
         impact.impactOccurred() // Haptic
-        let textToShare = searchBar.text
-        if textToShare != nil {
-            displayShareSheet(shareContent: textToShare!)
-        }
+        
+        let urlToShare = self.webView.url as! URL
+        displayShareSheet(shareContent: urlToShare)
     }
     
     
@@ -258,9 +261,9 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         }
     }
     
-    func displayShareSheet(shareContent:String) {
+    func displayShareSheet(shareContent:URL) {
         notification.notificationOccurred(.success)//Haptic
-        let activityViewController = UIActivityViewController(activityItems: [shareContent as NSString], applicationActivities: nil)
+        let activityViewController = UIActivityViewController(activityItems: [shareContent as URL], applicationActivities: nil)
         present(activityViewController, animated: true, completion: {})
     }
     
@@ -561,7 +564,9 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
 //            
 //            self.present(alert, animated: true)
         
-        self.displayShareSheet(shareContent: self.searchBar.text!)
+            let urlToShare = self.webView.url as! URL
+        
+            self.displayShareSheet(shareContent: urlToShare)
         }
     
 
